@@ -1,0 +1,55 @@
+seed: 42
+paths:
+  data_dir: data
+  tile_dir: data/tiles
+  output_dir: outputs
+  checkpoint_dir: checkpoints
+  prediction_dir: outputs/predictions
+  vector_dir: outputs/vectors
+areas:
+  - name: northern_utah
+    description: Wasatch Front, Bountiful to Smithfield, including Wellsville Mountains, Logan Canyon and foothills
+    bbox: [-112.05, 40.85, -111.75, 41.88] # west, south, east, north
+    imagery: data/northern_utah/naip_rgbn.tif
+    dtm: data/northern_utah/3dep_dtm.tif
+    trails: data/northern_utah/trails.gpkg
+  - name: rexburg_idaho
+    description: Kelly Canyon and R Mountain near Rexburg
+    bbox: [-111.85, 43.58, -111.55, 43.85]
+    imagery: data/rexburg_idaho/naip_rgbn.tif
+    dtm: data/rexburg_idaho/3dep_dtm.tif
+    trails: data/rexburg_idaho/trails.gpkg
+tiling:
+  tile_size: 512
+  overlap: 128
+  resolution_m: 0.6
+  trail_buffer_m:
+    path: 1.0
+    footway: 1.0
+    track: 1.5
+    default: 1.0
+terrain:
+  local_relief_radius_px: 25
+model:
+  encoder_name: resnet34
+  encoder_weights: imagenet
+  in_channels: 6
+  classes: 1
+  dilated_center: false
+training:
+  batch_size: 4
+  epochs: 40
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  val_fraction: 0.15
+  test_fraction: 0.15
+  block_size_m: 5000
+  num_workers: 0
+  mixed_precision: true
+  checkpoint_path: checkpoints/trailnet_best.pt
+inference:
+  threshold: 0.5
+postprocess:
+  threshold: 0.5
+  simplify_m: 1.0
+  dedup_tolerance_m: 3.0
