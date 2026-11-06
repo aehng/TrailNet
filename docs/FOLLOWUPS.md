@@ -7,9 +7,9 @@ Documented findings from the 2026-11-05 overnight runs. **Not implemented here.*
 - Threshold sweeps belong on **validation** only. Do **not** choose decision thresholds on the held-out test set.
 
 ## Labels / sidewalks
-- OSM Overpass cache still carries `footway=sidewalk` and `footway=crossing`, but `parse_overpass_response` currently stores only `trail_type=<highway>` and **drops** those tags.
-- Prefer preserving sidewalk/crossing as an **ignore mask or separate class** at parse time. Unnamed OSM `footway` is **not** equivalent to sidewalk.
-- Do **not** drop Corner Canyon wholesale: UGRC singletrack and named mountain trails remain useful. Overnight T4-B (unnamed-footway drop) underperformed baseline.
+- **Code in this branch:** `parse_overpass_response` keeps `footway=*`; explicit `sidewalk`/`crossing` become `class_group=sidewalk` and rasterize as **ignore (class 4)** with an uncertain buffer (default 2 m). Unnamed footway stays path. Corner Canyon is not dropped.
+- **Still required operationally:** re-fetch/rebuild GPKGs+tiles so existing Corner caches pick up preserved tags (old GPKGs lack `footway`).
+- See `docs/LABEL_MISALIGNMENT_OPTIONS.md` for GPS-offset training options (ignore bands, bounded alignment, trusted-label weights).
 
 ## XPU-C ReliefSnap
 - Snap QA + local train ran (`experiments/xpuc_snap/`). Best **val** F1 **0.2059 @ 0.90** (epoch 8). Training ends without running held-out eval.
@@ -17,7 +17,8 @@ Documented findings from the 2026-11-05 overnight runs. **Not implemented here.*
 - Optional later: eval snap checkpoint and T4-D on one fixed GT, or park snap until a drainage QA gate.
 
 ## Vector metrics
-- Overnight vector precision/recall at `match_tolerance_m=3.0` read **0.0** for A2/B/D. Matcher tolerance and/or CRS need a dedicated eval fix (e.g. 5–8 m) before using P/R as a win condition. That is **eval plumbing**, not a model upgrade.
+- Overnight P/R at 3 m was **0.0**; synthetic checks show coincident lines score 1.0, while a **4 m parallel offset scores 0.0 at 3 m and 1.0 at 5 m** — consistent with measured 4–7 m label offsets, not a fragment-count bug.
+- Matcher now requires metric CRS (rejects metre-as-4326), uses length-weighted symmetric P/R, and exposes a **tolerance sweep** `{1,3,5,8,10}` without selecting a test winner.
 
 ## Repo hygiene
 - Push code/configs/docs only. Never commit rasters, GPKGs, checkpoints, `_agent-runs/`, or secrets (Overpass token stays in env `TRAILNET_OVERPASS_TOKEN`).
