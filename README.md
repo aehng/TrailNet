@@ -1,3 +1,5 @@
+> Current handoff (Nov 6, 2026): see [START_HERE.md](START_HERE.md). Older run notes below are historical, not the current decision protocol.
+
 # TrailNet
 
 TrailNet is a small Python 3.11 research project for finding narrow hiking and mountain-bike singletrack from aerial imagery and LiDAR terrain derivatives. Version 1 is a supervised segmentation baseline: prepare georeferenced tiles and noisy trail masks, train a U-Net, predict trail probabilities, then convert likely centerlines to GeoJSON.

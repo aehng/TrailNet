@@ -1,3 +1,5 @@
+> Current handoff (Nov 6, 2026): see [CLI_HANDOFF.md](CLI_HANDOFF.md) and [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md). Older run notes below are historical, not the current decision protocol.
+
 # Checkpoint: trailnet-overnight-20261106
 
 Branch snapshot of verified overnight training/label work after the local v4 collapse fix and Kaggle A2/B/D runs.

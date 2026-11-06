@@ -1,3 +1,5 @@
+> Current handoff (Nov 6, 2026): see [CLI_HANDOFF.md](CLI_HANDOFF.md) and [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md). Older run notes below are historical, not the current decision protocol.
+
 # Vector metric novelty-filter fix (2026-11-06)
 
 ## Bug

@@ -1,3 +1,5 @@
+> Current handoff (Nov 6, 2026): see [CLI_HANDOFF.md](CLI_HANDOFF.md) and [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md). Older run notes below are historical, not the current decision protocol.
+
 # Three grounded options for GPS / OSM label misalignment
 
 Rendering bugs (Leaflet declaring UTM metres as EPSG:4326) are separate from **true**
