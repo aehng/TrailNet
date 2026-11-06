@@ -197,6 +197,33 @@ def vector_metrics_tolerance_sweep(
     return rows
 
 
+
+def _clip_pair_to_raster(pred_gdf, label_gdf, raster_path):
+    """Clip pred/label geometries to the probability raster footprint (metric CRS)."""
+    import rasterio
+    from shapely.geometry import box
+
+    with rasterio.open(raster_path) as ds:
+        bounds = ds.bounds
+        raster_crs = ds.crs
+    if raster_crs is None:
+        return pred_gdf, label_gdf
+    footprint = gpd.GeoDataFrame({"geometry": [box(*bounds)]}, crs=raster_crs)
+    if pred_gdf is not None and not pred_gdf.empty:
+        if pred_gdf.crs != footprint.crs:
+            footprint_pred = footprint.to_crs(pred_gdf.crs)
+        else:
+            footprint_pred = footprint
+        pred_gdf = gpd.clip(pred_gdf, footprint_pred)
+    if label_gdf is not None and not label_gdf.empty:
+        if label_gdf.crs != footprint.crs:
+            footprint_lab = footprint.to_crs(label_gdf.crs)
+        else:
+            footprint_lab = footprint
+        label_gdf = gpd.clip(label_gdf, footprint_lab)
+    return pred_gdf, label_gdf
+
+
 def vector_metrics_for_area(config, area, predicted_path=None, label_path=None, tolerances_m=None):
     from trailnet.config import resolve_path
 
@@ -212,11 +239,23 @@ def vector_metrics_for_area(config, area, predicted_path=None, label_path=None, 
         tolerances_m = config.get("evaluation", {}).get(
             "vector_match_tolerances_m", list(DEFAULT_TOLERANCE_SWEEP_M)
         )
+    # Optional clip both layers to probability-raster footprint so label_km is not full-AOI
+    # while predictions only cover the inferred mosaic.
+    clip_path = None
+    if config.get("evaluation", {}).get("clip_vector_metrics_to_prediction", True):
+        pred_dir = resolve_path(config, config["paths"]["prediction_dir"])
+        clip_path = pred_dir / f"{area['name']}_probability.tif"
+    if clip_path is not None and clip_path.exists():
+        pred, labels = _clip_pair_to_raster(pred, labels, clip_path)
+
     sweep = vector_metrics_tolerance_sweep(pred, labels, tolerances_m=tolerances_m)
-    # Keep backward-compatible single-tolerance fields from config default, not "best".
-    default_tol = float(config.get("postprocess", {}).get("dedup_tolerance_m", 5.0))
-    primary = next((row for row in sweep if abs(row["match_tolerance_m"] - default_tol) < 1e-9), sweep[0])
+    # Scientific headline uses evaluation.vector_report_tolerance_m (default 5 m).
+    # Do NOT reuse postprocess.dedup_tolerance_m — that is novelty-filter distance.
+    report_tol = float(config.get("evaluation", {}).get("vector_report_tolerance_m", 5.0))
+    primary = next((row for row in sweep if abs(row["match_tolerance_m"] - report_tol) < 1e-9), sweep[0])
     out = dict(primary)
     out["area"] = area["name"]
     out["tolerance_sweep"] = sweep
+    out["report_tolerance_m"] = report_tol
+    out["clipped_to_prediction"] = bool(clip_path is not None and Path(clip_path).exists())
     return out

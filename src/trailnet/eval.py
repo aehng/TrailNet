@@ -151,7 +151,9 @@ def evaluate(config_path=None, checkpoint_path=None, thresholds=None):
     predicted_dir = resolve_path(config, config["paths"]["vector_dir"])
     novelty = {}
     for area in config["areas"]:
-        pred_path = predicted_dir / f"{area['name']}_trails.geojson"
+        # Prefer dedicated novelty product; else count unmatched from unfiltered trails.
+        novelty_path = predicted_dir / f"{area['name']}_novelty.geojson"
+        pred_path = novelty_path if novelty_path.exists() else predicted_dir / f"{area['name']}_trails.geojson"
         osm_path = resolve_path(config, area["trails"])
         if not pred_path.exists() or not osm_path.exists():
             print(f"skip novelty for {area['name']}: missing pred or OSM file")
@@ -164,6 +166,10 @@ def evaluate(config_path=None, checkpoint_path=None, thresholds=None):
             predicted = _usable_geometries(predicted, "predicted", area["name"])
             existing = _usable_geometries(existing, "OSM", area["name"])
             if predicted is None:
+                continue
+            if novelty_path.exists():
+                # File already novelty-filtered at vectorize time.
+                novelty[area["name"]] = int(len(predicted))
                 continue
             if existing is None:
                 novelty[area["name"]] = int(len(predicted))

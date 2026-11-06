@@ -82,3 +82,32 @@ def test_geographic_inputs_are_projected_to_metres():
     metrics = vector_noise_metrics(pred, label, match_tolerance_m=3.0)
     assert metrics["precision"] == pytest.approx(1.0)
     assert "326" in metrics["crs"] or "utm" in metrics["crs"].lower()
+
+
+def test_clip_pair_to_raster_drops_out_of_footprint_label(tmp_path):
+    import numpy as np
+    import rasterio
+    from rasterio.transform import from_origin
+    from trailnet.vector_eval import _clip_pair_to_raster, vector_noise_metrics
+
+    transform = from_origin(500000, 4500100, 1.0, 1.0)
+    arr = np.zeros((100, 100), dtype=np.float32)
+    path = tmp_path / "prob.tif"
+    with rasterio.open(
+        path, "w", driver="GTiff", height=100, width=100, count=1, dtype="float32",
+        crs="EPSG:32612", transform=transform,
+    ) as ds:
+        ds.write(arr, 1)
+    # Pred inside footprint; label half outside
+    pred = _utm_line(500010, 4500050, 500090, 4500050)
+    label_in = _utm_line(500010, 4500050, 500090, 4500050)
+    label_out = _utm_line(500010, 4500200, 500090, 4500200)  # north of origin
+    labels = gpd.GeoDataFrame(
+        {"geometry": list(label_in.geometry) + list(label_out.geometry)},
+        crs="EPSG:32612",
+    )
+    pred_c, lab_c = _clip_pair_to_raster(pred, labels, path)
+    unclipped = vector_noise_metrics(pred, labels, match_tolerance_m=5.0)
+    clipped = vector_noise_metrics(pred_c, lab_c, match_tolerance_m=5.0)
+    assert unclipped["label_km"] > clipped["label_km"]
+    assert clipped["precision"] == pytest.approx(1.0)
