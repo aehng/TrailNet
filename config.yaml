@@ -30,22 +30,32 @@ tiling:
     default: 1.0
 terrain:
   local_relief_radius_px: 25
+  channel_gain: 1.85
 model:
   encoder_name: resnet34
   encoder_weights: imagenet
-  in_channels: 6
+  in_channels: 7
   classes: 1
   dilated_center: false
+loss:
+  name: focal_bce_tversky
+  pixel_weights:
+    background: 1.0
+    path: 8.0
+    track: 3.0
+    uncertain: 4.0
 training:
   batch_size: 4
   epochs: 40
-  learning_rate: 0.0003
+  learning_rate: 0.0001
   weight_decay: 0.0001
   val_fraction: 0.15
   test_fraction: 0.15
   block_size_m: 5000
   num_workers: 0
   mixed_precision: true
+  warmup_epochs: 3
+  early_stopping_patience: 7
   checkpoint_path: checkpoints/trailnet_best.pt
 inference:
   threshold: 0.5
@@ -53,3 +63,24 @@ postprocess:
   threshold: 0.5
   simplify_m: 1.0
   dedup_tolerance_m: 3.0
+downloads:
+  # Raster requests above this footprint require an explicit CLI override.
+  max_raster_km2: 25.0
+  max_raster_pixels: 70000000
+  max_download_gb: 2.0
+  max_extracted_gb: 8.0
+  max_3dep_products: 200
+  max_osm_km2: 5000.0
+  naip_stac_url: https://planetarycomputer.microsoft.com/api/stac/v1
+  naip_collection: naip
+  naip_asset: image
+  planetary_computer_sign_url: https://planetarycomputer.microsoft.com/api/sas/v1/sign
+  tnm_products_url: https://tnmaccess.nationalmap.gov/api/v1/products
+  tnm_1m_dataset: Digital Elevation Model (DEM) 1 meter
+  dtm_resolution_m: 1.0
+  overpass_url: https://overpass-api.de/api/interpreter
+  # Optional bearer token name; the token value itself belongs in the environment.
+  overpass_token_env: TRAILNET_OVERPASS_TOKEN
+  cache_dir: data/_cache
+  ugrc_trails_url: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TrailsAndPathways/FeatureServer/0/query
+  usfs_trails_url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query

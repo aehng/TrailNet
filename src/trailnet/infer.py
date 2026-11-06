@@ -1,6 +1,4 @@
 """Sliding-window inference over one area's imagery/DTM pair."""
-import math
-
 import numpy as np
 import rasterio
 import torch
@@ -11,7 +9,9 @@ from tqdm import tqdm
 
 from trailnet.config import load_config, resolve_path
 from trailnet.data.terrain import derive_terrain
-from trailnet.models.unet import TrailUNet
+from trailnet.models.unet import build_model
+from trailnet.train import select_device
+from trailnet.viz import build_map_area
 
 
 def _input_tile(image_ds, dtm_ds, row, col, size, relief_radius):
@@ -30,8 +30,10 @@ def _input_tile(image_ds, dtm_ds, row, col, size, relief_radius):
               src_nodata=dtm_ds.nodata,
               dst_transform=transform, dst_crs=image_ds.crs,
               resampling=Resampling.bilinear, dst_nodata=np.nan)
-    hillshade, slope, _ = derive_terrain(dtm, image_ds.transform.a, image_ds.transform.e, relief_radius)
-    return np.concatenate((imagery, hillshade[None], slope[None]), axis=0), transform
+    hillshade, slope, local_relief = derive_terrain(
+        dtm, image_ds.transform.a, image_ds.transform.e, relief_radius)
+    terrain = np.stack((hillshade, slope, local_relief), axis=0)
+    return np.concatenate((imagery, terrain), axis=0), transform
 
 
 def predict_area(config, area, checkpoint_path=None):
@@ -39,9 +41,8 @@ def predict_area(config, area, checkpoint_path=None):
     checkpoint_path = resolve_path(config, checkpoint_path or config["training"]["checkpoint_path"])
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {checkpoint_path}")
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = TrailUNet(model_cfg["encoder_name"], None, model_cfg["in_channels"],
-                      model_cfg["classes"], model_cfg.get("dilated_center", False)).to(device)
+    device = select_device()
+    model = build_model(model_cfg, encoder_weights=None).to(device)
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     model.load_state_dict(checkpoint["model"]); model.eval()
     image_path, dtm_path = resolve_path(config, area["imagery"]), resolve_path(config, area["dtm"])
@@ -50,18 +51,30 @@ def predict_area(config, area, checkpoint_path=None):
     size = int(config["tiling"]["tile_size"])
     overlap = int(config["tiling"]["overlap"])
     stride = size - overlap
-    radius = config.get("terrain", {}).get("local_relief_radius_px", 25)
+    terrain_cfg = config.get("terrain", {})
+    radius = terrain_cfg.get("local_relief_radius_px", 25)
+    channel_gain = float(terrain_cfg.get("channel_gain", 1.0))
+    if channel_gain <= 0:
+        raise ValueError("terrain.channel_gain must be positive")
     with rasterio.open(image_path) as image_ds, rasterio.open(dtm_path) as dtm_ds:
         if image_ds.count < 4:
             raise ValueError("Inference requires four NAIP bands (R,G,B,NIR)")
         profile = image_ds.profile.copy(); profile.update(count=1, dtype="float32", nodata=0, compress="deflate")
+        jobs = [(row, col) for row in range(0, image_ds.height, stride)
+                for col in range(0, image_ds.width, stride)]
+        infer_batch = max(1, int(config.get("inference", {}).get("batch_size", 8)))
         with rasterio.open(out_path, "w", **profile) as output:
-            for row in tqdm(range(0, image_ds.height, stride), desc=area["name"]):
-                for col in range(0, image_ds.width, stride):
-                    inputs, transform = _input_tile(image_ds, dtm_ds, row, col, size, radius)
-                    with torch.inference_mode():
-                        batch = torch.from_numpy(inputs[None]).to(device)
-                        prob = torch.sigmoid(model(batch))[0, 0].cpu().numpy()
+            for start in tqdm(range(0, len(jobs), infer_batch), desc=area["name"]):
+                chunk = jobs[start:start + infer_batch]
+                tiles = []
+                for row, col in chunk:
+                    inputs, _transform = _input_tile(image_ds, dtm_ds, row, col, size, radius)
+                    inputs[4:7] *= channel_gain
+                    tiles.append(np.ascontiguousarray(inputs, dtype=np.float32))
+                stacked = torch.from_numpy(np.stack(tiles, axis=0)).to(device)
+                with torch.inference_mode():
+                    probs = torch.sigmoid(model(stacked)).cpu().numpy()[:, 0]
+                for (row, col), prob in zip(chunk, probs):
                     h, w = min(size, image_ds.height-row), min(size, image_ds.width-col)
                     top = 0 if row == 0 else overlap // 2
                     left = 0 if col == 0 else overlap // 2
@@ -70,4 +83,5 @@ def predict_area(config, area, checkpoint_path=None):
                     if bottom > top and right > left:
                         window = Window(col + left, row + top, right-left, bottom-top)
                         output.write(prob[top:bottom, left:right].astype(np.float32), 1, window=window)
+    build_map_area(config, area)
     return out_path
