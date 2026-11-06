@@ -224,38 +224,300 @@ def _clip_pair_to_raster(pred_gdf, label_gdf, raster_path):
     return pred_gdf, label_gdf
 
 
-def vector_metrics_for_area(config, area, predicted_path=None, label_path=None, tolerances_m=None):
+
+
+def assign_block_split(area, block_x, block_y, seed=42, val_fraction=0.15, test_fraction=0.15):
+    """Return train/val/test for one geographic block — same hash as ``spatial_split``."""
+    import hashlib
+
+    if val_fraction < 0 or test_fraction < 0 or val_fraction + test_fraction >= 1:
+        raise ValueError("Invalid spatial split fractions")
+    key = f"{seed}:{area}:{int(block_x)}:{int(block_y)}".encode()
+    value = int.from_bytes(hashlib.sha256(key).digest()[:8], "big") / 2**64
+    if value < test_fraction:
+        return "test"
+    if value < test_fraction + val_fraction:
+        return "val"
+    return "train"
+
+
+def unique_blocks_from_rows(rows, block_size_m=2500):
+    """Unique (area, block_x, block_y) from tile-index rows with projected centres."""
+    import numpy as np
+
+    if block_size_m <= 0:
+        raise ValueError("block_size_m must be > 0")
+    seen = set()
+    out = []
+    for row in rows:
+        area = row["area"]
+        bx = int(np.floor(float(row["x"]) / block_size_m))
+        by = int(np.floor(float(row["y"]) / block_size_m))
+        key = (area, bx, by)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({"area": area, "block_x": bx, "block_y": by, "crs": row.get("crs")})
+    return out
+
+
+def split_block_polygons(
+    rows,
+    block_size_m=2500,
+    val_fraction=0.15,
+    test_fraction=0.15,
+    seed=42,
+    area_name=None,
+    crs=None,
+):
+    """Build per-split unions of block boxes from the same assignment as ``spatial_split``.
+
+    Returns dict mapping ``train``/``val``/``test`` to a GeoDataFrame of block boxes
+    (may be empty). Coordinates are projected metres matching tile ``x``/``y``.
+    """
+    from shapely.geometry import box
+
+    blocks = unique_blocks_from_rows(rows, block_size_m=block_size_m)
+    if area_name is not None:
+        blocks = [b for b in blocks if b["area"] == area_name]
+    if crs is None:
+        for b in blocks:
+            if b.get("crs"):
+                crs = b["crs"]
+                break
+        if crs is None and rows:
+            filtered = [r for r in rows if area_name is None or r["area"] == area_name]
+            if filtered and filtered[0].get("crs"):
+                crs = filtered[0]["crs"]
+    if crs is None:
+        crs = "EPSG:32612"
+
+    buckets = {"train": [], "val": [], "test": []}
+    for b in blocks:
+        split = assign_block_split(
+            b["area"], b["block_x"], b["block_y"],
+            seed=seed, val_fraction=val_fraction, test_fraction=test_fraction,
+        )
+        bx, by = b["block_x"], b["block_y"]
+        buckets[split].append(
+            box(bx * block_size_m, by * block_size_m, (bx + 1) * block_size_m, (by + 1) * block_size_m)
+        )
+    out = {}
+    for split, geoms in buckets.items():
+        out[split] = gpd.GeoDataFrame({"geometry": geoms}, crs=crs) if geoms else gpd.GeoDataFrame(
+            {"geometry": []}, crs=crs
+        )
+    return out
+
+
+def _clip_pair_to_polygon(pred_gdf, label_gdf, clip_gdf):
+    """Clip pred/label to the union of clip_gdf polygons (metric CRS)."""
+    if clip_gdf is None or clip_gdf.empty:
+        empty_pred = pred_gdf.iloc[0:0].copy() if pred_gdf is not None else None
+        empty_lab = label_gdf.iloc[0:0].copy() if label_gdf is not None else None
+        return empty_pred, empty_lab
+    clip_union = clip_gdf
+    if pred_gdf is not None and not pred_gdf.empty:
+        if clip_union.crs != pred_gdf.crs:
+            clip_pred = clip_union.to_crs(pred_gdf.crs)
+        else:
+            clip_pred = clip_union
+        pred_gdf = gpd.clip(pred_gdf, clip_pred)
+    if label_gdf is not None and not label_gdf.empty:
+        if clip_union.crs != label_gdf.crs:
+            clip_lab = clip_union.to_crs(label_gdf.crs)
+        else:
+            clip_lab = clip_union
+        label_gdf = gpd.clip(label_gdf, clip_lab)
+    return pred_gdf, label_gdf
+
+
+def length_weighted_aggregate(per_area_metrics, report_tolerance_m=5.0):
+    """Aggregate length-weighted P/R across areas for a single tolerance headline."""
+    pred_km = matched_pred = label_km = matched_label = 0.0
+    areas_used = []
+    for area_name, metrics in per_area_metrics.items():
+        if not metrics or metrics.get("skipped") or metrics.get("empty_scope"):
+            continue
+        # Prefer explicit primary fields; fall back to tolerance_sweep
+        row = metrics
+        if "precision" not in row and "tolerance_sweep" in row:
+            report_tol = float(metrics.get("report_tolerance_m", report_tolerance_m))
+            sweep = metrics["tolerance_sweep"]
+            row = next(
+                (r for r in sweep if abs(r["match_tolerance_m"] - report_tol) < 1e-9),
+                sweep[0] if sweep else None,
+            )
+            if row is None:
+                continue
+        pred_km += float(row.get("pred_km", 0.0))
+        matched_pred += float(row.get("matched_pred_km", 0.0))
+        label_km += float(row.get("label_km", 0.0))
+        matched_label += float(row.get("matched_label_km", 0.0))
+        areas_used.append(area_name)
+    precision = (matched_pred / pred_km) if pred_km else 1.0
+    recall = (matched_label / label_km) if label_km else 1.0
+    return {
+        "precision": precision,
+        "recall": recall,
+        "pred_km": pred_km,
+        "label_km": label_km,
+        "matched_pred_km": matched_pred,
+        "matched_label_km": matched_label,
+        "report_tolerance_m": float(report_tolerance_m),
+        "areas": areas_used,
+        "n_areas": len(areas_used),
+    }
+
+
+def _empty_scope_result(area_name, scope, report_tol, reason="empty_scope"):
+    return {
+        "area": area_name,
+        "scope": scope,
+        "empty_scope": True,
+        "skipped": reason,
+        "pred_km": 0.0,
+        "label_km": 0.0,
+        "matched_pred_km": 0.0,
+        "matched_label_km": 0.0,
+        "precision": None,
+        "recall": None,
+        "tolerance_sweep": [],
+        "report_tolerance_m": report_tol,
+        "clipped_to_prediction": True,
+        "clipped_to_blocks": scope != "full_footprint",
+    }
+
+
+def _metrics_bundle(pred, labels, tolerances_m, report_tol, area_name, scope, clipped_pred, clipped_blocks):
+    if (pred is None or pred.empty) and (labels is None or (hasattr(labels, "empty") and labels.empty)):
+        return _empty_scope_result(area_name, scope, report_tol, reason="empty_after_clip")
+    sweep = vector_metrics_tolerance_sweep(pred, labels, tolerances_m=tolerances_m)
+    if not sweep:
+        return _empty_scope_result(area_name, scope, report_tol, reason="empty_sweep")
+    primary = next(
+        (row for row in sweep if abs(row["match_tolerance_m"] - report_tol) < 1e-9),
+        sweep[0],
+    )
+    out = dict(primary)
+    out["area"] = area_name
+    out["scope"] = scope
+    out["tolerance_sweep"] = sweep
+    out["report_tolerance_m"] = report_tol
+    out["clipped_to_prediction"] = clipped_pred
+    out["clipped_to_blocks"] = clipped_blocks
+    out["empty_scope"] = False
+    return out
+
+
+def vector_metrics_for_area(
+    config,
+    area,
+    predicted_path=None,
+    label_path=None,
+    tolerances_m=None,
+    index_rows=None,
+    scopes=("full_footprint", "val_blocks", "test_blocks"),
+):
+    """Length-weighted vector P/R for one AOI, optionally scoped to val/test blocks.
+
+    ``full_footprint`` clips pred+label to the probability raster footprint (existing).
+    ``val_blocks`` / ``test_blocks`` further clip to the geographic block unions from the
+    same ``spatial_split`` hash used for pixel eval (block_size_m / fractions / seed).
+    """
     from trailnet.config import resolve_path
 
+    area_name = area["name"] if isinstance(area, dict) else str(area)
     pred_path = Path(predicted_path) if predicted_path else (
-        resolve_path(config, config["paths"]["vector_dir"]) / f"{area['name']}_trails.geojson"
+        resolve_path(config, config["paths"]["vector_dir"]) / f"{area_name}_trails.geojson"
     )
     lab_path = Path(label_path) if label_path else resolve_path(config, area["trails"])
     if not pred_path.exists():
-        return {"area": area["name"], "skipped": "missing predicted vectors"}
+        return {"area": area_name, "skipped": "missing predicted vectors"}
     pred = gpd.read_file(pred_path)
     labels = gpd.read_file(lab_path) if lab_path.exists() else None
     if tolerances_m is None:
         tolerances_m = config.get("evaluation", {}).get(
             "vector_match_tolerances_m", list(DEFAULT_TOLERANCE_SWEEP_M)
         )
+    report_tol = float(config.get("evaluation", {}).get("vector_report_tolerance_m", 5.0))
+
     # Optional clip both layers to probability-raster footprint so label_km is not full-AOI
     # while predictions only cover the inferred mosaic.
     clip_path = None
+    clipped_pred = False
     if config.get("evaluation", {}).get("clip_vector_metrics_to_prediction", True):
         pred_dir = resolve_path(config, config["paths"]["prediction_dir"])
-        clip_path = pred_dir / f"{area['name']}_probability.tif"
+        clip_path = pred_dir / f"{area_name}_probability.tif"
     if clip_path is not None and clip_path.exists():
         pred, labels = _clip_pair_to_raster(pred, labels, clip_path)
+        clipped_pred = True
 
-    sweep = vector_metrics_tolerance_sweep(pred, labels, tolerances_m=tolerances_m)
-    # Scientific headline uses evaluation.vector_report_tolerance_m (default 5 m).
-    # Do NOT reuse postprocess.dedup_tolerance_m — that is novelty-filter distance.
-    report_tol = float(config.get("evaluation", {}).get("vector_report_tolerance_m", 5.0))
-    primary = next((row for row in sweep if abs(row["match_tolerance_m"] - report_tol) < 1e-9), sweep[0])
-    out = dict(primary)
-    out["area"] = area["name"]
-    out["tolerance_sweep"] = sweep
-    out["report_tolerance_m"] = report_tol
-    out["clipped_to_prediction"] = bool(clip_path is not None and Path(clip_path).exists())
+    # Load tile index rows for block assignment when scopes need them.
+    need_blocks = any(s in ("val_blocks", "test_blocks") for s in scopes)
+    training = config.get("training", {})
+    block_size_m = float(training.get("block_size_m", 2500))
+    val_fraction = float(training.get("val_fraction", 0.15))
+    test_fraction = float(training.get("test_fraction", 0.15))
+    seed = int(config.get("seed", 42))
+    block_polys = None
+    if need_blocks:
+        rows = index_rows
+        if rows is None:
+            from trailnet.data.dataset import read_indexes
+            tile_dir = resolve_path(config, config["paths"]["tile_dir"])
+            index_path = tile_dir / area_name / "index.csv"
+            if index_path.exists():
+                rows = read_indexes([index_path])
+            else:
+                rows = []
+        if rows:
+            block_polys = split_block_polygons(
+                rows,
+                block_size_m=block_size_m,
+                val_fraction=val_fraction,
+                test_fraction=test_fraction,
+                seed=seed,
+                area_name=area_name,
+            )
+
+    scoped = {}
+    for scope in scopes:
+        if scope == "full_footprint":
+            scoped[scope] = _metrics_bundle(
+                pred, labels, tolerances_m, report_tol, area_name, scope, clipped_pred, False
+            )
+            continue
+        split_name = "val" if scope == "val_blocks" else ("test" if scope == "test_blocks" else None)
+        if split_name is None:
+            continue
+        if block_polys is None:
+            scoped[scope] = _empty_scope_result(
+                area_name, scope, report_tol, reason="missing_tile_index"
+            )
+            continue
+        clip_gdf = block_polys.get(split_name)
+        if clip_gdf is None or clip_gdf.empty:
+            scoped[scope] = _empty_scope_result(
+                area_name, scope, report_tol, reason="no_blocks_for_split"
+            )
+            continue
+        pred_s, lab_s = _clip_pair_to_polygon(pred, labels, clip_gdf)
+        scoped[scope] = _metrics_bundle(
+            pred_s, lab_s, tolerances_m, report_tol, area_name, scope, clipped_pred, True
+        )
+
+    # Backward-compatible top-level fields = full_footprint headline.
+    primary_scope = scoped.get("full_footprint") or next(iter(scoped.values()), None)
+    out = dict(primary_scope) if primary_scope else {"area": area_name, "skipped": "no_scopes"}
+    out["area"] = area_name
+    out["scopes"] = scoped
+    out["block_split"] = {
+        "block_size_m": block_size_m,
+        "val_fraction": val_fraction,
+        "test_fraction": test_fraction,
+        "seed": seed,
+    }
     return out
+
+

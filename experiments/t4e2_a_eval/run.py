@@ -184,16 +184,44 @@ def ensure_deps() -> None:
         run_command([sys.executable, "-m", "pip", "install", "-q", *missing_pkgs])
 
 
+
 def write_vector_metrics() -> dict:
     sys.path.insert(0, str(PROJECT / "src"))
     from trailnet.config import load_config
-    from trailnet.vector_eval import vector_metrics_for_area
+    from trailnet.vector_eval import length_weighted_aggregate, vector_metrics_for_area
     config = load_config(PROJECT / CONFIG_NAME)
     metrics = {}
+    val_by_area = {}
+    test_by_area = {}
+    full_by_area = {}
     for area in config["areas"]:
-        metrics[area["name"]] = vector_metrics_for_area(config, area)
-        log(f"VECTOR_METRICS {area['name']} {json.dumps(metrics[area['name']], default=str)}")
+        row = vector_metrics_for_area(config, area)
+        metrics[area["name"]] = row
+        scopes = row.get("scopes") or {}
+        full = scopes.get("full_footprint") or row
+        val = scopes.get("val_blocks") or {}
+        test = scopes.get("test_blocks") or {}
+        full_by_area[area["name"]] = full
+        val_by_area[area["name"]] = val
+        test_by_area[area["name"]] = test
+        log(f"VECTOR_METRICS {area['name']} {json.dumps(full, default=str)}")
+        log(f"VAL_BLOCK_VECTOR_METRICS {area['name']} {json.dumps(val, default=str)}")
+        log(f"TEST_BLOCK_VECTOR_METRICS {area['name']} {json.dumps(test, default=str)}")
+    report_tol = float(config.get("evaluation", {}).get("vector_report_tolerance_m", 5.0))
+    val_agg = length_weighted_aggregate(val_by_area, report_tolerance_m=report_tol)
+    test_agg = length_weighted_aggregate(test_by_area, report_tolerance_m=report_tol)
+    full_agg = length_weighted_aggregate(full_by_area, report_tolerance_m=report_tol)
+    log(f"VAL_BLOCK_AGG_5M {json.dumps(val_agg, default=str)}")
+    log(f"TEST_BLOCK_AGG_5M {json.dumps(test_agg, default=str)}")
+    log(f"FULL_FOOTPRINT_AGG_5M {json.dumps(full_agg, default=str)}")
+    metrics["_aggregates"] = {
+        "val_blocks": val_agg,
+        "test_blocks": test_agg,
+        "full_footprint": full_agg,
+        "report_tolerance_m": report_tol,
+    }
     return metrics
+
 
 
 def re_rasterize_roundtrip_check() -> dict:
@@ -284,19 +312,57 @@ def main() -> None:
         sys.executable, "scripts/evaluate.py", "--config", CONFIG_NAME,
         "--thresholds", "0.90",
     ])
-    metrics = {
+    aggregates = (vectors or {}).get("_aggregates") or {}
+    compact = {
         "run": EXPERIMENT,
         "config": CONFIG_NAME,
         "architecture": "dual_terrain",
         "no_train": True,
         "eval_threshold": thr,
+        "val_block_agg_5m": aggregates.get("val_blocks"),
+        "test_block_agg_5m": aggregates.get("test_blocks"),
+        "full_footprint_agg_5m": aggregates.get("full_footprint"),
+        "reraster_check": {
+            k: {kk: vv for kk, vv in (v or {}).items() if kk in (
+                "roundtrip_precision", "roundtrip_recall", "meaningful", "crs", "threshold"
+            )}
+            if isinstance(v, dict) else v
+            for k, v in (reraster or {}).items()
+        },
+        "elapsed_seconds": round(time.time() - started, 1),
+    }
+    # Per-area val/test headlines (small) for downloadable gate table
+    val_block_metrics = {
+        "aggregates": aggregates,
+        "per_area": {
+            name: {
+                "val_blocks": (row.get("scopes") or {}).get("val_blocks"),
+                "test_blocks": (row.get("scopes") or {}).get("test_blocks"),
+                "full_footprint": (row.get("scopes") or {}).get("full_footprint"),
+            }
+            for name, row in (vectors or {}).items()
+            if name != "_aggregates" and isinstance(row, dict)
+        },
+    }
+    metrics = {
+        **compact,
         "vector_metrics": vectors,
         "reraster_check": reraster,
-        "elapsed_seconds": round(time.time() - started, 1),
         "eval_tail": eval_output[-2000:],
     }
-    (WORK / "metrics.json").write_text(json.dumps(metrics, indent=2, default=str), encoding="utf-8")
-    log("RUN_COMPLETE " + json.dumps({k: metrics[k] for k in metrics if k != "vector_metrics"}, default=str))
+    metrics_text = json.dumps(metrics, indent=2, default=str)
+    compact_text = json.dumps(compact, indent=2, default=str)
+    val_text = json.dumps(val_block_metrics, indent=2, default=str)
+    # Root of /kaggle/working so files API retains them (not buried under project/)
+    (WORK / "metrics.json").write_text(compact_text, encoding="utf-8")
+    (WORK / "val_block_metrics.json").write_text(val_text, encoding="utf-8")
+    (WORK / "metrics_full.json").write_text(metrics_text, encoding="utf-8")
+    out_dir = PROJECT / "outputs_t4e_a"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "metrics.json").write_text(compact_text, encoding="utf-8")
+    (out_dir / "val_block_metrics.json").write_text(val_text, encoding="utf-8")
+    log("METRICS_WRITTEN " + json.dumps({"root": str(WORK / "metrics.json"), "val_block": str(WORK / "val_block_metrics.json")}))
+    log("RUN_COMPLETE " + json.dumps(compact, default=str))
 
 
 if __name__ == "__main__":
