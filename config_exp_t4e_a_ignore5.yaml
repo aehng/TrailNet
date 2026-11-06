@@ -1,0 +1,125 @@
+seed: 42
+paths:
+  data_dir: data
+  tile_dir: data/tiles_t4e_a
+  output_dir: outputs_t4e_a
+  checkpoint_dir: checkpoints_t4e_a
+  prediction_dir: outputs_t4e_a/predictions
+  vector_dir: outputs_t4e_a/vectors
+areas:
+  - name: kelly_canyon
+    description: Existing Kelly Canyon NAIP and 3DEP window
+    bbox: [-111.6294, 43.617, -111.574, 43.6578]
+    imagery: data/kelly_canyon/naip_rgbn.tif
+    dtm: data/kelly_canyon/3dep_dtm.tif
+    trails: data/kelly_canyon/trails.gpkg
+    label_sources: {osm: true, ugrc: false, usfs: true}
+  - name: corner_canyon
+    description: Draper Corner Canyon path and singletrack cluster
+    bbox: [-111.87, 40.49, -111.82, 40.54]
+    imagery: data/corner_canyon/naip_rgbn.tif
+    dtm: data/corner_canyon/3dep_dtm.tif
+    trails: data/corner_canyon/trails.gpkg
+    label_sources: {osm: true, ugrc: true, usfs: false}
+  - name: park_city
+    description: Wasatch Crest and PCMR trail cluster
+    bbox: [-111.61, 40.60, -111.56, 40.65]
+    imagery: data/park_city/naip_rgbn.tif
+    dtm: data/park_city/3dep_dtm.tif
+    trails: data/park_city/trails.gpkg
+    label_sources: {osm: true, ugrc: true, usfs: false}
+  - name: teton_pass
+    description: Teton Pass trail cluster
+    bbox: [-111.03, 43.48, -110.98, 43.53]
+    imagery: data/teton_pass/naip_rgbn.tif
+    dtm: data/teton_pass/3dep_dtm.tif
+    trails: data/teton_pass/trails.gpkg
+    label_sources: {osm: true, ugrc: false, usfs: true}
+  - name: snowbasin
+    description: Snowbasin trail cluster
+    bbox: [-111.89, 41.18, -111.84, 41.23]
+    imagery: data/snowbasin/naip_rgbn.tif
+    dtm: data/snowbasin/3dep_dtm.tif
+    trails: data/snowbasin/trails.gpkg
+    label_sources: {osm: true, ugrc: true, usfs: false}
+tiling:
+  tile_size: 512
+  overlap: 128
+  resolution_m: 0.6
+  ignore_buffer_m: 5.0
+  soft_label_band_m: 0.0
+  sidewalk_uncertain_buffer_m: 2.0
+  trail_buffer_m:
+    path: 1.0
+    footway: 1.0
+    cycleway: 1.0
+    track: 1.5
+    default: 1.0
+terrain:
+  local_relief_radius_px: 25
+  channel_gain: 1.85
+model:
+  architecture: dual_terrain
+  encoder_name: resnet34
+  terrain_encoder_name: resnet18
+  encoder_weights: imagenet
+  in_channels: 7
+  classes: 1
+  dilated_center: false
+loss:
+  name: focal_bce_tversky
+  pos_boost: 2.0
+  pixel_weights:
+    background: 1.0
+    path: 8.0
+    track: 3.0
+    uncertain: 4.0
+training:
+  batch_size: 12
+  abort_if_batch_not: 12
+  epochs: 16
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  val_fraction: 0.15
+  test_fraction: 0.15
+  block_size_m: 2500
+  num_workers: 2
+  mixed_precision: true
+  warmup_epochs: 3
+  pos_oversample: 2.0
+  early_stopping_patience: 5
+  early_stopping_min_delta: 0.0
+  writeback_threshold: true
+  val_thresholds: [0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90]
+  checkpoint_path: checkpoints_t4e_a/trailnet_best.pt
+inference:
+  threshold: 0.60
+  batch_size: 8
+postprocess:
+  threshold: 0.60
+  simplify_m: 1.0
+  dedup_tolerance_m: 3.0
+downloads:
+  max_raster_km2: 25.0
+  max_raster_pixels: 70000000
+  max_download_gb: 2.0
+  max_extracted_gb: 8.0
+  max_3dep_products: 200
+  max_osm_km2: 5000.0
+  naip_stac_url: https://planetarycomputer.microsoft.com/api/stac/v1
+  naip_collection: naip
+  naip_asset: image
+  planetary_computer_sign_url: https://planetarycomputer.microsoft.com/api/sas/v1/sign
+  tnm_products_url: https://tnmaccess.nationalmap.gov/api/v1/products
+  tnm_1m_dataset: Digital Elevation Model (DEM) 1 meter
+  dtm_resolution_m: 1.0
+  overpass_url: https://overpass-api.de/api/interpreter
+  overpass_token_env: TRAILNET_OVERPASS_TOKEN
+  cache_dir: data/_cache
+  ugrc_trails_url: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TrailsAndPathways/FeatureServer/0/query
+  usfs_trails_url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query
+labels:
+  drop_unnamed_osm_footway: false
+  drop_osm_footway: false
+  rebuild_from_sources: false
+  snap_to_relief: {enabled: false}

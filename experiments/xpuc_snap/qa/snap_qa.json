@@ -1,0 +1,37 @@
+{
+  "kelly_canyon": {
+    "snapped_gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\kelly_canyon\\trails_snapped.gpkg",
+    "qa_png": "experiments\\xpuc_snap\\qa\\kelly_canyon_snap_qa.png",
+    "n": 86,
+    "median_abs_shift_m": 2.124898390921153,
+    "share_shift_lt_2m": 0.4832814930015552
+  },
+  "teton_pass": {
+    "snapped_gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\teton_pass\\trails_snapped.gpkg",
+    "qa_png": "experiments\\xpuc_snap\\qa\\teton_pass_snap_qa.png",
+    "n": 24,
+    "median_abs_shift_m": 1.9813577622050818,
+    "share_shift_lt_2m": 0.5004965243296922
+  },
+  "corner_canyon": {
+    "snapped_gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\corner_canyon\\trails_snapped.gpkg",
+    "qa_png": "experiments\\xpuc_snap\\qa\\corner_canyon_snap_qa.png",
+    "n": 2691,
+    "median_abs_shift_m": 0.053304914133168804,
+    "share_shift_lt_2m": 0.6156372593741447
+  },
+  "park_city": {
+    "snapped_gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\park_city\\trails_snapped.gpkg",
+    "qa_png": "experiments\\xpuc_snap\\qa\\park_city_snap_qa.png",
+    "n": 292,
+    "median_abs_shift_m": 0.9734522477461858,
+    "share_shift_lt_2m": 0.6060697115384616
+  },
+  "snowbasin": {
+    "snapped_gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\snowbasin\\trails_snapped.gpkg",
+    "qa_png": "experiments\\xpuc_snap\\qa\\snowbasin_snap_qa.png",
+    "n": 196,
+    "median_abs_shift_m": 2.4379168555669706,
+    "share_shift_lt_2m": 0.4618887349039794
+  }
+}

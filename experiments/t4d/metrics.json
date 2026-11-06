@@ -1,0 +1,16 @@
+{
+  "run": "t4d",
+  "config": "config_exp_t4d.yaml",
+  "architecture": "dual_terrain",
+  "best_epoch": 14,
+  "best_validation_f1": 0.3394,
+  "eval_threshold": 0.9,
+  "test_tile_count": 358,
+  "test_iou": 0.3638,
+  "test_f1": 0.5335,
+  "f1_at_0.60": 0.4371,
+  "iou_at_0.60": 0.2797,
+  "elapsed_seconds": 2960.3,
+  "batch_fit": "requested=12 chosen=12 n_gpus=2",
+  "early_stop_epoch": 21
+}

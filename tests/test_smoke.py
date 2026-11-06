@@ -11,8 +11,8 @@ from trailnet.postprocess import vectorize_probability
 def test_model_and_postprocess_smoke(tmp_path):
     torch.set_num_threads(1)
     model = TrailUNet(encoder_name="resnet34", encoder_weights=None,
-                      in_channels=6, classes=1).eval()
-    sample = torch.zeros((1, 6, 64, 64), dtype=torch.float32)
+                      in_channels=7, classes=1).eval()
+    sample = torch.zeros((1, 7, 64, 64), dtype=torch.float32)
     with torch.inference_mode():
         logits = model(sample)
     assert logits.shape == (1, 1, 64, 64)

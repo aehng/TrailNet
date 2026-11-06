@@ -1,0 +1,15 @@
+{
+  "run": "t4b",
+  "config": "config_exp_t4b.yaml",
+  "best_epoch": 7,
+  "best_validation_f1": 0.2658,
+  "eval_threshold": 0.9,
+  "test_tile_count": 358,
+  "test_iou": 0.2153,
+  "test_f1": 0.3543,
+  "f1_at_0.60": 0.1862,
+  "iou_at_0.60": 0.1026,
+  "legacy_f1_at_0.90": 0.2732,
+  "elapsed_seconds": 1851.5,
+  "batch_fit": "requested=12 chosen=12 n_gpus=2"
+}
