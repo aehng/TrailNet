@@ -12,9 +12,14 @@ dist/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-data/
+
+# Local geospatial / training artifacts (keep src/trailnet/data/*.py)
+/data/
 outputs/
+outputs_*/
 checkpoints/
+checkpoints_*/
+_agent-runs/
 *.pt
 *.pth
 *.tif
@@ -25,3 +30,11 @@ checkpoints/
 *.dbf
 *.prj
 *.cpg
+*.npz.gz
+*.bak
+*.bak-*
+experiments/**/*.png
+experiments/**/*.jpg
+experiments/**/*.jpeg
+*.html
+.DS_Store
