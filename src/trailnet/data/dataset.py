@@ -70,6 +70,10 @@ class TrailTileDataset(Dataset):
         weights[0, class_map == 1] = self.path_weight
         weights[0, class_map == 2] = self.track_weight
         weights[0, class_map == 3] = self.uncertain_weight
+        # Soft GPS band: fractional mask on background class_map cells.
+        soft = (mask[0] > 0) & (mask[0] < 1) & (class_map == 0)
+        weights[0, soft] = self.path_weight * mask[0, soft]
+        # Explicit ignore (sidewalks / ignore annulus) never supervises.
         weights[0, class_map == 4] = 0.0
         mask[0, class_map == 4] = 0.0
         if self.augment:

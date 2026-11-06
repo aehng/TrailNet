@@ -162,19 +162,57 @@ def _write_tile(image_ds, dtm_ds, row, col, spec, shape_geometries, shape_codes,
                           fill=0, dtype="uint8", all_touched=True) if class_shapes else np.zeros(
         (size, size), dtype="uint8"
     )
-    mask = np.isin(class_map, (1, 2, 3)).astype("uint8")
+    soft_band = float(spec.get("soft_label_band_m") or 0.0)
+    if soft_band > 0:
+        # Soft confidence in the GPS uncertainty band beyond the hard core.
+        # Hard core (classes 1/2/3) stays 1.0; ignore (4) stays unsupervised;
+        # pixels in the soft annulus get a decaying target in (0,1).
+        from rasterio.transform import xy as transform_xy
+        soft = np.zeros((size, size), dtype=np.float32)
+        # Approximate soft field by rasterizing successive buffers of positive cores.
+        pos_shapes = [shape for code in (1, 2, 3) for shape in local_classes[code]]
+        if pos_shapes:
+            soft = np.isin(class_map, (1, 2, 3)).astype(np.float32)
+            # Dilate rings at ~1px steps out to soft_band using buffered geometries.
+            # local_classes cores are already width-buffered polygons; expand further.
+            steps = max(1, int(round(soft_band / max(abs(transform.a), 1e-6))))
+            for step in range(1, steps + 1):
+                frac = 1.0 - (step / float(steps))
+                ring_shapes = []
+                for geom, code in pos_shapes:
+                    # Expand core polygon by step pixels in map units.
+                    expand = step * abs(transform.a)
+                    grown = geom.buffer(expand)
+                    if grown is not None and not grown.is_empty:
+                        ring_shapes.append((grown, 1))
+                if not ring_shapes:
+                    continue
+                layer = rasterize(ring_shapes, out_shape=(size, size), transform=transform,
+                                  fill=0, dtype="uint8", all_touched=True)
+                # Only fill background (not ignore, not already harder core)
+                fill = (layer > 0) & (class_map == 0) & (soft < frac)
+                soft[fill] = np.maximum(soft[fill], frac)
+        # Sidewalk/ignore must never be supervised positives.
+        soft[class_map == 4] = 0.0
+        mask = soft
+        mask_dtype = "float32"
+    else:
+        mask = np.isin(class_map, (1, 2, 3)).astype("uint8")
+        mask_dtype = "uint8"
     stem = f"{spec['area_name']}_r{row:07d}_c{col:07d}"
     out_dir = Path(spec["out_dir"])
     profile = dict(spec["profile"])
     profile.update(width=size, height=size, count=7, dtype="float32", nodata=0,
                    transform=transform, compress="deflate")
     mask_profile = profile.copy()
-    mask_profile.update(count=1, dtype="uint8")
+    mask_profile.update(count=1, dtype=mask_dtype)
     with rasterio.open(out_dir / f"{stem}.tif", "w", **profile) as ds:
         ds.write(tile)
     with rasterio.open(out_dir / f"{stem}_mask.tif", "w", **mask_profile) as ds:
-        ds.write(mask, 1)
-    with rasterio.open(out_dir / f"{stem}_class.tif", "w", **mask_profile) as ds:
+        ds.write(mask.astype(mask_dtype), 1)
+    class_profile = profile.copy()
+    class_profile.update(count=1, dtype="uint8")
+    with rasterio.open(out_dir / f"{stem}_class.tif", "w", **class_profile) as ds:
         ds.write(class_map, 1)
     center = transform * (size / 2, size / 2)
     return {"area": spec["area_name"], "image": f"{stem}.tif",

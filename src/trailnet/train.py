@@ -230,17 +230,23 @@ def trail_seg_loss(logits, targets, pixel_weights=None, alpha=0.3, beta=0.7,
     else:
         weights_f = pixel_weights.float()
 
+    # Ignore pixels (weight==0) contribute to neither BCE nor Tversky/Dice.
+    # Soft targets in (0,1) are allowed; pos_boost scales by soft confidence.
+    valid = weights_f > 0
+    if not bool(valid.any()):
+        return logits_f.sum() * 0.0
+
     bce_map = nn.functional.binary_cross_entropy_with_logits(
-        logits_f, targets_f, reduction="none"
+        logits_f, targets_f.clamp(0.0, 1.0), reduction="none"
     )
-    positive = targets_f >= 0.5
-    bce_w = weights_f * torch.where(
-        positive, torch.full_like(targets_f, float(pos_boost)), torch.ones_like(targets_f)
-    )
+    # Continuous confidence: hard positives (~1) get full pos_boost; soft band scales.
+    conf = targets_f.clamp(0.0, 1.0)
+    bce_w = weights_f * (1.0 + (float(pos_boost) - 1.0) * conf)
     probs = torch.sigmoid(logits_f)
-    pt = torch.where(positive, probs, 1.0 - probs).clamp(0.0, 1.0)
+    pt = (conf * probs + (1.0 - conf) * (1.0 - probs)).clamp(0.0, 1.0)
     focal_map = (1.0 - pt).pow(float(focal_gamma)) * bce_map
-    focal = (focal_map * bce_w).sum() / bce_w.sum().clamp_min(1.0)
+    denom = bce_w.sum().clamp_min(1e-6)
+    focal = (focal_map * bce_w).sum() / denom
 
     tp = (probs * targets_f * weights_f).sum()
     fp = (probs * (1.0 - targets_f) * weights_f).sum()

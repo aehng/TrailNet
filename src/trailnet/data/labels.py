@@ -516,6 +516,9 @@ def _canonicalize_existing(frame):
     for field in CANONICAL_FIELDS:
         if field not in result:
             result[field] = None
+    # Avoid pandas string-dtype explosions when writing float label_weight.
+    result["label_weight"] = pd.to_numeric(result["label_weight"], errors="coerce")
+    result["priority"] = pd.to_numeric(result.get("priority"), errors="coerce")
     for index, row in result.iterrows():
         trail = str(row.get("trail_type") or "").strip().lower()
         footway = row.get("footway")
