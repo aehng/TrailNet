@@ -1,0 +1,14 @@
+{
+  "run": "t4a",
+  "config": "config_exp_t4a.yaml",
+  "best_epoch": 25,
+  "best_validation_f1": 0.2264,
+  "eval_threshold": 0.9,
+  "test_tile_count": 358,
+  "test_iou": 0.3416,
+  "test_f1": 0.5092,
+  "f1_at_0.60": 0.3764,
+  "iou_at_0.60": 0.2318,
+  "elapsed_seconds": 2660.2,
+  "batch_fit": "requested=12 chosen=12 n_gpus=2"
+}
