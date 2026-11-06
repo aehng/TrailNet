@@ -113,9 +113,11 @@ def stage_inputs() -> None:
         raise RuntimeError("stale postprocess.py: missing unfiltered/novelty split")
     log("POSTPROCESS_OK unfiltered trails + novelty split")
     ve = (PROJECT / "src" / "trailnet" / "vector_eval.py").read_text(encoding="utf-8")
-    if "split_block_polygons" not in ve or "val_blocks" not in ve:
-        raise RuntimeError("stale vector_eval.py: missing val/test block scopes")
-    log("VECTOR_EVAL_OK block scopes present")
+    if "scoped_vector_metrics" not in ve or "split_lines_to_blocks" not in ve:
+        raise RuntimeError("stale vector_eval.py: missing disjoint block scope and sidewalk exclusion")
+    if "directional_reraster_scores" not in ve:
+        raise RuntimeError("stale vector_eval.py: missing directional re-raster scores")
+    log("VECTOR_EVAL_OK scoped blocks, sidewalk exclusion, directional reraster")
 
     ckpt = find_file(ckpt_mount, "trailnet_best.pt")
     if ckpt is None:
@@ -258,25 +260,30 @@ def re_rasterize_roundtrip_check() -> dict:
         burned = features.rasterize(
             [(geom, 1) for geom in gdf.geometry if geom is not None and not geom.is_empty],
             out_shape=shape, transform=transform, fill=0, dtype="uint8",
+            all_touched=False,
         ).astype(bool)
-        # Dilate vector burn by 1px for fair centerline compare
-        from skimage.morphology import binary_dilation, disk
-        burned_d = binary_dilation(burned, disk(1))
-        skel_n = int(skel.sum())
-        burn_n = int(burned.sum())
-        inter = int((skel & burned_d).sum())
-        precision = (inter / burn_n) if burn_n else 0.0
-        recall = (inter / skel_n) if skel_n else 0.0
+        from trailnet.vector_eval import assert_metric_raster_grid, directional_reraster_scores
+        try:
+            grid = assert_metric_raster_grid(crs, transform, shape[1], shape[0])
+        except ValueError as exc:
+            out[name] = {
+                "skipped": "bad_affine_or_crs",
+                "error": str(exc),
+                "roundtrip_is_trail_truth": False,
+            }
+            log(f"RERASTER_CHECK {name} {json.dumps(out[name])}")
+            continue
+        # Directional 1px counts. Recall uses dilated burn over skeleton pixels.
+        # Precision uses dilated skeleton over vector-burn pixels. The old ratio
+        # (skeleton∩dilated-burn) / burn_px can exceed 1 and is not reported as precision.
+        scores = directional_reraster_scores(skel, burned, dilate_px=1)
+        recall = scores["roundtrip_recall"] or 0.0
         row = {
             "threshold": thr,
-            "crs": str(crs),
-            "skel_px": skel_n,
-            "vector_burn_px": burn_n,
-            "inter_skel_vs_vecdilate1": inter,
-            "roundtrip_precision": round(precision, 4),
-            "roundtrip_recall": round(recall, 4),
             "n_vector_lines": int(len(gdf)),
-            "meaningful": bool(skel_n > 0 and burn_n > 0 and recall > 0.1),
+            "meaningful": bool(scores["skel_px"] > 0 and scores["vector_burn_px"] > 0 and recall > 0.1),
+            **grid,
+            **scores,
         }
         out[name] = row
         log(f"RERASTER_CHECK {name} {json.dumps(row)}")

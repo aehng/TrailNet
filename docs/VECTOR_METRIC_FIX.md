@@ -16,3 +16,24 @@ by construction. T4E2 A/B showed P/R=0 at 1/3 m and small nonzero from 5 m — m
 ## Re-eval
 Re-vectorize from saved `*_probability.tif` then re-run vector metrics. Do not re-score
 old novelty GeoJSON. Pixel held-out metrics are unaffected.
+
+## Geographic val/test scope
+`scoped_vector_metrics` keeps the unfiltered lines and does not apply the novelty
+filter. Val and test use the same block hash as `spatial_split` (seed, `block_size_m`,
+fractions, tile-centre floor). Lines are split on those block borders before matching,
+then intersected with the raster footprint. Overlapping tile windows are not the match
+scope; the length difference versus tile assignment is reported as
+`boundary_vs_tile_assignment`.
+
+Explicit `sidewalk` / `crossing` centerlines and `tiling.sidewalk_uncertain_buffer_m`
+(default follows `tiles.py`: the key itself, else `ignore_buffer_m` if positive, else
+2 m) are removed from both prediction and reference lengths. That removal is ignore,
+not a background false positive. Unnamed paths stay. An empty split returns null
+precision and recall.
+
+## Re-raster round trip
+Precision and recall use different numerators. Recall is skeleton pixels covered by
+the vector burn dilated 1 px, over skeleton pixels. Precision is vector-burn pixels
+covered by the skeleton dilated 1 px, over vector-burn pixels. Dividing the
+skeleton-side intersection by the undilated vector pixel count can exceed 1 and is
+not a precision. The check validates a projected metre affine and is not trail truth.
