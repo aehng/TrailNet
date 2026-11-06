@@ -22,3 +22,6 @@ Documented findings from the 2026-11-05 overnight runs. **Not implemented here.*
 
 ## Repo hygiene
 - Push code/configs/docs only. Never commit rasters, GPKGs, checkpoints, `_agent-runs/`, or secrets (Overpass token stays in env `TRAILNET_OVERPASS_TOKEN`).
+
+## T4E (2026-11-06)
+- Both ignore5/soft5 Kaggle kernels **ERROR** pre-train (`label_overrides` not copied in directory staging). No metrics. See `docs/experiments/t4e2_followup.md` for the fixed relaunch pair.
