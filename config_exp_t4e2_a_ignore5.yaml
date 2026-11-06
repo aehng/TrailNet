@@ -7,41 +7,76 @@ paths:
   prediction_dir: outputs_t4e_a/predictions
   vector_dir: outputs_t4e_a/vectors
 areas:
-  - name: kelly_canyon
-    description: Existing Kelly Canyon NAIP and 3DEP window
-    bbox: [-111.6294, 43.617, -111.574, 43.6578]
-    imagery: data/kelly_canyon/naip_rgbn.tif
-    dtm: data/kelly_canyon/3dep_dtm.tif
-    trails: data/kelly_canyon/trails.gpkg
-    label_sources: {osm: true, ugrc: false, usfs: true}
-  - name: corner_canyon
-    description: Draper Corner Canyon path and singletrack cluster
-    bbox: [-111.87, 40.49, -111.82, 40.54]
-    imagery: data/corner_canyon/naip_rgbn.tif
-    dtm: data/corner_canyon/3dep_dtm.tif
-    trails: data/corner_canyon/trails.gpkg
-    label_sources: {osm: true, ugrc: true, usfs: false}
-  - name: park_city
-    description: Wasatch Crest and PCMR trail cluster
-    bbox: [-111.61, 40.60, -111.56, 40.65]
-    imagery: data/park_city/naip_rgbn.tif
-    dtm: data/park_city/3dep_dtm.tif
-    trails: data/park_city/trails.gpkg
-    label_sources: {osm: true, ugrc: true, usfs: false}
-  - name: teton_pass
-    description: Teton Pass trail cluster
-    bbox: [-111.03, 43.48, -110.98, 43.53]
-    imagery: data/teton_pass/naip_rgbn.tif
-    dtm: data/teton_pass/3dep_dtm.tif
-    trails: data/teton_pass/trails.gpkg
-    label_sources: {osm: true, ugrc: false, usfs: true}
-  - name: snowbasin
-    description: Snowbasin trail cluster
-    bbox: [-111.89, 41.18, -111.84, 41.23]
-    imagery: data/snowbasin/naip_rgbn.tif
-    dtm: data/snowbasin/3dep_dtm.tif
-    trails: data/snowbasin/trails.gpkg
-    label_sources: {osm: true, ugrc: true, usfs: false}
+- name: kelly_canyon
+  description: Existing Kelly Canyon NAIP and 3DEP window
+  bbox:
+  - -111.6294
+  - 43.617
+  - -111.574
+  - 43.6578
+  imagery: data/kelly_canyon/naip_rgbn.tif
+  dtm: data/kelly_canyon/3dep_dtm.tif
+  trails: data/kelly_canyon/trails.gpkg
+  label_sources:
+    osm: true
+    ugrc: false
+    usfs: true
+- name: corner_canyon
+  description: Draper Corner Canyon path and singletrack cluster
+  bbox:
+  - -111.87
+  - 40.49
+  - -111.82
+  - 40.54
+  imagery: data/corner_canyon/naip_rgbn.tif
+  dtm: data/corner_canyon/3dep_dtm.tif
+  trails: data/corner_canyon/trails.gpkg
+  label_sources:
+    osm: true
+    ugrc: true
+    usfs: false
+- name: park_city
+  description: Wasatch Crest and PCMR trail cluster
+  bbox:
+  - -111.61
+  - 40.6
+  - -111.56
+  - 40.65
+  imagery: data/park_city/naip_rgbn.tif
+  dtm: data/park_city/3dep_dtm.tif
+  trails: data/park_city/trails.gpkg
+  label_sources:
+    osm: true
+    ugrc: true
+    usfs: false
+- name: teton_pass
+  description: Teton Pass trail cluster
+  bbox:
+  - -111.03
+  - 43.48
+  - -110.98
+  - 43.53
+  imagery: data/teton_pass/naip_rgbn.tif
+  dtm: data/teton_pass/3dep_dtm.tif
+  trails: data/teton_pass/trails.gpkg
+  label_sources:
+    osm: true
+    ugrc: false
+    usfs: true
+- name: snowbasin
+  description: Snowbasin trail cluster
+  bbox:
+  - -111.89
+  - 41.18
+  - -111.84
+  - 41.23
+  imagery: data/snowbasin/naip_rgbn.tif
+  dtm: data/snowbasin/3dep_dtm.tif
+  trails: data/snowbasin/trails.gpkg
+  label_sources:
+    osm: true
+    ugrc: true
+    usfs: false
 tiling:
   tile_size: 512
   overlap: 128
@@ -90,13 +125,27 @@ training:
   early_stopping_patience: 5
   early_stopping_min_delta: 0.0
   writeback_threshold: true
-  val_thresholds: [0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90]
+  val_thresholds:
+  - 0.25
+  - 0.3
+  - 0.35
+  - 0.4
+  - 0.45
+  - 0.5
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
+  - 0.8
+  - 0.85
+  - 0.9
   checkpoint_path: checkpoints_t4e2_a/trailnet_best.pt
 inference:
-  threshold: 0.60
+  threshold: 0.6
   batch_size: 8
 postprocess:
-  threshold: 0.60
+  threshold: 0.6
   simplify_m: 1.0
   dedup_tolerance_m: 3.0
 downloads:
@@ -122,4 +171,13 @@ labels:
   drop_unnamed_osm_footway: false
   drop_osm_footway: false
   rebuild_from_sources: false
-  snap_to_relief: {enabled: false}
+  snap_to_relief:
+    enabled: false
+evaluation:
+  vector_match_tolerances_m:
+  - 3.0
+  - 5.0
+  - 8.0
+  - 10.0
+  vector_report_tolerance_m: 5.0
+  clip_vector_metrics_to_prediction: true
