@@ -1,0 +1,55 @@
+﻿seed: 42
+paths:
+  data_dir: data
+  tile_dir: data/tiles_smoke_v4
+  output_dir: outputs_v4d_alt
+  checkpoint_dir: checkpoints_v4d_alt
+  prediction_dir: outputs_v4d_alt/predictions
+  vector_dir: outputs_v4d_alt/vectors
+areas:
+- name: kelly_smoke
+  description: 1 km smoke crop
+  bbox: [-111.615, 43.63, -111.602, 43.64]
+  imagery: data/kelly_smoke/naip_rgbn.tif
+  dtm: data/kelly_smoke/3dep_dtm.tif
+  trails: data/kelly_smoke/trails.gpkg
+tiling:
+  tile_size: 512
+  overlap: 128
+  resolution_m: 0.6
+  trail_buffer_m: {path: 1.0, footway: 1.0, track: 1.5, default: 1.0}
+terrain:
+  local_relief_radius_px: 25
+  channel_gain: 1.85
+model:
+  encoder_name: resnet34
+  encoder_weights: imagenet
+  in_channels: 7
+  classes: 1
+  dilated_center: false
+loss:
+  name: focal_bce_tversky
+  pixel_weights:
+    background: 1.0
+    path: 8.0
+    track: 3.0
+    uncertain: 4.0
+training:
+  batch_size: 2
+  epochs: 8
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  val_fraction: 0.15
+  test_fraction: 0.15
+  block_size_m: 300
+  num_workers: 0
+  mixed_precision: false
+  early_stopping_patience: 5
+  warmup_epochs: 2
+  checkpoint_path: checkpoints_v4d_alt/trailnet_best.pt
+inference:
+  threshold: 0.60
+postprocess:
+  threshold: 0.60
+  simplify_m: 1.0
+  dedup_tolerance_m: 3.0
