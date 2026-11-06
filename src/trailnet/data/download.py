@@ -488,13 +488,27 @@ def parse_overpass_response(payload, *, area_name=None):
         highway = tags.get("highway")
         if highway not in {"path", "footway", "cycleway", "track"}:
             continue
-        class_group = "track" if highway == "track" else "path"
+        footway = tags.get("footway")
+        if isinstance(footway, str):
+            footway = footway.strip().lower() or None
+        else:
+            footway = None
+        # Preserve OSM footway=* (sidewalk/crossing). Do not treat unnamed footway as sidewalk.
+        if highway == "footway" and footway in {"sidewalk", "crossing"}:
+            trail_type = footway
+            class_group = "sidewalk"
+        elif highway == "track":
+            trail_type = highway
+            class_group = "track"
+        else:
+            trail_type = highway
+            class_group = "path"
         features.append({"osm_id": f"way/{element['id']}", "highway": highway,
-                         "trail_type": highway, "class_group": class_group,
+                         "footway": footway, "trail_type": trail_type, "class_group": class_group,
                          "label_weight": 1.0, "cartocode": None,
                          "name": tags.get("name"), "area": area_name,
                          "source": "OpenStreetMap (ODbL)", "geometry": LineString(coords)})
-    return gpd.GeoDataFrame(features, columns=["osm_id", "highway", "trail_type", "class_group",
+    return gpd.GeoDataFrame(features, columns=["osm_id", "highway", "footway", "trail_type", "class_group",
                                                "label_weight", "cartocode", "name", "area", "source", "geometry"],
                             geometry="geometry", crs="EPSG:4326")
 

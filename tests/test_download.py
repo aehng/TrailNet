@@ -2,6 +2,7 @@
 import xml.etree.ElementTree as ET
 
 import geopandas as gpd
+import pandas as pd
 from shapely.geometry import LineString
 
 from trailnet.data.download import parse_overpass_response
@@ -93,3 +94,47 @@ def test_drop_unnamed_osm_footway_keeps_named_and_non_footway():
     )
     unchanged = _drop_unnamed_osm_footway(frame, enabled=False)
     assert len(unchanged) == 4
+
+
+def test_overpass_preserves_explicit_sidewalk_tags_not_unnamed_footway():
+    payload = {
+        "elements": [
+            {
+                "type": "way",
+                "id": 1,
+                "tags": {"highway": "footway", "footway": "sidewalk"},
+                "geometry": [{"lon": -111.8, "lat": 40.7}, {"lon": -111.799, "lat": 40.701}],
+            },
+            {
+                "type": "way",
+                "id": 2,
+                "tags": {"highway": "footway", "footway": "crossing"},
+                "geometry": [{"lon": -111.8, "lat": 40.7}, {"lon": -111.7995, "lat": 40.7005}],
+            },
+            {
+                "type": "way",
+                "id": 3,
+                "tags": {"highway": "footway", "name": "Jungle Trail"},
+                "geometry": [{"lon": -111.81, "lat": 40.71}, {"lon": -111.809, "lat": 40.711}],
+            },
+            {
+                "type": "way",
+                "id": 4,
+                "tags": {"highway": "footway"},
+                "geometry": [{"lon": -111.82, "lat": 40.72}, {"lon": -111.819, "lat": 40.721}],
+            },
+        ]
+    }
+    trails = parse_overpass_response(payload, area_name="corner_canyon")
+    by_id = {row.osm_id: row for _, row in trails.iterrows()}
+    assert by_id["way/1"]["footway"] == "sidewalk"
+    assert by_id["way/1"]["trail_type"] == "sidewalk"
+    assert by_id["way/1"]["class_group"] == "sidewalk"
+    assert by_id["way/2"]["trail_type"] == "crossing"
+    assert by_id["way/2"]["class_group"] == "sidewalk"
+    # Named / unnamed footways are NOT sidewalks without footway=sidewalk.
+    assert by_id["way/3"]["trail_type"] == "footway"
+    assert by_id["way/3"]["class_group"] == "path"
+    assert by_id["way/4"]["trail_type"] == "footway"
+    assert by_id["way/4"]["class_group"] == "path"
+    assert pd.isna(by_id["way/4"]["footway"]) or by_id["way/4"]["footway"] in (None, "")

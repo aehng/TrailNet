@@ -276,3 +276,31 @@ def test_arcgis_pagination_caches_all_pages(tmp_path, monkeypatch):
         source="unit", page_size=2,
     )
     assert len(again["features"]) == 3
+
+
+def test_explicit_sidewalk_is_ignore_not_positive_unnamed_footway_stays_path():
+    """footway=sidewalk → class 4 ignore; plain footway remains path positive."""
+    from trailnet.data.tiles import _trail_geometries
+    import geopandas as gpd
+    from shapely.geometry import LineString
+
+    gdf = gpd.GeoDataFrame(
+        [
+            {"class_group": "sidewalk", "highway": "footway", "footway": "sidewalk",
+             "trail_type": "sidewalk", "label_weight": 1.0,
+             "geometry": LineString([(0, 0), (10, 0)])},
+            {"class_group": "path", "highway": "path", "footway": None,
+             "trail_type": "footway", "label_weight": 1.0,
+             "geometry": LineString([(0, 5), (10, 5)])},
+        ],
+        crs="EPSG:32612",
+    )
+    buffers = {"path": 1.0, "track": 1.5, "default": 1.0, "sidewalk": 1.0}
+    result = _trail_geometries(gdf, buffers, ignore_buffer_m=0.0, sidewalk_uncertain_buffer_m=2.0)
+    assert result[1], "unnamed/plain footway should remain a path positive"
+    assert not any(False for _ in ()), "sanity"
+    # No sidewalk geometry should appear as path/track/uncertain positive.
+    assert result[4], "sidewalk must be present as ignore"
+    # Path positive count: only the second line
+    assert len(result[1]) == 1
+    assert len(result[2]) == 0

@@ -30,16 +30,47 @@ def _normalize_imagery(arr):
     return np.clip(arr / scale, 0.0, 1.0)
 
 
-def _trail_geometries(gdf, buffers, ignore_buffer_m=0.0):
+def _is_explicit_sidewalk(row):
+    """Exclude only OSM footway=sidewalk/crossing; unnamed footway stays eligible."""
+    trail = str(row.get("trail_type") or "").strip().lower()
+    if trail in {"sidewalk", "crossing"}:
+        return True
+    group = str(row.get("class_group") or "").strip().lower()
+    if group == "sidewalk":
+        return True
+    footway = str(row.get("footway") or "").strip().lower()
+    highway = str(row.get("highway") or "").strip().lower()
+    return highway == "footway" and footway in {"sidewalk", "crossing"}
+
+
+def _trail_geometries(gdf, buffers, ignore_buffer_m=0.0, sidewalk_uncertain_buffer_m=None):
     if gdf.crs is None:
         raise ValueError("Trail vector file has no CRS")
     if not gdf.crs.is_projected:
         raise ValueError("Trail vectors must be projected to the imagery CRS before buffering")
     ignore_buffer_m = float(ignore_buffer_m or 0.0)
+    # Sidewalk GPS/edge uncertainty: default to the same ignore ring used for trails.
+    if sidewalk_uncertain_buffer_m is None:
+        sidewalk_uncertain_buffer_m = ignore_buffer_m if ignore_buffer_m > 0 else 2.0
+    sidewalk_uncertain_buffer_m = float(sidewalk_uncertain_buffer_m or 0.0)
     result = {1: [], 2: [], 3: [], 4: []}
     for _, row in gdf.iterrows():
         geom = row.geometry
         if geom is None or geom.is_empty:
+            continue
+        # Explicit sidewalks/crossings are never path/track positives. Rasterize as
+        # ignore (class 4) so supervised loss does not treat them as background.
+        if _is_explicit_sidewalk(row):
+            width = float(buffers.get("sidewalk", buffers.get("footway", buffers.get("path",
+                             buffers.get("default", 1.0)))))
+            if width <= 0:
+                width = 1.0
+            core = geom.buffer(width)
+            result[4].append((core, 4))
+            if sidewalk_uncertain_buffer_m > 0:
+                ring = geom.buffer(width + sidewalk_uncertain_buffer_m).difference(core)
+                if ring is not None and not ring.is_empty:
+                    result[4].append((ring, 4))
             continue
         raw_kind = ""
         for field in ("class_group", "highway", "fclass", "trail_type"):
@@ -86,9 +117,13 @@ def _prepare_worker_count(cfg, tile_count):
     return workers
 
 
-def _load_label_index(trails_path, dst_crs, buffers, ignore_buffer_m=0.0):
+def _load_label_index(trails_path, dst_crs, buffers, ignore_buffer_m=0.0,
+                      sidewalk_uncertain_buffer_m=None):
     vectors = gpd.read_file(trails_path).to_crs(dst_crs)
-    buffered = _trail_geometries(vectors, buffers, ignore_buffer_m=ignore_buffer_m)
+    buffered = _trail_geometries(
+        vectors, buffers, ignore_buffer_m=ignore_buffer_m,
+        sidewalk_uncertain_buffer_m=sidewalk_uncertain_buffer_m,
+    )
     indexed_shapes = [(geom, code) for code, shapes in buffered.items()
                       for geom, _value in shapes]
     geometries = [geom for geom, _code in indexed_shapes]
@@ -155,6 +190,7 @@ def _init_tile_worker(spec):
     geometries, codes, index = _load_label_index(
         spec["trails_path"], image_ds.crs, spec["buffers"],
         ignore_buffer_m=spec.get("ignore_buffer_m", 0.0),
+        sidewalk_uncertain_buffer_m=spec.get("sidewalk_uncertain_buffer_m"),
     )
     _WORKER.clear()
     _WORKER.update(spec=spec, image_ds=image_ds, dtm_ds=dtm_ds,
@@ -216,6 +252,10 @@ def build_area_tiles(config, area):
         "area_name": area["name"],
         "buffers": cfg.get("trail_buffer_m", {}),
         "ignore_buffer_m": float(cfg.get("ignore_buffer_m", 0.0) or 0.0),
+        "sidewalk_uncertain_buffer_m": (
+            None if cfg.get("sidewalk_uncertain_buffer_m") is None
+            else float(cfg.get("sidewalk_uncertain_buffer_m"))
+        ),
         "relief_radius": relief_radius,
         "channel_gain": channel_gain,
         "profile": {k: v for k, v in profile.items() if k != "crs"},
@@ -228,6 +268,7 @@ def build_area_tiles(config, area):
         geometries, codes, index = _load_label_index(
             trails_path, crs, spec["buffers"],
             ignore_buffer_m=spec.get("ignore_buffer_m", 0.0),
+            sidewalk_uncertain_buffer_m=spec.get("sidewalk_uncertain_buffer_m"),
         )
         rows = []
         with rasterio.open(imagery_path) as image_ds, rasterio.open(dtm_path) as dtm_ds:

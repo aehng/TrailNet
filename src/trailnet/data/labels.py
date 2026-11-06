@@ -28,9 +28,10 @@ USFS_TRAILS_URL = (
     "MapServer/0/query"
 )
 CANONICAL_FIELDS = [
-    "highway", "trail_type", "name", "source", "cartocode", "class_group",
+    "highway", "footway", "trail_type", "name", "source", "cartocode", "class_group",
     "label_weight", "priority", "geometry",
 ]
+SIDEWALK_TRAIL_TYPES = frozenset({"sidewalk", "crossing"})
 
 
 def _bbox_key(source, endpoint, bbox):
@@ -498,6 +499,16 @@ def snap_lines_to_relief(
     return out
 
 
+def _is_sidewalk_row(row):
+    """True only for explicit OSM footway=sidewalk/crossing (not unnamed footway)."""
+    trail = str(row.get("trail_type") or "").strip().lower()
+    if trail in SIDEWALK_TRAIL_TYPES:
+        return True
+    footway = str(row.get("footway") or "").strip().lower()
+    highway = str(row.get("highway") or "").strip().lower()
+    return highway == "footway" and footway in SIDEWALK_TRAIL_TYPES
+
+
 def _canonicalize_existing(frame):
     if frame.empty:
         return gpd.GeoDataFrame(columns=CANONICAL_FIELDS, geometry="geometry", crs=frame.crs)
@@ -506,12 +517,29 @@ def _canonicalize_existing(frame):
         if field not in result:
             result[field] = None
     for index, row in result.iterrows():
-        highway = str(row.get("highway") or row.get("trail_type") or "").lower()
-        group = row.get("class_group")
-        if group not in {"path", "track"}:
-            group = "track" if highway == "track" else "path"
-        result.at[index, "class_group"] = group
-        result.at[index, "highway"] = "track" if group == "track" else "path"
+        trail = str(row.get("trail_type") or "").strip().lower()
+        footway = row.get("footway")
+        if isinstance(footway, str):
+            footway = footway.strip().lower() or None
+        else:
+            footway = None
+        if footway is None and trail in SIDEWALK_TRAIL_TYPES:
+            footway = trail
+        result.at[index, "footway"] = footway
+        if _is_sidewalk_row({**row.to_dict(), "footway": footway, "trail_type": trail or row.get("trail_type")}):
+            result.at[index, "class_group"] = "sidewalk"
+            result.at[index, "trail_type"] = footway or trail
+            # Keep highway=footway so source tags remain auditable; not a path positive.
+            result.at[index, "highway"] = "footway"
+        else:
+            highway = str(row.get("highway") or row.get("trail_type") or "").lower()
+            group = row.get("class_group")
+            if group not in {"path", "track"}:
+                group = "track" if highway == "track" else "path"
+            result.at[index, "class_group"] = group
+            result.at[index, "highway"] = "track" if group == "track" else "path"
+            if not trail:
+                result.at[index, "trail_type"] = result.at[index, "highway"]
         label_weight = row.get("label_weight")
         result.at[index, "label_weight"] = (1.0 if pd.isna(label_weight) else float(label_weight))
         result.at[index, "priority"] = _source_priority(row.get("source"))
