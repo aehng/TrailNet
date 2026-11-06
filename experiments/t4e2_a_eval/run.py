@@ -112,6 +112,10 @@ def stage_inputs() -> None:
     if "novelty_output_path" not in post or "novelty_filter=False" not in post:
         raise RuntimeError("stale postprocess.py: missing unfiltered/novelty split")
     log("POSTPROCESS_OK unfiltered trails + novelty split")
+    ve = (PROJECT / "src" / "trailnet" / "vector_eval.py").read_text(encoding="utf-8")
+    if "split_block_polygons" not in ve or "val_blocks" not in ve:
+        raise RuntimeError("stale vector_eval.py: missing val/test block scopes")
+    log("VECTOR_EVAL_OK block scopes present")
 
     ckpt = find_file(ckpt_mount, "trailnet_best.pt")
     if ckpt is None:
