@@ -11,6 +11,7 @@
 - Built a per-area imagery/terrain inventory, reconstructed NAIP STAC item dates using the retained AOI extents and current latest-year selection rule, and created 45 no-overlay RGB, NIR/R/G, and relief windows. The 48-window target was short by six because Kelly Canyon and Teton Pass have no VAL tiles in the frozen 2,500 m, seed-42 split.
 - Ran the local Arc 130V batch-12 fit smoke check. It failed for memory; no local full training run was scheduled.
 - Submitted an isolated A evaluation replay to Kaggle, using a new private kernel slug. Both replay attempts failed before model inference: the first had stale vector-evaluation imports; the one permitted retry reached dependency setup, then failed when its installer reloaded the already-imported PyTorch module and duplicated Triton's `TORCH_LIBRARY` registration. A separate audit-only kernel also failed at startup because Kaggle did not expose its auxiliary modules on the import path. Neither retry nor audit kernel generated tiles, audit pixels, or model scores. No further push was made because the A replay's staging-retry allowance is spent.
+- Reproduced the exact PyTorch reload failure locally with the installed `2.14.0+xpu` build. Fixed the staged replay package to verify the post-install PyTorch/CUDA build from a fresh subprocess instead of reloading the live module. Child commands now wait on process completion without polling, write callback JSON on completion/failure, and are killed with a timeout callback after 60 minutes; a 90-minute top-level watchdog records a timed fallback and exits if the replay itself gets stuck. This package fix is locally tested but was not submitted because the plan's single staging retry is exhausted.
 - Screened all seven requested next-site areas against NAIP STAC, USGS TNM 1 m DEM product metadata, and OSM line lengths. Each remains `review_later` because independent truth samples and area-specific permissions have not been verified.
 
 ## Data and label evidence
@@ -45,7 +46,7 @@ Fix the dependency installer in a separately reviewed package, then request a ne
 
 ## Verification
 
-The focused screen/download tests passed: 9 tests. The full suite passed: 79 tests, with 146 existing deprecation and library warnings. The first sandboxed full-suite invocation could not load the installed Intel XPU DLL; rerunning with normal Windows access completed successfully. Kaggle failure diagnoses above come from the remote kernel logs, not local simulation.
+The focused callback/dependency tests passed: 4 tests; focused screen/download tests passed: 9 tests. The full suite passed: 83 tests, with 146 library/deprecation warnings. The first sandboxed full-suite invocation could not load the installed Intel XPU DLL; rerunning with normal Windows access completed successfully. Kaggle failure diagnoses above come from remote kernel logs; the PyTorch reload root cause was also reproduced locally.
 
 ---
 
@@ -55,4 +56,4 @@ The focused screen/download tests passed: 9 tests. The full suite passed: 79 tes
 - **Labels:** Existing audits show measurable alignment uncertainty and many unnamed paths, but neither establishes true label errors.
 - **Imagery:** Park City mixes September and late-November 2021 NAIP; snow-like cover and invalid tile edges warrant separate visibility/validity slices.
 - **Sites:** All seven are `review_later`; metadata is promising, but independent sample counts and permissions are unknown.
-- **Experiments:** No training arm is qualified. The A replay failed in dependency setup before inference; local batch 12 did not fit on the Arc 130V.
+- **Experiments:** No training arm is qualified. The A replay failed in dependency setup before inference; a corrected callback-enabled package is prepared locally but not rerun under the exhausted retry allowance. Local batch 12 did not fit on the Arc 130V.

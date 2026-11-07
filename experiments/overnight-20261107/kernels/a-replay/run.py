@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import sys
 import tarfile
+import threading
 import time
 from pathlib import Path
 
@@ -23,6 +24,8 @@ INPUT_ROOT = Path("/kaggle/input")
 WORK = Path("/kaggle/working")
 PROJECT = Path("/kaggle/temp/TrailNet")
 LOG_PATH = WORK / "trailnet-t4e2_a-eval-run.log"
+DEFAULT_COMMAND_TIMEOUT_SECONDS = 60 * 60
+RUN_TIMEOUT_SECONDS = 90 * 60
 
 
 def log(message: str) -> None:
@@ -31,22 +34,70 @@ def log(message: str) -> None:
         stream.write(message + "\n")
 
 
-def run_command(args: list[str], env: dict[str, str] | None = None) -> str:
+def write_callback(record: dict, name: str = "command") -> Path:
+    callback_dir = WORK / "callbacks"
+    callback_dir.mkdir(parents=True, exist_ok=True)
+    path = callback_dir / f"{time.time_ns()}-{name}.callback.json"
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(record, indent=2, default=str), encoding="utf-8")
+    temporary.replace(path)
+    return path
+
+
+def run_command(
+    args: list[str], env: dict[str, str] | None = None,
+    timeout_seconds: float = DEFAULT_COMMAND_TIMEOUT_SECONDS,
+) -> str:
+    started_at = time.time()
+    started_monotonic = time.monotonic()
     log("$ " + " ".join(args))
-    output = []
-    process = subprocess.Popen(
-        args, cwd=PROJECT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-        text=True, errors="replace", bufsize=1,
-    )
-    assert process.stdout is not None
-    for line in process.stdout:
-        clean = line.rstrip("\r\n")
-        output.append(clean)
-        log(clean)
-    code = process.wait()
+    timed_out = False
+    output = ""
+    launch_error = None
+    try:
+        process = subprocess.Popen(
+            args, cwd=PROJECT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            text=True, errors="replace",
+        )
+        try:
+            output, _ = process.communicate(timeout=timeout_seconds)
+        except subprocess.TimeoutExpired:
+            timed_out = True
+            process.kill()
+            output, _ = process.communicate()
+        code = process.returncode
+    except OSError as exc:
+        launch_error = exc
+        code = None
+        output = str(exc)
+        status = "launch_error"
+    else:
+        status = "timed_out" if timed_out else ("complete" if code == 0 else "failed")
+
+    for line in output.splitlines():
+        log(line)
+    ended_at = time.time()
+    callback = {
+        "executable": args[0],
+        "arguments": args[1:],
+        "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(started_at)),
+        "ended_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(ended_at)),
+        "elapsed_seconds": round(time.monotonic() - started_monotonic, 3),
+        "timeout_seconds": timeout_seconds,
+        "status": status,
+        "exit_code": None if timed_out else code,
+        "timed_fallback_triggered": timed_out,
+        "output_tail": output[-4000:],
+    }
+    callback_path = write_callback(callback, Path(args[0]).stem or "command")
+    log(f"COMMAND_CALLBACK {callback_path} status={status}")
+    if timed_out:
+        raise subprocess.TimeoutExpired(args, timeout_seconds, output=output)
+    if launch_error is not None:
+        raise launch_error
     if code:
-        raise subprocess.CalledProcessError(code, args)
-    return "\n".join(output)
+        raise subprocess.CalledProcessError(code, args, output=output)
+    return output
 
 
 def find_mount(slug: str) -> Path:
@@ -190,9 +241,12 @@ def ensure_deps() -> None:
         constraint = WORK / "torch-constraints.txt"
         constraint.write_text(f"torch=={version}\n", encoding="utf-8")
         run_command([sys.executable, "-m", "pip", "install", "-q", "-c", str(constraint), *missing_pkgs])
-        import importlib
-        importlib.reload(torch)
-        if torch.__version__ != version or torch.version.cuda != cuda_build:
+        probe = (
+            "import json, torch; "
+            "print(json.dumps({'version': torch.__version__, 'cuda': torch.version.cuda}))"
+        )
+        installed_build = json.loads(run_command([sys.executable, "-c", probe]).splitlines()[-1])
+        if installed_build["version"] != version or installed_build["cuda"] != cuda_build:
             raise RuntimeError("dependency installation changed the preinstalled PyTorch/CUDA build")
         log(f"PYTORCH_BUILD_PRESERVED version={version} cuda={cuda_build}")
 
@@ -458,4 +512,43 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    run_started_at = time.time()
+    run_finished = threading.Event()
+
+    def run_timeout_fallback() -> None:
+        if run_finished.is_set():
+            return
+        write_callback({
+            "status": "timed_out",
+            "timed_fallback_triggered": True,
+            "timeout_seconds": RUN_TIMEOUT_SECONDS,
+            "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(run_started_at)),
+            "ended_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "elapsed_seconds": RUN_TIMEOUT_SECONDS,
+            "reason": "top-level replay exceeded the timed fallback deadline",
+        }, "trailnet-run-timeout")
+        os._exit(124)
+
+    watchdog = threading.Timer(RUN_TIMEOUT_SECONDS, run_timeout_fallback)
+    watchdog.daemon = True
+    watchdog.start()
+    run_status = "failed"
+    run_error = None
+    try:
+        main()
+        run_status = "complete"
+    except BaseException as exc:
+        run_error = repr(exc)
+        raise
+    finally:
+        run_finished.set()
+        watchdog.cancel()
+        write_callback({
+            "status": run_status,
+            "timed_fallback_triggered": False,
+            "timeout_seconds": RUN_TIMEOUT_SECONDS,
+            "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(run_started_at)),
+            "ended_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "elapsed_seconds": round(time.time() - run_started_at, 3),
+            "error": run_error,
+        }, "trailnet-run")

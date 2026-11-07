@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T09:48:23Z",
+  "updated_at": "2026-11-07T09:59:12Z",
   "experiment_status": "early_stop_staging_failure",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -26,6 +26,12 @@
     "retry_combines_pixel_replay_and_exact_a_tile_hash_audit": true,
     "retry_is_evaluation_only": true,
     "staging_retry_budget": "one retry allowed; consumed; no further kernel submissions",
+    "staging_fix": {
+      "root_cause_reproduced_locally": "importlib.reload(torch) duplicates Triton TORCH_LIBRARY registration",
+      "local_package_fix": "verify PyTorch version and CUDA build in a fresh subprocess; never reload the active torch module",
+      "callback_behavior": "child commands wait without polling, write completion callbacks, and kill/report at 60 minutes; top-level replay has a 90-minute timed fallback",
+      "remote_submission": "not submitted; retry limit remains exhausted"
+    },
     "training_kernels_launched": 0
   },
   "audit": {
@@ -61,8 +67,9 @@
     "next_decision": "wait for A replay parity; finish a blinded, independently referenced audit before registering a training arm"
   },
   "verification": {
+    "focused_callback_and_dependency_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
-    "full_test_suite": "79 passed, 146 warnings",
+    "full_test_suite": "83 passed, 146 warnings",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0
   }
