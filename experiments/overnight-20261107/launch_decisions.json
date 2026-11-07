@@ -1,24 +1,24 @@
 {
-  "decision_time": "2026-11-07T10:15:51Z",
+  "decision_time": "2026-11-07T18:00:35Z",
   "training_launch": "none",
   "selected_arm": null,
   "confirmation_seed_43_eligible": false,
   "global_gates": {
     "a_replay_parity": {
-      "status": "failed_before_execution",
-      "evidence": "A replay staging failed before tile generation and inference; one allowed staging retry is consumed."
+      "status": "met_for_published_pixel_replay",
+      "evidence": "All five regenerated A index hashes match. Held-out at 0.90: 358 tiles, F1 0.4311, IoU 0.2748, exact TP/FP/FN recorded; local provisional crop hashes still differ."
     },
     "trusted_independent_val_audit": {
       "status": "not_met",
-      "evidence": "0 independently verified trail or distractor samples; no trusted VAL traces were frozen."
+      "evidence": "0 independently verified target trail or distractor samples; zero trusted VAL traces frozen."
     },
     "input_registration_and_pixel_identity": {
-      "status": "not_verified",
-      "evidence": "Raw source files and tile indexes match, but regenerated tile image/class-map hashes do not."
+      "status": "partial",
+      "evidence": "Replay index parity and published pixel metrics match, but local provisional audit sample image/class-map hashes match 0/45; candidate municipal imagery band order and masks are unverified."
     },
     "split_footprint_independence": {
       "status": "risk_identified",
-      "evidence": "The recovered split has 2.34 km2 summed pairwise cross-split tile-footprint overlap; 0.401 km2 overlaps Park City VAL and held-out footprints. This is geometric footprint area; nodata validity is unknown."
+      "evidence": "Recovered split has about 2.34 km2 summed pairwise cross-split tile-footprint overlap, including 0.401 km2 Park City VAL/held-out; geometric area, not nodata-valid overlap."
     },
     "local_batch_12_fit": {
       "status": "failed",
@@ -52,11 +52,12 @@
       "evidence": "No trusted VAL distractor audit; registration and tile-pixel identity remain unverified."
     }
   },
-  "decision": "No training arm is justified. Preserve A and do not treat failed staging as a model result.",
+  "decision": "No training arm is justified. Preserve A; replay parity is not a label-quality or generalization result.",
   "reopen_when": [
-    "A replay parity and tile-pixel identities are verified in an authorized run.",
+    "Input band order and nodata/mask behavior are verified for each image source.",
     "Dated independent Park City trail references and ML reuse permission are obtained.",
-    "Blinded trusted VAL audit meets the applicable arm's sample/block thresholds.",
+    "Blinded trusted VAL audit meets applicable arm sample/block thresholds.",
+    "Paired imagery windows are valid, co-registered, and reviewed with season/weather/cover conditions recorded.",
     "Cross-split tile-footprint overlap is reported and excluded from trusted audit windows."
   ]
 }

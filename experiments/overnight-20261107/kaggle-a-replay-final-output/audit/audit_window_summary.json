@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "block_size_m": 2500,
+  "crop_target_m": 128,
+  "requested_windows": 48,
+  "sampled_windows": 45,
+  "shortages": [
+    {
+      "area": "kelly_canyon",
+      "split": "val",
+      "requested": 3,
+      "available": 0
+    },
+    {
+      "area": "teton_pass",
+      "split": "val",
+      "requested": 3,
+      "available": 0
+    }
+  ],
+  "tile_pixel_identity_check": "compare image_sha256 and class_map_sha256 to local provisional samples",
+  "limitations": [
+    "no independent human adjudication",
+    "no labels or predictions appear on contact sheets"
+  ]
+}

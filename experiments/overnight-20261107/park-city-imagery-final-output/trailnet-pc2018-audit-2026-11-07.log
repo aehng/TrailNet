@@ -1,0 +1,80 @@
+[{"stream_name":"stderr","time":6.639746734,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":6.639833082,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":7.242374901,"data":"CHIP_COMPLETE 1/24 W001\n"}
+,{"stream_name":"stderr","time":7.434317048,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":7.434358465,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":8.005322944,"data":"CHIP_COMPLETE 2/24 W002\n"}
+,{"stream_name":"stderr","time":8.322011335,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":8.322063081,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":8.477089383,"data":"CHIP_COMPLETE 3/24 W003\n"}
+,{"stream_name":"stderr","time":8.948939331,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":8.949050799,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":9.112624362,"data":"CHIP_COMPLETE 4/24 W004\n"}
+,{"stream_name":"stderr","time":9.26338001,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":9.263441465,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":9.543095089,"data":"CHIP_COMPLETE 5/24 W005\n"}
+,{"stream_name":"stderr","time":9.644075658,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":9.644124248,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":9.809412327,"data":"CHIP_COMPLETE 6/24 W006\n"}
+,{"stream_name":"stderr","time":9.9262568,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":9.926300795,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":10.077974938,"data":"CHIP_COMPLETE 7/24 W007\n"}
+,{"stream_name":"stderr","time":10.186421953,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":10.186461214,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":10.338418798,"data":"CHIP_COMPLETE 8/24 W008\n"}
+,{"stream_name":"stderr","time":10.649485376,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":10.649551503,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":10.797036731,"data":"CHIP_COMPLETE 9/24 W009\n"}
+,{"stream_name":"stderr","time":10.926842735,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":10.926888138,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":11.106457498,"data":"CHIP_COMPLETE 10/24 W010\n"}
+,{"stream_name":"stderr","time":11.233328063,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":11.233376726,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":11.40371901,"data":"CHIP_COMPLETE 11/24 W011\n"}
+,{"stream_name":"stderr","time":11.51286112,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":11.512914298,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":11.666478958999999,"data":"CHIP_COMPLETE 12/24 W012\n"}
+,{"stream_name":"stderr","time":12.421846565,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":12.421896593,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":12.568189469,"data":"CHIP_COMPLETE 13/24 W013\n"}
+,{"stream_name":"stderr","time":13.953525222,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":13.953573995,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":14.183179776,"data":"CHIP_COMPLETE 14/24 W014\n"}
+,{"stream_name":"stderr","time":14.319070486,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.31911612,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":14.542608914,"data":"CHIP_COMPLETE 15/24 W015\n"}
+,{"stream_name":"stderr","time":14.647173482,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.647220729,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":14.871403663,"data":"CHIP_COMPLETE 16/24 W016\n"}
+,{"stream_name":"stderr","time":14.9715552,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.971593768,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":15.119830805,"data":"CHIP_COMPLETE 17/24 W017\n"}
+,{"stream_name":"stderr","time":15.268782424,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.268828769,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":15.506437258,"data":"CHIP_COMPLETE 18/24 W018\n"}
+,{"stream_name":"stderr","time":15.630194119,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.630256056,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":15.79128959,"data":"CHIP_COMPLETE 19/24 W019\n"}
+,{"stream_name":"stderr","time":15.896347445,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.896392601,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":16.120283315000002,"data":"CHIP_COMPLETE 20/24 W020\n"}
+,{"stream_name":"stderr","time":16.254759006,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":16.254805692,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":16.480768913,"data":"CHIP_COMPLETE 21/24 W021\n"}
+,{"stream_name":"stderr","time":16.58057431,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":16.580620283000002,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":16.81017347,"data":"CHIP_COMPLETE 22/24 W022\n"}
+,{"stream_name":"stderr","time":16.965830967,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":16.96589376,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":17.188367401,"data":"CHIP_COMPLETE 23/24 W023\n"}
+,{"stream_name":"stderr","time":17.276936515,"data":"/kaggle/src/script.py:124: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":17.276980982,"data":"  current_mask = source.read_masks(indexes=[1, 2, 3, 4], window=src_window, boundless=True) \u003e 0\n"}
+,{"stream_name":"stdout","time":17.497335758,"data":"CHIP_COMPLETE 24/24 W024\n"}
+,{"stream_name":"stdout","time":21.767289039,"data":"SCREEN_COMPLETE samples=24 output=/kaggle/working/park-city-imagery\n"}
+,{"stream_name":"stderr","time":25.346502281,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":25.346553379,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":25.954939618,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":25.954972467,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":28.494208289,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":30.261678586,"data":"[NbConvertApp] Writing 326284 bytes to __results__.html\n"}
+]

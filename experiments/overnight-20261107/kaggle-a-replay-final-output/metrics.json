@@ -1,0 +1,68 @@
+{
+  "run": "t4e2_a_eval",
+  "status": "complete",
+  "config": "config_exp_t4e2_a_ignore5.yaml",
+  "no_train": true,
+  "checkpoint_threshold": 0.9,
+  "pixel_eval_threshold": 0.9,
+  "eval_tail": "eval_threshold=0.90 source=checkpoint\nheld-out tile count=358 IoU=0.2748 F1=0.4311 threshold=0.90 tp=301931 fp=325818 fn=471116\neval_threshold_sweep t=0.90 tp=301931 fp=325818 fn=471116 iou=0.2748 f1=0.4311 legacy_f1=0.3353 legacy_iou=0.2014\neval_threshold_sweep area=corner_canyon t=0.90 tp=167044 fp=133510 fn=259869 iou=0.2981 f1=0.4592\neval_threshold_sweep area=kelly_canyon t=0.90 tp=99323 fp=140842 fn=131554 iou=0.2672 f1=0.4217\neval_threshold_sweep area=park_city t=0.90 tp=35564 fp=51466 fn=79693 iou=0.2133 f1=0.3516\nskip novelty for kelly_canyon: missing pred or OSM file\nskip novelty for corner_canyon: missing pred or OSM file\nskip novelty for park_city: missing pred or OSM file\nskip novelty for teton_pass: missing pred or OSM file\nskip novelty for snowbasin: missing pred or OSM file\npredicted line features not matching OSM within tolerance: {}\n",
+  "regenerated_a_index_hashes": {
+    "corner_canyon": {
+      "sha256": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "expected_recovered_a_sha256": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "matches": true
+    },
+    "kelly_canyon": {
+      "sha256": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "expected_recovered_a_sha256": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "matches": true
+    },
+    "park_city": {
+      "sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "expected_recovered_a_sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "matches": true
+    },
+    "snowbasin": {
+      "sha256": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+      "expected_recovered_a_sha256": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+      "matches": true
+    },
+    "teton_pass": {
+      "sha256": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "expected_recovered_a_sha256": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "matches": true
+    }
+  },
+  "audit_windows": {
+    "seed": 42,
+    "block_size_m": 2500,
+    "crop_target_m": 128,
+    "requested_windows": 48,
+    "sampled_windows": 45,
+    "shortages": [
+      {
+        "area": "kelly_canyon",
+        "split": "val",
+        "requested": 3,
+        "available": 0
+      },
+      {
+        "area": "teton_pass",
+        "split": "val",
+        "requested": 3,
+        "available": 0
+      }
+    ],
+    "tile_pixel_identity_check": "compare image_sha256 and class_map_sha256 to local provisional samples",
+    "limitations": [
+      "no independent human adjudication",
+      "no labels or predictions appear on contact sheets"
+    ]
+  },
+  "elapsed_seconds": 854.0,
+  "source_datasets": [
+    "trailnet-multiaoi-v4",
+    "trailnet-t4e-code",
+    "trailnet-t4e2-a-ckpt"
+  ]
+}

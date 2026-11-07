@@ -542,7 +542,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 110,
         "length_km": {
           "path_candidate": 3.449,
@@ -1199,7 +1199,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 909,
         "length_km": {
           "path_candidate": 114.855,
@@ -1799,7 +1799,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 514,
         "length_km": {
           "path_candidate": 58.381,
@@ -2489,7 +2489,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 73,
         "length_km": {
           "path_candidate": 10.18,
@@ -2853,7 +2853,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 176,
         "length_km": {
           "path_candidate": 65.946,
@@ -3170,7 +3170,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 588,
         "length_km": {
           "path_candidate": 69.005,
@@ -3858,7 +3858,7 @@
       },
       "osm_lengths": {
         "endpoint": "https://overpass-api.de/api/interpreter",
-        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "attribution": "© OpenStreetMap contributors, ODbL",
         "ways": 359,
         "length_km": {
           "path_candidate": 100.609,
@@ -3992,5 +3992,27 @@
     "permission_status": "unknown",
     "decision": "review_later",
     "reason": "UGRC is already represented in the current Park City labels. MTF and city sources are credible candidates for a provenance-traced, dated reference, but geometry lineage, historical dates, sample counts, positional uncertainty and reuse permission remain unverified."
-  }
+  },
+  "park_city_local_imagery_service": {
+    "source": "Park City / Summit County PC2018Imagery ArcGIS ImageServer",
+    "url": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer",
+    "flight_dates": [
+      "2018-06-24",
+      "2018-07-01"
+    ],
+    "ground_sample_distance_m": 0.5,
+    "band_count": 4,
+    "service_extent_covers_all_24_recovered_park_city_sample_centers": true,
+    "coverage_evidence": "Published service metadata extent after transforming sample centers to WKID 3566; actual valid pixel coverage is unknown.",
+    "pixel_comparison": "bounded retrieval complete for 24 exact A replay windows; candidate has 13/24 all-zero RGB windows and 0.571854 mean zero fraction; masks misleadingly report 100% valid. Human review, band semantics and registration unresolved.",
+    "decision": "review_later; partial-coverage candidate only, not approved training imagery",
+    "artifact": "park-city-imagery-final-output/park-city-imagery/paired-imagery-screen.json",
+    "permission_status": "unknown"
+  },
+  "next_steps": [
+    "Resolve NAIP and municipal imagery band order, source masks, and nodata behavior.",
+    "Blinded-review valid canonical paired windows for snow, shadow, cloud, canopy, brightness and tread visibility.",
+    "Request dated independent Park City trail records and ML reuse permission before training or promotion.",
+    "Keep all seven screened sites at review_later until independent target/distractor counts and permissions are verified."
+  ]
 }

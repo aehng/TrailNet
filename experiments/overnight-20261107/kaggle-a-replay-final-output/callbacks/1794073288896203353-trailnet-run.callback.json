@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "timed_fallback_triggered": false,
+  "timeout_seconds": 5400,
+  "started_at": "2026-11-07T17:27:14Z",
+  "ended_at": "2026-11-07T17:41:28Z",
+  "elapsed_seconds": 854.858,
+  "error": null
+}

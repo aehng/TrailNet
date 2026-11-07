@@ -1,0 +1,20 @@
+{
+  "executable": "/usr/bin/python3",
+  "arguments": [
+    "-m",
+    "pip",
+    "install",
+    "-q",
+    "-c",
+    "/kaggle/working/torch-constraints.txt",
+    "segmentation-models-pytorch"
+  ],
+  "started_at": "2026-11-07T17:27:36Z",
+  "ended_at": "2026-11-07T17:27:42Z",
+  "elapsed_seconds": 6.189,
+  "timeout_seconds": 3600,
+  "status": "complete",
+  "exit_code": 0,
+  "timed_fallback_triggered": false,
+  "output_tail": ""
+}

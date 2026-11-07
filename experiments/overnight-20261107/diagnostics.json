@@ -1,32 +1,44 @@
 {
-  "status": "blocked_before_execution",
-  "reason": "The permitted A replay retry failed before tile generation or model inference. No A parity run, trusted independent references, or verified 2018 imagery pairs are available.",
+  "status": "a_replay_complete_diagnostics_incomplete",
+  "reason": "A replay and published held-out pixel metrics reproduced; independent labels, weather adjudication, band identity, nodata semantics, and paired imagery registration are still unresolved.",
   "input_identities": {
     "checkpoint_matches_handoff": true,
     "raw_source_files_match_manifest": true,
     "recovered_tile_indexes_match": true,
-    "regenerated_tile_pixel_identity": false
+    "regenerated_a_index_hashes_match_all_five": true,
+    "replay_heldout_f1_matches_published": true,
+    "local_provisional_sample_centers_match": "35/45 overall; 18/24 Park City",
+    "local_provisional_image_hashes_match": "0/45",
+    "local_provisional_class_map_hashes_match": "0/45",
+    "canonical_park_city_screen_uses_exact_replay_centers": true
   },
   "a_checkpoint_ablation": {
     "full_input": "not_run",
     "terrain_neutralized_channels_4_to_6": "not_run",
     "optical_neutralized_channels_0_to_3": "not_run",
-    "reason": "Requires verified A replay inputs and original VAL inference."
+    "reason": "A replay artifact contains held-out evaluation; VAL modality ablations have not been run."
   },
   "weather_slices": {
     "park_city_snow_windows_with_independently_verified_tread": 0,
     "park_city_bare_windows_with_independently_verified_tread": 0,
     "recall_deltas": null,
     "distractor_burden_deltas": null,
-    "status": "unsupported; exploratory contact sheets did not receive blinded corridor adjudication"
+    "status": "unsupported; canonical imagery-only contact sheets await blinded human review and independent corridor truth"
   },
   "paired_imagery": {
-    "candidate": "Park City NAIP 2018-09-09 and 2018-09-27, four tiles covering the AOI",
-    "window_pairs_locked": 0,
-    "snow_free_corridor_visibility_verified": false,
-    "four_band_resolution_registration_and_trail_date_checks": "not_run",
-    "status": "candidate metadata only; no imagery pair scored"
+    "candidate": "Park City/Summit County PC2018Imagery ImageServer, flown 2018-06-24 and 2018-07-01",
+    "window_pairs_locked": 24,
+    "canonical_centers_from": "completed A replay audit_samples.csv",
+    "bounded_retrieval": "complete for all 24 paired footprints",
+    "candidate_allzero_windows": 13,
+    "mean_candidate_rgb_zero_pixel_fraction": 0.571854,
+    "candidate_reported_mask_valid_fraction": "1.0 for all windows despite all-zero RGB windows; masks require validation",
+    "band_order": "unverified",
+    "co_registration": "not measured",
+    "snow_shadow_cloud_canopy_scored": false,
+    "reuse_permission": "unknown",
+    "status": "partial coverage and integrity review required before blinded visibility scoring"
   },
-  "interpretation": "No weather, modality, or imagery-causality claim can be made from this run.",
-  "next_step": "The corrected replay package is locally tested but unsubmitted; obtain authorization for one additional A replay beyond the exhausted retry cap, then obtain dated independent Park City trail references before selecting paired VAL windows."
+  "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
+  "next_step": "Resolve input band and mask semantics, then blinded-review only valid canonical paired windows; obtain dated independent trail reference evidence and permission before training."
 }

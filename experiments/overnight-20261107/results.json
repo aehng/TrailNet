@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T10:19:01Z",
-  "experiment_status": "early_stop_staging_failure",
+  "updated_at": "2026-11-07T18:00:35Z",
+  "experiment_status": "a_replay_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
   "inputs": {
@@ -8,7 +8,16 @@
     "recovered_a_tile_index_hashes_match_local_v4_indexes": true,
     "tile_raster_pixel_identity_verified": false,
     "a_checkpoint_matches_handoff_sha256": true,
-    "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a"
+    "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+    "provisional_audit_sample_identity": {
+      "sample_ids_compared": 45,
+      "centers_matching": 35,
+      "image_hashes_matching": 0,
+      "class_map_hashes_matching": 0,
+      "park_city_centers_matching": 18,
+      "park_city_sample_count": 24,
+      "interpretation": "Local v4 audit contact-sheet annotations are provisional and must not be treated as canonical A replay evidence."
+    }
   },
   "local_accelerator": {
     "device": "Intel Arc 130V XPU, 8 GB",
@@ -17,34 +26,68 @@
   },
   "kaggle": {
     "gpu_quota_before_replay_h": 28.57,
-    "gpu_quota_after_replay_retry_h": 28.56,
-    "baseline_replay_kernel": "elikearl/trailnet-t4q-a-replay-2026-11-07",
+    "baseline_replay_kernel": "elikearl/trailnet-t4q-a-replay-final-2026-11-07",
     "baseline_replay_initial_attempt": "ERROR_BEFORE_MODEL_WORK: stale vector_eval.py in the attached code dataset",
     "standalone_audit_initial_attempt": "ERROR_BEFORE_MODEL_WORK: Kaggle did not expose auxiliary module files on the runtime import path",
     "baseline_replay_retry_version": 2,
-    "baseline_replay_status": "ERROR_BEFORE_MODEL_WORK: dependency setup reloaded already-imported torch and failed on duplicate triton TORCH_LIBRARY registration",
+    "baseline_replay_status": "COMPLETE; evaluation only; no training",
     "retry_combines_pixel_replay_and_exact_a_tile_hash_audit": true,
     "retry_is_evaluation_only": true,
-    "staging_retry_budget": "one retry allowed; consumed; no further kernel submissions",
+    "staging_retry_budget": "The plan allowed one retry; after that, Eli explicitly authorized final corrected replay. It completed; training kernels launched: 0.",
     "staging_fix": {
       "root_cause_reproduced_locally": "importlib.reload(torch) duplicates Triton TORCH_LIBRARY registration",
       "local_package_fix": "verify PyTorch version and CUDA build in a fresh subprocess; never reload the active torch module",
       "callback_behavior": "child commands wait without polling, write completion callbacks, and kill/report at 60 minutes; top-level replay has a 90-minute timed fallback",
-      "remote_submission": "not submitted; retry limit remains exhausted"
+      "remote_submission": "Submitted after explicit user authorization; final corrected replay completed."
     },
-    "training_kernels_launched": 0
+    "training_kernels_launched": 0,
+    "gpu_quota_after_replay_h": 28.22,
+    "replay_version": "final corrected PyTorch setup, callback timeouts enabled",
+    "replay_staging_bug": "Corrected Teton index SHA constant typo; all five hashes now match.",
+    "replay_elapsed_seconds": 854.0,
+    "replay_heldout": {
+      "tile_count": 358,
+      "threshold": 0.9,
+      "iou": 0.2748,
+      "f1": 0.4311,
+      "tp": 301931,
+      "fp": 325818,
+      "fn": 471116
+    },
+    "replay_park_city_heldout": {
+      "iou": 0.2133,
+      "f1": 0.3516
+    },
+    "replay_callback": "complete; no inference/model-work error",
+    "gpu_quota_after_failed_replay_retry_h": 28.56,
+    "park_city_best_followup_candidate": "PC2018 municipal imagery flown June 24 and July 1, 2018 was bounded-fetched for 24 canonical windows; 13/24 are all-zero. Complete September 2018 NAIP coverage remains a secondary candidate."
   },
   "audit": {
     "sampled_windows": 45,
     "requested_windows": 48,
-    "no_val_candidates": ["kelly_canyon", "teton_pass"],
+    "no_val_candidates": [
+      "kelly_canyon",
+      "teton_pass"
+    ],
     "windows_with_valid_image_fraction_below_0_99": 17,
     "windows_with_valid_image_fraction_below_0_50": 8,
     "windows_with_valid_image_fraction_below_0_10": 5,
     "park_city_naip_latest_year_items": 4,
-    "park_city_reconstructed_acquisition_dates": ["2021-09-24", "2021-11-21"],
+    "park_city_reconstructed_acquisition_dates": [
+      "2021-09-24",
+      "2021-11-21"
+    ],
     "park_city_best_followup_candidate": "2018-09-09 and 2018-09-27; full four-tile coverage; visual weather and trail-change checks pending",
-    "visual_snow_review": "qualitative only; no corridor snow fraction or independent human adjudication"
+    "visual_snow_review": "not adjudicated; image-only sheets are awaiting blinded human review",
+    "park_city_canonical_imagery_windows": 24,
+    "park_city_canonical_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
+    "park_city_candidate_2018_image_service": {
+      "all_24_windows_requested": true,
+      "allzero_windows": 13,
+      "mean_zero_filled_pixel_fraction": 0.571854,
+      "mask_validity_reported": 1.0,
+      "human_condition_review": "pending"
+    }
   },
   "split_audit": {
     "recovered_membership_counts": {
@@ -59,23 +102,51 @@
       "heldout": "47c376d79165caf828c81f77c87f20f6fef907b0fc7f947f7ca5c7eefea82c8f"
     },
     "pairwise_cross_split_tile_footprints_m2": {
-      "corner_canyon": {"train_val": 76677.12, "train_heldout": 648806.4, "val_heldout": 0.0},
-      "kelly_canyon": {"train_val": 0.0, "train_heldout": 524943.36, "val_heldout": 0.0},
-      "park_city": {"train_val": 277217.28, "train_heldout": 153354.24, "val_heldout": 401080.32},
-      "snowbasin": {"train_val": 253624.32, "train_heldout": 0.0, "val_heldout": 0.0},
-      "teton_pass": {"train_val": 0.0, "train_heldout": 0.0, "val_heldout": 0.0}
+      "corner_canyon": {
+        "train_val": 76677.12,
+        "train_heldout": 648806.4,
+        "val_heldout": 0.0
+      },
+      "kelly_canyon": {
+        "train_val": 0.0,
+        "train_heldout": 524943.36,
+        "val_heldout": 0.0
+      },
+      "park_city": {
+        "train_val": 277217.28,
+        "train_heldout": 153354.24,
+        "val_heldout": 401080.32
+      },
+      "snowbasin": {
+        "train_val": 253624.32,
+        "train_heldout": 0.0,
+        "val_heldout": 0.0
+      },
+      "teton_pass": {
+        "train_val": 0.0,
+        "train_heldout": 0.0,
+        "val_heldout": 0.0
+      }
     },
     "provisional_45_window_split_and_exclusive_geometry_check": "45/45 split assignments match indexes; 45/45 windows lie within split-exclusive geometry; raster pixel identity remains unverified",
     "limitations": "Footprints are index-center-derived 512 px squares at 0.6 m; source nodata/valid pixel overlap is unavailable"
   },
   "plan_gates": {
-    "diagnostics": "blocked_before_execution; A replay failed before inference",
+    "diagnostics": "A replay complete; pixel baseline reproduced; modality/weather and independent-reference diagnostics remain unsupported",
     "launch_decisions": "written; all five training arms not_eligible",
     "diagnostics_artifact": "experiments/overnight-20261107/diagnostics.json",
     "launch_decisions_artifact": "experiments/overnight-20261107/launch_decisions.json"
   },
   "site_screen": {
-    "sites": ["Fruita 18 Road", "Sedona Bell Rock", "Crested Butte", "Buffalo Creek", "Tiger Mountain", "Copper Harbor", "Kingdom Trails"],
+    "sites": [
+      "Fruita 18 Road",
+      "Sedona Bell Rock",
+      "Crested Butte",
+      "Buffalo Creek",
+      "Tiger Mountain",
+      "Copper Harbor",
+      "Kingdom Trails"
+    ],
     "current_decisions": "review_later",
     "independent_verified_samples": 0,
     "permissions_reviewed": false,
@@ -85,21 +156,30 @@
   "park_city_reference_review": {
     "ugrc_features_already_in_park_city_source_labels": 55,
     "independent_verified_geometry_samples": 0,
-    "local_candidates": ["Mountain Trails Foundation Park City Trail Guide", "Park City Municipal GIS"],
+    "local_candidates": [
+      "Mountain Trails Foundation Park City Trail Guide",
+      "Park City Municipal GIS"
+    ],
     "geometry_lineage_historical_accuracy_and_reuse_permission": "unknown",
     "decision": "review_later; request dated local GIS/as-built or maintenance records and permission; exclude existing label overlaps from independent evaluation"
   },
   "training_gate": {
     "status": "not_qualified",
-    "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No arm meets its preregistered evidence gate, and cross-split tile footprints overlap in every area with a nonempty VAL/held-out or train/VAL pairing.",
-    "next_decision": "request authorization for one additional A replay beyond the plan's exhausted staging retry cap; after parity, obtain independent dated trail references and use split-exclusive audit windows before registering a training arm"
+    "reason": "Replay parity is sufficient for the published held-out F1 and all five regenerated index hashes, but there are zero independent verified label/distractor samples, no blinded weather adjudication, unverified paired-image band/mask semantics, and split-footprint overlap.",
+    "next_decision": "Complete image-band and nodata-mask integrity checks, conduct blinded canonical-window visibility review, and obtain dated independent Park City trail records with permission before considering any training arm."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
     "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
-    "full_test_suite": "87 passed, 146 warnings",
+    "full_test_suite": "87 passed, 146 warnings (previously run; rerun after documentation/code edits)",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0
+  },
+  "artifacts": {
+    "replay_output": "experiments/overnight-20261107/kaggle-a-replay-final-output/",
+    "replay_metrics": "experiments/overnight-20261107/kaggle-a-replay-final-output/metrics.json",
+    "canonical_imagery_screen": "experiments/overnight-20261107/park-city-imagery-final-output/park-city-imagery/paired-imagery-screen.json",
+    "canonical_contact_sheets": "experiments/overnight-20261107/park-city-imagery-final-output/park-city-imagery/paired-contact-sheet-01.png through paired-contact-sheet-04.png"
   }
 }

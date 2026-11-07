@@ -1,0 +1,34 @@
+{
+  "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+  "checkpoint_handoff_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+  "checkpoint_matches_handoff": true,
+  "regenerated_a_index_hashes": {
+    "corner_canyon": {
+      "sha256": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "expected_recovered_a_sha256": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "matches": true
+    },
+    "kelly_canyon": {
+      "sha256": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "expected_recovered_a_sha256": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "matches": true
+    },
+    "park_city": {
+      "sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "expected_recovered_a_sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "matches": true
+    },
+    "snowbasin": {
+      "sha256": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+      "expected_recovered_a_sha256": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+      "matches": true
+    },
+    "teton_pass": {
+      "sha256": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "expected_recovered_a_sha256": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "matches": true
+    }
+  },
+  "audit_sample_tile_hashes": "audit/audit_samples.csv",
+  "pixel_identity_verified_for_all_sampled_tiles": false
+}

@@ -356,7 +356,7 @@ EXPECTED_INDEX_SHA256 = {
     "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
     "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
     "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
-    "teton_pass": "f04eff6be5a833ad08d2a882e7c3a88eaf16b53cef4a948eea69ab735b50984f",
+    "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
 }
 
 

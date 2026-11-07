@@ -1,0 +1,15 @@
+{
+  "executable": "/usr/bin/python3",
+  "arguments": [
+    "-c",
+    "import json, torch; print(json.dumps({'version': torch.__version__, 'cuda': torch.version.cuda}))"
+  ],
+  "started_at": "2026-11-07T17:27:42Z",
+  "ended_at": "2026-11-07T17:27:46Z",
+  "elapsed_seconds": 3.796,
+  "timeout_seconds": 3600,
+  "status": "complete",
+  "exit_code": 0,
+  "timed_fallback_triggered": false,
+  "output_tail": "{\"version\": \"2.11.0+cu130\", \"cuda\": \"13.0\"}\n"
+}

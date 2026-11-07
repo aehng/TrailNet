@@ -1,0 +1,710 @@
+{
+  "status": "complete",
+  "started_epoch": 1794073852.0805151,
+  "elapsed_seconds": 16.8,
+  "sample_count": 24,
+  "sample_manifest_source": "24 Park City rows selected from the completed A replay audit_samples.csv; exact recovered-A window centers and dimensions",
+  "sample_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
+  "window_size_target_m": 128,
+  "candidate_flight_dates": [
+    "2018-06-24",
+    "2018-07-01"
+  ],
+  "candidate_gsd_m": 0.5,
+  "current_gsd_m": 0.6,
+  "current_source_metadata": {
+    "count": 4,
+    "dtype": [
+      "uint8",
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "color_interpretation": [
+      "red",
+      "green",
+      "blue",
+      "alpha"
+    ],
+    "band_descriptions": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "nodata": 0.0,
+    "resolution_m": [
+      0.6,
+      0.6
+    ],
+    "crs": "EPSG:32612",
+    "bounds": [
+      448389.0,
+      4494505.2,
+      452655.0,
+      4500084.0
+    ],
+    "tags": {
+      "AREA_OR_POINT": "Area"
+    },
+    "mask_warning_seen": "Rasterio reported NodataShadowWarning; current-mask fractions need validation against source masks, not numeric zero alone."
+  },
+  "review_protocol": "Contact sheets omit labels and predictions; give sheets to a reviewer without the sample key.",
+  "human_visibility_review": "pending; contact sheets contain imagery only",
+  "snow_shadow_cloud_canopy_scored": false,
+  "candidate_rgb_allzero_windows": 13,
+  "candidate_zero_filled_pixel_fraction_mean": 0.571854,
+  "band_order_verified": false,
+  "ml_reuse_permission": "unknown; pixels retrieved only for bounded internal visibility screening",
+  "source_item_identity": "current 2021 item IDs reconstructed from STAC; PC2018 service metadata lists flight dates but not sample-specific source IDs",
+  "windows": [
+    {
+      "sample_id": "W001",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4496871.600000001,
+        449758.2,
+        4496999.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W002",
+      "center_epsg32612_m": [
+        452459.10000000003,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        452395.2,
+        4496871.600000001,
+        452523.0,
+        4496999.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W003",
+      "center_epsg32612_m": [
+        448542.30000000005,
+        4497396.299999999
+      ],
+      "bbox_epsg32612_m": [
+        448478.4,
+        4497332.4,
+        448606.2,
+        4497460.2
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W004",
+      "center_epsg32612_m": [
+        449003.10000000003,
+        4496013.899999999
+      ],
+      "bbox_epsg32612_m": [
+        448939.2,
+        4495950.0,
+        449067.0,
+        4496077.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W005",
+      "center_epsg32612_m": [
+        452689.50000000006,
+        4497165.899999999
+      ],
+      "bbox_epsg32612_m": [
+        452625.6,
+        4497102.0,
+        452753.39999999997,
+        4497229.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 0.230047,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W006",
+      "center_epsg32612_m": [
+        451307.10000000003,
+        4496013.899999999
+      ],
+      "bbox_epsg32612_m": [
+        451243.2,
+        4495950.0,
+        451371.0,
+        4496077.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W007",
+      "center_epsg32612_m": [
+        448542.30000000005,
+        4495553.1
+      ],
+      "bbox_epsg32612_m": [
+        448478.4,
+        4495489.2,
+        448606.2,
+        4495617.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W008",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4497165.899999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4497102.0,
+        449758.2,
+        4497229.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W009",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4495322.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.8,
+        4495258.8,
+        451140.6,
+        4495386.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W010",
+      "center_epsg32612_m": [
+        450846.30000000005,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        450782.4,
+        4496871.600000001,
+        450910.2,
+        4496999.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W011",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4494631.499999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4494567.600000001,
+        450219.0,
+        4494695.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W012",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4495322.699999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4495258.8,
+        449758.2,
+        4495386.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W013",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4498778.699999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4498714.8,
+        450219.0,
+        4498842.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W014",
+      "center_epsg32612_m": [
+        451767.9,
+        4497857.1
+      ],
+      "bbox_epsg32612_m": [
+        451704.0,
+        4497793.2,
+        451831.8,
+        4497921.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W015",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4499239.499999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.8,
+        4499175.600000001,
+        451140.6,
+        4499303.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W016",
+      "center_epsg32612_m": [
+        450615.9,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        450552.0,
+        4499636.4,
+        450679.8,
+        4499764.2
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W017",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4499009.1
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4498945.2,
+        450219.0,
+        4499073.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W018",
+      "center_epsg32612_m": [
+        450846.30000000005,
+        4499469.899999999
+      ],
+      "bbox_epsg32612_m": [
+        450782.4,
+        4499406.0,
+        450910.2,
+        4499533.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W019",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4497626.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.8,
+        4497562.8,
+        451140.6,
+        4497690.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 1.0,
+      "candidate_rgb_nonzero_fraction": 0.0,
+      "candidate_zero_return_suspected": true,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W020",
+      "center_epsg32612_m": [
+        451998.30000000005,
+        4499930.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451934.4,
+        4499866.8,
+        452062.2,
+        4499994.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W021",
+      "center_epsg32612_m": [
+        452459.10000000003,
+        4498087.499999999
+      ],
+      "bbox_epsg32612_m": [
+        452395.2,
+        4498023.600000001,
+        452523.0,
+        4498151.4
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W022",
+      "center_epsg32612_m": [
+        451998.30000000005,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        451934.4,
+        4499636.4,
+        452062.2,
+        4499764.2
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W023",
+      "center_epsg32612_m": [
+        452689.50000000006,
+        4494861.899999999
+      ],
+      "bbox_epsg32612_m": [
+        452625.6,
+        4494798.0,
+        452753.39999999997,
+        4494925.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 0.230047,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.0,
+      "candidate_rgb_nonzero_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    },
+    {
+      "sample_id": "W024",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4499636.4,
+        450219.0,
+        4499764.2
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_source": "park_city_naip_rgbn.tif (2021 September/November mosaic)",
+      "candidate_source": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer/exportImage",
+      "candidate_response_content_type": "image/tiff",
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_rgb_zero_fraction": 0.724487,
+      "candidate_rgb_nonzero_fraction": 0.275513,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_band_order": "not verified in service metadata; first three bands shown as served"
+    }
+  ]
+}

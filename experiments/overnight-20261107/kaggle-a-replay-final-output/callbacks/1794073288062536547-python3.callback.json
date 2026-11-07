@@ -1,0 +1,18 @@
+{
+  "executable": "/usr/bin/python3",
+  "arguments": [
+    "scripts/evaluate.py",
+    "--config",
+    "config_exp_t4e2_a_ignore5.yaml",
+    "--thresholds",
+    "0.90"
+  ],
+  "started_at": "2026-11-07T17:40:47Z",
+  "ended_at": "2026-11-07T17:41:28Z",
+  "elapsed_seconds": 40.818,
+  "timeout_seconds": 3600,
+  "status": "complete",
+  "exit_code": 0,
+  "timed_fallback_triggered": false,
+  "output_tail": "eval_threshold=0.90 source=checkpoint\nheld-out tile count=358 IoU=0.2748 F1=0.4311 threshold=0.90 tp=301931 fp=325818 fn=471116\neval_threshold_sweep t=0.90 tp=301931 fp=325818 fn=471116 iou=0.2748 f1=0.4311 legacy_f1=0.3353 legacy_iou=0.2014\neval_threshold_sweep area=corner_canyon t=0.90 tp=167044 fp=133510 fn=259869 iou=0.2981 f1=0.4592\neval_threshold_sweep area=kelly_canyon t=0.90 tp=99323 fp=140842 fn=131554 iou=0.2672 f1=0.4217\neval_threshold_sweep area=park_city t=0.90 tp=35564 fp=51466 fn=79693 iou=0.2133 f1=0.3516\nskip novelty for kelly_canyon: missing pred or OSM file\nskip novelty for corner_canyon: missing pred or OSM file\nskip novelty for park_city: missing pred or OSM file\nskip novelty for teton_pass: missing pred or OSM file\nskip novelty for snowbasin: missing pred or OSM file\npredicted line features not matching OSM within tolerance: {}\n"
+}
