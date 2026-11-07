@@ -51,6 +51,8 @@ All five candidate arms remain ineligible in `launch_decisions.json`. A held-out
 
 **Recommended next action:** inspect why W005 and W023 have partial current imagery, then measure stable-landmark registration for the 24 paired NAIP windows and request dated independent Park City trail references. Do not launch training until label and weather gates are supported.
 
+I also screened public Park City trail-reference sources. UGRC's Trails and Pathways service is current (page updated October 6, 2026) and has useful class, surface, steward, source, and edit-date fields, but UGRC describes it as incomplete and includes pathways and important road connections. The existing source-label review already found 55 UGRC features in the Park City labels, so those overlaps cannot independently validate them. The Mountain Trails Foundation site provides a current trail guide and condition reports, while the City GIS page describes maintained services; neither reviewed page establishes dated historical geometry and ML reuse terms. The source-by-source evidence is recorded in `park-city-reference-source-screen.json`. Keep trusted VAL references at zero pending provenance, date, non-overlap, and permissions checks.
+
 ## Artifacts
 
 - Exact reconstructed current NAIP item metadata: `naip-2021-item-metadata.json`
@@ -63,4 +65,4 @@ All five candidate arms remain ineligible in `launch_decisions.json`. A held-out
 
 ## Verification record
 
-Fresh verification completed: `pytest -q` passed 88 tests with 148 warnings in the normal Windows context. The focused NAIP writer regression passed and confirms unchanged pixel values with band 4 tagged `undefined`. All 73 experiment JSON files parse, including the new VAL modality artifact. The focused ablation tests pass (5 tests). The September 2018 NAIP comparison has 24 windows and zero allzero responses; the municipal PC2018 comparison has 13/24 allzero responses. The paired 2021/2018 screen reports partial current imagery in W005 and W023. All five A index hashes match. `git diff --check` passes.
+Fresh verification completed: `pytest -q` passed 88 tests with 148 warnings in the normal Windows context. The focused NAIP writer regression passed and confirms unchanged pixel values with band 4 tagged `undefined`. All 74 experiment JSON files parse, including the VAL modality artifact and public reference-source screen. The focused ablation tests pass (5 tests). The September 2018 NAIP comparison has 24 windows and zero allzero responses; the municipal PC2018 comparison has 13/24 allzero responses. The paired 2021/2018 screen reports partial current imagery in W005 and W023. All five A index hashes match. `git diff --check` passes.

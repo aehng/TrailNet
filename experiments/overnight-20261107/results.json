@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T19:44:25Z",
+  "updated_at": "2026-11-07T19:47:02Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -205,6 +205,13 @@
     "geometry_lineage_historical_accuracy_and_reuse_permission": "unknown",
     "decision": "review_later; request dated local GIS/as-built or maintenance records and permission; exclude existing label overlaps from independent evaluation"
   },
+  "park_city_reference_source_screen": {
+    "status": "completed_public_source_metadata_screen_no_new_independent_geometry_qualified",
+    "artifact": "experiments/overnight-20261107/park-city-reference-source-screen.json",
+    "findings": "UGRC Trails and Pathways has useful class/surface/steward/source/edit-date fields but is incomplete, includes path and road-connection semantics, and 55 UGRC features already occur in source labels. MTF public pages show current guides/reports but no reviewed evidence of dated historical geometry or ML reuse terms. City GIS publishes services and contact, but historical geometry/terms remain unverified.",
+    "trusted_val_reference_count": 0,
+    "training_gate_changed": false
+  },
   "training_gate": {
     "status": "not_qualified",
     "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
@@ -218,7 +225,7 @@
     "full_test_suite": "88 passed, 148 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0,
-    "artifact_validation": "73 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; paired 2021 screen has 2 partial-coverage windows (W005/W023); no_train=true.",
+    "artifact_validation": "74 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen is recorded separately and does not qualify geometry; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; paired 2021 screen has 2 partial-coverage windows (W005/W023); no_train=true.",
     "git_diff_check": "passed",
     "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds",
     "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs",

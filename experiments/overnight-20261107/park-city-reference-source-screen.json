@@ -1,0 +1,54 @@
+{
+  "screened_at": "2026-11-07",
+  "purpose": "Identify candidate dated trail references for an independent Park City label and distractor audit.",
+  "decision": "no_new_independent_geometry_qualified",
+  "sources": [
+    {
+      "name": "Utah Trails and Pathways (UGRC / WFRC)",
+      "url": "https://gis.utah.gov/products/sgid/recreation/trails-pathways/",
+      "feature_service": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TrailsAndPathways/FeatureServer/0",
+      "public_metadata_last_updated": "2026-10-06",
+      "observed_metadata": [
+        "Polyline feature layer; schema includes Class, SurfaceType, DesignatedUses, OwnerSteward, DataSource, created_date, and last_edited_date.",
+        "UGRC describes the statewide layer as incomplete and says it includes trails and pathways plus important road connections.",
+        "Its published source history includes purchased base data and subsequent agency and regional updates; current feature-level lineage must be checked before using any segment."
+      ],
+      "local_overlap_evidence": "The existing Park City reference review found 55 UGRC features already represented in the source labels. Those overlapping features are not independent evaluation evidence.",
+      "permission_status": "Not verified for this model use; copyright attribution is UGRC, WFRC, but the reviewed pages do not establish a license for this derived use.",
+      "decision": "provenance_triage_only",
+      "why": "Useful fields may help locate dated, stewarded trail segments, but existing overlap, incompleteness, mixed path/road-connection semantics, and unverified use terms prevent treating the layer as independent truth. Exclude all geometry already used by source labels and manually verify any non-overlap candidate against dated imagery or field evidence."
+    },
+    {
+      "name": "Mountain Trails Foundation Park City Trail Guide and current trail reports",
+      "url": "https://mountaintrails.org/",
+      "public_metadata_last_updated": null,
+      "observed_metadata": [
+        "The organization describes its work as building, maintaining, and protecting non-motorized trails in the Park City area.",
+        "Its public guide provides trail and area descriptions, maps, and a route builder; current trail reports provide current conditions and updates."
+      ],
+      "permission_status": "Unknown.",
+      "dated_historical_geometry": "Not established from the reviewed public pages.",
+      "decision": "request_source_records_and_terms",
+      "why": "Potentially authoritative local stewardship context, but current maps/reports alone do not establish historical geometry, positional accuracy, lineage, or permission for ML reuse."
+    },
+    {
+      "name": "Park City Municipal GIS",
+      "url": "https://www.parkcity.gov/services/gis/index.php",
+      "public_metadata_last_updated": null,
+      "observed_metadata": [
+        "The City GIS page says the department maintains spatial data and services and identifies gis@parkcity.gov as its contact."
+      ],
+      "permission_status": "Unknown.",
+      "dated_historical_geometry": "Not established from the reviewed public page; the city's 2018 imagery service is not trail geometry.",
+      "decision": "request_as_built_or_maintenance_records_and_terms",
+      "why": "Ask for dated trail centerlines/as-builts, maintenance or reroute history, positional accuracy, source lineage, and written reuse terms; do not infer permission from public map access."
+    }
+  ],
+  "audit_consequence": "Keep trusted VAL reference count at zero and all training arms ineligible until non-overlapping, dated target and distractor evidence is independently verified and reuse rights are documented.",
+  "source_urls": {
+    "UGRC product page": "https://gis.utah.gov/products/sgid/recreation/trails-pathways/",
+    "UGRC feature service schema and history": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TrailsAndPathways/FeatureServer/0",
+    "Mountain Trails Foundation": "https://mountaintrails.org/",
+    "Park City GIS": "https://www.parkcity.gov/services/gis/index.php"
+  }
+}
