@@ -77,7 +77,7 @@
       "partial_coverage_windows": ["W005", "W023"],
       "valid_fraction_each": 0.230047,
       "other_windows_report_full_validity": true,
-      "investigation": "Trace source footprint and mask through existing mosaic and training tile writer; do not infer full sample coverage from the other windows."
+      "investigation": "Resolved for these two windows: both are on the east source-footprint edge, with 49/213 columns in-bounds and 100% in-footprint valid masks. Broader existing mosaic mask and source-to-training-tensor audit remains open."
     },
     "registration_screen": {
       "artifact": "experiments/overnight-20261107/registration_screen.json",
@@ -90,6 +90,15 @@
     "warning": "Kernel emitted GDAL warning that WarpedVRT ignored optional RES; merge output transform is exact EPSG:32612 at 0.6 m, but stable-landmark registration remains unverified."
   },
   "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
-  "next_step": "W005/W023's partial current-image validity is traced to the eastern source-footprint edge; broaden nodata/mask-to-training-tensor validation across the mosaic. Obtain dated independent Park City trail/distractor geometry and reuse terms; manually validate stable landmarks and trail dates for 2018 imagery. Keep the aggregate ablation as label-agreement sensitivity only until condition-specific references exist.",
-  "park_city_mask_edge_audit": "experiments/overnight-20261107/park-city-mask-edge-audit.json"
+  "outside_footprint_supervision": {
+    "local_v4_edge_tile_count": 61,
+    "local_v4_tile_count": 475,
+    "repeated_outside_source_pixels": 8500264,
+    "local_pixel_identity_with_canonical_a": false,
+    "opt_in_ignore_behavior": "Implemented and tested as tiling.ignore_outside_imagery; default false to preserve A.",
+    "canonical_regeneration_audit": "Pending Kaggle read-only regeneration; no training."
+  },
+  "next_step": "Reproduce the edge-footprint and label-mask counts on a fresh A-source Park City Kaggle tile build; broaden nodata/alpha and source-to-training-tensor validation across the mosaic. Obtain dated independent Park City trail/distractor geometry and reuse terms; manually validate stable landmarks and trail dates for 2018 imagery. Keep training closed until those audits qualify evidence.",
+  "park_city_mask_edge_audit": "experiments/overnight-20261107/park-city-mask-edge-audit.json",
+  "park_city_edge_tile_audit": "experiments/overnight-20261107/park-city-edge-tile-audit.json"
 }

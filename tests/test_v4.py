@@ -74,6 +74,75 @@ def test_tile_stack_has_seven_channels_and_scales_only_terrain(tmp_path):
     assert classes[33, 20] == 1
 
 
+def test_outside_source_pixels_are_ignored_only_when_opted_in(tmp_path):
+    data = tmp_path / "data"
+    data.mkdir()
+    imagery = data / "naip.tif"
+    dtm = data / "dtm.tif"
+    trails = data / "trails.gpkg"
+    yy, xx = np.mgrid[:32, :32]
+    optical = np.full((4, 32, 32), 100, dtype="uint8")
+    optical[:, 2, 2] = 0  # A valid black pixel must not be mistaken for padding.
+    _write_raster(imagery, optical)
+    _write_raster(dtm, (100 + xx * 0.2 + np.sin(yy / 5) * 2).astype("float32"))
+    gpd.GeoDataFrame(
+        [{"highway": "path", "class_group": "path", "source": "test",
+          "geometry": LineString([(500002, 4499995), (500018, 4499995)])},
+         {"highway": "path", "class_group": "path", "source": "test",
+          "geometry": LineString([(500000.6, 4499998.5), (500002.4, 4499998.5)])}],
+        crs="EPSG:32612",
+    ).to_file(trails, driver="GPKG")
+
+    common = {
+        "_root": tmp_path,
+        "tiling": {"tile_size": 64, "overlap": 0,
+                   "trail_buffer_m": {"path": 1.0, "default": 1.0}},
+        "terrain": {"local_relief_radius_px": 8, "channel_gain": 1.0},
+    }
+    area = {"name": "edge", "imagery": "data/naip.tif", "dtm": "data/dtm.tif",
+            "trails": "data/trails.gpkg"}
+    outputs = {}
+    for label, enabled in (("legacy", False), ("ignored", True)):
+        config = {
+            **common,
+            "paths": {"tile_dir": f"tiles_{label}"},
+            "tiling": {**common["tiling"], "ignore_outside_imagery": enabled},
+        }
+        index_path = build_area_tiles(config, area)
+        with index_path.open(newline="", encoding="utf-8") as stream:
+            row = next(csv.DictReader(stream))
+        with rasterio.open(index_path.parent / row["class_map"]) as ds:
+            classes = ds.read(1)
+        with rasterio.open(index_path.parent / row["mask"]) as ds:
+            target = ds.read(1)
+        with rasterio.open(index_path.parent / row["image"]) as ds:
+            image = ds.read()
+        _, _, weights = TrailTileDataset([{
+            "index_dir": str(index_path.parent), "image": row["image"],
+            "mask": row["mask"], "class_map": row["class_map"],
+        }])[0]
+        outside = np.zeros((64, 64), dtype=bool)
+        outside[32:, :] = True
+        outside[:, 32:] = True
+        outputs[label] = (classes, target, image, weights[0].numpy(), outside)
+
+    legacy_classes, legacy_target, legacy_image, legacy_weights, outside = outputs["legacy"]
+    fixed_classes, fixed_target, fixed_image, fixed_weights, _ = outputs["ignored"]
+    assert np.array_equal(legacy_classes[~outside], fixed_classes[~outside])
+    assert np.array_equal(legacy_target[~outside], fixed_target[~outside])
+    assert np.array_equal(legacy_image, fixed_image)
+    assert (legacy_classes[~outside] == 1).any()
+    assert legacy_classes[2, 2] == fixed_classes[2, 2] == 1
+    assert np.all(legacy_image[:4, 2, 2] == 0)
+    assert np.all(legacy_classes[outside] == 0)
+    assert np.all(fixed_classes[outside] == 4)
+    assert np.all(legacy_target[outside] == 0)
+    assert np.all(fixed_target[outside] == 0)
+    assert np.all(legacy_weights[outside] == 1.0)
+    assert np.all(fixed_weights[outside] == 0.0)
+    assert np.array_equal(legacy_weights[~outside], fixed_weights[~outside])
+
+
 def test_prepare_parallel_workers_write_all_tiles(tmp_path):
     data = tmp_path / "data"
     data.mkdir()

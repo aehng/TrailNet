@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T19:50:56Z",
+  "updated_at": "2026-11-07T20:10:08Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -219,6 +219,22 @@
     "result": "Both windows have 49/213 columns in the source footprint and 100% in-footprint valid masks with nonzero RGB. Their 23.0047% valid fraction is explained by east-edge footprint coverage.",
     "broader_nodata_alpha_and_tensor_audit": "open"
   },
+  "park_city_edge_tile_audit": {
+    "status": "local_v4_scan_complete_canonical_tile_pixels_pending",
+    "artifact": "experiments/overnight-20261107/park-city-edge-tile-audit.json",
+    "local_v4": "61/475 tiles have 8,500,264 repeated out-of-footprint tile-pixels, all optical zero and class 0 with background weight 1.0; no positive labels outside footprint.",
+    "canonical_a_index_matches": true,
+    "canonical_tile_pixel_identity": false,
+    "opt_in_tiler_setting": "tiling.ignore_outside_imagery (default false; class 4 ignore outside raster grid)",
+    "training_launched": false
+  },
+  "outside_footprint_ignore": {
+    "implementation": "src/trailnet/data/tiles.py via tiling.ignore_outside_imagery",
+    "default": false,
+    "behavior": "Opt-in tile builds mark only out-of-source-grid pixels as ignore class 4, yielding zero target and weight; in-footprint imagery and labels are unchanged.",
+    "focused_regression": "passed; verifies default behavior, zero-weight exterior, unchanged in-footprint target/weights and image tensor, and preserves an in-footprint black pixel",
+    "full_suite": "94 passed, 164 warnings"
+  },
   "training_gate": {
     "status": "not_qualified",
     "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
@@ -229,10 +245,11 @@
     "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
     "focused_val_ablation_kernel_tests": "5 passed: self-contained Kaggle entrypoint, prepare-before-hash ordering, optical post-normalization neutralization, and terrain-only channel neutralization",
-    "full_test_suite": "88 passed, 148 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
+    "focused_outside_footprint_ignore_test": "1 passed; preserves default behavior and valid in-footprint zero-valued pixels",
+    "full_test_suite": "94 passed, 164 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0,
-    "artifact_validation": "75 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen does not qualify independent geometry; W005/W023 partial validity is source-footprint edge coverage with in-footprint masks valid; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; no_train=true.",
+    "artifact_validation": "77 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen does not qualify independent geometry; W005/W023 partial validity is source-footprint edge coverage with in-footprint masks valid; local tile edge audit is explicitly noncanonical pending Kaggle regeneration; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; no_train=true.",
     "git_diff_check": "passed",
     "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds",
     "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs",

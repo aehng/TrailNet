@@ -162,6 +162,15 @@ def _write_tile(image_ds, dtm_ds, row, col, spec, shape_geometries, shape_codes,
                           fill=0, dtype="uint8", all_touched=True) if class_shapes else np.zeros(
         (size, size), dtype="uint8"
     )
+    if spec.get("ignore_outside_imagery", False):
+        # Boundless optical reads are zero-filled outside the source footprint.
+        # Those pixels are unknown coverage, not observed background. Use the
+        # source grid indices, never pixel values, to preserve legitimate zeros.
+        rows = row + np.arange(size)
+        cols = col + np.arange(size)
+        inside_source = ((rows[:, None] >= 0) & (rows[:, None] < image_ds.height) &
+                         (cols[None, :] >= 0) & (cols[None, :] < image_ds.width))
+        class_map[~inside_source] = 4
     soft_band = float(spec.get("soft_label_band_m") or 0.0)
     if soft_band > 0:
         # Soft confidence in the GPS uncertainty band beyond the hard core.
@@ -296,6 +305,7 @@ def build_area_tiles(config, area):
         ),
         "relief_radius": relief_radius,
         "channel_gain": channel_gain,
+        "ignore_outside_imagery": bool(cfg.get("ignore_outside_imagery", False)),
         "profile": {k: v for k, v in profile.items() if k != "crs"},
         "crs": crs,
     }
