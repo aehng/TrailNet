@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T10:15:51Z",
+  "updated_at": "2026-11-07T10:19:01Z",
   "experiment_status": "early_stop_staging_failure",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -92,7 +92,7 @@
   "training_gate": {
     "status": "not_qualified",
     "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No arm meets its preregistered evidence gate, and cross-split tile footprints overlap in every area with a nonempty VAL/held-out or train/VAL pairing.",
-    "next_decision": "resolve the replay staging issue and its exhausted retry allowance, obtain independent dated trail references, and use split-exclusive audit windows before registering a training arm"
+    "next_decision": "request authorization for one additional A replay beyond the plan's exhausted staging retry cap; after parity, obtain independent dated trail references and use split-exclusive audit windows before registering a training arm"
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",

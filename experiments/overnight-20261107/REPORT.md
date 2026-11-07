@@ -44,7 +44,7 @@ For Park City, request dated MTF GIS/as-built or trail-maintenance records, prov
 
 ## Recommended next action
 
-Fix the dependency installer in a separately reviewed package, then request a new run authorization before submitting another Kaggle kernel because the plan's one staging retry has been consumed. After a successful replay, regenerate the exact A tiles and review the 45-window sample against independent trail references with image-only visibility notes recorded before labels or predictions are revealed. This resolves the remaining tile-pixel identity and audit-blinding gaps before any training arm is chosen.
+The corrected callback-enabled package is tested locally but unsubmitted. Request authorization for one additional A replay beyond the plan's single-staging-retry cap. If authorized, verify the 45 sampled tile hashes against the corrected replay, then complete the A parity gate before starting a blinded audit against dated MTF/city references. Keep training blocked until the relevant preregistered evidence threshold is met.
 
 ## Verification
 

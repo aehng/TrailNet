@@ -28,5 +28,5 @@
     "status": "candidate metadata only; no imagery pair scored"
   },
   "interpretation": "No weather, modality, or imagery-causality claim can be made from this run.",
-  "next_step": "Resolve the A replay staging package and the plan's exhausted retry allowance, then obtain dated independent Park City trail references before selecting paired VAL windows."
+  "next_step": "The corrected replay package is locally tested but unsubmitted; obtain authorization for one additional A replay beyond the exhausted retry cap, then obtain dated independent Park City trail references before selecting paired VAL windows."
 }
