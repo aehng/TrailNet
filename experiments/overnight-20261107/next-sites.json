@@ -3958,5 +3958,39 @@
       "Check trail construction, closure, reroute and label date before using older imagery as evidence."
     ],
     "next_review": "Open same-corridor low-resolution previews and inspect affected trail corridors; record snow/shadow/cloud/leaf status, independent trail references, positional uncertainty and permission."
+  },
+  "park_city_reference_sources": {
+    "reviewed_at": "2026-11-07",
+    "candidates": [
+      {
+        "name": "Utah Trails and Pathways (UGRC)",
+        "url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TrailsAndPathways/FeatureServer/0",
+        "availability": "public feature service; supports trail/path classifications and DataSource/OwnerSteward fields",
+        "independence": "not independent for the current Park City labels: source-manifest/aoi_summary.json records 55 UGRC features in the Park City source vectors",
+        "use": "use DataSource and owner/steward fields to trace provenance and identify records not already used; exclude overlaps with the training labels from independent validation",
+        "limitations": "statewide layer is incomplete and includes paved shared-use paths, road-concurrent routes and links in addition to natural-surface trails; classify features individually"
+      },
+      {
+        "name": "Mountain Trails Foundation Park City Trail Guide",
+        "url": "https://mountaintrails.org/",
+        "map_url": "https://pctrails.org/",
+        "availability": "public current summer/winter trail maps and a current trail report; Park City Municipal identifies mountaintrails.org as its most accurate online trail resource",
+        "independence": "promising local reference candidate, but geometry lineage versus OSM/UGRC and A label vectors is unknown",
+        "use": "request dated GIS centerlines or trail-work/as-built records for the sampled corridors, with construction/reroute dates, use class, positional uncertainty, and written permission for ML evaluation",
+        "limitations": "public map access does not itself establish downloadable geometry, historical accuracy for 2018/2021, or permission to reuse data"
+      },
+      {
+        "name": "Park City Municipal GIS",
+        "url": "https://www.parkcity.gov/services/gis/index.php",
+        "availability": "city GIS staff maintain spatial data and online services; no trail-centerline download was verified in this screen",
+        "independence": "potential source-of-record for city-maintained assets; specific trail coverage and overlap unknown",
+        "use": "ask GIS and Trails & Open Space for dated as-built/maintenance centerlines and permission; keep any unverified map as contextual evidence only",
+        "limitations": "coverage may exclude county, resort, state, and federal land"
+      }
+    ],
+    "verified_independent_geometry_samples": 0,
+    "permission_status": "unknown",
+    "decision": "review_later",
+    "reason": "UGRC is already represented in the current Park City labels. MTF and city sources are credible candidates for a provenance-traced, dated reference, but geometry lineage, historical dates, sample counts, positional uncertainty and reuse permission remain unverified."
   }
 }

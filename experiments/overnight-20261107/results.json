@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T09:45:05Z",
+  "updated_at": "2026-11-07T09:48:23Z",
   "experiment_status": "early_stop_staging_failure",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -47,6 +47,13 @@
     "permissions_reviewed": false,
     "refreshed_run": "complete",
     "all_decisions": "review_later; no candidate has independent verified sample counts or permission review"
+  },
+  "park_city_reference_review": {
+    "ugrc_features_already_in_park_city_source_labels": 55,
+    "independent_verified_geometry_samples": 0,
+    "local_candidates": ["Mountain Trails Foundation Park City Trail Guide", "Park City Municipal GIS"],
+    "geometry_lineage_historical_accuracy_and_reuse_permission": "unknown",
+    "decision": "review_later; request dated local GIS/as-built or maintenance records and permission; exclude existing label overlaps from independent evaluation"
   },
   "training_gate": {
     "status": "not_qualified",
