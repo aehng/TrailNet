@@ -1,0 +1,8 @@
+{
+  "stage": "run",
+  "status": "complete",
+  "recorded_at": "2026-11-07T20:41:21Z",
+  "output": "/kaggle/working/val-modality-ablation.json",
+  "val_tile_count": 172,
+  "elapsed_seconds": 368.31
+}

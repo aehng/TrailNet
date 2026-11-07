@@ -173,7 +173,7 @@
     "opt_in_ignore_behavior": "Implemented and tested as tiling.ignore_outside_imagery; default false to preserve A.",
     "canonical_regeneration_audit": "Park City A-source regeneration complete; five-AOI split and unique-area audit running; no training."
   },
-  "next_step": "Freeze/hash geometric source-bounds masks and run an unchanged A VAL inference with legacy and coverage-aware scores. If parity holds, run one seed of t4q-coverage-ignore as a diagnostic only; keep promotion blocked without independent references. Continue internal nodata/alpha and landmark-registration checks separately.",
+  "next_step": "Verify the staged training package injects the committed bounds-only tiles.py and sets tiling.ignore_outside_imagery=true; then run one seed-42 coverage-ignore diagnostic. Report coverage-aware and legacy VAL metrics. Do not score heldout or promote without trusted independent references.",
   "park_city_mask_edge_audit": "experiments/overnight-20261107/park-city-mask-edge-audit.json",
   "park_city_edge_tile_audit": "experiments/overnight-20261107/park-city-edge-tile-audit.json",
   "source_footprint_audit": {
@@ -213,5 +213,19 @@
     "interpretation": "Missing optical coverage is unsupervisable, not a verified false label. Zero, nodata, alpha, and masks inside source bounds remain a separate unresolved validity audit.",
     "training_launched": false,
     "heldout_predictions_scored": false
+  },
+  "coverage_aware_a_val_baseline": {
+    "status": "complete",
+    "artifact": "experiments/overnight-20261107/a-coverage-baseline-summary.json",
+    "val_membership_sha256": "40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831",
+    "coverage_mask_sha256": "6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52",
+    "legacy_f1_0_90": 0.34278839713795395,
+    "coverage_aware_f1_0_90": 0.3536541461658466,
+    "corner_canyon_f1_legacy_0_90": 0.397819850831899,
+    "corner_canyon_f1_coverage_aware_0_90": 0.6129590975707243,
+    "same_predictions": true,
+    "heldout_scored": false,
+    "training_launched": false,
+    "interpretation": "F1 differences are due to excluding uncovered pixels from the metric; no model gain."
   }
 }

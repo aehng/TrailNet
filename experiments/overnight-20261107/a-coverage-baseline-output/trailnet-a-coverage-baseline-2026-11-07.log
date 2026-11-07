@@ -1,0 +1,34 @@
+[{"stream_name":"stdout","time":0.845194988,"data":"START A checkpoint VAL ablation; no training; held-out split excluded\n"}
+,{"stream_name":"stdout","time":21.04180557,"data":"INPUTS_STAGED; no external file dependencies in kernel code\n"}
+,{"stream_name":"stdout","time":37.024030297,"data":"{\"version\": \"2.11.0+cu130\", \"cuda\": \"13.0\"}\n"}
+,{"stream_name":"stdout","time":304.136365307,"data":"Preparing kelly_canyon...\n"}
+,{"stream_name":"stdout","time":304.136678852,"data":"PREPARE_SETUP area=kelly_canyon tiles=400 workers=4\n"}
+,{"stream_name":"stdout","time":304.136845027,"data":"/kaggle/temp/TrailNet/data/tiles_t4e_a/kelly_canyon/index.csv\n"}
+,{"stream_name":"stdout","time":304.136977648,"data":"Preparing corner_canyon...\n"}
+,{"stream_name":"stdout","time":304.137111663,"data":"PREPARE_SETUP area=corner_canyon tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":304.137245508,"data":"/kaggle/temp/TrailNet/data/tiles_t4e_a/corner_canyon/index.csv\n"}
+,{"stream_name":"stdout","time":304.137345181,"data":"Preparing park_city...\n"}
+,{"stream_name":"stdout","time":304.137470673,"data":"PREPARE_SETUP area=park_city tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":304.137602971,"data":"/kaggle/temp/TrailNet/data/tiles_t4e_a/park_city/index.csv\n"}
+,{"stream_name":"stdout","time":304.137750587,"data":"Preparing teton_pass...\n"}
+,{"stream_name":"stdout","time":304.137894596,"data":"PREPARE_SETUP area=teton_pass tiles=450 workers=4\n"}
+,{"stream_name":"stdout","time":304.138010874,"data":"/kaggle/temp/TrailNet/data/tiles_t4e_a/teton_pass/index.csv\n"}
+,{"stream_name":"stdout","time":304.138150466,"data":"Preparing snowbasin...\n"}
+,{"stream_name":"stdout","time":304.138258796,"data":"PREPARE_SETUP area=snowbasin tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":304.138364906,"data":"/kaggle/temp/TrailNet/data/tiles_t4e_a/snowbasin/index.csv\n"}
+,{"stream_name":"stdout","time":304.165679696,"data":"PREFLIGHT_OK val=172 heldout=358 val_sha256=40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831\n"}
+,{"stream_name":"stderr","time":305.53480069,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":310.12100608,"data":"ABLATION_START full batch_size=2\n"}
+,{"stream_name":"stdout","time":332.613513494,"data":"ABLATION_COMPLETE full\n"}
+,{"stream_name":"stdout","time":332.613934805,"data":"ABLATION_START terrain_neutralized batch_size=2\n"}
+,{"stream_name":"stdout","time":350.679430525,"data":"ABLATION_COMPLETE terrain_neutralized\n"}
+,{"stream_name":"stdout","time":350.679778467,"data":"ABLATION_START optical_neutralized batch_size=2\n"}
+,{"stream_name":"stdout","time":368.752944794,"data":"ABLATION_COMPLETE optical_neutralized\n"}
+,{"stream_name":"stdout","time":369.160789597,"data":"RUN_COMPLETE {\"output\": \"/kaggle/working/val-modality-ablation.json\", \"elapsed_seconds\": 368.31}\n"}
+,{"stream_name":"stderr","time":374.044453967,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":374.044519062,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":374.295340082,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":374.295363901,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":375.049674254,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":376.090881355,"data":"[NbConvertApp] Writing 388228 bytes to __results__.html\n"}
+]

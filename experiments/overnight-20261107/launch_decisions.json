@@ -1,6 +1,6 @@
 {
-  "decision_time": "2026-11-07T20:25:19Z",
-  "training_launch": "none_yet_coverage_aware_baseline_required",
+  "decision_time": "2026-11-07T20:41:21Z",
+  "training_launch": "conditional_diagnostic_only_coverage_aware_baseline_complete",
   "selected_arm": "t4q-coverage-ignore diagnostic only, conditional",
   "confirmation_seed_43_eligible": false,
   "global_gates": {
@@ -27,6 +27,10 @@
     "source_footprint_coverage": {
       "status": "confirmed_geometric_input_coverage_failure",
       "evidence": "All five A index hashes and split counts match. Four AOIs have positive TRAIN targets outside source bounds; Corner Canyon VAL has 9,166 uncovered unique positives (54.04% of VAL positive targets). Bounds-only mask; internal source validity remains open."
+    },
+    "coverage_aware_a_baseline": {
+      "status": "met",
+      "evidence": "Exact 172 VAL IDs and five A index hashes reproduced. A checkpoint 73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a scored legacy and with fixed bounds-only mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52; no heldout predictions."
     }
   },
   "arms": {
@@ -56,14 +60,16 @@
       "evidence": "No trusted VAL distractor audit; registration and tile-pixel identity remain unverified."
     },
     "t4q-coverage-ignore": {
-      "status": "diagnostic_only_conditional_not_launched",
+      "status": "eligible_for_one_diagnostic_run_after_source_injection_preflight",
       "required_gate": "coverage-aware A VAL inference and parity, plus fixed geometric coverage mask hashes",
-      "evidence": "A-source all-area audit: Corner Canyon, Park City, and Snowbasin each exceed 1% unique TRAIN positive target area across at least 8 edge windows and 2 TRAIN blocks. This is missing input coverage, not proven false geometry. Promotion remains blocked pending trusted independent references."
+      "evidence": "A-source all-area audit: Corner Canyon, Park City, and Snowbasin each exceed 1% unique TRAIN positive target area across at least 8 edge windows and 2 TRAIN blocks. This is missing input coverage, not proven false geometry. Promotion remains blocked pending trusted independent references. The unchanged A checkpoint coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52). Unchanged A coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52)."
     }
   },
-  "decision": "Do not train until the unchanged A model has a coverage-aware VAL baseline. Then one diagnostic-only t4q-coverage-ignore run is conditionally justified; no candidate promotion without independent trusted references.",
+  "decision": "One seed-42 t4q-coverage-ignore diagnostic is eligible after preflight verifies code injection and mask setting. It cannot promote; independent trusted references remain required. No heldout scoring for the diagnostic.",
   "reopen_when": [
-    "Coverage mask hashes are frozen and A VAL is re-scored with legacy and coverage-aware metrics.",
+    "A coverage-aware VAL baseline is complete and frozen: mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52; exact A IDs/index hashes match.",
+    "The training preflight injects the committed bounds-only tiles.py and verifies tiling.ignore_outside_imagery=true without using in-bounds nodata or zero values.",
+    "The training preflight injects the committed bounds-only tiles.py and verifies tiling.ignore_outside_imagery=true without using in-bounds nodata or zero values.",
     "Geometric coverage mask tests pass; mask excludes only pixel centers outside source bounds.",
     "Internal nodata/zero/alpha semantics and source-to-training-tensor checks continue as separate audits.",
     "Dated independent Park City trail references and ML reuse permission are obtained.",

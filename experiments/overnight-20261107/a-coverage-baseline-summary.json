@@ -1,0 +1,81 @@
+{
+  "status": "complete",
+  "kernel": "elikearl/trailnet-a-coverage-baseline-2026-11-07 version 1",
+  "source_result": "experiments/overnight-20261107/a-coverage-baseline-output/val-modality-ablation.json",
+  "callback_directory": "experiments/overnight-20261107/a-coverage-baseline-output/callbacks/",
+  "callback_final": {
+    "stage": "run-final",
+    "status": "complete",
+    "recorded_at": "2026-11-07T20:41:21Z",
+    "timed_fallback_triggered": false,
+    "timeout_seconds": 2700,
+    "error": null
+  },
+  "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+  "index_hashes_match_recovered_a": true,
+  "val_tile_count": 172,
+  "val_membership_sha256": "40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831",
+  "coverage_mask": {
+    "definition": "pixel centers outside each source raster's geometric bounds only; in-bounds zero/nodata/alpha values do not extend this mask",
+    "sha256": "6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52",
+    "tile_count": 172,
+    "primary_metric": "coverage_aware_thresholds; legacy thresholds remain reported beside it"
+  },
+  "no_training": true,
+  "heldout_scored": false,
+  "threshold_selection": {
+    "legacy_best": [
+      "0.90",
+      {
+        "tp": 67814,
+        "fp": 150768,
+        "fn": 109265,
+        "iou": 0.20684648631831312,
+        "f1": 0.34278839713795395
+      }
+    ],
+    "coverage_aware_best": [
+      "0.90",
+      {
+        "tp": 67781,
+        "fp": 150653,
+        "fn": 97103,
+        "iou": 0.2148115751876959,
+        "f1": 0.3536541461658466
+      }
+    ]
+  },
+  "fixed_threshold_0_90": {
+    "legacy": {
+      "tp": 67814,
+      "fp": 150768,
+      "fn": 109265,
+      "iou": 0.20684648631831312,
+      "f1": 0.34278839713795395
+    },
+    "coverage_aware": {
+      "tp": 67781,
+      "fp": 150653,
+      "fn": 97103,
+      "iou": 0.2148115751876959,
+      "f1": 0.3536541461658466
+    },
+    "f1_change_due_only_to_coverage_mask": 0.01086575,
+    "corner_canyon_legacy": {
+      "tp": 6934,
+      "fp": 5601,
+      "fn": 15391,
+      "iou": 0.24829907612977153,
+      "f1": 0.397819850831899
+    },
+    "corner_canyon_coverage_aware": {
+      "tp": 6901,
+      "fp": 5486,
+      "fn": 3229,
+      "iou": 0.4419185450819672,
+      "f1": 0.6129590975707243
+    }
+  },
+  "interpretation": "Same checkpoint predictions and VAL tiles. Coverage-aware denominator masks only pixel centers outside source bounds; score change is a scoring correction and not a model improvement. No test/heldout prediction was run.",
+  "source_result_sha256": "448d43dad6a5c862ab2b544af234564f0cba45c582cbcd3883ad33d318264954"
+}

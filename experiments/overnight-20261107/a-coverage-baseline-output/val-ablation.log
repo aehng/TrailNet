@@ -1,0 +1,26 @@
+START A checkpoint VAL ablation; no training; held-out split excluded
+INPUTS_STAGED; no external file dependencies in kernel code
+{"version": "2.11.0+cu130", "cuda": "13.0"}
+Preparing kelly_canyon...
+PREPARE_SETUP area=kelly_canyon tiles=400 workers=4
+/kaggle/temp/TrailNet/data/tiles_t4e_a/kelly_canyon/index.csv
+Preparing corner_canyon...
+PREPARE_SETUP area=corner_canyon tiles=475 workers=4
+/kaggle/temp/TrailNet/data/tiles_t4e_a/corner_canyon/index.csv
+Preparing park_city...
+PREPARE_SETUP area=park_city tiles=475 workers=4
+/kaggle/temp/TrailNet/data/tiles_t4e_a/park_city/index.csv
+Preparing teton_pass...
+PREPARE_SETUP area=teton_pass tiles=450 workers=4
+/kaggle/temp/TrailNet/data/tiles_t4e_a/teton_pass/index.csv
+Preparing snowbasin...
+PREPARE_SETUP area=snowbasin tiles=475 workers=4
+/kaggle/temp/TrailNet/data/tiles_t4e_a/snowbasin/index.csv
+PREFLIGHT_OK val=172 heldout=358 val_sha256=40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831
+ABLATION_START full batch_size=2
+ABLATION_COMPLETE full
+ABLATION_START terrain_neutralized batch_size=2
+ABLATION_COMPLETE terrain_neutralized
+ABLATION_START optical_neutralized batch_size=2
+ABLATION_COMPLETE optical_neutralized
+RUN_COMPLETE {"output": "/kaggle/working/val-modality-ablation.json", "elapsed_seconds": 368.31}
