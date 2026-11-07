@@ -373,6 +373,17 @@ def _frozen_sampler_counts(rows, path, expected_sha256):
     return [counts[key] for key in wanted]
 
 
+def _sampler_counts(config, rows, workers):
+    train_cfg = config.get("training", {})
+    manifest = train_cfg.get("frozen_sampler_manifest")
+    if manifest:
+        return _frozen_sampler_counts(
+            rows, resolve_path(config, manifest), train_cfg.get("frozen_sampler_sha256"))
+    if config.get("tiling", {}).get("ignore_outside_imagery", False):
+        raise ValueError("Coverage-mask training requires the original frozen sampler manifest")
+    return _mask_positive_counts(rows, workers=workers)
+
+
 def _resolve_pixel_weights(config):
     configured = dict(config.get("loss", {}).get("pixel_weights") or {})
     path_weight = float(configured.get("path", 1.0))
@@ -456,13 +467,7 @@ def run_training(config_path=None, area_names=None):
     sampler = None
     pos_tiles = empty_tiles = None
     io_workers = int(train_cfg.get("num_workers", _performance_core_count()))
-    sampler_manifest = train_cfg.get("frozen_sampler_manifest")
-    if sampler_manifest:
-        positive_counts = _frozen_sampler_counts(
-            train_rows, resolve_path(config, sampler_manifest),
-            train_cfg.get("frozen_sampler_sha256"))
-    else:
-        positive_counts = _mask_positive_counts(train_rows, workers=max(1, io_workers))
+    positive_counts = _sampler_counts(config, train_rows, workers=max(1, io_workers))
     if positive_counts is not None and any(count > 0 for count in positive_counts):
         pos_boost_tiles = float(train_cfg.get("pos_oversample", 4.0))
         sample_weights = _make_pos_sampler(positive_counts, boost=pos_boost_tiles)

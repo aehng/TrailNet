@@ -3,7 +3,7 @@ import json
 import pytest
 import torch
 from trailnet.frozen_eval import frozen_counts
-from trailnet.train import _frozen_sampler_counts, _make_pos_sampler
+from trailnet.train import _frozen_sampler_counts, _make_pos_sampler, _sampler_counts
 
 
 def test_frozen_legacy_targets_and_coverage_are_separate():
@@ -29,3 +29,14 @@ def test_original_sampler_survives_treatment_and_order(tmp_path):
     with pytest.raises(ValueError): _frozen_sampler_counts(rows,path,'bad')
     with pytest.raises(ValueError): _frozen_sampler_counts(rows[:1],path,sha)
     with pytest.raises(ValueError): _frozen_sampler_counts([rows[0],rows[0]],path,sha)
+
+
+def test_coverage_training_refuses_recomputed_eligibility(tmp_path):
+    rows=[dict(area='a',image='edge')]
+    config=dict(_root=tmp_path,tiling=dict(ignore_outside_imagery=True),training={})
+    with pytest.raises(ValueError,match='original frozen sampler'):
+        _sampler_counts(config,rows,workers=1)
+    path=tmp_path/'original.json'
+    path.write_text(json.dumps(dict(tiles=[dict(**rows[0],positive_count=7)])))
+    config['training']=dict(frozen_sampler_manifest='original.json',frozen_sampler_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    assert _sampler_counts(config,rows,workers=1)==[7]
