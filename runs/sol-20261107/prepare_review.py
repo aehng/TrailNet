@@ -1,5 +1,5 @@
 """Rebuild original VAL tensors and TRAIN sampler counts; never score heldout."""
-import sys, re, json, hashlib
+import sys, re, json, hashlib, os
 from pathlib import Path
 import numpy as np
 import rasterio
@@ -12,8 +12,9 @@ from trailnet.config import load_config
 from trailnet.data.dataset import read_indexes, spatial_split
 from trailnet.data.tiles import _load_label_index, _write_tile
 OUT=Path(__file__).resolve().parent
-SOURCE=Path('/workspace/trailnet-eval-vb-check/TrailNet/data')
-INDEX=Path('/workspace/TrailNet-handoff-20261106-1650/assets/recovered_A/data/tiles_t4e_a')
+SOURCE=Path(os.environ.get('SOL_SOURCE_ROOT','/workspace/trailnet-eval-vb-check/TrailNet/data'))
+INDEX=Path(os.environ.get('SOL_INDEX_ROOT','/workspace/TrailNet-handoff-20261106-1650/assets/recovered_A/data/tiles_t4e_a'))
+LABEL=Path(os.environ.get('SOL_LABEL_ROOT','/workspace/kaggle-t4e/code/label_overrides'))
 cfg=load_config(ROOT/'config_exp_t4e2_a_ignore5.yaml')
 rows=read_indexes([INDEX/a['name']/'index.csv' for a in cfg['areas']])
 split=spatial_split(rows,2500,.15,.15,42)
@@ -22,7 +23,7 @@ records=[]; val_rows=[]; changed=[]
 for a in cfg['areas']:
     name=a['name']; folder=OUT/'original-val'/name; folder.mkdir(parents=True,exist_ok=True)
     with rasterio.open(SOURCE/name/'naip_rgbn.tif') as im, rasterio.open(SOURCE/name/'3dep_dtm.tif') as dtm:
-        geoms,codes,idx=_load_label_index(Path('/workspace/kaggle-t4e/code/label_overrides')/name/'trails.gpkg',im.crs,cfg['tiling']['trail_buffer_m'],5.,2.)
+        geoms,codes,idx=_load_label_index(LABEL/name/'trails.gpkg',im.crs,cfg['tiling']['trail_buffer_m'],5.,2.)
         profile=im.profile.copy()
         for key in ('blockxsize','blockysize','tiled','interleave'): profile.pop(key,None)
         spec=dict(size=512,relief_radius=25,channel_gain=1.85,out_dir=str(folder),area_name=name,profile=profile,crs=str(im.crs),soft_label_band_m=0,ignore_outside_imagery=False)
