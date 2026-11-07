@@ -1,0 +1,83 @@
+{
+  "seed": 42,
+  "block_size_m": 2500,
+  "index_root": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\tiles_v4",
+  "grid": "seed-42 A-compatible index tile centers; center crop, fixed area/split allocation",
+  "crop_target_m": 128.0,
+  "requested_windows": 48,
+  "sampled_windows": 45,
+  "shortages": [
+    {
+      "area": "kelly_canyon",
+      "split": "val",
+      "requested": 3,
+      "available": 0
+    },
+    {
+      "area": "teton_pass",
+      "split": "val",
+      "requested": 3,
+      "available": 0
+    }
+  ],
+  "tile_raster_pixel_identity_verified": false,
+  "counts_by_area_split_stratum": {
+    "park_city": {
+      "train": {
+        "reference_positive": 6,
+        "apparently_empty": 6
+      },
+      "val": {
+        "reference_positive": 6,
+        "apparently_empty": 6
+      }
+    },
+    "corner_canyon": {
+      "train": {
+        "reference_positive": 2,
+        "apparently_empty": 2
+      },
+      "val": {
+        "reference_positive": 0,
+        "apparently_empty": 3
+      }
+    },
+    "kelly_canyon": {
+      "train": {
+        "reference_positive": 2,
+        "apparently_empty": 2
+      },
+      "val": {
+        "reference_positive": 0,
+        "apparently_empty": 0
+      }
+    },
+    "snowbasin": {
+      "train": {
+        "reference_positive": 2,
+        "apparently_empty": 2
+      },
+      "val": {
+        "reference_positive": 1,
+        "apparently_empty": 2
+      }
+    },
+    "teton_pass": {
+      "train": {
+        "reference_positive": 1,
+        "apparently_empty": 2
+      },
+      "val": {
+        "reference_positive": 0,
+        "apparently_empty": 0
+      }
+    }
+  },
+  "limitations": [
+    "Selection is from existing tiled data and frozen seed-42 spatial split.",
+    "No independent human adjudication; class-map counts are exposed only in audit_samples.csv.",
+    "Snow/cloud/shadow/canopy visibility must be reviewed from the no-overlay contact sheets.",
+    "Tile rasters were sampled from the local tiles_v4 folder; only index CSV hashes match recovered A, not per-tile raster hashes.",
+    "Center-point selection is a first-pass sampler, not a substitute for precise block-footprint clipping."
+  ]
+}

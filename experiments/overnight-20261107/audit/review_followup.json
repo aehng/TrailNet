@@ -1,0 +1,170 @@
+{
+  "footway_named": [
+    {
+      "aoi": "kelly_canyon",
+      "n": 0,
+      "km": 0.0,
+      "named_n": 0,
+      "named_km": 0.0,
+      "unnamed_n": 0,
+      "unnamed_km": 0.0,
+      "named_unique_vs_ugrc_km": 0.0,
+      "unnamed_unique_vs_ugrc_km": 0.0,
+      "named_examples": []
+    },
+    {
+      "aoi": "corner_canyon",
+      "n": 2229,
+      "km": 199.0699783920308,
+      "named_n": 30,
+      "named_km": 2.303811043226458,
+      "unnamed_n": 2199,
+      "unnamed_km": 196.76616734880434,
+      "named_unique_vs_ugrc_km": 1.9134760422569574,
+      "unnamed_unique_vs_ugrc_km": 196.50105286291281,
+      "named_examples": [
+        {
+          "name": "Creek View Foot Path",
+          "km": 0.659
+        },
+        {
+          "name": "Burnham Creek Foot Path",
+          "km": 0.585
+        },
+        {
+          "name": "Casper",
+          "km": 0.295
+        },
+        {
+          "name": "Jungle Trail",
+          "km": 0.242
+        },
+        {
+          "name": "Phantom Foot Path",
+          "km": 0.186
+        },
+        {
+          "name": "Creek View Access Trail",
+          "km": 0.103
+        },
+        {
+          "name": "Memorial Cove Foot Path",
+          "km": 0.086
+        },
+        {
+          "name": "Willow Creek Trail",
+          "km": 0.069
+        },
+        {
+          "name": "White City Canal Trail",
+          "km": 0.028
+        },
+        {
+          "name": "Porter Rockwell Trail",
+          "km": 0.02
+        },
+        {
+          "name": "Draper Canal Trail",
+          "km": 0.015
+        },
+        {
+          "name": "Spring Hollow Trail",
+          "km": 0.012
+        }
+      ]
+    },
+    {
+      "aoi": "park_city",
+      "n": 92,
+      "km": 1.8733312060258747,
+      "named_n": 1,
+      "named_km": 0.5456885789927567,
+      "unnamed_n": 91,
+      "unnamed_km": 1.327642627033118,
+      "named_unique_vs_ugrc_km": 0.42249578501512464,
+      "unnamed_unique_vs_ugrc_km": 1.327642627033118,
+      "named_examples": [
+        {
+          "name": "The Raptor Run",
+          "km": 0.546
+        }
+      ]
+    },
+    {
+      "aoi": "teton_pass",
+      "n": 0,
+      "km": 0.0,
+      "named_n": 0,
+      "named_km": 0.0,
+      "unnamed_n": 0,
+      "unnamed_km": 0.0,
+      "named_unique_vs_ugrc_km": 0.0,
+      "unnamed_unique_vs_ugrc_km": 0.0,
+      "named_examples": []
+    },
+    {
+      "aoi": "snowbasin",
+      "n": 20,
+      "km": 0.9379245061083478,
+      "named_n": 0,
+      "named_km": 0.0,
+      "unnamed_n": 20,
+      "unnamed_km": 0.9379245061083478,
+      "named_unique_vs_ugrc_km": 0.0,
+      "unnamed_unique_vs_ugrc_km": 0.9379245061083478,
+      "named_examples": []
+    }
+  ],
+  "halfpx_labeled_windows": [
+    {
+      "aoi": "kelly_canyon",
+      "measured": true,
+      "window_row": 0,
+      "window_col": 0,
+      "reraster_positive_px": 147,
+      "halfpx_shift_positive_px": 133,
+      "halfpx_shift_xor_px": 38,
+      "halfpx_shift_iou": 0.7610062893081762
+    },
+    {
+      "aoi": "corner_canyon",
+      "measured": true,
+      "window_row": 0,
+      "window_col": 0,
+      "reraster_positive_px": 5635,
+      "halfpx_shift_positive_px": 5688,
+      "halfpx_shift_xor_px": 1249,
+      "halfpx_shift_iou": 0.80130448615972
+    },
+    {
+      "aoi": "park_city",
+      "measured": true,
+      "window_row": 0,
+      "window_col": 0,
+      "reraster_positive_px": 4449,
+      "halfpx_shift_positive_px": 4418,
+      "halfpx_shift_xor_px": 1153,
+      "halfpx_shift_iou": 0.7698602794411178
+    },
+    {
+      "aoi": "teton_pass",
+      "measured": true,
+      "window_row": 0,
+      "window_col": 512,
+      "reraster_positive_px": 2563,
+      "halfpx_shift_positive_px": 2574,
+      "halfpx_shift_xor_px": 627,
+      "halfpx_shift_iou": 0.7824427480916031
+    },
+    {
+      "aoi": "snowbasin",
+      "measured": true,
+      "window_row": 0,
+      "window_col": 0,
+      "reraster_positive_px": 438,
+      "halfpx_shift_positive_px": 437,
+      "halfpx_shift_xor_px": 93,
+      "halfpx_shift_iou": 0.8078512396694215
+    }
+  ]
+}

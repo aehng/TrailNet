@@ -1,0 +1,48 @@
+{
+  "updated_at": "2026-11-07T09:20:00Z",
+  "experiment_status": "in_progress",
+  "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
+  "worktree_branch": "codex/overnight-failure-tests",
+  "inputs": {
+    "raw_source_files_match_published_raster_manifest": true,
+    "recovered_a_tile_index_hashes_match_local_v4_indexes": true,
+    "tile_raster_pixel_identity_verified": false,
+    "a_checkpoint_matches_handoff_sha256": true,
+    "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a"
+  },
+  "local_accelerator": {
+    "device": "Intel Arc 130V XPU, 8 GB",
+    "batch_12_smoke": "failed_out_of_memory",
+    "decision": "no local full training run"
+  },
+  "kaggle": {
+    "gpu_quota_before_replay_h": 28.57,
+    "baseline_replay_kernel": "elikearl/trailnet-t4q-a-replay-2026-11-07",
+    "baseline_replay_status": "QUEUED",
+    "replay_is_evaluation_only": true,
+    "training_kernels_launched": 0
+  },
+  "audit": {
+    "sampled_windows": 45,
+    "requested_windows": 48,
+    "no_val_candidates": ["kelly_canyon", "teton_pass"],
+    "windows_with_valid_image_fraction_below_0_99": 17,
+    "windows_with_valid_image_fraction_below_0_50": 8,
+    "windows_with_valid_image_fraction_below_0_10": 5,
+    "park_city_naip_latest_year_items": 4,
+    "park_city_reconstructed_acquisition_dates": ["2021-09-24", "2021-11-21"],
+    "visual_snow_review": "qualitative only; no corridor snow fraction or independent human adjudication"
+  },
+  "site_screen": {
+    "sites": ["Fruita 18 Road", "Sedona Bell Rock", "Crested Butte", "Buffalo Creek", "Tiger Mountain", "Copper Harbor", "Kingdom Trails"],
+    "current_decisions": "review_later",
+    "independent_verified_samples": 0,
+    "permissions_reviewed": false,
+    "refreshed_run": "in progress"
+  },
+  "training_gate": {
+    "status": "not_qualified",
+    "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No labelmask, labeladd, hard-negative, or weather arm has met its preregistered evidence gate.",
+    "next_decision": "wait for A replay parity; finish a blinded, independently referenced audit before registering a training arm"
+  }
+}

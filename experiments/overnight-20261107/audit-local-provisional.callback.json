@@ -1,0 +1,17 @@
+{
+  "executable": "python",
+  "arguments": [
+    "-u",
+    "scripts/make_audit_windows.py",
+    "--index-root",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\tiles_v4",
+    "--output",
+    "experiments/overnight-20261107/audit/local_tiles_v4_provisional"
+  ],
+  "pid": 34504,
+  "started_at": "2026-11-07T09:18:30.9736787+00:00",
+  "ended_at": "2026-11-07T09:18:38.3082518+00:00",
+  "elapsed_seconds": 7,
+  "status": "complete",
+  "exit_code": 0
+}

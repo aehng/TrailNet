@@ -1,0 +1,29 @@
+{
+  "executable": "python",
+  "arguments": [
+    "-u",
+    "scripts/build_imagery_inventory.py",
+    "--data-root",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data",
+    "--index-root",
+    "C:\\Users\\elijk\\Documents\\TrailNet-handoff-20261106-1650\\assets\\recovered_A\\data\\tiles_t4e_a",
+    "--manifest",
+    "experiments/overnight-20261107/source-manifest/SHA256SUMS.txt",
+    "--summary",
+    "experiments/overnight-20261107/source-manifest/aoi_summary.json",
+    "--naip-trace",
+    "experiments/overnight-20261107/naip-source-dates.json",
+    "--checkpoint",
+    "experiments/overnight-20261107/checkpoint/trailnet_best.pt",
+    "--config",
+    "config_exp_t4e2_a_ignore5.yaml",
+    "--output",
+    "experiments/overnight-20261107"
+  ],
+  "pid": 40072,
+  "started_at": "2026-11-07T09:17:42.3756029+00:00",
+  "ended_at": "2026-11-07T09:17:51.1602764+00:00",
+  "elapsed_seconds": 9,
+  "status": "complete",
+  "exit_code": 0
+}

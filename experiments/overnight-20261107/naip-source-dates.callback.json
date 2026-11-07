@@ -1,0 +1,17 @@
+{
+  "executable": "python",
+  "arguments": [
+    "-u",
+    "scripts/trace_naip_acquisitions.py",
+    "--summary",
+    "experiments/overnight-20261107/source-manifest/aoi_summary.json",
+    "--output",
+    "experiments/overnight-20261107/naip-source-dates.json"
+  ],
+  "pid": 10624,
+  "started_at": "2026-11-07T09:16:31.9306528+00:00",
+  "ended_at": "2026-11-07T09:16:41.2855029+00:00",
+  "elapsed_seconds": 9,
+  "status": "complete",
+  "exit_code": 0
+}

@@ -1,0 +1,303 @@
+{
+  "run": "trailnet-v4",
+  "max_raster_km2": 25.0,
+  "max_raster_pixels": 70000000,
+  "tile_size": 512,
+  "overlap": 128,
+  "channel_count": 7,
+  "terrain_channel_gain": 1.85,
+  "areas": [
+    {
+      "name": "kelly_canyon",
+      "description": "Existing Kelly Canyon NAIP and 3DEP window",
+      "bbox_wsen": [
+        -111.6294,
+        43.617,
+        -111.574,
+        43.6578
+      ],
+      "km2": 20.135,
+      "path_km": 31.051,
+      "track_km": 36.336,
+      "features": 86,
+      "sources": {
+        "OpenStreetMap (ODbL)": 70,
+        "USFS TrailNFS": 16
+      },
+      "source_errors": {
+        "osm": "Refresh timed out; existing OSM labels were retained and merged with USFS."
+      },
+      "raster_acquisition": "reused existing NAIP and 3DEP rasters",
+      "imagery": {
+        "width": 7503,
+        "height": 7608,
+        "pixels": 57082824,
+        "count": 4,
+        "crs": "EPSG:32612",
+        "bounds": [
+          449214.6,
+          4829494.8,
+          453716.39999999997,
+          4834059.6
+        ],
+        "res": [
+          0.6,
+          0.6
+        ]
+      },
+      "dtm": {
+        "width": 4503,
+        "height": 4565,
+        "pixels": 20556195,
+        "count": 1,
+        "crs": "EPSG:32612",
+        "bounds": [
+          449214.0,
+          4829495.0,
+          453717.0,
+          4834060.0
+        ],
+        "res": [
+          1.0,
+          1.0
+        ]
+      },
+      "tile_count": 400,
+      "tile_rows": 20,
+      "tile_cols": 20,
+      "tile_count_basis": "ceil(dim/384) rows and columns at tile_size=512, overlap=128"
+    },
+    {
+      "name": "corner_canyon",
+      "description": "Draper Corner Canyon path and singletrack cluster",
+      "bbox_wsen": [
+        -111.87,
+        40.49,
+        -111.82,
+        40.54
+      ],
+      "km2": 23.394,
+      "path_km": 310.043,
+      "track_km": 18.885,
+      "features": 2691,
+      "sources": {
+        "OpenStreetMap (ODbL)": 2470,
+        "Utah UGRC TrailsAndPathways": 221
+      },
+      "source_errors": {},
+      "raster_acquisition": "fetched from public NAIP STAC and USGS TNMAccess",
+      "imagery": {
+        "width": 7149,
+        "height": 9319,
+        "pixels": 66621531,
+        "count": 4,
+        "crs": "EPSG:32612",
+        "bounds": [
+          426270.0,
+          4482467.399999999,
+          430559.4,
+          4488058.8
+        ],
+        "res": [
+          0.6,
+          0.6
+        ]
+      },
+      "dtm": {
+        "width": 4290,
+        "height": 5592,
+        "pixels": 23989680,
+        "count": 1,
+        "crs": "EPSG:32612",
+        "bounds": [
+          426270.0,
+          4482467.0,
+          430560.0,
+          4488059.0
+        ],
+        "res": [
+          1.0,
+          1.0
+        ]
+      },
+      "tile_count": 475,
+      "tile_rows": 25,
+      "tile_cols": 19,
+      "tile_count_basis": "ceil(dim/384) rows and columns at tile_size=512, overlap=128"
+    },
+    {
+      "name": "park_city",
+      "description": "Wasatch Crest and PCMR trail cluster",
+      "bbox_wsen": [
+        -111.61,
+        40.6,
+        -111.56,
+        40.65
+      ],
+      "km2": 23.355,
+      "path_km": 63.102,
+      "track_km": 27.335,
+      "features": 292,
+      "sources": {
+        "OpenStreetMap (ODbL)": 237,
+        "Utah UGRC TrailsAndPathways": 55
+      },
+      "source_errors": {},
+      "raster_acquisition": "fetched from public NAIP STAC and USGS TNMAccess",
+      "imagery": {
+        "width": 7110,
+        "height": 9298,
+        "pixels": 66108780,
+        "count": 4,
+        "crs": "EPSG:32612",
+        "bounds": [
+          448389.0,
+          4494505.2,
+          452655.0,
+          4500084.0
+        ],
+        "res": [
+          0.6,
+          0.6
+        ]
+      },
+      "dtm": {
+        "width": 4266,
+        "height": 5579,
+        "pixels": 23800014,
+        "count": 1,
+        "crs": "EPSG:32612",
+        "bounds": [
+          448389.0,
+          4494505.0,
+          452655.0,
+          4500084.0
+        ],
+        "res": [
+          1.0,
+          1.0
+        ]
+      },
+      "tile_count": 475,
+      "tile_rows": 25,
+      "tile_cols": 19,
+      "tile_count_basis": "ceil(dim/384) rows and columns at tile_size=512, overlap=128"
+    },
+    {
+      "name": "teton_pass",
+      "description": "Teton Pass trail cluster",
+      "bbox_wsen": [
+        -111.03,
+        43.48,
+        -110.98,
+        43.53
+      ],
+      "km2": 22.319,
+      "path_km": 25.643,
+      "track_km": 0.317,
+      "features": 24,
+      "sources": {
+        "OpenStreetMap (ODbL)": 20,
+        "USFS TrailNFS": 4
+      },
+      "source_errors": {},
+      "raster_acquisition": "fetched from public NAIP STAC and USGS TNMAccess",
+      "imagery": {
+        "width": 6741,
+        "height": 9257,
+        "pixels": 62401437,
+        "count": 4,
+        "crs": "EPSG:32612",
+        "bounds": [
+          497573.39999999997,
+          4814119.8,
+          501617.99999999994,
+          4819674.0
+        ],
+        "res": [
+          0.6,
+          0.6
+        ]
+      },
+      "dtm": {
+        "width": 4045,
+        "height": 5554,
+        "pixels": 22465930,
+        "count": 1,
+        "crs": "EPSG:32612",
+        "bounds": [
+          497573.0,
+          4814120.0,
+          501618.0,
+          4819674.0
+        ],
+        "res": [
+          1.0,
+          1.0
+        ]
+      },
+      "tile_count": 450,
+      "tile_rows": 25,
+      "tile_cols": 18,
+      "tile_count_basis": "ceil(dim/384) rows and columns at tile_size=512, overlap=128"
+    },
+    {
+      "name": "snowbasin",
+      "description": "Snowbasin trail cluster",
+      "bbox_wsen": [
+        -111.89,
+        41.18,
+        -111.84,
+        41.23
+      ],
+      "km2": 23.151,
+      "path_km": 99.842,
+      "track_km": 33.192,
+      "features": 196,
+      "sources": {
+        "OpenStreetMap (ODbL)": 114,
+        "Utah UGRC TrailsAndPathways": 82
+      },
+      "source_errors": {},
+      "raster_acquisition": "fetched from public NAIP STAC and USGS TNMAccess",
+      "imagery": {
+        "width": 7079,
+        "height": 9321,
+        "pixels": 65983359,
+        "count": 4,
+        "crs": "EPSG:32612",
+        "bounds": [
+          425353.2,
+          4559079.0,
+          429600.60000000003,
+          4564671.6
+        ],
+        "res": [
+          0.6,
+          0.6
+        ]
+      },
+      "dtm": {
+        "width": 4248,
+        "height": 5593,
+        "pixels": 23759064,
+        "count": 1,
+        "crs": "EPSG:32612",
+        "bounds": [
+          425353.0,
+          4559079.0,
+          429601.0,
+          4564672.0
+        ],
+        "res": [
+          1.0,
+          1.0
+        ]
+      },
+      "tile_count": 475,
+      "tile_rows": 25,
+      "tile_cols": 19,
+      "tile_count_basis": "ceil(dim/384) rows and columns at tile_size=512, overlap=128"
+    }
+  ]
+}

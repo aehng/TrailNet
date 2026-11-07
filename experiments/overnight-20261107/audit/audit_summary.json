@@ -1,0 +1,225 @@
+{
+  "evidence_type": "pre-existing exploratory audit; copied from the preserved original checkout",
+  "source_directory": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit",
+  "source_config": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\config_v4_local.yaml",
+  "copied_files": [
+    {
+      "file": "measurements.json",
+      "sha256": "9117ac86eaac8bd999bf16515ef562410c64f3d92eed4fb508f129ac9946f280",
+      "bytes": 41161
+    },
+    {
+      "file": "review_followup.json",
+      "sha256": "8c16a2a512249c5b5fa5e21ef7ecc4073980c699b8ecb777680939d744045173",
+      "bytes": 4182
+    },
+    {
+      "file": "km_by_source.csv",
+      "sha256": "fad6d1fd564a75c8b1e3c7942722ba12b02c9a707358de5cb54a5fd2146459c9",
+      "bytes": 501
+    },
+    {
+      "file": "offsets_park_city.csv",
+      "sha256": "0c34044d72eba97f9795d153d678dba0b5b4b92bf142210f0caa268b0c518407",
+      "bytes": 51881
+    },
+    {
+      "file": "offsets_corner_canyon.csv",
+      "sha256": "1ace46a8c058bd2e4f129384926ef532d3d55888ce703bd522b16c9bc9644a67",
+      "bytes": 33868
+    },
+    {
+      "file": "offsets_kelly_canyon.csv",
+      "sha256": "095fcda2ccb6855ad81f4adcda5d0f775592b81309aa846b4c604593c62193d2",
+      "bytes": 51520
+    },
+    {
+      "file": "offsets_snowbasin.csv",
+      "sha256": "2fa2bf8964802c719bddf84891c4583be903fa68421aff856f7f147d1146c5e9",
+      "bytes": 52023
+    },
+    {
+      "file": "offsets_teton_pass.csv",
+      "sha256": "2edb9f9dbb8916996afd3210e763e3478f2841bfa0ceeb27d011db7ff6dcb875",
+      "bytes": 51297
+    },
+    {
+      "file": "overlay_park_city.png",
+      "sha256": "ef9f7f7c9266711325044ff9862ee4c38e827920d5f76925e5d374ee1f6e9bb0",
+      "bytes": 961516
+    },
+    {
+      "file": "overlay_corner_canyon.png",
+      "sha256": "7cec9cbe28ac518496e82737eb139c787e5f05599a3289312e402fe402b54162",
+      "bytes": 840000
+    },
+    {
+      "file": "overlay_kelly_canyon.png",
+      "sha256": "31da17254d85b6e9fe05ea852c264aac9b9d24be3ccaabf675567cfb8782207d",
+      "bytes": 985436
+    },
+    {
+      "file": "overlay_snowbasin.png",
+      "sha256": "72961ee5a6a321cce663ff01b9f52956b0ddfb564cd7d53b6e8922276323bbf5",
+      "bytes": 865547
+    },
+    {
+      "file": "overlay_teton_pass.png",
+      "sha256": "46a7f00d7f3e26b5b6e404dc64eacd32846544af7ed6863de138bbf25faf4bcb",
+      "bytes": 938358
+    }
+  ],
+  "alignment_by_area": {
+    "kelly_canyon": {
+      "n_samples": 500,
+      "mean_offset_m": -0.5628000000000085,
+      "abs_median_m": 4.800000000000006,
+      "share_abs_lt_2m": 0.29,
+      "share_abs_gt_5m": 0.49,
+      "share_abs_gt_10m": 0.26,
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "corner_canyon": {
+      "n_samples": 328,
+      "mean_offset_m": 1.9408536585365754,
+      "abs_median_m": 5.999999999999986,
+      "share_abs_lt_2m": 0.15853658536585366,
+      "share_abs_gt_5m": 0.5579268292682927,
+      "share_abs_gt_10m": 0.32621951219512196,
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "park_city": {
+      "n_samples": 500,
+      "mean_offset_m": 0.003599999999991098,
+      "abs_median_m": 4.200000000000006,
+      "share_abs_lt_2m": 0.29,
+      "share_abs_gt_5m": 0.462,
+      "share_abs_gt_10m": 0.242,
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "teton_pass": {
+      "n_samples": 500,
+      "mean_offset_m": -0.45720000000000866,
+      "abs_median_m": 6.599999999999996,
+      "share_abs_lt_2m": 0.196,
+      "share_abs_gt_5m": 0.576,
+      "share_abs_gt_10m": 0.344,
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "snowbasin": {
+      "n_samples": 500,
+      "mean_offset_m": -0.3384000000000087,
+      "abs_median_m": 4.800000000000006,
+      "share_abs_lt_2m": 0.27,
+      "share_abs_gt_5m": 0.49,
+      "share_abs_gt_10m": 0.284,
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "corner_canyon_footway_inventory": {
+    "aoi": "corner_canyon",
+    "n": 2229,
+    "km": 199.0699783920308,
+    "named_n": 30,
+    "named_km": 2.303811043226458,
+    "unnamed_n": 2199,
+    "unnamed_km": 196.76616734880434,
+    "named_unique_vs_ugrc_km": 1.9134760422569574,
+    "unnamed_unique_vs_ugrc_km": 196.50105286291281,
+    "named_examples": [
+      {
+        "name": "Creek View Foot Path",
+        "km": 0.659
+      },
+      {
+        "name": "Burnham Creek Foot Path",
+        "km": 0.585
+      },
+      {
+        "name": "Casper",
+        "km": 0.295
+      },
+      {
+        "name": "Jungle Trail",
+        "km": 0.242
+      },
+      {
+        "name": "Phantom Foot Path",
+        "km": 0.186
+      },
+      {
+        "name": "Creek View Access Trail",
+        "km": 0.103
+      },
+      {
+        "name": "Memorial Cove Foot Path",
+        "km": 0.086
+      },
+      {
+        "name": "Willow Creek Trail",
+        "km": 0.069
+      },
+      {
+        "name": "White City Canal Trail",
+        "km": 0.028
+      },
+      {
+        "name": "Porter Rockwell Trail",
+        "km": 0.02
+      },
+      {
+        "name": "Draper Canal Trail",
+        "km": 0.015
+      },
+      {
+        "name": "Spring Hollow Trail",
+        "km": 0.012
+      }
+    ]
+  },
+  "limitations": [
+    "Relief-edge offsets measure alignment to a terrain cue, not whether each line is a real trail.",
+    "The sampled relief response can be a road, drainage, ski cut, or other terrain feature.",
+    "No blinded, independently adjudicated image-window audit or snow/cloud/shadow label was present in these artifacts.",
+    "OSM and local source overlap does not establish independent ground truth."
+  ],
+  "interpretation": "Use this evidence to justify a blinded audit and alignment/visibility diagnostics. Do not automatically drop unnamed footways or alter masks from this audit alone.",
+  "current_overnight_sample": {
+    "path": "local_tiles_v4_provisional/audit_window_summary.json",
+    "window_table": "local_tiles_v4_provisional/audit_samples.csv",
+    "contact_sheets": [
+      "local_tiles_v4_provisional/contact_sheet_01.png",
+      "local_tiles_v4_provisional/contact_sheet_02.png",
+      "local_tiles_v4_provisional/contact_sheet_03.png"
+    ],
+    "sampled": 45,
+    "requested": 48,
+    "image_mask_valid_fraction": {
+      "below_0_99": 17,
+      "below_0_50": 8,
+      "below_0_10": 5
+    },
+    "independent_trail_and_distractor_counts": null,
+    "visual_review": "Exploratory, no-overlay screen; snow-like appearance was not converted to verified snow labels or corridor fractions.",
+    "tile_pixel_identity_verified": false,
+    "blinding_note": "This visual screen is not a fully blinded adjudication: the separate sample key was inspected before contact-sheet review. Treat findings as exploratory; do not use them to select or edit labels."
+  },
+  "naip_source_trace": "../naip-source-dates.json",
+  "next_site_screen": "../next-sites.json",
+  "audit_findings": "audit_findings.csv"
+}

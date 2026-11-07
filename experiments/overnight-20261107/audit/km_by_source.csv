@@ -1,0 +1,11 @@
+aoi,source,n,km,path_km,track_km,uncertain_n
+kelly_canyon,osm,70,45.8401,16.5935,29.2466,0
+kelly_canyon,usfs,16,21.5474,14.4575,7.0898,0
+corner_canyon,osm,2470,266.5853,255.4724,11.1129,0
+corner_canyon,ugrc,221,62.3431,54.5708,7.7722,0
+park_city,osm,237,49.5604,32.3314,17.229,0
+park_city,ugrc,55,40.8769,30.7705,10.1064,0
+teton_pass,osm,20,18.1817,17.865,0.3167,0
+teton_pass,usfs,4,7.7777,7.7777,0.0,0
+snowbasin,osm,114,69.1252,49.752,19.3732,0
+snowbasin,ugrc,82,63.9091,50.0899,13.8192,0

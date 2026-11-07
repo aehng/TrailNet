@@ -1,0 +1,15 @@
+{
+  "executable": "kaggle",
+  "arguments": [
+    "kernels",
+    "push",
+    "-p",
+    "experiments/overnight-20261107/kernels/a-replay"
+  ],
+  "pid": 13976,
+  "started_at": "2026-11-07T09:05:40.6119872+00:00",
+  "ended_at": "2026-11-07T09:05:43.6127125+00:00",
+  "elapsed_seconds": 3,
+  "status": "complete",
+  "exit_code": 0
+}

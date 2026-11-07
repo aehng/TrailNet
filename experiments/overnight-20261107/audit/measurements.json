@@ -1,0 +1,1392 @@
+{
+  "config": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\config_v4_local.yaml",
+  "inventory": [
+    {
+      "aoi": "kelly_canyon",
+      "bbox": [
+        -111.6294,
+        43.617,
+        -111.574,
+        43.6578
+      ],
+      "gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\kelly_canyon\\trails.gpkg",
+      "crs": "EPSG:32612",
+      "epsg": 32612,
+      "n_features": 86,
+      "columns": [
+        "highway",
+        "trail_type",
+        "name",
+        "source",
+        "cartocode",
+        "class_group",
+        "label_weight",
+        "priority",
+        "area",
+        "geometry"
+      ],
+      "km_by_source": {
+        "osm": {
+          "n": 70,
+          "km": 45.8401,
+          "path_km": 16.5935,
+          "track_km": 29.2466,
+          "uncertain_n": 0
+        },
+        "usfs": {
+          "n": 16,
+          "km": 21.5474,
+          "path_km": 14.4575,
+          "track_km": 7.0898,
+          "uncertain_n": 0
+        }
+      },
+      "total_km": 67.3874,
+      "path_km": 31.0511,
+      "track_km": 36.3364,
+      "stacking": {
+        "config_flags": {
+          "osm": true,
+          "ugrc": false,
+          "usfs": true
+        },
+        "sources_present": [
+          "osm",
+          "usfs"
+        ],
+        "configured_but_missing": [],
+        "present_but_not_configured": [],
+        "stacked": true
+      },
+      "naip_res_m": [
+        0.6,
+        0.6
+      ],
+      "alignment": {
+        "n_samples": 500,
+        "median_offset_m": -8.881784197001252e-15,
+        "mean_offset_m": -0.5628000000000085,
+        "abs_median_m": 4.800000000000006,
+        "p25_m": -6.000000000000005,
+        "p75_m": 3.599999999999987,
+        "share_abs_lt_2m": 0.29,
+        "share_abs_gt_5m": 0.49,
+        "share_abs_gt_10m": 0.26,
+        "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+        "by_source": {
+          "osm": {
+            "n": 322,
+            "median_m": -8.881784197001252e-15,
+            "mean_m": -0.4639751552795118,
+            "p25_m": -5.400000000000006,
+            "p75_m": 3.599999999999987,
+            "abs_median_m": 4.200000000000006,
+            "share_abs_lt_2m": 0.30434782608695654,
+            "share_abs_gt_5m": 0.4720496894409938
+          },
+          "usfs": {
+            "n": 178,
+            "median_m": -0.3000000000000087,
+            "mean_m": -0.7415730337078736,
+            "p25_m": -6.600000000000005,
+            "p75_m": 4.049999999999988,
+            "abs_median_m": 5.399999999999997,
+            "share_abs_lt_2m": 0.2640449438202247,
+            "share_abs_gt_5m": 0.5224719101123596
+          }
+        },
+        "dtm_pixel_m": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "aoi": "corner_canyon",
+      "bbox": [
+        -111.87,
+        40.49,
+        -111.82,
+        40.54
+      ],
+      "gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\corner_canyon\\trails.gpkg",
+      "crs": "EPSG:32612",
+      "epsg": 32612,
+      "n_features": 2691,
+      "columns": [
+        "highway",
+        "trail_type",
+        "name",
+        "source",
+        "cartocode",
+        "class_group",
+        "label_weight",
+        "priority",
+        "area",
+        "geometry"
+      ],
+      "km_by_source": {
+        "osm": {
+          "n": 2470,
+          "km": 266.5853,
+          "path_km": 255.4724,
+          "track_km": 11.1129,
+          "uncertain_n": 0
+        },
+        "ugrc": {
+          "n": 221,
+          "km": 62.3431,
+          "path_km": 54.5708,
+          "track_km": 7.7722,
+          "uncertain_n": 0
+        }
+      },
+      "total_km": 328.9284,
+      "path_km": 310.0432,
+      "track_km": 18.8851,
+      "stacking": {
+        "config_flags": {
+          "osm": true,
+          "ugrc": true,
+          "usfs": false
+        },
+        "sources_present": [
+          "osm",
+          "ugrc"
+        ],
+        "configured_but_missing": [],
+        "present_but_not_configured": [],
+        "stacked": true
+      },
+      "naip_res_m": [
+        0.6,
+        0.6
+      ],
+      "alignment": {
+        "n_samples": 328,
+        "median_offset_m": 2.9999999999999893,
+        "mean_offset_m": 1.9408536585365754,
+        "abs_median_m": 5.999999999999986,
+        "p25_m": -3.000000000000007,
+        "p75_m": 8.399999999999984,
+        "share_abs_lt_2m": 0.15853658536585366,
+        "share_abs_gt_5m": 0.5579268292682927,
+        "share_abs_gt_10m": 0.32621951219512196,
+        "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+        "by_source": {
+          "osm": {
+            "n": 296,
+            "median_m": 2.9999999999999893,
+            "mean_m": 1.7331081081080981,
+            "p25_m": -3.000000000000007,
+            "p75_m": 8.099999999999987,
+            "abs_median_m": 5.399999999999997,
+            "share_abs_lt_2m": 0.17229729729729729,
+            "share_abs_gt_5m": 0.5236486486486487
+          },
+          "ugrc": {
+            "n": 32,
+            "median_m": 6.599999999999987,
+            "mean_m": 3.8624999999999883,
+            "p25_m": -1.350000000000008,
+            "p75_m": 8.399999999999984,
+            "abs_median_m": 7.199999999999989,
+            "share_abs_lt_2m": 0.03125,
+            "share_abs_gt_5m": 0.875
+          }
+        },
+        "dtm_pixel_m": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "aoi": "park_city",
+      "bbox": [
+        -111.61,
+        40.6,
+        -111.56,
+        40.65
+      ],
+      "gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\park_city\\trails.gpkg",
+      "crs": "EPSG:32612",
+      "epsg": 32612,
+      "n_features": 292,
+      "columns": [
+        "highway",
+        "trail_type",
+        "name",
+        "source",
+        "cartocode",
+        "class_group",
+        "label_weight",
+        "priority",
+        "area",
+        "geometry"
+      ],
+      "km_by_source": {
+        "osm": {
+          "n": 237,
+          "km": 49.5604,
+          "path_km": 32.3314,
+          "track_km": 17.229,
+          "uncertain_n": 0
+        },
+        "ugrc": {
+          "n": 55,
+          "km": 40.8769,
+          "path_km": 30.7705,
+          "track_km": 10.1064,
+          "uncertain_n": 0
+        }
+      },
+      "total_km": 90.4373,
+      "path_km": 63.1019,
+      "track_km": 27.3354,
+      "stacking": {
+        "config_flags": {
+          "osm": true,
+          "ugrc": true,
+          "usfs": false
+        },
+        "sources_present": [
+          "osm",
+          "ugrc"
+        ],
+        "configured_but_missing": [],
+        "present_but_not_configured": [],
+        "stacked": true
+      },
+      "naip_res_m": [
+        0.6,
+        0.6
+      ],
+      "alignment": {
+        "n_samples": 500,
+        "median_offset_m": -0.6000000000000085,
+        "mean_offset_m": 0.003599999999991098,
+        "abs_median_m": 4.200000000000006,
+        "p25_m": -4.200000000000006,
+        "p75_m": 4.349999999999989,
+        "share_abs_lt_2m": 0.29,
+        "share_abs_gt_5m": 0.462,
+        "share_abs_gt_10m": 0.242,
+        "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+        "by_source": {
+          "osm": {
+            "n": 210,
+            "median_m": -0.6000000000000085,
+            "mean_m": -0.0657142857142947,
+            "p25_m": -4.650000000000006,
+            "p75_m": 4.79999999999999,
+            "abs_median_m": 4.79999999999999,
+            "share_abs_lt_2m": 0.2714285714285714,
+            "share_abs_gt_5m": 0.4714285714285714
+          },
+          "ugrc": {
+            "n": 290,
+            "median_m": -8.881784197001252e-15,
+            "mean_m": 0.053793103448266925,
+            "p25_m": -4.200000000000006,
+            "p75_m": 4.049999999999988,
+            "abs_median_m": 4.200000000000006,
+            "share_abs_lt_2m": 0.30344827586206896,
+            "share_abs_gt_5m": 0.45517241379310347
+          }
+        },
+        "dtm_pixel_m": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "aoi": "teton_pass",
+      "bbox": [
+        -111.03,
+        43.48,
+        -110.98,
+        43.53
+      ],
+      "gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\teton_pass\\trails.gpkg",
+      "crs": "EPSG:32612",
+      "epsg": 32612,
+      "n_features": 24,
+      "columns": [
+        "highway",
+        "trail_type",
+        "name",
+        "source",
+        "cartocode",
+        "class_group",
+        "label_weight",
+        "priority",
+        "area",
+        "geometry"
+      ],
+      "km_by_source": {
+        "osm": {
+          "n": 20,
+          "km": 18.1817,
+          "path_km": 17.865,
+          "track_km": 0.3167,
+          "uncertain_n": 0
+        },
+        "usfs": {
+          "n": 4,
+          "km": 7.7777,
+          "path_km": 7.7777,
+          "track_km": 0.0,
+          "uncertain_n": 0
+        }
+      },
+      "total_km": 25.9594,
+      "path_km": 25.6427,
+      "track_km": 0.3167,
+      "stacking": {
+        "config_flags": {
+          "osm": true,
+          "ugrc": false,
+          "usfs": true
+        },
+        "sources_present": [
+          "osm",
+          "usfs"
+        ],
+        "configured_but_missing": [],
+        "present_but_not_configured": [],
+        "stacked": true
+      },
+      "naip_res_m": [
+        0.6,
+        0.6
+      ],
+      "alignment": {
+        "n_samples": 500,
+        "median_offset_m": -0.6000000000000085,
+        "mean_offset_m": -0.45720000000000866,
+        "abs_median_m": 6.599999999999996,
+        "p25_m": -7.200000000000005,
+        "p75_m": 5.549999999999987,
+        "share_abs_lt_2m": 0.196,
+        "share_abs_gt_5m": 0.576,
+        "share_abs_gt_10m": 0.344,
+        "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+        "by_source": {
+          "osm": {
+            "n": 347,
+            "median_m": -0.6000000000000085,
+            "mean_m": -0.703746397694533,
+            "p25_m": -7.200000000000005,
+            "p75_m": 4.79999999999999,
+            "abs_median_m": 6.600000000000005,
+            "share_abs_lt_2m": 0.21037463976945245,
+            "share_abs_gt_5m": 0.5706051873198847
+          },
+          "usfs": {
+            "n": 153,
+            "median_m": 0.5999999999999908,
+            "mean_m": 0.10196078431371654,
+            "p25_m": -6.600000000000005,
+            "p75_m": 6.599999999999987,
+            "abs_median_m": 6.599999999999987,
+            "share_abs_lt_2m": 0.16339869281045752,
+            "share_abs_gt_5m": 0.5882352941176471
+          }
+        },
+        "dtm_pixel_m": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "aoi": "snowbasin",
+      "bbox": [
+        -111.89,
+        41.18,
+        -111.84,
+        41.23
+      ],
+      "gpkg": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\snowbasin\\trails.gpkg",
+      "crs": "EPSG:32612",
+      "epsg": 32612,
+      "n_features": 196,
+      "columns": [
+        "highway",
+        "trail_type",
+        "name",
+        "source",
+        "cartocode",
+        "class_group",
+        "label_weight",
+        "priority",
+        "area",
+        "geometry"
+      ],
+      "km_by_source": {
+        "osm": {
+          "n": 114,
+          "km": 69.1252,
+          "path_km": 49.752,
+          "track_km": 19.3732,
+          "uncertain_n": 0
+        },
+        "ugrc": {
+          "n": 82,
+          "km": 63.9091,
+          "path_km": 50.0899,
+          "track_km": 13.8192,
+          "uncertain_n": 0
+        }
+      },
+      "total_km": 133.0343,
+      "path_km": 99.8419,
+      "track_km": 33.1924,
+      "stacking": {
+        "config_flags": {
+          "osm": true,
+          "ugrc": true,
+          "usfs": false
+        },
+        "sources_present": [
+          "osm",
+          "ugrc"
+        ],
+        "configured_but_missing": [],
+        "present_but_not_configured": [],
+        "stacked": true
+      },
+      "naip_res_m": [
+        0.6,
+        0.6
+      ],
+      "alignment": {
+        "n_samples": 500,
+        "median_offset_m": -0.6000000000000085,
+        "mean_offset_m": -0.3384000000000087,
+        "abs_median_m": 4.800000000000006,
+        "p25_m": -5.400000000000006,
+        "p75_m": 4.199999999999989,
+        "share_abs_lt_2m": 0.27,
+        "share_abs_gt_5m": 0.49,
+        "share_abs_gt_10m": 0.284,
+        "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+        "by_source": {
+          "osm": {
+            "n": 238,
+            "median_m": -0.6000000000000085,
+            "mean_m": -0.7588235294117729,
+            "p25_m": -7.200000000000005,
+            "p75_m": 4.79999999999999,
+            "abs_median_m": 6.000000000000005,
+            "share_abs_lt_2m": 0.21008403361344538,
+            "share_abs_gt_5m": 0.5630252100840336
+          },
+          "ugrc": {
+            "n": 262,
+            "median_m": -0.6000000000000085,
+            "mean_m": 0.043511450381670626,
+            "p25_m": -4.200000000000006,
+            "p75_m": 4.199999999999989,
+            "abs_median_m": 4.199999999999989,
+            "share_abs_lt_2m": 0.3244274809160305,
+            "share_abs_gt_5m": 0.42366412213740456
+          }
+        },
+        "dtm_pixel_m": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ],
+  "cache_compare": {
+    "kelly_canyon": {
+      "osm": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\osm\\osm_d5534fb31edc62ad4e09.json",
+        "exists": false
+      },
+      "ugrc": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\ugrc_3e092e9f6096990530e8.geojson",
+        "exists": false
+      },
+      "usfs": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\usfs_1e86a96f7f5351a17d05.geojson",
+        "exists": true,
+        "raw_features": 16,
+        "clipped_features": 16,
+        "clipped_km": 21.547357629043756,
+        "clipped_path_km": 14.457548298992762,
+        "clipped_track_km": 7.089809330050992,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 21.547357629043756
+      }
+    },
+    "corner_canyon": {
+      "osm": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\osm\\osm_14a99349fffe1d782b5c.json",
+        "exists": true,
+        "raw_features": 2527,
+        "clipped_features": 2527,
+        "clipped_km": 281.9055159764717,
+        "clipped_path_km": 270.12648943651607,
+        "clipped_track_km": 11.779026539955662,
+        "unique_vs_gpkg_km": 0.5524587995877995,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 266.58530336439776
+      },
+      "ugrc": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\ugrc_1290251c03ebf3dd3463.geojson",
+        "exists": true,
+        "raw_features": 228,
+        "clipped_features": 228,
+        "clipped_km": 62.46074113497516,
+        "clipped_path_km": 54.61353926422275,
+        "clipped_track_km": 7.847201870752427,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 62.34307906376462
+      },
+      "usfs": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\usfs_271815ff4e6a579f1695.geojson",
+        "exists": false
+      }
+    },
+    "park_city": {
+      "osm": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\osm\\osm_812d96839bb647cce83b.json",
+        "exists": true,
+        "raw_features": 266,
+        "clipped_features": 266,
+        "clipped_km": 70.81263223398003,
+        "clipped_path_km": 48.276073058151646,
+        "clipped_track_km": 22.536559175828366,
+        "unique_vs_gpkg_km": 0.5195305945084451,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 49.560449672956935
+      },
+      "ugrc": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\ugrc_288d2a3e696a9830332f.geojson",
+        "exists": true,
+        "raw_features": 55,
+        "clipped_features": 55,
+        "clipped_km": 40.8768947750682,
+        "clipped_path_km": 30.770471579428467,
+        "clipped_track_km": 10.106423195639719,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 40.87689477506294
+      },
+      "usfs": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\usfs_d2d8626a982b138cd6ec.geojson",
+        "exists": false
+      }
+    },
+    "teton_pass": {
+      "osm": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\osm\\osm_a14558ad7d7962c40c84.json",
+        "exists": true,
+        "raw_features": 20,
+        "clipped_features": 20,
+        "clipped_km": 18.181700886263624,
+        "clipped_path_km": 17.864977474665327,
+        "clipped_track_km": 0.31672341159829787,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 18.181700886263624
+      },
+      "ugrc": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\ugrc_3ac65d6d2a9a30c63748.geojson",
+        "exists": false
+      },
+      "usfs": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\usfs_aeb8785e347ba886baa0.geojson",
+        "exists": true,
+        "raw_features": 4,
+        "clipped_features": 4,
+        "clipped_km": 7.777729326563291,
+        "clipped_path_km": 7.777729326563291,
+        "clipped_track_km": 0.0,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 7.777729326563291
+      }
+    },
+    "snowbasin": {
+      "osm": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\osm\\osm_d09e4135c7351d01254c.json",
+        "exists": true,
+        "raw_features": 128,
+        "clipped_features": 128,
+        "clipped_km": 86.03152013585154,
+        "clipped_path_km": 59.57417631796466,
+        "clipped_track_km": 26.457343817886873,
+        "unique_vs_gpkg_km": 1.1629987169057474,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 69.12517858830546
+      },
+      "ugrc": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\ugrc_c99c91bc011e2578b36a.geojson",
+        "exists": true,
+        "raw_features": 82,
+        "clipped_features": 82,
+        "clipped_km": 63.90907520426879,
+        "clipped_path_km": 50.0899011493811,
+        "clipped_track_km": 13.81917405488768,
+        "unique_vs_gpkg_km": 0.0,
+        "unique_vs_gpkg_features": 0,
+        "gpkg_same_source_km": 63.90907520426879
+      },
+      "usfs": {
+        "cache_path": "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\data\\_cache\\arcgis\\usfs_51e9ea2edd86ab1522aa.geojson",
+        "exists": false
+      }
+    }
+  },
+  "affine": {
+    "kelly_canyon": {
+      "naip_crs": "EPSG:32612",
+      "naip_epsg": 32612,
+      "naip_transform": [
+        0.6,
+        0.0,
+        449214.6,
+        0.0,
+        -0.6,
+        4834059.6
+      ],
+      "naip_pixel_size_m": [
+        0.6,
+        0.6
+      ],
+      "naip_origin_ul_corner": [
+        449214.6,
+        4834059.6
+      ],
+      "naip_bounds": [
+        449214.6,
+        4829494.8,
+        453716.39999999997,
+        4834059.6
+      ],
+      "naip_width": 7503,
+      "naip_height": 7608,
+      "dtm_crs": "EPSG:32612",
+      "dtm_epsg": 32612,
+      "dtm_transform": [
+        1.0,
+        0.0,
+        449214.0,
+        0.0,
+        -1.0,
+        4834060.0
+      ],
+      "dtm_pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtm_origin_ul_corner": [
+        449214.0,
+        4834060.0
+      ],
+      "same_crs": true,
+      "origin_delta_m": [
+        -0.5999999999767169,
+        0.40000000037252903
+      ],
+      "pixel_convention": "GDAL/rasterio Affine maps (0,0) to the upper-left corner of pixel (0,0). Pixel center is (col+0.5, row+0.5). download._target_grid uses rasterio.transform.from_origin, which is pixel-corner, not pixel-center.",
+      "half_pixel_m": 0.3,
+      "vertex_frac_col_median": 0.508793436223641,
+      "vertex_frac_row_median": 0.48306954512372613,
+      "vertex_frac_near_center_share": 0.09037900874635568,
+      "reraster_positive_px": 1594,
+      "halfpx_shift_positive_px": 1729,
+      "halfpx_shift_xor_px": 459,
+      "halfpx_shift_iou": 0.7572712850343734
+    },
+    "corner_canyon": {
+      "naip_crs": "EPSG:32612",
+      "naip_epsg": 32612,
+      "naip_transform": [
+        0.6,
+        0.0,
+        426270.0,
+        0.0,
+        -0.6,
+        4488058.8
+      ],
+      "naip_pixel_size_m": [
+        0.6,
+        0.6
+      ],
+      "naip_origin_ul_corner": [
+        426270.0,
+        4488058.8
+      ],
+      "naip_bounds": [
+        426270.0,
+        4482467.399999999,
+        430559.4,
+        4488058.8
+      ],
+      "naip_width": 7149,
+      "naip_height": 9319,
+      "dtm_crs": "EPSG:32612",
+      "dtm_epsg": 32612,
+      "dtm_transform": [
+        1.0,
+        0.0,
+        426270.0,
+        0.0,
+        -1.0,
+        4488059.0
+      ],
+      "dtm_pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtm_origin_ul_corner": [
+        426270.0,
+        4488059.0
+      ],
+      "same_crs": true,
+      "origin_delta_m": [
+        0.0,
+        0.20000000018626451
+      ],
+      "pixel_convention": "GDAL/rasterio Affine maps (0,0) to the upper-left corner of pixel (0,0). Pixel center is (col+0.5, row+0.5). download._target_grid uses rasterio.transform.from_origin, which is pixel-corner, not pixel-center.",
+      "half_pixel_m": 0.3,
+      "vertex_frac_col_median": 0.4875269524054602,
+      "vertex_frac_row_median": 0.4980893777683377,
+      "vertex_frac_near_center_share": 0.06390977443609022,
+      "reraster_positive_px": 18195,
+      "halfpx_shift_positive_px": 18084,
+      "halfpx_shift_xor_px": 4055,
+      "halfpx_shift_iou": 0.7989289433232508
+    },
+    "park_city": {
+      "naip_crs": "EPSG:32612",
+      "naip_epsg": 32612,
+      "naip_transform": [
+        0.6,
+        0.0,
+        448389.0,
+        0.0,
+        -0.6,
+        4500084.0
+      ],
+      "naip_pixel_size_m": [
+        0.6,
+        0.6
+      ],
+      "naip_origin_ul_corner": [
+        448389.0,
+        4500084.0
+      ],
+      "naip_bounds": [
+        448389.0,
+        4494505.2,
+        452655.0,
+        4500084.0
+      ],
+      "naip_width": 7110,
+      "naip_height": 9298,
+      "dtm_crs": "EPSG:32612",
+      "dtm_epsg": 32612,
+      "dtm_transform": [
+        1.0,
+        0.0,
+        448389.0,
+        0.0,
+        -1.0,
+        4500084.0
+      ],
+      "dtm_pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtm_origin_ul_corner": [
+        448389.0,
+        4500084.0
+      ],
+      "same_crs": true,
+      "origin_delta_m": [
+        0.0,
+        0.0
+      ],
+      "pixel_convention": "GDAL/rasterio Affine maps (0,0) to the upper-left corner of pixel (0,0). Pixel center is (col+0.5, row+0.5). download._target_grid uses rasterio.transform.from_origin, which is pixel-corner, not pixel-center.",
+      "half_pixel_m": 0.3,
+      "vertex_frac_col_median": 0.48952888569328934,
+      "vertex_frac_row_median": 0.5127704003825784,
+      "vertex_frac_near_center_share": 0.0761904761904762,
+      "reraster_positive_px": 0,
+      "halfpx_shift_positive_px": 0,
+      "halfpx_shift_xor_px": 0,
+      "halfpx_shift_iou": 0.0
+    },
+    "teton_pass": {
+      "naip_crs": "EPSG:32612",
+      "naip_epsg": 32612,
+      "naip_transform": [
+        0.6,
+        0.0,
+        497573.39999999997,
+        0.0,
+        -0.6,
+        4819674.0
+      ],
+      "naip_pixel_size_m": [
+        0.6,
+        0.6
+      ],
+      "naip_origin_ul_corner": [
+        497573.39999999997,
+        4819674.0
+      ],
+      "naip_bounds": [
+        497573.39999999997,
+        4814119.8,
+        501617.99999999994,
+        4819674.0
+      ],
+      "naip_width": 6741,
+      "naip_height": 9257,
+      "dtm_crs": "EPSG:32612",
+      "dtm_epsg": 32612,
+      "dtm_transform": [
+        1.0,
+        0.0,
+        497573.0,
+        0.0,
+        -1.0,
+        4819674.0
+      ],
+      "dtm_pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtm_origin_ul_corner": [
+        497573.0,
+        4819674.0
+      ],
+      "same_crs": true,
+      "origin_delta_m": [
+        -0.3999999999650754,
+        0.0
+      ],
+      "pixel_convention": "GDAL/rasterio Affine maps (0,0) to the upper-left corner of pixel (0,0). Pixel center is (col+0.5, row+0.5). download._target_grid uses rasterio.transform.from_origin, which is pixel-corner, not pixel-center.",
+      "half_pixel_m": 0.3,
+      "vertex_frac_col_median": 0.5350412401603535,
+      "vertex_frac_row_median": 0.5496310889720917,
+      "vertex_frac_near_center_share": 0.08,
+      "reraster_positive_px": 2423,
+      "halfpx_shift_positive_px": 2394,
+      "halfpx_shift_xor_px": 659,
+      "halfpx_shift_iou": 0.7593133674214755
+    },
+    "snowbasin": {
+      "naip_crs": "EPSG:32612",
+      "naip_epsg": 32612,
+      "naip_transform": [
+        0.6,
+        0.0,
+        425353.2,
+        0.0,
+        -0.6,
+        4564671.6
+      ],
+      "naip_pixel_size_m": [
+        0.6,
+        0.6
+      ],
+      "naip_origin_ul_corner": [
+        425353.2,
+        4564671.6
+      ],
+      "naip_bounds": [
+        425353.2,
+        4559079.0,
+        429600.60000000003,
+        4564671.6
+      ],
+      "naip_width": 7079,
+      "naip_height": 9321,
+      "dtm_crs": "EPSG:32612",
+      "dtm_epsg": 32612,
+      "dtm_transform": [
+        1.0,
+        0.0,
+        425353.0,
+        0.0,
+        -1.0,
+        4564672.0
+      ],
+      "dtm_pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtm_origin_ul_corner": [
+        425353.0,
+        4564672.0
+      ],
+      "same_crs": true,
+      "origin_delta_m": [
+        -0.20000000001164153,
+        0.40000000037252903
+      ],
+      "pixel_convention": "GDAL/rasterio Affine maps (0,0) to the upper-left corner of pixel (0,0). Pixel center is (col+0.5, row+0.5). download._target_grid uses rasterio.transform.from_origin, which is pixel-corner, not pixel-center.",
+      "half_pixel_m": 0.3,
+      "vertex_frac_col_median": 0.49934144906001166,
+      "vertex_frac_row_median": 0.5013286806643009,
+      "vertex_frac_near_center_share": 0.08356164383561644,
+      "reraster_positive_px": 0,
+      "halfpx_shift_positive_px": 0,
+      "halfpx_shift_xor_px": 0,
+      "halfpx_shift_iou": 0.0
+    }
+  },
+  "alignment": {
+    "kelly_canyon": {
+      "n_samples": 500,
+      "median_offset_m": -8.881784197001252e-15,
+      "mean_offset_m": -0.5628000000000085,
+      "abs_median_m": 4.800000000000006,
+      "p25_m": -6.000000000000005,
+      "p75_m": 3.599999999999987,
+      "share_abs_lt_2m": 0.29,
+      "share_abs_gt_5m": 0.49,
+      "share_abs_gt_10m": 0.26,
+      "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+      "by_source": {
+        "osm": {
+          "n": 322,
+          "median_m": -8.881784197001252e-15,
+          "mean_m": -0.4639751552795118,
+          "p25_m": -5.400000000000006,
+          "p75_m": 3.599999999999987,
+          "abs_median_m": 4.200000000000006,
+          "share_abs_lt_2m": 0.30434782608695654,
+          "share_abs_gt_5m": 0.4720496894409938
+        },
+        "usfs": {
+          "n": 178,
+          "median_m": -0.3000000000000087,
+          "mean_m": -0.7415730337078736,
+          "p25_m": -6.600000000000005,
+          "p75_m": 4.049999999999988,
+          "abs_median_m": 5.399999999999997,
+          "share_abs_lt_2m": 0.2640449438202247,
+          "share_abs_gt_5m": 0.5224719101123596
+        }
+      },
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "corner_canyon": {
+      "n_samples": 328,
+      "median_offset_m": 2.9999999999999893,
+      "mean_offset_m": 1.9408536585365754,
+      "abs_median_m": 5.999999999999986,
+      "p25_m": -3.000000000000007,
+      "p75_m": 8.399999999999984,
+      "share_abs_lt_2m": 0.15853658536585366,
+      "share_abs_gt_5m": 0.5579268292682927,
+      "share_abs_gt_10m": 0.32621951219512196,
+      "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+      "by_source": {
+        "osm": {
+          "n": 296,
+          "median_m": 2.9999999999999893,
+          "mean_m": 1.7331081081080981,
+          "p25_m": -3.000000000000007,
+          "p75_m": 8.099999999999987,
+          "abs_median_m": 5.399999999999997,
+          "share_abs_lt_2m": 0.17229729729729729,
+          "share_abs_gt_5m": 0.5236486486486487
+        },
+        "ugrc": {
+          "n": 32,
+          "median_m": 6.599999999999987,
+          "mean_m": 3.8624999999999883,
+          "p25_m": -1.350000000000008,
+          "p75_m": 8.399999999999984,
+          "abs_median_m": 7.199999999999989,
+          "share_abs_lt_2m": 0.03125,
+          "share_abs_gt_5m": 0.875
+        }
+      },
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "park_city": {
+      "n_samples": 500,
+      "median_offset_m": -0.6000000000000085,
+      "mean_offset_m": 0.003599999999991098,
+      "abs_median_m": 4.200000000000006,
+      "p25_m": -4.200000000000006,
+      "p75_m": 4.349999999999989,
+      "share_abs_lt_2m": 0.29,
+      "share_abs_gt_5m": 0.462,
+      "share_abs_gt_10m": 0.242,
+      "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+      "by_source": {
+        "osm": {
+          "n": 210,
+          "median_m": -0.6000000000000085,
+          "mean_m": -0.0657142857142947,
+          "p25_m": -4.650000000000006,
+          "p75_m": 4.79999999999999,
+          "abs_median_m": 4.79999999999999,
+          "share_abs_lt_2m": 0.2714285714285714,
+          "share_abs_gt_5m": 0.4714285714285714
+        },
+        "ugrc": {
+          "n": 290,
+          "median_m": -8.881784197001252e-15,
+          "mean_m": 0.053793103448266925,
+          "p25_m": -4.200000000000006,
+          "p75_m": 4.049999999999988,
+          "abs_median_m": 4.200000000000006,
+          "share_abs_lt_2m": 0.30344827586206896,
+          "share_abs_gt_5m": 0.45517241379310347
+        }
+      },
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "teton_pass": {
+      "n_samples": 500,
+      "median_offset_m": -0.6000000000000085,
+      "mean_offset_m": -0.45720000000000866,
+      "abs_median_m": 6.599999999999996,
+      "p25_m": -7.200000000000005,
+      "p75_m": 5.549999999999987,
+      "share_abs_lt_2m": 0.196,
+      "share_abs_gt_5m": 0.576,
+      "share_abs_gt_10m": 0.344,
+      "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+      "by_source": {
+        "osm": {
+          "n": 347,
+          "median_m": -0.6000000000000085,
+          "mean_m": -0.703746397694533,
+          "p25_m": -7.200000000000005,
+          "p75_m": 4.79999999999999,
+          "abs_median_m": 6.600000000000005,
+          "share_abs_lt_2m": 0.21037463976945245,
+          "share_abs_gt_5m": 0.5706051873198847
+        },
+        "usfs": {
+          "n": 153,
+          "median_m": 0.5999999999999908,
+          "mean_m": 0.10196078431371654,
+          "p25_m": -6.600000000000005,
+          "p75_m": 6.599999999999987,
+          "abs_median_m": 6.599999999999987,
+          "share_abs_lt_2m": 0.16339869281045752,
+          "share_abs_gt_5m": 0.5882352941176471
+        }
+      },
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    },
+    "snowbasin": {
+      "n_samples": 500,
+      "median_offset_m": -0.6000000000000085,
+      "mean_offset_m": -0.3384000000000087,
+      "abs_median_m": 4.800000000000006,
+      "p25_m": -5.400000000000006,
+      "p75_m": 4.199999999999989,
+      "share_abs_lt_2m": 0.27,
+      "share_abs_gt_5m": 0.49,
+      "share_abs_gt_10m": 0.284,
+      "direction_note": "Signed offset is metres to the LEFT of digitized line direction (CCW perpendicular). Positive = labels sit left of the relief-edge peak; the peak is then to the RIGHT of the label.",
+      "by_source": {
+        "osm": {
+          "n": 238,
+          "median_m": -0.6000000000000085,
+          "mean_m": -0.7588235294117729,
+          "p25_m": -7.200000000000005,
+          "p75_m": 4.79999999999999,
+          "abs_median_m": 6.000000000000005,
+          "share_abs_lt_2m": 0.21008403361344538,
+          "share_abs_gt_5m": 0.5630252100840336
+        },
+        "ugrc": {
+          "n": 262,
+          "median_m": -0.6000000000000085,
+          "mean_m": 0.043511450381670626,
+          "p25_m": -4.200000000000006,
+          "p75_m": 4.199999999999989,
+          "abs_median_m": 4.199999999999989,
+          "share_abs_lt_2m": 0.3244274809160305,
+          "share_abs_gt_5m": 0.42366412213740456
+        }
+      },
+      "dtm_pixel_m": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "overlays": [
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit\\overlay_kelly_canyon.png",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit\\overlay_corner_canyon.png",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit\\overlay_park_city.png",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit\\overlay_teton_pass.png",
+    "C:\\Users\\elijk\\Documents\\Projects\\TrailNet\\_agent-runs\\label_audit\\overlay_snowbasin.png"
+  ],
+  "highway_breakdown": [
+    {
+      "aoi": "kelly_canyon",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": NaN,
+      "n": 24,
+      "km": 16.593520403460047,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "kelly_canyon",
+      "source": "osm",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": NaN,
+      "n": 46,
+      "km": 29.246550589316715,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "kelly_canyon",
+      "source": "usfs",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "TERRA",
+      "n": 13,
+      "km": 14.457548298992762,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "kelly_canyon",
+      "source": "usfs",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "TERRA",
+      "n": 3,
+      "km": 7.089809330050992,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "cycleway",
+      "n": 65,
+      "km": 19.70096234859811,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "footway",
+      "n": 2229,
+      "km": 199.0699783920308,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "path",
+      "n": 163,
+      "km": 36.701468582773444,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "osm",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "track",
+      "n": 13,
+      "km": 11.112894040995439,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "ugrc",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "ugrc_singletrack",
+      "n": 185,
+      "km": 54.57083670153601,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "corner_canyon",
+      "source": "ugrc",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "ugrc_doubletrack",
+      "n": 36,
+      "km": 7.772242362228623,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "park_city",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "footway",
+      "n": 92,
+      "km": 1.8733312060258747,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "park_city",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "path",
+      "n": 106,
+      "km": 30.45809245474602,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "park_city",
+      "source": "osm",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "track",
+      "n": 39,
+      "km": 17.229026012185034,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "park_city",
+      "source": "ugrc",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "ugrc_singletrack",
+      "n": 40,
+      "km": 30.770471579426026,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "park_city",
+      "source": "ugrc",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "ugrc_doubletrack",
+      "n": 15,
+      "km": 10.106423195636909,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "teton_pass",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "path",
+      "n": 19,
+      "km": 17.864977474665327,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "teton_pass",
+      "source": "osm",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "track",
+      "n": 1,
+      "km": 0.31672341159829787,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "teton_pass",
+      "source": "usfs",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "TERRA",
+      "n": 4,
+      "km": 7.777729326563291,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "cycleway",
+      "n": 8,
+      "km": 10.789609946586511,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "footway",
+      "n": 20,
+      "km": 0.9379245061083478,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "osm",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "path",
+      "n": 48,
+      "km": 38.02446662232363,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "osm",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "track",
+      "n": 38,
+      "km": 19.373177513286983,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "ugrc",
+      "class_group": "path",
+      "highway": "path",
+      "trail_type": "ugrc_singletrack",
+      "n": 56,
+      "km": 50.0899011493811,
+      "n_uncertain": 0
+    },
+    {
+      "aoi": "snowbasin",
+      "source": "ugrc",
+      "class_group": "track",
+      "highway": "track",
+      "trail_type": "ugrc_doubletrack",
+      "n": 26,
+      "km": 13.81917405488768,
+      "n_uncertain": 0
+    }
+  ]
+}

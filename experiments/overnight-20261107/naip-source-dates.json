@@ -1,0 +1,347 @@
+{
+  "generated_at": "2026-11-07T09:16:41.195840+00:00",
+  "method": "NAIP STAC metadata query at retained AOI bounding boxes; no assets downloaded",
+  "areas": [
+    {
+      "area": "kelly_canyon",
+      "bbox_wgs84": [
+        -111.6294,
+        43.617,
+        -111.574,
+        43.6578
+      ],
+      "stac_catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "collection": "naip",
+      "item_count": 28,
+      "truncated": false,
+      "latest_year_selected_by_fetcher": "2023",
+      "items_selected_by_latest_year_rule": [
+        {
+          "id": "id_m_4311128_nw_12_060_20230715_20231018",
+          "datetime": "2023-07-15T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.628174,
+            43.560377,
+            -111.559437,
+            43.627124
+          ]
+        },
+        {
+          "id": "id_m_4311120_sw_12_060_20230715_20231018",
+          "datetime": "2023-07-15T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.628156,
+            43.62283,
+            -111.559421,
+            43.68963
+          ]
+        },
+        {
+          "id": "id_m_4311127_ne_12_060_20230711_20231018",
+          "datetime": "2023-07-11T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.690722,
+            43.560341,
+            -111.621842,
+            43.627179
+          ]
+        },
+        {
+          "id": "id_m_4311119_se_12_060_20230711_20231018",
+          "datetime": "2023-07-11T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.690694,
+            43.622794,
+            -111.621816,
+            43.689685
+          ]
+        }
+      ],
+      "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
+    },
+    {
+      "area": "corner_canyon",
+      "bbox_wgs84": [
+        -111.87,
+        40.49,
+        -111.82,
+        40.54
+      ],
+      "stac_catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "collection": "naip",
+      "item_count": 10,
+      "truncated": false,
+      "latest_year_selected_by_fetcher": "2021",
+      "items_selected_by_latest_year_rule": [
+        {
+          "id": "ut_m_4011134_nw_12_060_20211113",
+          "datetime": "2021-11-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.878226,
+            40.435204,
+            -111.809384,
+            40.502289
+          ]
+        },
+        {
+          "id": "ut_m_4011126_sw_12_060_20211113",
+          "datetime": "2021-11-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.878192,
+            40.49769,
+            -111.809355,
+            40.564774
+          ]
+        }
+      ],
+      "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
+    },
+    {
+      "area": "park_city",
+      "bbox_wgs84": [
+        -111.61,
+        40.6,
+        -111.56,
+        40.65
+      ],
+      "stac_catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "collection": "naip",
+      "item_count": 20,
+      "truncated": false,
+      "latest_year_selected_by_fetcher": "2021",
+      "items_selected_by_latest_year_rule": [
+        {
+          "id": "ut_m_4011128_nw_12_060_20211121",
+          "datetime": "2021-11-21T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.627944,
+            40.560344,
+            -111.559571,
+            40.62712
+          ]
+        },
+        {
+          "id": "ut_m_4011120_sw_12_060_20211121",
+          "datetime": "2021-11-21T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.627963,
+            40.622829,
+            -111.559596,
+            40.689659
+          ]
+        },
+        {
+          "id": "ut_m_4011128_ne_12_060_20210924",
+          "datetime": "2021-09-24T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.565443,
+            40.560396,
+            -111.497132,
+            40.627082
+          ]
+        },
+        {
+          "id": "ut_m_4011120_se_12_060_20210924",
+          "datetime": "2021-09-24T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.565403,
+            40.622881,
+            -111.497169,
+            40.689621
+          ]
+        }
+      ],
+      "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
+    },
+    {
+      "area": "teton_pass",
+      "bbox_wgs84": [
+        -111.03,
+        43.48,
+        -110.98,
+        43.53
+      ],
+      "stac_catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "collection": "naip",
+      "item_count": 34,
+      "truncated": false,
+      "latest_year_selected_by_fetcher": "2023",
+      "items_selected_by_latest_year_rule": [
+        {
+          "id": "id_m_4311140_ne_12_060_20230713_20231018",
+          "datetime": "2023-07-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.06504,
+            43.43566,
+            -110.997501,
+            43.501806
+          ]
+        },
+        {
+          "id": "id_m_4311132_se_12_060_20230713_20231018",
+          "datetime": "2023-07-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.065033,
+            43.498168,
+            -110.997499,
+            43.564314
+          ]
+        }
+      ],
+      "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
+    },
+    {
+      "area": "snowbasin",
+      "bbox_wgs84": [
+        -111.89,
+        41.18,
+        -111.84,
+        41.23
+      ],
+      "stac_catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "collection": "naip",
+      "item_count": 20,
+      "truncated": false,
+      "latest_year_selected_by_fetcher": "2021",
+      "items_selected_by_latest_year_rule": [
+        {
+          "id": "ut_m_4111150_sw_12_060_20210813",
+          "datetime": "2021-08-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.878264,
+            41.122727,
+            -111.809339,
+            41.189806
+          ]
+        },
+        {
+          "id": "ut_m_4111150_nw_12_060_20210813",
+          "datetime": "2021-08-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.878241,
+            41.185206,
+            -111.809321,
+            41.252284
+          ]
+        },
+        {
+          "id": "ut_m_4111149_se_12_060_20210813",
+          "datetime": "2021-08-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.940795,
+            41.122667,
+            -111.871736,
+            41.189836
+          ]
+        },
+        {
+          "id": "ut_m_4111149_ne_12_060_20210813",
+          "datetime": "2021-08-13T16:00:00Z",
+          "assets": [
+            "image",
+            "rendered_preview",
+            "thumbnail",
+            "tilejson"
+          ],
+          "bbox": [
+            -111.940832,
+            41.185199,
+            -111.871777,
+            41.252313
+          ]
+        }
+      ],
+      "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
+    }
+  ]
+}

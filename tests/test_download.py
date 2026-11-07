@@ -5,9 +5,29 @@ import geopandas as gpd
 import pandas as pd
 from shapely.geometry import LineString
 
-from trailnet.data.download import parse_overpass_response
+from trailnet.data.download import parse_overpass_response, probe_3dep
 from trailnet.data.labels import _drop_unnamed_osm_footway
 from trailnet.export import export_geojson, export_gpx, export_kml
+
+
+def test_3dep_probe_preserves_product_footprints_and_resolution_metadata(monkeypatch):
+    from trailnet.data import download
+
+    monkeypatch.setattr(download, "_tnm_page", lambda *args, **kwargs: {
+        "total": 1,
+        "items": [{"title": "USGS one meter tile", "sizeInBytes": 123,
+                   "publicationDate": "2025-01-01", "extent": "10000 x 10000 meter",
+                   "boundingBox": {"minX": -111.9, "minY": 40.6,
+                                   "maxX": -111.8, "maxY": 40.7},
+                   "sourceId": "source-1", "metaUrl": "https://example.test/meta",
+                   "downloadURL": "https://example.test/dem.tif"}],
+    })
+
+    result = probe_3dep([-112, 40.5, -111, 41])
+    product = result["items"][0]
+    assert product["boundingBox"]["minX"] == -111.9
+    assert product["extent"] == "10000 x 10000 meter"
+    assert product["sourceId"] == "source-1"
 
 
 def test_overpass_response_becomes_tagged_trail_lines():

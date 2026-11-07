@@ -12,9 +12,9 @@ dist/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-data/
-outputs/
-checkpoints/
+/data/
+/outputs/
+/checkpoints/
 *.pt
 *.pth
 *.tif
