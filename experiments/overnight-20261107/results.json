@@ -172,9 +172,11 @@
     "focused_callback_and_dependency_tests": "4 passed",
     "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
-    "full_test_suite": "87 passed, 146 warnings (previously run; rerun after documentation/code edits)",
+    "full_test_suite": "87 passed, 146 warnings; fresh `pytest -q` run succeeded in the normal Windows context.",
     "full_suite_command": "pytest -q",
-    "full_suite_exit_code": 0
+    "full_suite_exit_code": 0,
+    "artifact_validation": "All tracked JSON parsed; imagery inventory has 5 rows; canonical screen has 24 windows with 13 allzero candidate windows; all 5 regenerated A index hashes match; no_train=true.",
+    "git_diff_check": "passed before commit"
   },
   "artifacts": {
     "replay_output": "experiments/overnight-20261107/kaggle-a-replay-final-output/",

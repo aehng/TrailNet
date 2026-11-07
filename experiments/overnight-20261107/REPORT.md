@@ -50,4 +50,4 @@ All five candidate arms remain ineligible in `launch_decisions.json`. The A repl
 
 ## Verification record
 
-The full test suite previously completed with 87 passed and 146 warnings. No source-code behavior changed in this documentation and provenance update. Current JSON/CSV consistency, plan content, `git diff --check`, and repository tests still need a fresh verification pass before handoff.
+Fresh verification completed: `pytest -q` passed 87 tests with 146 warnings in the normal Windows context. All experiment JSON parsed; the imagery inventory has five rows; the canonical comparison has 24 windows, 13 allzero candidate windows, and matching hashes for all five A indexes. `git diff --check` passed before commit.
