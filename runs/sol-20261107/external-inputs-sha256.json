@@ -1,0 +1,22 @@
+{
+  "data/corner_canyon/naip_rgbn.tif": "77bcb61829edd4eed1b3664073f2d2ba3b8e261a8c45cfb49b3eceead0153995",
+  "data/corner_canyon/3dep_dtm.tif": "50686517162605a383218a4935cb7e879bbd36bde35d85dce9b6ae4761db080e",
+  "label_overrides/corner_canyon/trails.gpkg": "1f8874f0249bc418a27dd05dd372010de7d7d453d1a618eecb1ac09eb978fc5e",
+  "indexes/corner_canyon/index.csv": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+  "data/kelly_canyon/naip_rgbn.tif": "4254c7c3c9bbffea937c47a2a0324030b427588c5a526181859ebf1a4aff0167",
+  "data/kelly_canyon/3dep_dtm.tif": "7d1c48c6dacc2c2c45b6fba6a7f9570de7912c144b247367c912fe00137d4d7a",
+  "label_overrides/kelly_canyon/trails.gpkg": "3fdc686c567878692745f16e4fe42fd36bd5175d7e9dcd22fc67d05e2cadf69d",
+  "indexes/kelly_canyon/index.csv": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+  "data/park_city/naip_rgbn.tif": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+  "data/park_city/3dep_dtm.tif": "2792b3c2bb6c9e00c0e0a14ef1944d07a2a22666641a3987059dc55cbcb3b922",
+  "label_overrides/park_city/trails.gpkg": "697b2da05021038d7a842dcbd091d79d7a34e961d24cef4bb2b8721a79bf7f14",
+  "indexes/park_city/index.csv": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+  "data/snowbasin/naip_rgbn.tif": "f668953a81f59bd8f4893cc7d0e08b2ae57784a2f30b3fd635a1b6f1158458ed",
+  "data/snowbasin/3dep_dtm.tif": "fe49f372aec7868b9fde9599def326965c537faaaae24394581dcce7a4b67981",
+  "label_overrides/snowbasin/trails.gpkg": "0a44c34378719b68e45636f9a3f93a72b487fa0f5a61ef83daac72365d3baebf",
+  "indexes/snowbasin/index.csv": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+  "data/teton_pass/naip_rgbn.tif": "7430483cdcdf405f932f690a09677f2ca481154eff8cf885cad9d56519ff1801",
+  "data/teton_pass/3dep_dtm.tif": "70c48e3d973fb80044f378654ee5e6fb4e81ba27733d0722e7049d909ce083ae",
+  "label_overrides/teton_pass/trails.gpkg": "1bdb2f53971f046c65d9e51c6e3d00c6d66dfe8bb7b9c72f2852386542790d75",
+  "indexes/teton_pass/index.csv": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f"
+}

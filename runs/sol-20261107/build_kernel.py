@@ -9,7 +9,7 @@ def sha(p):
         for b in iter(lambda:stream.read(1024*1024),b''):h.update(b)
     return h.hexdigest()
 manifest={}
-for area in sorted(p.name for p in labels.iterdir() if p.is_dir()):
+for area in sorted(p.name for p in labels.iterdir() if (indexes/p.name/'index.csv').is_file()):
     for filename in ('naip_rgbn.tif','3dep_dtm.tif'):manifest[f'data/{area}/{filename}']=sha(source/area/filename)
     manifest[f'label_overrides/{area}/trails.gpkg']=sha(labels/area/'trails.gpkg')
     manifest[f'indexes/{area}/index.csv']=sha(indexes/area/'index.csv')
@@ -19,7 +19,7 @@ for p in sorted((ROOT/'src').rglob('*.py')): files[str(p.relative_to(ROOT))]=p.r
 files['config_exp_t4e2_a_ignore5.yaml']=(ROOT/'config_exp_t4e2_a_ignore5.yaml').read_bytes()
 for filename in ('prepare_review.py','tta_val.py','PLAN.md','external-inputs-sha256.json','sampler-original.json'):
     files['runs/sol-20261107/'+filename]=(OUT/filename).read_bytes()
-for area in sorted(p.name for p in labels.iterdir() if p.is_dir()):files[f'indexes/{area}/index.csv']=(indexes/area/'index.csv').read_bytes()
+for area in sorted(p.name for p in labels.iterdir() if (indexes/p.name/'index.csv').is_file()):files[f'indexes/{area}/index.csv']=(indexes/area/'index.csv').read_bytes()
 buf=io.BytesIO()
 with zipfile.ZipFile(buf,'w',compression=zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(files.items()):
