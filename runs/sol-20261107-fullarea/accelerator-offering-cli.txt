@@ -1,0 +1,12 @@
+usage: kaggle kernels push [-h] [-p FOLDER] [-t TIMEOUT] [--accelerator ACC]
+                           [--no-run]
+
+options:
+  -h, --help            show this help message and exit
+  -p, --path FOLDER     Folder for upload, containing data files and a special kernel-metadata.json file (https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels_metadata.md). Defaults to current working directory
+  -t, --timeout TIMEOUT
+                        Limit the run time of a kernel to the given number of seconds. The global maximum time will not be exceeded.
+  --accelerator ACC     Specify the type of accelerator to use for the kernel run (e.g. 'NvidiaTeslaT4' for GPU T4 x2 or 'TpuV5E8' for TPU v5e-8). Retired accelerators such as 'NvidiaTeslaP100' are accepted but warn, since the session runs on a replacement instead.
+  --no-run              Save a new version without running the notebook, the equivalent of Quick Save in the web UI.
+                        The version is created but no cell is executed. Use this when only prose, metadata or
+                        sources changed.

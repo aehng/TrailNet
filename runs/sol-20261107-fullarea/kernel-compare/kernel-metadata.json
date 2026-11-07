@@ -1,0 +1,20 @@
+{
+  "id": "elikearl/trailnet-sol-fullarea-compare-20261107",
+  "title": "trailnet-sol-fullarea-compare-20261107",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "elikearl/trailnet-multiaoi-v4",
+    "elikearl/trailnet-t4e-code",
+    "elikearl/trailnet-t4e2-a-ckpt"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

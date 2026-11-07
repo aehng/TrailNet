@@ -1,0 +1,25 @@
+{
+  "id": "elikearl/trailnet-sol-tta-heldout-20261107",
+  "id_no": 143304558,
+  "title": "trailnet-sol-tta-heldout-20261107",
+  "code_file": "trailnet-sol-tta-heldout-20261107.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "elikearl/trailnet-multiaoi-v4",
+    "elikearl/trailnet-t4e-code",
+    "elikearl/trailnet-t4e2-a-ckpt"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:de153e6d303881930c51286216393d56f56b26458d0661350305a1e8144eea01",
+  "machine_shape": "NvidiaTeslaT4"
+}
