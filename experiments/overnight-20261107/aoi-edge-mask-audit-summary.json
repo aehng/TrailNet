@@ -1,0 +1,461 @@
+{
+  "audited_at": "2026-11-07",
+  "status": "complete",
+  "kernel": "elikearl/trailnet-aoi-edge-mask-audit-2026-11-07",
+  "elapsed_seconds": 270.643,
+  "input_identity": "A-era source rasters, A label overrides, A-era code/config; all five generated index hashes equal recovered A hashes.",
+  "index_hashes": {
+    "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+    "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+    "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+    "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+    "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f"
+  },
+  "split_tile_counts": {
+    "train": 1745,
+    "val": 172,
+    "test": 358
+  },
+  "coverage_definition": "Pixel centers outside the source raster bounds in EPSG:32612; geometric coverage only. This does not reinterpret in-bounds zero values, nodata masks, alpha, or internal data validity.",
+  "pixel_ground_area_m2": 0.36,
+  "areas": {
+    "corner_canyon": {
+      "tile_index_sha256": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "source": {
+        "sha256": "77bcb61829edd4eed1b3664073f2d2ba3b8e261a8c45cfb49b3eceead0153995",
+        "width": 7149,
+        "height": 9319,
+        "crs": "EPSG:32612",
+        "bounds": [
+          426270.0,
+          4482467.399999999,
+          430559.4,
+          4488058.8
+        ],
+        "resolution": [
+          0.6,
+          0.6
+        ],
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ]
+      },
+      "tile_count": 475,
+      "splits": {
+        "train": {
+          "tile_count": 274,
+          "edge_tiles": 58,
+          "positive_edge_tiles": 36,
+          "positive_edge_blocks": [
+            "171,1792",
+            "171,1793",
+            "172,1793",
+            "172,1794"
+          ],
+          "unique_positive_target_pixels": 785130,
+          "unique_positive_target_pixels_outside_footprint": 43700,
+          "outside_fraction_of_unique_positive_targets": 0.05565957,
+          "outside_positive_ground_area_m2": 15732.0,
+          "repeated_tile_positive_pixels_outside_footprint": 57322,
+          "repeated_tile_pixels_outside_footprint": 6966053
+        },
+        "val": {
+          "tile_count": 3,
+          "edge_tiles": 3,
+          "positive_edge_tiles": 3,
+          "positive_edge_blocks": [
+            "172,1792"
+          ],
+          "unique_positive_target_pixels": 16961,
+          "unique_positive_target_pixels_outside_footprint": 9166,
+          "outside_fraction_of_unique_positive_targets": 0.54041625,
+          "outside_positive_ground_area_m2": 3299.76,
+          "repeated_tile_positive_pixels_outside_footprint": 12195,
+          "repeated_tile_pixels_outside_footprint": 656549
+        },
+        "test": {
+          "tile_count": 198,
+          "edge_tiles": 0,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 248155,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 0
+        },
+        "all_splits_union": {
+          "all": 1012530,
+          "outside_source_footprint": 51396
+        }
+      }
+    },
+    "kelly_canyon": {
+      "tile_index_sha256": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "source": {
+        "sha256": "4254c7c3c9bbffea937c47a2a0324030b427588c5a526181859ebf1a4aff0167",
+        "width": 7503,
+        "height": 7608,
+        "crs": "EPSG:32612",
+        "bounds": [
+          449214.6,
+          4829494.8,
+          453716.39999999997,
+          4834059.6
+        ],
+        "resolution": [
+          0.6,
+          0.6
+        ],
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ]
+      },
+      "tile_count": 400,
+      "splits": {
+        "train": {
+          "tile_count": 328,
+          "edge_tiles": 32,
+          "positive_edge_tiles": 2,
+          "positive_edge_blocks": [
+            "181,1931"
+          ],
+          "unique_positive_target_pixels": 456670,
+          "unique_positive_target_pixels_outside_footprint": 8,
+          "outside_fraction_of_unique_positive_targets": 1.752e-05,
+          "outside_positive_ground_area_m2": 2.88,
+          "repeated_tile_positive_pixels_outside_footprint": 16,
+          "repeated_tile_pixels_outside_footprint": 4017080
+        },
+        "val": {
+          "tile_count": 0,
+          "edge_tiles": 0,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 0,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 0
+        },
+        "test": {
+          "tile_count": 72,
+          "edge_tiles": 7,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 144322,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 1093120
+        },
+        "all_splits_union": {
+          "all": 583042,
+          "outside_source_footprint": 8
+        }
+      }
+    },
+    "park_city": {
+      "tile_index_sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "source": {
+        "sha256": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+        "width": 7110,
+        "height": 9298,
+        "crs": "EPSG:32612",
+        "bounds": [
+          448389.0,
+          4494505.2,
+          452655.0,
+          4500084.0
+        ],
+        "resolution": [
+          0.6,
+          0.6
+        ],
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ]
+      },
+      "tile_count": 475,
+      "splits": {
+        "train": {
+          "tile_count": 263,
+          "edge_tiles": 47,
+          "positive_edge_tiles": 34,
+          "positive_edge_blocks": [
+            "179,1797",
+            "180,1797",
+            "181,1798"
+          ],
+          "unique_positive_target_pixels": 641879,
+          "unique_positive_target_pixels_outside_footprint": 52011,
+          "outside_fraction_of_unique_positive_targets": 0.08102929,
+          "outside_positive_ground_area_m2": 18723.96,
+          "repeated_tile_positive_pixels_outside_footprint": 74974,
+          "repeated_tile_pixels_outside_footprint": 6155264
+        },
+        "val": {
+          "tile_count": 124,
+          "edge_tiles": 3,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 54842,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 576552
+        },
+        "test": {
+          "tile_count": 88,
+          "edge_tiles": 11,
+          "positive_edge_tiles": 1,
+          "positive_edge_blocks": [
+            "181,1799"
+          ],
+          "unique_positive_target_pixels": 73579,
+          "unique_positive_target_pixels_outside_footprint": 1929,
+          "outside_fraction_of_unique_positive_targets": 0.02621672,
+          "outside_positive_ground_area_m2": 694.44,
+          "repeated_tile_positive_pixels_outside_footprint": 1929,
+          "repeated_tile_pixels_outside_footprint": 1768448
+        },
+        "all_splits_union": {
+          "all": 761406,
+          "outside_source_footprint": 53087
+        }
+      }
+    },
+    "snowbasin": {
+      "tile_index_sha256": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+      "source": {
+        "sha256": "f668953a81f59bd8f4893cc7d0e08b2ae57784a2f30b3fd635a1b6f1158458ed",
+        "width": 7079,
+        "height": 9321,
+        "crs": "EPSG:32612",
+        "bounds": [
+          425353.2,
+          4559079.0,
+          429600.60000000003,
+          4564671.6
+        ],
+        "resolution": [
+          0.6,
+          0.6
+        ],
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ]
+      },
+      "tile_count": 475,
+      "splits": {
+        "train": {
+          "tile_count": 430,
+          "edge_tiles": 43,
+          "positive_edge_tiles": 11,
+          "positive_edge_blocks": [
+            "171,1823",
+            "171,1824",
+            "171,1825"
+          ],
+          "unique_positive_target_pixels": 924901,
+          "unique_positive_target_pixels_outside_footprint": 13840,
+          "outside_fraction_of_unique_positive_targets": 0.01496376,
+          "outside_positive_ground_area_m2": 4982.4,
+          "repeated_tile_positive_pixels_outside_footprint": 19687,
+          "repeated_tile_pixels_outside_footprint": 6469250
+        },
+        "val": {
+          "tile_count": 45,
+          "edge_tiles": 18,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 35431,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 1981440
+        },
+        "test": {
+          "tile_count": 0,
+          "edge_tiles": 0,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 0,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 0
+        },
+        "all_splits_union": {
+          "all": 953629,
+          "outside_source_footprint": 13840
+        }
+      }
+    },
+    "teton_pass": {
+      "tile_index_sha256": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "source": {
+        "sha256": "7430483cdcdf405f932f690a09677f2ca481154eff8cf885cad9d56519ff1801",
+        "width": 6741,
+        "height": 9257,
+        "crs": "EPSG:32612",
+        "bounds": [
+          497573.39999999997,
+          4814119.8,
+          501617.99999999994,
+          4819674.0
+        ],
+        "resolution": [
+          0.6,
+          0.6
+        ],
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ]
+      },
+      "tile_count": 450,
+      "splits": {
+        "train": {
+          "tile_count": 450,
+          "edge_tiles": 59,
+          "positive_edge_tiles": 3,
+          "positive_edge_blocks": [
+            "200,1926",
+            "200,1927"
+          ],
+          "unique_positive_target_pixels": 180291,
+          "unique_positive_target_pixels_outside_footprint": 3615,
+          "outside_fraction_of_unique_positive_targets": 0.02005092,
+          "outside_positive_ground_area_m2": 1301.4,
+          "repeated_tile_positive_pixels_outside_footprint": 4972,
+          "repeated_tile_pixels_outside_footprint": 8802886
+        },
+        "val": {
+          "tile_count": 0,
+          "edge_tiles": 0,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 0,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 0
+        },
+        "test": {
+          "tile_count": 0,
+          "edge_tiles": 0,
+          "positive_edge_tiles": 0,
+          "positive_edge_blocks": [],
+          "unique_positive_target_pixels": 0,
+          "unique_positive_target_pixels_outside_footprint": 0,
+          "outside_fraction_of_unique_positive_targets": 0.0,
+          "outside_positive_ground_area_m2": 0.0,
+          "repeated_tile_positive_pixels_outside_footprint": 0,
+          "repeated_tile_pixels_outside_footprint": 0
+        },
+        "all_splits_union": {
+          "all": 180291,
+          "outside_source_footprint": 3615
+        }
+      }
+    }
+  },
+  "artifact_sha256": "42ac629a1df1aa4e8e9a78d68f96c8ee6ee8fb175878fef7f03aeb1c89f3f30e"
+}

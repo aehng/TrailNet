@@ -1,0 +1,24 @@
+[{"stream_name":"stdout","time":11.747150711,"data":"INPUTS_STAGED from A source datasets; no model/checkpoint mounted\n"}
+,{"stream_name":"stdout","time":232.420487271,"data":"Preparing kelly_canyon...\n"}
+,{"stream_name":"stdout","time":232.420640511,"data":"PREPARE_SETUP area=kelly_canyon tiles=400 workers=4\n"}
+,{"stream_name":"stdout","time":232.420685201,"data":"/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/kelly_canyon/index.csv\n"}
+,{"stream_name":"stdout","time":232.420715671,"data":"Preparing corner_canyon...\n"}
+,{"stream_name":"stdout","time":232.420800221,"data":"PREPARE_SETUP area=corner_canyon tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":232.420891071,"data":"/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/corner_canyon/index.csv\n"}
+,{"stream_name":"stdout","time":232.420905621,"data":"Preparing park_city...\n"}
+,{"stream_name":"stdout","time":232.421009371,"data":"PREPARE_SETUP area=park_city tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":232.421087691,"data":"/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/park_city/index.csv\n"}
+,{"stream_name":"stdout","time":232.421174591,"data":"Preparing teton_pass...\n"}
+,{"stream_name":"stdout","time":232.421191841,"data":"PREPARE_SETUP area=teton_pass tiles=450 workers=4\n"}
+,{"stream_name":"stdout","time":232.421339351,"data":"/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/teton_pass/index.csv\n"}
+,{"stream_name":"stdout","time":232.421356571,"data":"Preparing snowbasin...\n"}
+,{"stream_name":"stdout","time":232.421413051,"data":"PREPARE_SETUP area=snowbasin tiles=475 workers=4\n"}
+,{"stream_name":"stdout","time":232.421481031,"data":"/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/snowbasin/index.csv\n"}
+,{"stream_name":"stdout","time":271.620434122,"data":"EDGE_AUDIT_COMPLETE areas=5 splits={'train': 1745, 'val': 172, 'test': 358}\n"}
+,{"stream_name":"stderr","time":274.249769412,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":274.249816232,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":274.688748098,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":274.688805658,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":276.712529153,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":278.161136053,"data":"[NbConvertApp] Writing 356929 bytes to __results__.html\n"}
+]

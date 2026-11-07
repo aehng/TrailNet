@@ -1,0 +1,17 @@
+INPUTS_STAGED from A source datasets; no model/checkpoint mounted
+Preparing kelly_canyon...
+PREPARE_SETUP area=kelly_canyon tiles=400 workers=4
+/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/kelly_canyon/index.csv
+Preparing corner_canyon...
+PREPARE_SETUP area=corner_canyon tiles=475 workers=4
+/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/corner_canyon/index.csv
+Preparing park_city...
+PREPARE_SETUP area=park_city tiles=475 workers=4
+/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/park_city/index.csv
+Preparing teton_pass...
+PREPARE_SETUP area=teton_pass tiles=450 workers=4
+/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/teton_pass/index.csv
+Preparing snowbasin...
+PREPARE_SETUP area=snowbasin tiles=475 workers=4
+/kaggle/temp/TrailNet-edge-audit/data/tiles_t4e_a/snowbasin/index.csv
+EDGE_AUDIT_COMPLETE areas=5 splits={'train': 1745, 'val': 172, 'test': 358}

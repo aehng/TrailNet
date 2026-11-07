@@ -1,6 +1,6 @@
 {
   "audited_at": "2026-11-07",
-  "status": "local_v4_edge_tile_scan_complete_canonical_pixel_identity_pending",
+  "status": "local_scan_and_a_source_park_city_and_all_aoi_audits_complete",
   "method": "Read the preserved original checkout's local data/tiles_v4/park_city/index.csv, image tiles, and class maps. Compared tile pixel centers against the source NAIP raster footprint and counted outside-footprint optical and class-map pixels. No original checkout files were modified.",
   "source": {
     "tile_index_sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
@@ -25,7 +25,15 @@
     "outside_pixels_target_zero": 8500264,
     "outside_pixels_default_background_weight": 8500264
   },
-  "interpretation": "In the local V4 export, padded optical pixels beyond the NAIP footprint are represented as zero imagery and ordinary class-0 background; TrailTileDataset assigns class 0 the default background weight 1.0. No local V4 positive labels were found outside the image footprint. Because tile raster identities are not canonical A, reproduce this count against the exact Kaggle-prepared A tiles before using it as a baseline correction result.",
+  "interpretation": "In the local V4 export, padded optical pixels beyond the NAIP footprint are represented as zero imagery and ordinary class-0 background; TrailTileDataset assigns class 0 the default background weight 1.0. The local V4 class maps had no positive labels outside the footprint, but those pixel hashes were not canonical. A separate A-source Kaggle regeneration with the A-era code/raw inputs and exact Park City recovered index found 76,903 positive target pixels outside coverage (74,974 in TRAIN, 1,929 in held-out test, zero in VAL). See park-city-edge-a-source-v1-summary.json. The all-AOI audit is pending.",
+  "a_source_rebuild_v1": {
+    "artifact": "experiments/overnight-20261107/park-city-edge-a-source-v1-summary.json",
+    "park_city_index_matches_recovered_a": true,
+    "outside_positive_pixels": 76903,
+    "train_outside_positive_pixels": 74974,
+    "heldout_outside_positive_pixels": 1929,
+    "val_outside_positive_pixels": 0
+  },
   "candidate_fix": {
     "setting": "tiling.ignore_outside_imagery",
     "behavior": "When true, tile generation marks only pixels outside the source raster's pixel grid as class 4 (ignored); the target becomes zero and the dataset weight becomes zero. It does not inspect pixel values and preserves all in-footprint labels and imagery.",
@@ -33,5 +41,7 @@
     "reason": "Leave the setting off by default to preserve A's existing tile outputs, IDs, and replay comparability. Enable only in a new, explicitly versioned data build after canonical identity and evaluation-mask handling are checked."
   },
   "training_launched": false,
-  "original_checkout_modified": false
+  "original_checkout_modified": false,
+  "all_aoi_followup_artifact": "experiments/overnight-20261107/aoi-edge-mask-audit-summary.json",
+  "all_aoi_findings": "All five index hashes/split counts match. Unique TRAIN positive target pixels outside footprint: Corner Canyon 43,700 (5.57%), Park City 52,011 (8.10%), Snowbasin 13,840 (1.50%), Teton Pass 3,615 (2.01%), Kelly Canyon 8 (0.0018%). Corner Canyon VAL 9,166 (54.04%); Park City heldout 1,929 (2.62%). Bounds-only mask; not proof of false trails."
 }

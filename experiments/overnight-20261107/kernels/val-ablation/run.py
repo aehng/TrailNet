@@ -218,6 +218,29 @@ def neutralize_terrain(images):
     return result
 
 
+def outside_footprint_mask(transform, width, height, bounds):
+    """Mark pixel centers outside raster bounds; do not infer nodata from values."""
+    import numpy as np
+
+    if transform.b != 0 or transform.d != 0:
+        raise ValueError("rotated tiles are unsupported by the bounds-only coverage mask")
+    rows, cols = np.indices((height, width))
+    x = transform.c + (cols + 0.5) * transform.a
+    y = transform.f + (rows + 0.5) * transform.e
+    left, bottom, right, top = bounds
+    return (x < left) | (x >= right) | (y < bottom) | (y >= top)
+
+
+def combine_ignore_masks(weights, outside_footprint):
+    """Combine original loss ignores with the separately measured bounds mask."""
+    if tuple(weights.shape) != tuple(outside_footprint.shape):
+        raise ValueError(
+            f"coverage mask shape {tuple(outside_footprint.shape)} does not match "
+            f"pixel weights {tuple(weights.shape)}"
+        )
+    return (weights == 0) | outside_footprint
+
+
 def register_optical_zero_hook(model):
     """Zero RGB+NIR after RGB normalization, leaving terrain inputs untouched."""
     optical_branch = getattr(model, "optical_net", None)
@@ -248,12 +271,15 @@ def sha256_rows(rows) -> str:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def _counts_by_threshold(model, dataset, rows, device, variant, batch_size, thresholds):
+def _counts_by_threshold(model, dataset, rows, device, variant, batch_size, thresholds,
+                         coverage_masks=None):
     import torch
     from trailnet.train import confusion_from_binary, metrics_from_counts
 
     totals = {threshold: [0, 0, 0] for threshold in thresholds}
+    covered_totals = {threshold: [0, 0, 0] for threshold in thresholds}
     by_area = {}
+    covered_by_area = {}
     area_sizes = {}
     hook = register_optical_zero_hook(model) if variant == "optical_neutralized" else None
     try:
@@ -274,17 +300,32 @@ def _counts_by_threshold(model, dataset, rows, device, variant, batch_size, thre
                     area = row["area"]
                     area_sizes[area] = area_sizes.get(area, 0) + 1
                     by_area.setdefault(area, {t: [0, 0, 0] for t in thresholds})
+                    covered_by_area.setdefault(area, {t: [0, 0, 0] for t in thresholds})
                     for threshold in thresholds:
                         pred = probabilities[offset:offset + 1] >= threshold
                         target = truth[offset:offset + 1]
-                        ignored = ignore[offset:offset + 1]
-                        tp, fp, fn = confusion_from_binary(pred, target, ignore=ignored)
+                        legacy_ignored = ignore[offset:offset + 1]
+                        outside = None
+                        if coverage_masks is not None:
+                            outside = coverage_masks[(area, row["image"])].to(device="cpu")
+                            outside = outside.unsqueeze(0)
+                        covered_ignored = (legacy_ignored if outside is None else
+                                           combine_ignore_masks(
+                                               weights[offset:offset + 1], outside))
+                        tp, fp, fn = confusion_from_binary(pred, target, ignore=legacy_ignored)
                         totals[threshold][0] += tp
                         totals[threshold][1] += fp
                         totals[threshold][2] += fn
                         by_area[area][threshold][0] += tp
                         by_area[area][threshold][1] += fp
                         by_area[area][threshold][2] += fn
+                        ctp, cfp, cfn = confusion_from_binary(pred, target, ignore=covered_ignored)
+                        covered_totals[threshold][0] += ctp
+                        covered_totals[threshold][1] += cfp
+                        covered_totals[threshold][2] += cfn
+                        covered_by_area[area][threshold][0] += ctp
+                        covered_by_area[area][threshold][1] += cfp
+                        covered_by_area[area][threshold][2] += cfn
     finally:
         if hook is not None:
             hook.remove()
@@ -301,9 +342,15 @@ def _counts_by_threshold(model, dataset, rows, device, variant, batch_size, thre
 
     return {
         "thresholds": summarize(totals),
+        "coverage_aware_thresholds": summarize(covered_totals),
         "by_area": {
             area: {"tile_count": area_sizes[area], "thresholds": summarize(counts)}
             for area, counts in sorted(by_area.items())
+        },
+        "coverage_aware_by_area": {
+            area: {"tile_count": area_sizes[area],
+                   "thresholds": summarize(counts)}
+            for area, counts in sorted(covered_by_area.items())
         },
     }
 
@@ -373,13 +420,34 @@ def main() -> None:
     model.eval()
 
     dataset = TrailTileDataset(val_rows, pixel_weights=config.get("loss", {}).get("pixel_weights", {}))
+    import rasterio
+    coverage_masks = {}
+    for area in config["areas"]:
+        area_name = area["name"]
+        source_path = resolve_path(config, area["imagery"])
+        tile_dir = resolve_path(config, config["paths"]["tile_dir"]) / area_name
+        with rasterio.open(source_path) as source:
+            bounds = (source.bounds.left, source.bounds.bottom,
+                      source.bounds.right, source.bounds.top)
+        for row in val_rows:
+            if row["area"] != area_name:
+                continue
+            with rasterio.open(tile_dir / row["image"]) as tile:
+                mask = outside_footprint_mask(tile.transform, tile.width, tile.height, bounds)
+            coverage_masks[(area_name, row["image"])] = torch.from_numpy(mask).unsqueeze(0)
+    coverage_payload = "\n".join(
+        f"{area}\t{image}\t{hashlib.sha256(mask.numpy().tobytes()).hexdigest()}"
+        for (area, image), mask in sorted(coverage_masks.items())
+    )
+    coverage_mask_sha256 = hashlib.sha256(coverage_payload.encode("utf-8")).hexdigest()
     outputs = {}
     batch_size = 2
     for variant in ("full", "terrain_neutralized", "optical_neutralized"):
         write_callback(variant, "running", batch_size=batch_size)
         log(f"ABLATION_START {variant} batch_size={batch_size}")
         outputs[variant] = _counts_by_threshold(
-            model, dataset, val_rows, device, variant, batch_size, thresholds)
+            model, dataset, val_rows, device, variant, batch_size, thresholds,
+            coverage_masks=coverage_masks)
         write_callback(variant, "complete", val_tile_count=len(val_rows))
         log(f"ABLATION_COMPLETE {variant}")
 
@@ -418,6 +486,12 @@ def main() -> None:
         "device": device_name,
         "batch_size": batch_size,
         "ignore_mask": "same class_map/weight-derived mask for all three passes; weights == 0 are ignored",
+        "coverage_mask": {
+            "definition": "pixel centers outside each source raster's geometric bounds only; in-bounds zero/nodata/alpha values do not extend this mask",
+            "sha256": coverage_mask_sha256,
+            "tile_count": len(coverage_masks),
+            "primary_metric": "coverage_aware_thresholds; legacy thresholds remain reported beside it",
+        },
         "ablation_semantics": {
             "full": "original seven-channel model input",
             "terrain_neutralized": "zero channels 4:7 in the original [0,1] input before forward",

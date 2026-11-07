@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T20:10:08Z",
+  "updated_at": "2026-11-07T20:25:19Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -220,13 +220,43 @@
     "broader_nodata_alpha_and_tensor_audit": "open"
   },
   "park_city_edge_tile_audit": {
-    "status": "local_v4_scan_complete_canonical_tile_pixels_pending",
+    "status": "local_scan_and_a_source_rebuild_complete_all_aoi_unique_area_audit_pending",
     "artifact": "experiments/overnight-20261107/park-city-edge-tile-audit.json",
     "local_v4": "61/475 tiles have 8,500,264 repeated out-of-footprint tile-pixels, all optical zero and class 0 with background weight 1.0; no positive labels outside footprint.",
     "canonical_a_index_matches": true,
     "canonical_tile_pixel_identity": false,
     "opt_in_tiler_setting": "tiling.ignore_outside_imagery (default false; class 4 ignore outside raster grid)",
     "training_launched": false
+  },
+  "park_city_edge_a_source_v1": {
+    "kernel": "elikearl/trailnet-park-city-edge-mask-audit-2026-11-07, version 1",
+    "status": "complete_all_aoi_audit_complete",
+    "artifact": "experiments/overnight-20261107/park-city-edge-a-source-v1-summary.json",
+    "source_raster_sha256": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+    "park_city_index_matches_recovered_a": true,
+    "edge_tiles": 61,
+    "positive_target_pixels_outside_footprint_repeated": 76903,
+    "train": {
+      "edge_tiles": 47,
+      "positive_edge_tiles": 34,
+      "outside_positive_pixels_repeated": 74974,
+      "positive_blocks": [
+        "179,1797",
+        "180,1797",
+        "181,1798"
+      ]
+    },
+    "val": {
+      "edge_tiles": 3,
+      "outside_positive_pixels_repeated": 0
+    },
+    "heldout": {
+      "edge_tiles": 11,
+      "positive_edge_tiles": 1,
+      "outside_positive_pixels_repeated": 1929
+    },
+    "unique_ground_area_fraction": "See per-area/split unique pixel unions in the all-AOI artifact.",
+    "all_aoi_followup_artifact": "experiments/overnight-20261107/aoi-edge-mask-audit-summary.json"
   },
   "outside_footprint_ignore": {
     "implementation": "src/trailnet/data/tiles.py via tiling.ignore_outside_imagery",
@@ -236,9 +266,9 @@
     "full_suite": "94 passed, 164 warnings"
   },
   "training_gate": {
-    "status": "not_qualified",
-    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
-    "next_decision": "Audit the existing mosaic's broader nodata/alpha semantics and one source-to-training-tensor path; obtain dated independent Park City trail/distractor geometry and reuse terms; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs. Keep training closed until the audit gates are met."
+    "status": "promotion_blocked_diagnostic_coverage_arm_proposed",
+    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved.",
+    "next_decision": "Freeze/hash raster-bounds masks; rerun unchanged A VAL with legacy and coverage-aware metrics; if baseline parity and mask tests pass, run one-seed t4q-coverage-ignore as diagnostic only. Keep promotion closed without trusted independent references. Do not extend coverage mask based on in-bounds nodata/zero."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
@@ -265,5 +295,65 @@
     "val_modality_ablation": "experiments/overnight-20261107/val-modality-ablation-output/val-modality-ablation.json",
     "val_modality_ablation_callbacks": "experiments/overnight-20261107/val-modality-ablation-output/callbacks/",
     "park_city_2021_item_metadata": "experiments/overnight-20261107/naip-2021-item-metadata.json"
+  },
+  "aoi_edge_mask_audit": {
+    "status": "complete_frozen_indexes_and_splits_match",
+    "kernel": "elikearl/trailnet-aoi-edge-mask-audit-2026-11-07",
+    "artifact": "experiments/overnight-20261107/aoi-edge-mask-audit-output/park-city-edge-mask-audit.json",
+    "summary": "experiments/overnight-20261107/aoi-edge-mask-audit-summary.json",
+    "index_hashes_match_all_five": true,
+    "split_counts": {
+      "train": 1745,
+      "val": 172,
+      "test": 358
+    },
+    "no_training": true,
+    "heldout_predictions_not_scored": true,
+    "coverage_definition": "Pixel centers outside source raster bounds only; not nodata/zero/alpha validity inside bounds.",
+    "train_unique_positive_targets_outside": {
+      "corner_canyon": {
+        "pixels": 43700,
+        "fraction": 0.05565957,
+        "windows": 36,
+        "blocks": 4
+      },
+      "kelly_canyon": {
+        "pixels": 8,
+        "fraction": 1.752e-05,
+        "windows": 2,
+        "blocks": 1
+      },
+      "park_city": {
+        "pixels": 52011,
+        "fraction": 0.08102929,
+        "windows": 34,
+        "blocks": 3
+      },
+      "snowbasin": {
+        "pixels": 13840,
+        "fraction": 0.01496376,
+        "windows": 11,
+        "blocks": 3
+      },
+      "teton_pass": {
+        "pixels": 3615,
+        "fraction": 0.02005092,
+        "windows": 3,
+        "blocks": 2
+      }
+    },
+    "validation_unique_positive_targets_outside": {
+      "corner_canyon": {
+        "pixels": 9166,
+        "fraction": 0.54041625
+      }
+    },
+    "heldout_unique_positive_targets_outside": {
+      "park_city": {
+        "pixels": 1929,
+        "fraction": 0.02621672
+      }
+    },
+    "interpretation": "Unavailable input coverage, not evidence that trail labels are false. Four AOI training issues; Corner Canyon VAL and Park City heldout include uncovered positives."
   }
 }

@@ -1,0 +1,8 @@
+{
+  "stage": "start",
+  "status": "running",
+  "recorded_at": "2026-11-07T20:20:48Z",
+  "timeout_seconds": 2700,
+  "training_launched": false,
+  "gpu_enabled": false
+}

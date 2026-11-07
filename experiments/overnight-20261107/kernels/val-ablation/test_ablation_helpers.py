@@ -80,3 +80,23 @@ def test_terrain_neutralization_changes_only_channels_four_through_six():
     assert torch.equal(result[:, :4], images[:, :4])
     assert torch.count_nonzero(result[:, 4:7]) == 0
     assert torch.equal(images[:, 4:7], torch.tensor([4.0, 5.0, 6.0]).view(1, 3, 1, 1))
+
+
+def test_coverage_mask_uses_pixel_centers_outside_bounds_only():
+    from types import SimpleNamespace
+    import numpy as np
+
+    transform = SimpleNamespace(a=1.0, b=0.0, c=0.0, d=0.0, e=-1.0, f=2.0)
+    outside = KERNEL.outside_footprint_mask(
+        transform, width=3, height=2, bounds=(0.0, 0.0, 2.0, 2.0))
+    expected = np.array([[False, False, True], [False, False, True]])
+    assert np.array_equal(outside, expected)
+
+
+def test_coverage_ignore_preserves_in_bounds_zero_and_existing_ignore_pixels():
+    import numpy as np
+
+    weights = np.array([[0.0, 1.0, 1.0]])
+    outside = np.array([[False, False, True]])
+    ignored = KERNEL.combine_ignore_masks(weights, outside)
+    assert np.array_equal(ignored, np.array([[True, False, True]]))

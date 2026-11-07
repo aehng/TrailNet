@@ -1,0 +1,65 @@
+{
+  "audited_at": "2026-11-07",
+  "status": "complete_for_park_city_a_source_regeneration_all_aois_pending",
+  "source_result_artifact": "experiments/overnight-20261107/park-city-edge-mask-audit-output/park-city-edge-mask-audit.json",
+  "kernel": "elikearl/trailnet-park-city-edge-mask-audit-2026-11-07 version 1",
+  "provenance": {
+    "inputs": "A-era Kaggle raster and code datasets; Park City source raster and A label override staged; no checkpoint mounted.",
+    "source_raster_sha256": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+    "park_city_index_sha256": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+    "index_matches_recovered_a": true,
+    "historical_tile_pixel_hash_identity": "Not compared. This is a fresh A-source regeneration using the A-era code and raw inputs, with exact recovered index membership."
+  },
+  "source_footprint": {
+    "crs": "EPSG:32612",
+    "bounds_m": [
+      448389.0,
+      4494505.2,
+      452655.0,
+      4500084.0
+    ],
+    "raster_size_px": [
+      7110,
+      9298
+    ],
+    "resolution_m": 0.6
+  },
+  "edge_tile_pixels_repeated_across_tiles": {
+    "edge_tile_count": 61,
+    "tile_pixel_count_outside_source": 8500264,
+    "all_four_optical_channels_zero_outside": 8500264,
+    "class_0_background_outside": 8189546,
+    "class_4_ignore_outside": 233815,
+    "class_1_2_3_positive_outside": 76903,
+    "target_nonzero_outside": 76903,
+    "background_weight": 1.0
+  },
+  "frozen_split_counts_recomputed_from_exact_index_membership": {
+    "training": {
+      "edge_tiles": 47,
+      "edge_tiles_with_positive_target_outside": 34,
+      "positive_target_pixels_outside_repeated_across_tiles": 74974,
+      "distinct_training_blocks_with_outside_positive_targets": [
+        "179,1797",
+        "180,1797",
+        "181,1798"
+      ]
+    },
+    "validation": {
+      "edge_tiles": 3,
+      "edge_tiles_with_positive_target_outside": 0,
+      "positive_target_pixels_outside_repeated_across_tiles": 0
+    },
+    "heldout_test": {
+      "edge_tiles": 11,
+      "edge_tiles_with_positive_target_outside": 1,
+      "positive_target_pixels_outside_repeated_across_tiles": 1929,
+      "distinct_test_blocks_with_outside_positive_targets": [
+        "181,1799"
+      ]
+    }
+  },
+  "interpretation": "The A-source regeneration confirms positive target supervision where all four optical channels are zero because the pixels are outside the NAIP raster footprint. Treat these as unknown input coverage and ignore them in a corrected tile build; this does not establish that the mapped trails themselves are false. Counts are repeated tile-pixels, not unique ground-area counts, and therefore do not yet establish the plan's 1% area threshold.",
+  "training_launched": false,
+  "all_aoi_audit_pending": true
+}
