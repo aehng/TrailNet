@@ -1,0 +1,10 @@
+{
+  "stage": "final",
+  "status": "complete",
+  "recorded_at": "2026-11-07T21:23:32Z",
+  "elapsed_seconds": 1611.86,
+  "training_launched": true,
+  "heldout_scored": false,
+  "timed_fallback_triggered": false,
+  "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699"
+}

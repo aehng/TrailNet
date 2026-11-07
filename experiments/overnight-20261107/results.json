@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T20:52:30Z",
+  "updated_at": "2026-11-07T21:23:32Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -266,9 +266,9 @@
     "full_suite": "94 passed, 164 warnings"
   },
   "training_gate": {
-    "status": "diagnostic_coverage_arm_eligible_promotion_blocked",
-    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 the legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; the large Corner Canyon change is due to removing 9,166 uncovered positive targets from the metric. Independent trail/distractor truth remains absent, so this only supports a diagnostic data-integrity run, not promotion. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; in Corner Canyon the score shifts 0.3978 to 0.6130 when 9,166 uncovered positive targets leave the metric. This is a scoring correction, not model improvement. Independent trail/distractor truth remains absent; promotion is blocked.",
-    "next_decision": "Retry the one-seed coverage-ignore diagnostic once with embedded source/config bytes and exact SHA preflight. The first attempt failed before training and did not score heldout. If the retry fails, stop."
+    "status": "coverage_diagnostic_failed_val_no_further_arm_qualified",
+    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 the legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; the large Corner Canyon change is due to removing 9,166 uncovered positive targets from the metric. Independent trail/distractor truth remains absent, so this only supports a diagnostic data-integrity run, not promotion. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; in Corner Canyon the score shifts 0.3978 to 0.6130 when 9,166 uncovered positive targets leave the metric. This is a scoring correction, not model improvement. Independent trail/distractor truth remains absent; promotion is blocked. The single seed-42 coverage-ignore diagnostic completed with exact indexes/splits and all 38,486,642 repeated outside-footprint pixels verified ignored. Candidate coverage-aware VAL F1 is 0.3526 versus A 0.3537 at 0.90, below both A and the 0.3737 screen floor; candidate legacy F1 is 0.2884 versus A 0.3428. No heldout scoring was run. No independently verified labels/distractors qualify another arm.",
+    "next_decision": "Stop training. Continue source-mask/nodata/landmark checks and obtain dated independent trail/distractor references with reuse permission. Reopen training only with a new qualified lever; keep coverage masking as a data-integrity correction, not a performance claim."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
@@ -276,8 +276,8 @@
     "focused_screen_and_download_tests": "9 passed",
     "focused_val_ablation_kernel_tests": "5 passed: self-contained Kaggle entrypoint, prepare-before-hash ordering, optical post-normalization neutralization, and terrain-only channel neutralization",
     "focused_outside_footprint_ignore_test": "1 passed; preserves default behavior and valid in-footprint zero-valued pixels",
-    "full_test_suite": "94 passed, 164 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
-    "full_suite_command": "pytest -q",
+    "full_test_suite": "100 passed, 164 warnings; includes focused coverage-mask and diagnostic preflight tests.",
+    "full_suite_command": "pytest -q (normal Windows context; PyTorch XPU DLL unavailable in restricted sandbox)",
     "full_suite_exit_code": 0,
     "artifact_validation": "77 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen does not qualify independent geometry; W005/W023 partial validity is source-footprint edge coverage with in-footprint masks valid; local tile edge audit is explicitly noncanonical pending Kaggle regeneration; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; no_train=true.",
     "git_diff_check": "passed",
@@ -410,5 +410,24 @@
     "heldout_scored": false,
     "failure": "Kaggle script runtime did not mount sibling patch/config files; entrypoint expected /kaggle/src/tiles_coverage_patch.py.",
     "correction": "Embed the exact committed tiles.py bytes and config in the entrypoint; runtime verifies the SHA-256."
+  },
+  "coverage_ignore_diagnostic": {
+    "status": "complete_failed_val_screen_no_promotion",
+    "artifact": "experiments/overnight-20261107/coverage-ignore-summary.json",
+    "kernel": "elikearl/trailnet-coverage-ignore-2026-11-07 version 2",
+    "seed": 42,
+    "best_epoch": 10,
+    "early_stop_epoch": 15,
+    "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699",
+    "mask_sha256": "6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52",
+    "outside_pixels_verified_ignore_repeated": 38486642,
+    "A_coverage_f1_0_90": 0.3536541461658466,
+    "candidate_coverage_f1_0_90": 0.3526188089595024,
+    "coverage_f1_delta": -0.00103534,
+    "required_floor": 0.37365415,
+    "candidate_legacy_f1_0_90": 0.2884,
+    "A_legacy_f1_0_90": 0.34278839713795395,
+    "no_heldout_score": true,
+    "promotion_eligible": false
   }
 }

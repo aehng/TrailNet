@@ -173,7 +173,7 @@
     "opt_in_ignore_behavior": "Implemented and tested as tiling.ignore_outside_imagery; default false to preserve A.",
     "canonical_regeneration_audit": "Park City A-source regeneration complete; five-AOI split and unique-area audit running; no training."
   },
-  "next_step": "Verify the staged training package injects the committed bounds-only tiles.py and sets tiling.ignore_outside_imagery=true; then run one seed-42 coverage-ignore diagnostic. Report coverage-aware and legacy VAL metrics. Do not score heldout or promote without trusted independent references.",
+  "next_step": "Stop training. Preserve bounds-only ignore as a data-integrity correction; do not call it a model improvement. Audit in-bounds nodata/alpha/tensor validity and manually verify stable landmarks. Obtain dated independent Park City trail/distractor samples and permission, then reopen only the arm supported by those references.",
   "park_city_mask_edge_audit": "experiments/overnight-20261107/park-city-mask-edge-audit.json",
   "park_city_edge_tile_audit": "experiments/overnight-20261107/park-city-edge-tile-audit.json",
   "source_footprint_audit": {
@@ -227,5 +227,16 @@
     "heldout_scored": false,
     "training_launched": false,
     "interpretation": "F1 differences are due to excluding uncovered pixels from the metric; no model gain."
+  },
+  "coverage_ignore_experiment": {
+    "status": "complete_no_val_gain",
+    "artifact": "experiments/overnight-20261107/coverage-ignore-summary.json",
+    "candidate_coverage_aware_f1_0_90": 0.3526188089595024,
+    "A_coverage_aware_f1_0_90": 0.3536541461658466,
+    "required_floor": 0.37365415,
+    "candidate_legacy_f1_0_90": 0.2884,
+    "A_legacy_f1_0_90": 0.34278839713795395,
+    "heldout_scored": false,
+    "promotion_eligible": false
   }
 }

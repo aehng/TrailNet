@@ -1,0 +1,113 @@
+{
+  "status": "complete_failed_val_screen_no_promotion",
+  "kernel": "elikearl/trailnet-coverage-ignore-2026-11-07 version 2",
+  "callback_final": {
+    "stage": "final",
+    "status": "complete",
+    "recorded_at": "2026-11-07T21:23:32Z",
+    "elapsed_seconds": 1611.86,
+    "training_launched": true,
+    "heldout_scored": false,
+    "timed_fallback_triggered": false,
+    "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699"
+  },
+  "callback_preflight": {
+    "stage": "preflight",
+    "status": "complete",
+    "recorded_at": "2026-11-07T21:01:32Z",
+    "tile_index_hashes": {
+      "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+      "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+      "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+      "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+      "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500"
+    },
+    "tile_counts_by_split": {
+      "train": 1745,
+      "val": 172,
+      "test": 358
+    },
+    "edge_tiles_by_split": {
+      "train": 239,
+      "val": 24,
+      "test": 18
+    },
+    "outside_pixels_verified_as_ignore": 38486642,
+    "outside_class4_pixels": 38486642,
+    "heldout_scored": false
+  },
+  "callback_train": {
+    "stage": "train",
+    "status": "complete",
+    "recorded_at": "2026-11-07T21:23:32Z",
+    "elapsed_seconds": 1319.39,
+    "heldout_scored": false
+  },
+  "config_sha256": "0f860f107c33944b4a718169ed629f128f6911a4eef23b49ec5bc09acf904f96",
+  "tiles_py_sha256": "1256163013fb7001ecdb8d85d2cdd6cf6d10bb32ccd6b8eea53d3637c27f416b",
+  "mask_sha256": "6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52",
+  "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699",
+  "device": {
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "gpu_count": 2,
+    "gpus": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "seed": 42,
+  "best_epoch": 10,
+  "early_stop_epoch": 15,
+  "elapsed_seconds": 1611.86,
+  "training_seconds": 1319.39,
+  "split_counts": {
+    "train": 1745,
+    "val": 172,
+    "test": 358
+  },
+  "index_hashes_match_recovered_a": true,
+  "outside_footprint_pixels_verified_class4_and_zero_target_repeated_across_tiles": 38486642,
+  "heldout_scored": false,
+  "promotion_eligible": false,
+  "val_best_at_threshold_0_90": {
+    "A_coverage_aware": {
+      "tp": 67781,
+      "fp": 150653,
+      "fn": 97103,
+      "iou": 0.2148115751876959,
+      "f1": 0.3536541461658466
+    },
+    "candidate_coverage_aware": {
+      "tp": 75282,
+      "fp": 186822,
+      "fn": 89602,
+      "f1": 0.3526188089595024,
+      "threshold": 0.9
+    },
+    "A_legacy": {
+      "tp": 67814,
+      "fp": 150768,
+      "fn": 109265,
+      "iou": 0.20684648631831312,
+      "f1": 0.34278839713795395
+    },
+    "candidate_legacy": {
+      "tp": 75282,
+      "fp": 281835,
+      "fn": 89602,
+      "f1": 0.2884,
+      "threshold": 0.9
+    },
+    "coverage_aware_f1_delta_vs_a": -0.00103534,
+    "required_coverage_aware_f1_floor": 0.37365415
+  },
+  "interpretation": "The bounded data-integrity arm did not pass the VAL gate (candidate coverage-aware F1 0.3526 versus A 0.3537; required 0.3737). Candidate legacy F1 is 0.2884 versus A 0.3428. No heldout result was opened. This is one seed and provides no independent label-quality truth; it does not justify another modeling arm.",
+  "index_hashes": {
+    "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+    "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+    "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+    "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+    "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500"
+  }
+}

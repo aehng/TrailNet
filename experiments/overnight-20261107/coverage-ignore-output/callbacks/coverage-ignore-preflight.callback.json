@@ -1,0 +1,25 @@
+{
+  "stage": "preflight",
+  "status": "complete",
+  "recorded_at": "2026-11-07T21:01:32Z",
+  "tile_index_hashes": {
+    "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+    "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+    "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+    "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
+    "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500"
+  },
+  "tile_counts_by_split": {
+    "train": 1745,
+    "val": 172,
+    "test": 358
+  },
+  "edge_tiles_by_split": {
+    "train": 239,
+    "val": 24,
+    "test": 18
+  },
+  "outside_pixels_verified_as_ignore": 38486642,
+  "outside_class4_pixels": 38486642,
+  "heldout_scored": false
+}
