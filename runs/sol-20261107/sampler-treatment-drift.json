@@ -1,0 +1,60 @@
+{
+  "original_positive_tiles": 993,
+  "original_empty_tiles": 752,
+  "changed": [
+    {
+      "area": "corner_canyon",
+      "image": "corner_canyon_r0000768_c0006912.tif",
+      "original_positive": 416,
+      "treated_positive": 0
+    },
+    {
+      "area": "park_city",
+      "image": "park_city_r0009216_c0002304.tif",
+      "original_positive": 6178,
+      "treated_positive": 0
+    },
+    {
+      "area": "park_city",
+      "image": "park_city_r0009216_c0003456.tif",
+      "original_positive": 506,
+      "treated_positive": 0
+    },
+    {
+      "area": "park_city",
+      "image": "park_city_r0009216_c0005760.tif",
+      "original_positive": 1191,
+      "treated_positive": 0
+    },
+    {
+      "area": "snowbasin",
+      "image": "snowbasin_r0001920_c0006912.tif",
+      "original_positive": 2262,
+      "treated_positive": 0
+    },
+    {
+      "area": "snowbasin",
+      "image": "snowbasin_r0002304_c0006912.tif",
+      "original_positive": 119,
+      "treated_positive": 0
+    },
+    {
+      "area": "snowbasin",
+      "image": "snowbasin_r0002688_c0006912.tif",
+      "original_positive": 630,
+      "treated_positive": 0
+    },
+    {
+      "area": "snowbasin",
+      "image": "snowbasin_r0006912_c0006912.tif",
+      "original_positive": 2515,
+      "treated_positive": 0
+    },
+    {
+      "area": "snowbasin",
+      "image": "snowbasin_r0009216_c0005760.tif",
+      "original_positive": 1881,
+      "treated_positive": 0
+    }
+  ]
+}

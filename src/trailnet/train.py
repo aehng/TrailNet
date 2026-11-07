@@ -1,5 +1,7 @@
 """Train TrailNet using geographic-block train/validation/test partitions."""
 import math
+import hashlib
+import json
 import os
 import random
 import re
@@ -350,6 +352,27 @@ def _mask_positive_counts(rows, workers=4):
         return list(pool.map(count_one, rows))
 
 
+def _frozen_sampler_counts(rows, path, expected_sha256):
+    """Load original eligibility by identity, refusing drift or partial manifests."""
+    payload = Path(path).read_bytes()
+    if not expected_sha256 or hashlib.sha256(payload).hexdigest() != expected_sha256:
+        raise ValueError("Frozen sampler manifest SHA-256 mismatch")
+    records = json.loads(payload)["tiles"]
+    identities = [(r["area"], r["image"]) for r in records]
+    wanted = [(r["area"], r["image"]) for r in rows]
+    if len(set(identities)) != len(identities) or len(set(wanted)) != len(wanted):
+        raise ValueError("Duplicate frozen sampler tile identity")
+    if set(identities) != set(wanted):
+        raise ValueError("Frozen sampler membership differs from TRAIN")
+    counts = {}
+    for key, record in zip(identities, records):
+        count = record["positive_count"]
+        if type(count) is not int or count < 0:
+            raise ValueError("Invalid original positive count")
+        counts[key] = count
+    return [counts[key] for key in wanted]
+
+
 def _resolve_pixel_weights(config):
     configured = dict(config.get("loss", {}).get("pixel_weights") or {})
     path_weight = float(configured.get("path", 1.0))
@@ -433,7 +456,13 @@ def run_training(config_path=None, area_names=None):
     sampler = None
     pos_tiles = empty_tiles = None
     io_workers = int(train_cfg.get("num_workers", _performance_core_count()))
-    positive_counts = _mask_positive_counts(train_rows, workers=max(1, io_workers))
+    sampler_manifest = train_cfg.get("frozen_sampler_manifest")
+    if sampler_manifest:
+        positive_counts = _frozen_sampler_counts(
+            train_rows, resolve_path(config, sampler_manifest),
+            train_cfg.get("frozen_sampler_sha256"))
+    else:
+        positive_counts = _mask_positive_counts(train_rows, workers=max(1, io_workers))
     if positive_counts is not None and any(count > 0 for count in positive_counts):
         pos_boost_tiles = float(train_cfg.get("pos_oversample", 4.0))
         sample_weights = _make_pos_sampler(positive_counts, boost=pos_boost_tiles)

@@ -1,0 +1,480 @@
+{
+  "method": "Declared nodata and GDAL masks/alpha only; no zero/black heuristic. Separate modalities. No truth/registration/weather inference.",
+  "areas": {
+    "corner_canyon": {
+      "optical": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/corner_canyon/naip_rgbn.tif",
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          4,
+          9319,
+          7149
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          0.6,
+          0.0,
+          426270.0,
+          0.0,
+          -0.6,
+          4488058.8,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 66621531
+      },
+      "terrain": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/corner_canyon/3dep_dtm.tif",
+        "nodata": -9999.0,
+        "colorinterp": [
+          "gray"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          1,
+          5592,
+          4290
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          1.0,
+          0.0,
+          426270.0,
+          0.0,
+          -1.0,
+          4488059.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 23989680
+      },
+      "val_traces": [
+        {
+          "image": "corner_canyon_r0009216_c0006144.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 208896,
+          "optical_declared_invalid_pixels": 209408
+        },
+        {
+          "image": "corner_canyon_r0009216_c0006912.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 237392,
+          "optical_declared_invalid_pixels": 237733
+        }
+      ]
+    },
+    "kelly_canyon": {
+      "optical": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/kelly_canyon/naip_rgbn.tif",
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          4,
+          7608,
+          7503
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          0.6,
+          0.0,
+          449214.6,
+          0.0,
+          -0.6,
+          4834059.6,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 57082824
+      },
+      "terrain": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/kelly_canyon/3dep_dtm.tif",
+        "nodata": -9999.0,
+        "colorinterp": [
+          "gray"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          1,
+          4565,
+          4503
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          1.0,
+          0.0,
+          449214.0,
+          0.0,
+          -1.0,
+          4834060.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 20556195
+      },
+      "val_traces": []
+    },
+    "park_city": {
+      "optical": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/park_city/naip_rgbn.tif",
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          4,
+          9298,
+          7110
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          0.6,
+          0.0,
+          448389.0,
+          0.0,
+          -0.6,
+          4500084.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 66108780
+      },
+      "terrain": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/park_city/3dep_dtm.tif",
+        "nodata": -9999.0,
+        "colorinterp": [
+          "gray"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          1,
+          5579,
+          4266
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          1.0,
+          0.0,
+          448389.0,
+          0.0,
+          -1.0,
+          4500084.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 23800014
+      },
+      "val_traces": [
+        {
+          "image": "park_city_r0000000_c0002688.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 0,
+          "optical_declared_invalid_pixels": 0
+        },
+        {
+          "image": "park_city_r0009216_c0006912.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 245908,
+          "optical_declared_invalid_pixels": 245908
+        }
+      ]
+    },
+    "snowbasin": {
+      "optical": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/snowbasin/naip_rgbn.tif",
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          4,
+          9321,
+          7079
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          0.6,
+          0.0,
+          425353.2,
+          0.0,
+          -0.6,
+          4564671.6,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 65983359
+      },
+      "terrain": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/snowbasin/3dep_dtm.tif",
+        "nodata": -9999.0,
+        "colorinterp": [
+          "gray"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          1,
+          5593,
+          4248
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          1.0,
+          0.0,
+          425353.0,
+          0.0,
+          -1.0,
+          4564672.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 23759064
+      },
+      "val_traces": [
+        {
+          "image": "snowbasin_r0007680_c0000000.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 0,
+          "optical_declared_invalid_pixels": 0
+        },
+        {
+          "image": "snowbasin_r0009216_c0003072.tif",
+          "optical_tensor_max_abs_difference": 0.0,
+          "terrain_tensor_max_abs_difference": 0.0,
+          "terrain_nonfinite_reprojected": 208384,
+          "optical_declared_invalid_pixels": 208384
+        }
+      ]
+    },
+    "teton_pass": {
+      "optical": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/teton_pass/naip_rgbn.tif",
+        "nodata": 0.0,
+        "colorinterp": [
+          "red",
+          "green",
+          "blue",
+          "alpha"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ],
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          4,
+          9257,
+          6741
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          0.6,
+          0.0,
+          497573.39999999997,
+          0.0,
+          -0.6,
+          4819674.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          21846520,
+          21846520,
+          21846520,
+          21846520
+        ],
+        "any_band_invalid": 21846520,
+        "total_pixels": 62401437
+      },
+      "terrain": {
+        "path": "/workspace/trailnet-eval-vb-check/TrailNet/data/teton_pass/3dep_dtm.tif",
+        "nodata": -9999.0,
+        "colorinterp": [
+          "gray"
+        ],
+        "mask_flags": [
+          [
+            "nodata"
+          ]
+        ],
+        "shape": [
+          1,
+          5554,
+          4045
+        ],
+        "crs": "EPSG:32612",
+        "transform": [
+          1.0,
+          0.0,
+          497573.0,
+          0.0,
+          -1.0,
+          4819674.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "invalid_by_band": [
+          0
+        ],
+        "any_band_invalid": 0,
+        "total_pixels": 22465930
+      },
+      "val_traces": []
+    }
+  }
+}

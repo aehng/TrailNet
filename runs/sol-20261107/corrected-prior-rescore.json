@@ -1,0 +1,19 @@
+{
+  "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699",
+  "threshold": 0.9,
+  "heldout_scored": false,
+  "results": {
+    "legacy": {
+      "tp": 75170,
+      "fp": 186333,
+      "fn": 101909,
+      "f1": 0.342786525666808
+    },
+    "coverage": {
+      "tp": 75170,
+      "fp": 186333,
+      "fn": 89714,
+      "f1": 0.3525904870458058
+    }
+  }
+}

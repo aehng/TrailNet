@@ -1,0 +1,14 @@
+Collecting requests
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Requirement already satisfied: idna<4,>=2.5 in /home/box/.venvs/trailnet-smoke/lib/python3.13/site-packages (from requests) (3.20)
+Collecting urllib3<3,>=1.26 (from requests)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Requirement already satisfied: certifi>=2023.5.7 in /home/box/.venvs/trailnet-smoke/lib/python3.13/site-packages (from requests) (2026.10.23)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Installing collected packages: urllib3, charset_normalizer, requests
+
+Successfully installed charset_normalizer-3.5.2 requests-2.34.2 urllib3-2.8.0

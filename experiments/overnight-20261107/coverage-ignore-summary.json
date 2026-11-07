@@ -92,22 +92,32 @@
       "iou": 0.20684648631831312,
       "f1": 0.34278839713795395
     },
-    "candidate_legacy": {
+    "coverage_aware_f1_delta_vs_a": -0.00103534,
+    "required_coverage_aware_f1_floor": 0.37365415,
+    "candidate_legacy_invalid_changed_targets": {
       "tp": 75282,
       "fp": 281835,
       "fn": 89602,
       "f1": 0.2884,
       "threshold": 0.9
     },
-    "coverage_aware_f1_delta_vs_a": -0.00103534,
-    "required_coverage_aware_f1_floor": 0.37365415
+    "candidate_legacy": {
+      "tp": 75170,
+      "fp": 186333,
+      "fn": 101909,
+      "f1": 0.342786525666808,
+      "threshold": 0.9,
+      "source": "runs/sol-20261107/corrected-prior-rescore.json",
+      "original_target_positive_count": 177079
+    }
   },
-  "interpretation": "The bounded data-integrity arm did not pass the VAL gate (candidate coverage-aware F1 0.3526 versus A 0.3537; required 0.3737). Candidate legacy F1 is 0.2884 versus A 0.3428. No heldout result was opened. This is one seed and provides no independent label-quality truth; it does not justify another modeling arm.",
+  "interpretation": "Rejected. Corrected original-target legacy F1 .342787 vs A .342788. Coverage CPU F1 .352590 vs A .353654. No heldout scored. Original coverage training also changed sampler eligibility (984/761 vs 993/752), so not a controlled treatment estimate.",
   "index_hashes": {
     "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
     "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
     "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
     "teton_pass": "f04eff6be5a833ad08d2a882c3e7a88eaf16b53cef4a948eea69ab735b50984f",
     "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500"
-  }
+  },
+  "review_correction": "Old .2884 legacy score changed targets and is invalid against A. Existing checkpoint CPU rescore uses frozen original A targets/weights. A exactly reproduces original counts. Candidate coverage CPU .352590 vs historical GPU .352619; neither passes. Historical sampler changed nine tile eligibilities; run is confounded and cannot isolate coverage treatment."
 }

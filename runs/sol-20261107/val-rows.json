@@ -1,0 +1,1722 @@
+[
+  {
+    "area": "corner_canyon",
+    "image": "corner_canyon_r0009216_c0006144.tif",
+    "mask": "corner_canyon_r0009216_c0006144_mask.tif",
+    "class_map": "corner_canyon_r0009216_c0006144_class.tif",
+    "x": 430110.0,
+    "y": 4482375.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/corner_canyon"
+  },
+  {
+    "area": "corner_canyon",
+    "image": "corner_canyon_r0009216_c0006528.tif",
+    "mask": "corner_canyon_r0009216_c0006528_mask.tif",
+    "class_map": "corner_canyon_r0009216_c0006528_class.tif",
+    "x": 430340.39999999997,
+    "y": 4482375.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/corner_canyon"
+  },
+  {
+    "area": "corner_canyon",
+    "image": "corner_canyon_r0009216_c0006912.tif",
+    "mask": "corner_canyon_r0009216_c0006912_mask.tif",
+    "class_map": "corner_canyon_r0009216_c0006912_class.tif",
+    "x": 430570.8,
+    "y": 4482375.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/corner_canyon"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0002688.tif",
+    "mask": "park_city_r0000000_c0002688_mask.tif",
+    "class_map": "park_city_r0000000_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0003072.tif",
+    "mask": "park_city_r0000000_c0003072_mask.tif",
+    "class_map": "park_city_r0000000_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0003456.tif",
+    "mask": "park_city_r0000000_c0003456_mask.tif",
+    "class_map": "park_city_r0000000_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0003840.tif",
+    "mask": "park_city_r0000000_c0003840_mask.tif",
+    "class_map": "park_city_r0000000_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0004224.tif",
+    "mask": "park_city_r0000000_c0004224_mask.tif",
+    "class_map": "park_city_r0000000_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0004608.tif",
+    "mask": "park_city_r0000000_c0004608_mask.tif",
+    "class_map": "park_city_r0000000_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0004992.tif",
+    "mask": "park_city_r0000000_c0004992_mask.tif",
+    "class_map": "park_city_r0000000_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0005376.tif",
+    "mask": "park_city_r0000000_c0005376_mask.tif",
+    "class_map": "park_city_r0000000_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0005760.tif",
+    "mask": "park_city_r0000000_c0005760_mask.tif",
+    "class_map": "park_city_r0000000_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0006144.tif",
+    "mask": "park_city_r0000000_c0006144_mask.tif",
+    "class_map": "park_city_r0000000_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000000_c0006528.tif",
+    "mask": "park_city_r0000000_c0006528_mask.tif",
+    "class_map": "park_city_r0000000_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4499930.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0002688.tif",
+    "mask": "park_city_r0000384_c0002688_mask.tif",
+    "class_map": "park_city_r0000384_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0003072.tif",
+    "mask": "park_city_r0000384_c0003072_mask.tif",
+    "class_map": "park_city_r0000384_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0003456.tif",
+    "mask": "park_city_r0000384_c0003456_mask.tif",
+    "class_map": "park_city_r0000384_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0003840.tif",
+    "mask": "park_city_r0000384_c0003840_mask.tif",
+    "class_map": "park_city_r0000384_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0004224.tif",
+    "mask": "park_city_r0000384_c0004224_mask.tif",
+    "class_map": "park_city_r0000384_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0004608.tif",
+    "mask": "park_city_r0000384_c0004608_mask.tif",
+    "class_map": "park_city_r0000384_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0004992.tif",
+    "mask": "park_city_r0000384_c0004992_mask.tif",
+    "class_map": "park_city_r0000384_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0005376.tif",
+    "mask": "park_city_r0000384_c0005376_mask.tif",
+    "class_map": "park_city_r0000384_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0005760.tif",
+    "mask": "park_city_r0000384_c0005760_mask.tif",
+    "class_map": "park_city_r0000384_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0006144.tif",
+    "mask": "park_city_r0000384_c0006144_mask.tif",
+    "class_map": "park_city_r0000384_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000384_c0006528.tif",
+    "mask": "park_city_r0000384_c0006528_mask.tif",
+    "class_map": "park_city_r0000384_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4499700.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0002688.tif",
+    "mask": "park_city_r0000768_c0002688_mask.tif",
+    "class_map": "park_city_r0000768_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0003072.tif",
+    "mask": "park_city_r0000768_c0003072_mask.tif",
+    "class_map": "park_city_r0000768_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0003456.tif",
+    "mask": "park_city_r0000768_c0003456_mask.tif",
+    "class_map": "park_city_r0000768_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0003840.tif",
+    "mask": "park_city_r0000768_c0003840_mask.tif",
+    "class_map": "park_city_r0000768_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0004224.tif",
+    "mask": "park_city_r0000768_c0004224_mask.tif",
+    "class_map": "park_city_r0000768_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0004608.tif",
+    "mask": "park_city_r0000768_c0004608_mask.tif",
+    "class_map": "park_city_r0000768_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0004992.tif",
+    "mask": "park_city_r0000768_c0004992_mask.tif",
+    "class_map": "park_city_r0000768_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0005376.tif",
+    "mask": "park_city_r0000768_c0005376_mask.tif",
+    "class_map": "park_city_r0000768_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0005760.tif",
+    "mask": "park_city_r0000768_c0005760_mask.tif",
+    "class_map": "park_city_r0000768_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0006144.tif",
+    "mask": "park_city_r0000768_c0006144_mask.tif",
+    "class_map": "park_city_r0000768_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0000768_c0006528.tif",
+    "mask": "park_city_r0000768_c0006528_mask.tif",
+    "class_map": "park_city_r0000768_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4499469.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0002688.tif",
+    "mask": "park_city_r0001152_c0002688_mask.tif",
+    "class_map": "park_city_r0001152_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0003072.tif",
+    "mask": "park_city_r0001152_c0003072_mask.tif",
+    "class_map": "park_city_r0001152_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0003456.tif",
+    "mask": "park_city_r0001152_c0003456_mask.tif",
+    "class_map": "park_city_r0001152_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0003840.tif",
+    "mask": "park_city_r0001152_c0003840_mask.tif",
+    "class_map": "park_city_r0001152_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0004224.tif",
+    "mask": "park_city_r0001152_c0004224_mask.tif",
+    "class_map": "park_city_r0001152_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0004608.tif",
+    "mask": "park_city_r0001152_c0004608_mask.tif",
+    "class_map": "park_city_r0001152_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0004992.tif",
+    "mask": "park_city_r0001152_c0004992_mask.tif",
+    "class_map": "park_city_r0001152_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0005376.tif",
+    "mask": "park_city_r0001152_c0005376_mask.tif",
+    "class_map": "park_city_r0001152_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0005760.tif",
+    "mask": "park_city_r0001152_c0005760_mask.tif",
+    "class_map": "park_city_r0001152_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0006144.tif",
+    "mask": "park_city_r0001152_c0006144_mask.tif",
+    "class_map": "park_city_r0001152_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001152_c0006528.tif",
+    "mask": "park_city_r0001152_c0006528_mask.tif",
+    "class_map": "park_city_r0001152_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4499239.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0002688.tif",
+    "mask": "park_city_r0001536_c0002688_mask.tif",
+    "class_map": "park_city_r0001536_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0003072.tif",
+    "mask": "park_city_r0001536_c0003072_mask.tif",
+    "class_map": "park_city_r0001536_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0003456.tif",
+    "mask": "park_city_r0001536_c0003456_mask.tif",
+    "class_map": "park_city_r0001536_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0003840.tif",
+    "mask": "park_city_r0001536_c0003840_mask.tif",
+    "class_map": "park_city_r0001536_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0004224.tif",
+    "mask": "park_city_r0001536_c0004224_mask.tif",
+    "class_map": "park_city_r0001536_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0004608.tif",
+    "mask": "park_city_r0001536_c0004608_mask.tif",
+    "class_map": "park_city_r0001536_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0004992.tif",
+    "mask": "park_city_r0001536_c0004992_mask.tif",
+    "class_map": "park_city_r0001536_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0005376.tif",
+    "mask": "park_city_r0001536_c0005376_mask.tif",
+    "class_map": "park_city_r0001536_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0005760.tif",
+    "mask": "park_city_r0001536_c0005760_mask.tif",
+    "class_map": "park_city_r0001536_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0006144.tif",
+    "mask": "park_city_r0001536_c0006144_mask.tif",
+    "class_map": "park_city_r0001536_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001536_c0006528.tif",
+    "mask": "park_city_r0001536_c0006528_mask.tif",
+    "class_map": "park_city_r0001536_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4499008.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0002688.tif",
+    "mask": "park_city_r0001920_c0002688_mask.tif",
+    "class_map": "park_city_r0001920_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0003072.tif",
+    "mask": "park_city_r0001920_c0003072_mask.tif",
+    "class_map": "park_city_r0001920_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0003456.tif",
+    "mask": "park_city_r0001920_c0003456_mask.tif",
+    "class_map": "park_city_r0001920_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0003840.tif",
+    "mask": "park_city_r0001920_c0003840_mask.tif",
+    "class_map": "park_city_r0001920_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0004224.tif",
+    "mask": "park_city_r0001920_c0004224_mask.tif",
+    "class_map": "park_city_r0001920_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0004608.tif",
+    "mask": "park_city_r0001920_c0004608_mask.tif",
+    "class_map": "park_city_r0001920_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0004992.tif",
+    "mask": "park_city_r0001920_c0004992_mask.tif",
+    "class_map": "park_city_r0001920_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0005376.tif",
+    "mask": "park_city_r0001920_c0005376_mask.tif",
+    "class_map": "park_city_r0001920_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0005760.tif",
+    "mask": "park_city_r0001920_c0005760_mask.tif",
+    "class_map": "park_city_r0001920_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0006144.tif",
+    "mask": "park_city_r0001920_c0006144_mask.tif",
+    "class_map": "park_city_r0001920_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0001920_c0006528.tif",
+    "mask": "park_city_r0001920_c0006528_mask.tif",
+    "class_map": "park_city_r0001920_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4498778.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0002688.tif",
+    "mask": "park_city_r0002304_c0002688_mask.tif",
+    "class_map": "park_city_r0002304_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0003072.tif",
+    "mask": "park_city_r0002304_c0003072_mask.tif",
+    "class_map": "park_city_r0002304_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0003456.tif",
+    "mask": "park_city_r0002304_c0003456_mask.tif",
+    "class_map": "park_city_r0002304_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0003840.tif",
+    "mask": "park_city_r0002304_c0003840_mask.tif",
+    "class_map": "park_city_r0002304_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0004224.tif",
+    "mask": "park_city_r0002304_c0004224_mask.tif",
+    "class_map": "park_city_r0002304_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0004608.tif",
+    "mask": "park_city_r0002304_c0004608_mask.tif",
+    "class_map": "park_city_r0002304_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0004992.tif",
+    "mask": "park_city_r0002304_c0004992_mask.tif",
+    "class_map": "park_city_r0002304_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0005376.tif",
+    "mask": "park_city_r0002304_c0005376_mask.tif",
+    "class_map": "park_city_r0002304_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0005760.tif",
+    "mask": "park_city_r0002304_c0005760_mask.tif",
+    "class_map": "park_city_r0002304_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0006144.tif",
+    "mask": "park_city_r0002304_c0006144_mask.tif",
+    "class_map": "park_city_r0002304_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002304_c0006528.tif",
+    "mask": "park_city_r0002304_c0006528_mask.tif",
+    "class_map": "park_city_r0002304_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4498548.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0002688.tif",
+    "mask": "park_city_r0002688_c0002688_mask.tif",
+    "class_map": "park_city_r0002688_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0003072.tif",
+    "mask": "park_city_r0002688_c0003072_mask.tif",
+    "class_map": "park_city_r0002688_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0003456.tif",
+    "mask": "park_city_r0002688_c0003456_mask.tif",
+    "class_map": "park_city_r0002688_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0003840.tif",
+    "mask": "park_city_r0002688_c0003840_mask.tif",
+    "class_map": "park_city_r0002688_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0004224.tif",
+    "mask": "park_city_r0002688_c0004224_mask.tif",
+    "class_map": "park_city_r0002688_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0004608.tif",
+    "mask": "park_city_r0002688_c0004608_mask.tif",
+    "class_map": "park_city_r0002688_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0004992.tif",
+    "mask": "park_city_r0002688_c0004992_mask.tif",
+    "class_map": "park_city_r0002688_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0005376.tif",
+    "mask": "park_city_r0002688_c0005376_mask.tif",
+    "class_map": "park_city_r0002688_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0005760.tif",
+    "mask": "park_city_r0002688_c0005760_mask.tif",
+    "class_map": "park_city_r0002688_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0006144.tif",
+    "mask": "park_city_r0002688_c0006144_mask.tif",
+    "class_map": "park_city_r0002688_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0002688_c0006528.tif",
+    "mask": "park_city_r0002688_c0006528_mask.tif",
+    "class_map": "park_city_r0002688_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4498317.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0002688.tif",
+    "mask": "park_city_r0003072_c0002688_mask.tif",
+    "class_map": "park_city_r0003072_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0003072.tif",
+    "mask": "park_city_r0003072_c0003072_mask.tif",
+    "class_map": "park_city_r0003072_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0003456.tif",
+    "mask": "park_city_r0003072_c0003456_mask.tif",
+    "class_map": "park_city_r0003072_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0003840.tif",
+    "mask": "park_city_r0003072_c0003840_mask.tif",
+    "class_map": "park_city_r0003072_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0004224.tif",
+    "mask": "park_city_r0003072_c0004224_mask.tif",
+    "class_map": "park_city_r0003072_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0004608.tif",
+    "mask": "park_city_r0003072_c0004608_mask.tif",
+    "class_map": "park_city_r0003072_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0004992.tif",
+    "mask": "park_city_r0003072_c0004992_mask.tif",
+    "class_map": "park_city_r0003072_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0005376.tif",
+    "mask": "park_city_r0003072_c0005376_mask.tif",
+    "class_map": "park_city_r0003072_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0005760.tif",
+    "mask": "park_city_r0003072_c0005760_mask.tif",
+    "class_map": "park_city_r0003072_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0006144.tif",
+    "mask": "park_city_r0003072_c0006144_mask.tif",
+    "class_map": "park_city_r0003072_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003072_c0006528.tif",
+    "mask": "park_city_r0003072_c0006528_mask.tif",
+    "class_map": "park_city_r0003072_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4498087.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0002688.tif",
+    "mask": "park_city_r0003456_c0002688_mask.tif",
+    "class_map": "park_city_r0003456_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0003072.tif",
+    "mask": "park_city_r0003456_c0003072_mask.tif",
+    "class_map": "park_city_r0003456_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0003456.tif",
+    "mask": "park_city_r0003456_c0003456_mask.tif",
+    "class_map": "park_city_r0003456_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0003840.tif",
+    "mask": "park_city_r0003456_c0003840_mask.tif",
+    "class_map": "park_city_r0003456_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0004224.tif",
+    "mask": "park_city_r0003456_c0004224_mask.tif",
+    "class_map": "park_city_r0003456_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0004608.tif",
+    "mask": "park_city_r0003456_c0004608_mask.tif",
+    "class_map": "park_city_r0003456_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0004992.tif",
+    "mask": "park_city_r0003456_c0004992_mask.tif",
+    "class_map": "park_city_r0003456_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0005376.tif",
+    "mask": "park_city_r0003456_c0005376_mask.tif",
+    "class_map": "park_city_r0003456_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0005760.tif",
+    "mask": "park_city_r0003456_c0005760_mask.tif",
+    "class_map": "park_city_r0003456_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0006144.tif",
+    "mask": "park_city_r0003456_c0006144_mask.tif",
+    "class_map": "park_city_r0003456_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003456_c0006528.tif",
+    "mask": "park_city_r0003456_c0006528_mask.tif",
+    "class_map": "park_city_r0003456_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4497856.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0002688.tif",
+    "mask": "park_city_r0003840_c0002688_mask.tif",
+    "class_map": "park_city_r0003840_c0002688_class.tif",
+    "x": 450155.39999999997,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0003072.tif",
+    "mask": "park_city_r0003840_c0003072_mask.tif",
+    "class_map": "park_city_r0003840_c0003072_class.tif",
+    "x": 450385.8,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0003456.tif",
+    "mask": "park_city_r0003840_c0003456_mask.tif",
+    "class_map": "park_city_r0003840_c0003456_class.tif",
+    "x": 450616.19999999995,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0003840.tif",
+    "mask": "park_city_r0003840_c0003840_mask.tif",
+    "class_map": "park_city_r0003840_c0003840_class.tif",
+    "x": 450846.6,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0004224.tif",
+    "mask": "park_city_r0003840_c0004224_mask.tif",
+    "class_map": "park_city_r0003840_c0004224_class.tif",
+    "x": 451077.0,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0004608.tif",
+    "mask": "park_city_r0003840_c0004608_mask.tif",
+    "class_map": "park_city_r0003840_c0004608_class.tif",
+    "x": 451307.39999999997,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0004992.tif",
+    "mask": "park_city_r0003840_c0004992_mask.tif",
+    "class_map": "park_city_r0003840_c0004992_class.tif",
+    "x": 451537.8,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0005376.tif",
+    "mask": "park_city_r0003840_c0005376_mask.tif",
+    "class_map": "park_city_r0003840_c0005376_class.tif",
+    "x": 451768.19999999995,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0005760.tif",
+    "mask": "park_city_r0003840_c0005760_mask.tif",
+    "class_map": "park_city_r0003840_c0005760_class.tif",
+    "x": 451998.6,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0006144.tif",
+    "mask": "park_city_r0003840_c0006144_mask.tif",
+    "class_map": "park_city_r0003840_c0006144_class.tif",
+    "x": 452229.0,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0003840_c0006528.tif",
+    "mask": "park_city_r0003840_c0006528_mask.tif",
+    "class_map": "park_city_r0003840_c0006528_class.tif",
+    "x": 452459.39999999997,
+    "y": 4497626.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0008448_c0006912.tif",
+    "mask": "park_city_r0008448_c0006912_mask.tif",
+    "class_map": "park_city_r0008448_c0006912_class.tif",
+    "x": 452689.8,
+    "y": 4494861.600000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0008832_c0006912.tif",
+    "mask": "park_city_r0008832_c0006912_mask.tif",
+    "class_map": "park_city_r0008832_c0006912_class.tif",
+    "x": 452689.8,
+    "y": 4494631.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "park_city",
+    "image": "park_city_r0009216_c0006912.tif",
+    "mask": "park_city_r0009216_c0006912_mask.tif",
+    "class_map": "park_city_r0009216_c0006912_class.tif",
+    "x": 452689.8,
+    "y": 4494400.800000001,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/park_city"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0000000.tif",
+    "mask": "snowbasin_r0007680_c0000000_mask.tif",
+    "class_map": "snowbasin_r0007680_c0000000_class.tif",
+    "x": 425506.8,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0000384.tif",
+    "mask": "snowbasin_r0007680_c0000384_mask.tif",
+    "class_map": "snowbasin_r0007680_c0000384_class.tif",
+    "x": 425737.2,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0000768.tif",
+    "mask": "snowbasin_r0007680_c0000768_mask.tif",
+    "class_map": "snowbasin_r0007680_c0000768_class.tif",
+    "x": 425967.6,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0001152.tif",
+    "mask": "snowbasin_r0007680_c0001152_mask.tif",
+    "class_map": "snowbasin_r0007680_c0001152_class.tif",
+    "x": 426198.0,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0001536.tif",
+    "mask": "snowbasin_r0007680_c0001536_mask.tif",
+    "class_map": "snowbasin_r0007680_c0001536_class.tif",
+    "x": 426428.39999999997,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0001920.tif",
+    "mask": "snowbasin_r0007680_c0001920_mask.tif",
+    "class_map": "snowbasin_r0007680_c0001920_class.tif",
+    "x": 426658.8,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0002304.tif",
+    "mask": "snowbasin_r0007680_c0002304_mask.tif",
+    "class_map": "snowbasin_r0007680_c0002304_class.tif",
+    "x": 426889.2,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0002688.tif",
+    "mask": "snowbasin_r0007680_c0002688_mask.tif",
+    "class_map": "snowbasin_r0007680_c0002688_class.tif",
+    "x": 427119.6,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0007680_c0003072.tif",
+    "mask": "snowbasin_r0007680_c0003072_mask.tif",
+    "class_map": "snowbasin_r0007680_c0003072_class.tif",
+    "x": 427350.0,
+    "y": 4559910.0,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0000000.tif",
+    "mask": "snowbasin_r0008064_c0000000_mask.tif",
+    "class_map": "snowbasin_r0008064_c0000000_class.tif",
+    "x": 425506.8,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0000384.tif",
+    "mask": "snowbasin_r0008064_c0000384_mask.tif",
+    "class_map": "snowbasin_r0008064_c0000384_class.tif",
+    "x": 425737.2,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0000768.tif",
+    "mask": "snowbasin_r0008064_c0000768_mask.tif",
+    "class_map": "snowbasin_r0008064_c0000768_class.tif",
+    "x": 425967.6,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0001152.tif",
+    "mask": "snowbasin_r0008064_c0001152_mask.tif",
+    "class_map": "snowbasin_r0008064_c0001152_class.tif",
+    "x": 426198.0,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0001536.tif",
+    "mask": "snowbasin_r0008064_c0001536_mask.tif",
+    "class_map": "snowbasin_r0008064_c0001536_class.tif",
+    "x": 426428.39999999997,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0001920.tif",
+    "mask": "snowbasin_r0008064_c0001920_mask.tif",
+    "class_map": "snowbasin_r0008064_c0001920_class.tif",
+    "x": 426658.8,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0002304.tif",
+    "mask": "snowbasin_r0008064_c0002304_mask.tif",
+    "class_map": "snowbasin_r0008064_c0002304_class.tif",
+    "x": 426889.2,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0002688.tif",
+    "mask": "snowbasin_r0008064_c0002688_mask.tif",
+    "class_map": "snowbasin_r0008064_c0002688_class.tif",
+    "x": 427119.6,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008064_c0003072.tif",
+    "mask": "snowbasin_r0008064_c0003072_mask.tif",
+    "class_map": "snowbasin_r0008064_c0003072_class.tif",
+    "x": 427350.0,
+    "y": 4559679.6,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0000000.tif",
+    "mask": "snowbasin_r0008448_c0000000_mask.tif",
+    "class_map": "snowbasin_r0008448_c0000000_class.tif",
+    "x": 425506.8,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0000384.tif",
+    "mask": "snowbasin_r0008448_c0000384_mask.tif",
+    "class_map": "snowbasin_r0008448_c0000384_class.tif",
+    "x": 425737.2,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0000768.tif",
+    "mask": "snowbasin_r0008448_c0000768_mask.tif",
+    "class_map": "snowbasin_r0008448_c0000768_class.tif",
+    "x": 425967.6,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0001152.tif",
+    "mask": "snowbasin_r0008448_c0001152_mask.tif",
+    "class_map": "snowbasin_r0008448_c0001152_class.tif",
+    "x": 426198.0,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0001536.tif",
+    "mask": "snowbasin_r0008448_c0001536_mask.tif",
+    "class_map": "snowbasin_r0008448_c0001536_class.tif",
+    "x": 426428.39999999997,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0001920.tif",
+    "mask": "snowbasin_r0008448_c0001920_mask.tif",
+    "class_map": "snowbasin_r0008448_c0001920_class.tif",
+    "x": 426658.8,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0002304.tif",
+    "mask": "snowbasin_r0008448_c0002304_mask.tif",
+    "class_map": "snowbasin_r0008448_c0002304_class.tif",
+    "x": 426889.2,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0002688.tif",
+    "mask": "snowbasin_r0008448_c0002688_mask.tif",
+    "class_map": "snowbasin_r0008448_c0002688_class.tif",
+    "x": 427119.6,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008448_c0003072.tif",
+    "mask": "snowbasin_r0008448_c0003072_mask.tif",
+    "class_map": "snowbasin_r0008448_c0003072_class.tif",
+    "x": 427350.0,
+    "y": 4559449.2,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0000000.tif",
+    "mask": "snowbasin_r0008832_c0000000_mask.tif",
+    "class_map": "snowbasin_r0008832_c0000000_class.tif",
+    "x": 425506.8,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0000384.tif",
+    "mask": "snowbasin_r0008832_c0000384_mask.tif",
+    "class_map": "snowbasin_r0008832_c0000384_class.tif",
+    "x": 425737.2,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0000768.tif",
+    "mask": "snowbasin_r0008832_c0000768_mask.tif",
+    "class_map": "snowbasin_r0008832_c0000768_class.tif",
+    "x": 425967.6,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0001152.tif",
+    "mask": "snowbasin_r0008832_c0001152_mask.tif",
+    "class_map": "snowbasin_r0008832_c0001152_class.tif",
+    "x": 426198.0,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0001536.tif",
+    "mask": "snowbasin_r0008832_c0001536_mask.tif",
+    "class_map": "snowbasin_r0008832_c0001536_class.tif",
+    "x": 426428.39999999997,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0001920.tif",
+    "mask": "snowbasin_r0008832_c0001920_mask.tif",
+    "class_map": "snowbasin_r0008832_c0001920_class.tif",
+    "x": 426658.8,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0002304.tif",
+    "mask": "snowbasin_r0008832_c0002304_mask.tif",
+    "class_map": "snowbasin_r0008832_c0002304_class.tif",
+    "x": 426889.2,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0002688.tif",
+    "mask": "snowbasin_r0008832_c0002688_mask.tif",
+    "class_map": "snowbasin_r0008832_c0002688_class.tif",
+    "x": 427119.6,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0008832_c0003072.tif",
+    "mask": "snowbasin_r0008832_c0003072_mask.tif",
+    "class_map": "snowbasin_r0008832_c0003072_class.tif",
+    "x": 427350.0,
+    "y": 4559218.8,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0000000.tif",
+    "mask": "snowbasin_r0009216_c0000000_mask.tif",
+    "class_map": "snowbasin_r0009216_c0000000_class.tif",
+    "x": 425506.8,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0000384.tif",
+    "mask": "snowbasin_r0009216_c0000384_mask.tif",
+    "class_map": "snowbasin_r0009216_c0000384_class.tif",
+    "x": 425737.2,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0000768.tif",
+    "mask": "snowbasin_r0009216_c0000768_mask.tif",
+    "class_map": "snowbasin_r0009216_c0000768_class.tif",
+    "x": 425967.6,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0001152.tif",
+    "mask": "snowbasin_r0009216_c0001152_mask.tif",
+    "class_map": "snowbasin_r0009216_c0001152_class.tif",
+    "x": 426198.0,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0001536.tif",
+    "mask": "snowbasin_r0009216_c0001536_mask.tif",
+    "class_map": "snowbasin_r0009216_c0001536_class.tif",
+    "x": 426428.39999999997,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0001920.tif",
+    "mask": "snowbasin_r0009216_c0001920_mask.tif",
+    "class_map": "snowbasin_r0009216_c0001920_class.tif",
+    "x": 426658.8,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0002304.tif",
+    "mask": "snowbasin_r0009216_c0002304_mask.tif",
+    "class_map": "snowbasin_r0009216_c0002304_class.tif",
+    "x": 426889.2,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0002688.tif",
+    "mask": "snowbasin_r0009216_c0002688_mask.tif",
+    "class_map": "snowbasin_r0009216_c0002688_class.tif",
+    "x": 427119.6,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  },
+  {
+    "area": "snowbasin",
+    "image": "snowbasin_r0009216_c0003072.tif",
+    "mask": "snowbasin_r0009216_c0003072_mask.tif",
+    "class_map": "snowbasin_r0009216_c0003072_class.tif",
+    "x": 427350.0,
+    "y": 4558988.4,
+    "crs": "EPSG:32612",
+    "index_dir": "/workspace/trailnet-sol/runs/sol-20261107/original-val/snowbasin"
+  }
+]
