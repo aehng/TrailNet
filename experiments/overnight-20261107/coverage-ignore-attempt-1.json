@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "kernel": "elikearl/trailnet-coverage-ignore-2026-11-07 version 1",
+  "failure_stage": "preflight input staging",
+  "error": "FileNotFoundError('coverage patch absent: /kaggle/src/tiles_coverage_patch.py')",
+  "training_launched": false,
+  "heldout_scored": false,
+  "timed_fallback_triggered": false,
+  "root_cause": "Kaggle mounted only the script entrypoint, not sibling package files.",
+  "correction": "Embed the committed tiles.py patch and exact config bytes in the kernel entrypoint; verify SHA-256 before data preparation.",
+  "retry_authorized": "One retry for a verified staging/config bug is within the plan."
+}

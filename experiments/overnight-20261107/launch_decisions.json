@@ -1,5 +1,5 @@
 {
-  "decision_time": "2026-11-07T20:41:21Z",
+  "decision_time": "2026-11-07T20:52:30Z",
   "training_launch": "conditional_diagnostic_only_coverage_aware_baseline_complete",
   "selected_arm": "t4q-coverage-ignore diagnostic only, conditional",
   "confirmation_seed_43_eligible": false,
@@ -60,12 +60,12 @@
       "evidence": "No trusted VAL distractor audit; registration and tile-pixel identity remain unverified."
     },
     "t4q-coverage-ignore": {
-      "status": "eligible_for_one_diagnostic_run_after_source_injection_preflight",
+      "status": "single_retry_after_packaging_fix",
       "required_gate": "coverage-aware A VAL inference and parity, plus fixed geometric coverage mask hashes",
-      "evidence": "A-source all-area audit: Corner Canyon, Park City, and Snowbasin each exceed 1% unique TRAIN positive target area across at least 8 edge windows and 2 TRAIN blocks. This is missing input coverage, not proven false geometry. Promotion remains blocked pending trusted independent references. The unchanged A checkpoint coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52). Unchanged A coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52)."
+      "evidence": "A-source all-area audit: Corner Canyon, Park City, and Snowbasin each exceed 1% unique TRAIN positive target area across at least 8 edge windows and 2 TRAIN blocks. This is missing input coverage, not proven false geometry. Promotion remains blocked pending trusted independent references. The unchanged A checkpoint coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52). Unchanged A coverage-aware VAL baseline is complete (F1 0.3537 at 0.90; frozen mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52). First Kaggle attempt failed before training because the runtime did not mount sidecar files. Callback confirms training_launched=false and heldout_scored=false; one staging retry is permitted."
     }
   },
-  "decision": "One seed-42 t4q-coverage-ignore diagnostic is eligible after preflight verifies code injection and mask setting. It cannot promote; independent trusted references remain required. No heldout scoring for the diagnostic.",
+  "decision": "Retry the diagnostic once with embedded source/config payloads and hash validation. Stop if the packaging retry fails; do not score heldout.",
   "reopen_when": [
     "A coverage-aware VAL baseline is complete and frozen: mask SHA-256 6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52; exact A IDs/index hashes match.",
     "The training preflight injects the committed bounds-only tiles.py and verifies tiling.ignore_outside_imagery=true without using in-bounds nodata or zero values.",

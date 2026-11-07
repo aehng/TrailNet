@@ -1,0 +1,10 @@
+{
+  "stage": "dependencies",
+  "status": "complete",
+  "recorded_at": "2026-11-07T20:52:25Z",
+  "elapsed_seconds": 3.365,
+  "timeout_seconds": 1800,
+  "exit_code": 0,
+  "timed_fallback_triggered": false,
+  "output_tail": ""
+}

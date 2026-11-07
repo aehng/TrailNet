@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T20:41:21Z",
+  "updated_at": "2026-11-07T20:52:30Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -268,7 +268,7 @@
   "training_gate": {
     "status": "diagnostic_coverage_arm_eligible_promotion_blocked",
     "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 the legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; the large Corner Canyon change is due to removing 9,166 uncovered positive targets from the metric. Independent trail/distractor truth remains absent, so this only supports a diagnostic data-integrity run, not promotion. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; in Corner Canyon the score shifts 0.3978 to 0.6130 when 9,166 uncovered positive targets leave the metric. This is a scoring correction, not model improvement. Independent trail/distractor truth remains absent; promotion is blocked.",
-    "next_decision": "One seed-42 t4q-coverage-ignore diagnostic is eligible after verifying staged Kaggle tile source injection and setting. Compare to frozen coverage-aware A VAL baseline and report legacy metrics. Do not score heldout for this diagnostic; promotion remains blocked without trusted independent references."
+    "next_decision": "Retry the one-seed coverage-ignore diagnostic once with embedded source/config bytes and exact SHA preflight. The first attempt failed before training and did not score heldout. If the retry fails, stop."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
@@ -402,5 +402,13 @@
     "no_training": true,
     "heldout_scored": false,
     "interpretation": "Same predictions; score difference is only the documented bounds-mask denominator change, not a model gain."
+  },
+  "coverage_ignore_attempt_1": {
+    "status": "failed_before_training",
+    "artifact": "experiments/overnight-20261107/coverage-ignore-attempt-1.json",
+    "training_launched": false,
+    "heldout_scored": false,
+    "failure": "Kaggle script runtime did not mount sibling patch/config files; entrypoint expected /kaggle/src/tiles_coverage_patch.py.",
+    "correction": "Embed the exact committed tiles.py bytes and config in the entrypoint; runtime verifies the SHA-256."
   }
 }

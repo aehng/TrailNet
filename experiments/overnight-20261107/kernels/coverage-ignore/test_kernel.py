@@ -33,5 +33,7 @@ def test_preflight_rejects_remaining_outside_positive_supervision():
 def test_kernel_has_no_heldout_scoring_and_patches_exact_tiles_source():
     text=PATH.read_text(encoding='utf-8')
     assert '1256163013fb7001ecdb8d85d2cdd6cf6d10bb32ccd6b8eea53d3637c27f416b' in text
+    assert 'PATCH_SOURCE_ZLIB_B64' in text and 'CONFIG_YAML_B64' in text
+    assert 'package_dir' not in text
     assert "'heldout_scored':False" in text
     assert "tiling.ignore_outside_imagery" in text

@@ -1,0 +1,10 @@
+{
+  "stage": "final",
+  "status": "failed",
+  "recorded_at": "2026-11-07T20:52:30Z",
+  "error": "FileNotFoundError('coverage patch absent: /kaggle/src/tiles_coverage_patch.py')",
+  "elapsed_seconds": 15.39,
+  "training_launched": false,
+  "heldout_scored": false,
+  "timed_fallback_triggered": false
+}
