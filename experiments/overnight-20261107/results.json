@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T09:20:00Z",
-  "experiment_status": "in_progress",
+  "updated_at": "2026-11-07T09:45:05Z",
+  "experiment_status": "early_stop_staging_failure",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
   "inputs": {
@@ -17,9 +17,15 @@
   },
   "kaggle": {
     "gpu_quota_before_replay_h": 28.57,
+    "gpu_quota_after_replay_retry_h": 28.56,
     "baseline_replay_kernel": "elikearl/trailnet-t4q-a-replay-2026-11-07",
-    "baseline_replay_status": "QUEUED",
-    "replay_is_evaluation_only": true,
+    "baseline_replay_initial_attempt": "ERROR_BEFORE_MODEL_WORK: stale vector_eval.py in the attached code dataset",
+    "standalone_audit_initial_attempt": "ERROR_BEFORE_MODEL_WORK: Kaggle did not expose auxiliary module files on the runtime import path",
+    "baseline_replay_retry_version": 2,
+    "baseline_replay_status": "ERROR_BEFORE_MODEL_WORK: dependency setup reloaded already-imported torch and failed on duplicate triton TORCH_LIBRARY registration",
+    "retry_combines_pixel_replay_and_exact_a_tile_hash_audit": true,
+    "retry_is_evaluation_only": true,
+    "staging_retry_budget": "one retry allowed; consumed; no further kernel submissions",
     "training_kernels_launched": 0
   },
   "audit": {
@@ -31,6 +37,7 @@
     "windows_with_valid_image_fraction_below_0_10": 5,
     "park_city_naip_latest_year_items": 4,
     "park_city_reconstructed_acquisition_dates": ["2021-09-24", "2021-11-21"],
+    "park_city_best_followup_candidate": "2018-09-09 and 2018-09-27; full four-tile coverage; visual weather and trail-change checks pending",
     "visual_snow_review": "qualitative only; no corridor snow fraction or independent human adjudication"
   },
   "site_screen": {
@@ -38,11 +45,18 @@
     "current_decisions": "review_later",
     "independent_verified_samples": 0,
     "permissions_reviewed": false,
-    "refreshed_run": "in progress"
+    "refreshed_run": "complete",
+    "all_decisions": "review_later; no candidate has independent verified sample counts or permission review"
   },
   "training_gate": {
     "status": "not_qualified",
     "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No labelmask, labeladd, hard-negative, or weather arm has met its preregistered evidence gate.",
     "next_decision": "wait for A replay parity; finish a blinded, independently referenced audit before registering a training arm"
+  },
+  "verification": {
+    "focused_screen_and_download_tests": "9 passed",
+    "full_test_suite": "79 passed, 146 warnings",
+    "full_suite_command": "pytest -q",
+    "full_suite_exit_code": 0
   }
 }

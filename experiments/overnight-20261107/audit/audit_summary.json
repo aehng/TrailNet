@@ -217,9 +217,71 @@
     "independent_trail_and_distractor_counts": null,
     "visual_review": "Exploratory, no-overlay screen; snow-like appearance was not converted to verified snow labels or corridor fractions.",
     "tile_pixel_identity_verified": false,
-    "blinding_note": "This visual screen is not a fully blinded adjudication: the separate sample key was inspected before contact-sheet review. Treat findings as exploratory; do not use them to select or edit labels."
+    "blinding_note": "This visual screen is not a fully blinded adjudication: the separate sample key was inspected before contact-sheet review. Treat findings as exploratory; do not use them to select or edit labels.",
+    "sample_tile_hashes_recorded": true,
+    "recovered_a_sample_index_hashes_match": true
   },
   "naip_source_trace": "../naip-source-dates.json",
   "next_site_screen": "../next-sites.json",
-  "audit_findings": "audit_findings.csv"
+  "audit_findings": "audit_findings.csv",
+  "site_screen_summary": {
+    "site_count": 7,
+    "review_later_count": 7,
+    "independent_verified_samples_collected": 0,
+    "permissions_unknown_count": 7,
+    "coverage_estimate_method": "TNM product boundingBox metadata union; raster pixel validity is unverified"
+  },
+  "park_city_followup_imagery": {
+    "status": "review_later",
+    "priority": "review before any further geographic acquisition",
+    "recommended_candidate_year": "2018",
+    "candidate_mosaics": {
+      "2021": {
+        "dates": [
+          "2021-09-24",
+          "2021-11-21"
+        ],
+        "item_ids": [
+          "ut_m_4011128_nw_12_060_20211121",
+          "ut_m_4011120_sw_12_060_20211121",
+          "ut_m_4011128_ne_12_060_20210924",
+          "ut_m_4011120_se_12_060_20210924"
+        ],
+        "item_count": 4
+      },
+      "2018": {
+        "dates": [
+          "2018-09-09",
+          "2018-09-27"
+        ],
+        "item_ids": [
+          "ut_m_4011128_ne_12_060_20180927_20181209",
+          "ut_m_4011120_se_12_060_20180927_20181209",
+          "ut_m_4011128_nw_12_060_20180909_20181209",
+          "ut_m_4011120_sw_12_060_20180909_20181209"
+        ],
+        "item_count": 4
+      },
+      "2016": {
+        "dates": [
+          "2016-08-08",
+          "2016-08-20"
+        ],
+        "item_ids": [
+          "ut_m_4011128_nw_12_1_20160820_20161017",
+          "ut_m_4011128_ne_12_1_20160808_20161017",
+          "ut_m_4011120_sw_12_1_20160808_20161017",
+          "ut_m_4011120_se_12_1_20160808_20161017"
+        ],
+        "item_count": 4
+      }
+    },
+    "reason": "2018 provides four September tiles across the Park City AOI (September 9 and 27); 2021 combines two September 24 tiles with two November 21 tiles and the sample shows widespread snow-like cover. 2016 August coverage is a fallback.",
+    "caveats": [
+      "STAC items are reconstructed from the retained AOI bbox and latest-year fetcher rule; source IDs were not embedded in the existing raster.",
+      "Acquisition date does not prove snow-free, cloud-free, or low-shadow pixels.",
+      "Check trail construction, closure, reroute and label date before using older imagery as evidence."
+    ],
+    "next_review": "Open same-corridor low-resolution previews and inspect affected trail corridors; record snow/shadow/cloud/leaf status, independent trail references, positional uncertainty and permission."
+  }
 }

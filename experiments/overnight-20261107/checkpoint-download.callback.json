@@ -1,0 +1,18 @@
+{
+  "executable": "kaggle",
+  "arguments": [
+    "datasets",
+    "download",
+    "-d",
+    "elikearl/trailnet-t4e2-a-ckpt",
+    "-p",
+    "experiments/overnight-20261107/checkpoint",
+    "--unzip"
+  ],
+  "pid": 39380,
+  "started_at": "2026-11-07T08:59:56.2152294+00:00",
+  "ended_at": "2026-11-07T09:00:06.8857973+00:00",
+  "elapsed_seconds": 11,
+  "status": "complete",
+  "exit_code": 0
+}

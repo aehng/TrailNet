@@ -1,0 +1,3962 @@
+{
+  "generated_at": "2026-11-07T09:24:58.691366+00:00",
+  "method": "Approximate named-site anchor, 5 km x 5 km metadata probe, OSM way lengths; no rasters downloaded",
+  "sites": [
+    {
+      "site": "Fruita 18 Road",
+      "status": "review_later",
+      "center": {
+        "lon": -108.735,
+        "lat": 39.235,
+        "source_note": "approximate North Fruita Desert / 18 Road trail-system anchor"
+      },
+      "bbox_wgs84": [
+        -108.763994,
+        39.212391,
+        -108.706006,
+        39.257609
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -108.76399430624093,
+          39.212390706676075,
+          -108.70600569375907,
+          39.257609293323924
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 28,
+          "truncated": false,
+          "items": [
+            {
+              "id": "co_m_3910851_nw_12_030_20230923_20240104",
+              "datetime": "2023-09-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.75555,
+                39.183509,
+                -108.681887,
+                39.253996
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_030_20230923_20240104",
+              "datetime": "2023-09-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.817992,
+                39.183543,
+                -108.744444,
+                39.253961
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_030_20230923_20240104",
+              "datetime": "2023-09-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755557,
+                39.24601,
+                -108.681878,
+                39.316497
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_030_20230923_20240104",
+              "datetime": "2023-09-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.817999,
+                39.246045,
+                -108.744435,
+                39.316463
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_060_20210905",
+              "datetime": "2021-09-05T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.754366,
+                39.184416,
+                -108.683084,
+                39.253082
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_060_20210905",
+              "datetime": "2021-09-05T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.816813,
+                39.184451,
+                -108.745589,
+                39.253029
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_060_20210905",
+              "datetime": "2021-09-05T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.75439,
+                39.246905,
+                -108.683041,
+                39.315573
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_060_20210905",
+              "datetime": "2021-09-05T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.816822,
+                39.246942,
+                -108.745602,
+                39.31552
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_060_20190828_20191121",
+              "datetime": "2019-08-28T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.754366,
+                39.184416,
+                -108.683084,
+                39.253082
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_060_20190828_20191121",
+              "datetime": "2019-08-28T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.816813,
+                39.184451,
+                -108.745589,
+                39.253029
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_060_20190828_20191121",
+              "datetime": "2019-08-28T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.75439,
+                39.246905,
+                -108.683041,
+                39.315573
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_060_20190828_20191121",
+              "datetime": "2019-08-28T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.816822,
+                39.246942,
+                -108.745602,
+                39.31552
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_1_20170918_20180102",
+              "datetime": "2017-09-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755694,
+                39.183381,
+                -108.681753,
+                39.254116
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_1_20170918_20180102",
+              "datetime": "2017-09-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.81814,
+                39.183417,
+                -108.744259,
+                39.254062
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_1_20170918_20180102",
+              "datetime": "2017-09-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755719,
+                39.245871,
+                -108.68171,
+                39.316606
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_1_20170918_20180102",
+              "datetime": "2017-09-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.81815,
+                39.245908,
+                -108.744271,
+                39.316553
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_1_20150911_20151102",
+              "datetime": "2015-09-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755718,
+                39.183362,
+                -108.681708,
+                39.254098
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_1_20150909_20151102",
+              "datetime": "2015-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.818117,
+                39.183418,
+                -108.744281,
+                39.254116
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_1_20150909_20151102",
+              "datetime": "2015-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755695,
+                39.245889,
+                -108.681732,
+                39.316624
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_1_20150909_20151102",
+              "datetime": "2015-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.818149,
+                39.245944,
+                -108.744248,
+                39.316553
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_1_20130708_20131119",
+              "datetime": "2013-07-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755552,
+                39.183492,
+                -108.681873,
+                39.253996
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_1_20130708_20131119",
+              "datetime": "2013-07-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.817997,
+                39.183528,
+                -108.744425,
+                39.25396
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_1_20130708_20131119",
+              "datetime": "2013-07-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755564,
+                39.245991,
+                -108.681864,
+                39.316495
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_1_20130708_20131119",
+              "datetime": "2013-07-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.818008,
+                39.246028,
+                -108.744413,
+                39.31646
+              ]
+            },
+            {
+              "id": "co_m_3910851_nw_12_1_20110908_20111025",
+              "datetime": "2011-09-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.75561,
+                39.183464,
+                -108.681825,
+                39.254042
+              ]
+            },
+            {
+              "id": "co_m_3910843_sw_12_1_20110720_20111025",
+              "datetime": "2011-07-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.755623,
+                39.245963,
+                -108.681828,
+                39.316542
+              ]
+            },
+            {
+              "id": "co_m_3910842_se_12_1_20110720_20111025",
+              "datetime": "2011-07-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.818055,
+                39.246,
+                -108.744377,
+                39.316506
+              ]
+            },
+            {
+              "id": "co_m_3910850_ne_12_1_20110715_20111025",
+              "datetime": "2011-07-15T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -108.818056,
+                39.183501,
+                -108.744388,
+                39.254007
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 1,
+          "returned": 1,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS one meter x69y435 CO MesaCo QL2 UTM12 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -108.797309377,
+                "maxX": -108.684288491,
+                "minY": 39.1861974662,
+                "maxY": 39.2785945884
+              },
+              "sourceId": "5eaa51b082cefae35a221e19",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eaa51b082cefae35a221e19",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_MesaCo_QL2_UTM12_2016/TIFF/USGS_one_meter_x69y435_CO_MesaCo_QL2_UTM12_2016.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.138,
+        "estimated_covered_area_km2": 25.138,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 1,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 110,
+        "length_km": {
+          "path_candidate": 3.449,
+          "track_candidate": 61.621,
+          "road": 58.04,
+          "sidewalk": 0.0,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2011-07-15",
+          "2011-07-20",
+          "2011-09-08",
+          "2013-07-08",
+          "2015-09-09",
+          "2015-09-11",
+          "2017-09-18",
+          "2019-08-28",
+          "2021-09-05",
+          "2023-09-23"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Sedona Bell Rock",
+      "status": "review_later",
+      "center": {
+        "lon": -111.7619,
+        "lat": 34.7915,
+        "source_note": "Bell Rock Vista trailhead coordinate, reviewed 2026-08-10"
+      },
+      "bbox_wgs84": [
+        -111.789246,
+        34.768891,
+        -111.734554,
+        34.814109
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -111.7892463872751,
+          34.768890706676075,
+          -111.7345536127249,
+          34.814109293323924
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 28,
+          "truncated": false,
+          "items": [
+            {
+              "id": "az_m_3411111_sw_12_030_20230615_20240328",
+              "datetime": "2023-06-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753869,
+                34.746905,
+                -111.683681,
+                34.815593
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_030_20230615_20240328",
+              "datetime": "2023-06-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753874,
+                34.809407,
+                -111.683678,
+                34.878092
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_030_20230615_20240328",
+              "datetime": "2023-06-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816418,
+                34.746873,
+                -111.746133,
+                34.815626
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_030_20230615_20240328",
+              "datetime": "2023-06-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816422,
+                34.809372,
+                -111.746129,
+                34.878127
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_060_20211014",
+              "datetime": "2021-10-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753873,
+                34.746902,
+                -111.683173,
+                34.816096
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_060_20211014",
+              "datetime": "2021-10-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753868,
+                34.809902,
+                -111.683181,
+                34.878095
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_060_20211014",
+              "datetime": "2021-10-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.815921,
+                34.746876,
+                -111.746127,
+                34.816121
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_060_20211014",
+              "datetime": "2021-10-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.815916,
+                34.809876,
+                -111.74613,
+                34.878125
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_060_20190618_20191018",
+              "datetime": "2019-06-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753873,
+                34.746902,
+                -111.683173,
+                34.816091
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_060_20190618_20200109",
+              "datetime": "2019-06-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753868,
+                34.809902,
+                -111.683181,
+                34.878095
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_060_20190618_20191018",
+              "datetime": "2019-06-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.815921,
+                34.746871,
+                -111.746126,
+                34.816121
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_060_20190618_20191018",
+              "datetime": "2019-06-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.815916,
+                34.809871,
+                -111.74613,
+                34.878119
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_.6_20170605_20171128",
+              "datetime": "2017-06-05T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816415,
+                34.746868,
+                -111.746126,
+                34.815623
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_.6_20170605_20171128",
+              "datetime": "2017-06-05T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816422,
+                34.809369,
+                -111.746125,
+                34.878125
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_.6_20170604_20171128",
+              "datetime": "2017-06-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753869,
+                34.746902,
+                -111.683677,
+                34.81559
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_.6_20170604_20171128",
+              "datetime": "2017-06-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753868,
+                34.809404,
+                -111.683675,
+                34.878092
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_1_20150601_20150826",
+              "datetime": "2015-06-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.754014,
+                34.746772,
+                -111.683475,
+                34.815714
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_1_20150601_20150826",
+              "datetime": "2015-06-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.754037,
+                34.809263,
+                -111.683554,
+                34.878205
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_1_20150601_20150826",
+              "datetime": "2015-06-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816556,
+                34.74673,
+                -111.745966,
+                34.815797
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_1_20150601_20150826",
+              "datetime": "2015-06-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816627,
+                34.80922,
+                -111.745982,
+                34.878288
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_1_20130619_20130819",
+              "datetime": "2013-06-19T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753883,
+                34.80939,
+                -111.683664,
+                34.878096
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_1_20130619_20130819",
+              "datetime": "2013-06-19T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816428,
+                34.809357,
+                -111.746114,
+                34.878134
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_1_20130605_20130819",
+              "datetime": "2013-06-05T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753871,
+                34.74689,
+                -111.683662,
+                34.815596
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_1_20130605_20130819",
+              "datetime": "2013-06-05T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816423,
+                34.746857,
+                -111.74612,
+                34.815634
+              ]
+            },
+            {
+              "id": "az_m_3411111_sw_12_1_20100615",
+              "datetime": "2010-06-15T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753871,
+                34.746899,
+                -111.683673,
+                34.815596
+              ]
+            },
+            {
+              "id": "az_m_3411111_nw_12_1_20100615",
+              "datetime": "2010-06-15T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.753883,
+                34.809399,
+                -111.683675,
+                34.878096
+              ]
+            },
+            {
+              "id": "az_m_3411110_se_12_1_20100615",
+              "datetime": "2010-06-15T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816423,
+                34.746866,
+                -111.746131,
+                34.815634
+              ]
+            },
+            {
+              "id": "az_m_3411110_ne_12_1_20100615",
+              "datetime": "2010-06-15T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.816428,
+                34.809366,
+                -111.746125,
+                34.878134
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 6,
+          "returned": 6,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 12 x42y385 AZ_NorthCentral_B23",
+              "sizeInBytes": 285333842,
+              "publicationDate": "2026-05-15",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.87444638799997,
+                "maxX": -111.76431882799994,
+                "minY": 34.69889810900003,
+                "maxY": 34.78980196500004
+              },
+              "sourceId": "6a1e3bcfb66b019f32f2b43b",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/6a1e3bcfb66b019f32f2b43b",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_NorthCentral_B23/TIFF/USGS_1M_12_x42y385_AZ_NorthCentral_B23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 12 x42y386 AZ_Coconino_2019_B19",
+              "sizeInBytes": 7596058,
+              "publicationDate": "2021-01-06",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.87540029699994,
+                "maxX": -111.76514983899995,
+                "minY": 34.78906580700004,
+                "maxY": 34.87997076200003
+              },
+              "sourceId": "60679ae3d34edc0435c0b1db",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/60679ae3d34edc0435c0b1db",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_Coconino_2019_B19/TIFF/USGS_1M_12_x42y386_AZ_Coconino_2019_B19.tif"
+            },
+            {
+              "title": "USGS 1 Meter 12 x42y386 AZ_NorthCentral_B23",
+              "sizeInBytes": 296538582,
+              "publicationDate": "2026-05-15",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.87540029699994,
+                "maxX": -111.76514983899995,
+                "minY": 34.78906580700004,
+                "maxY": 34.87997076200003
+              },
+              "sourceId": "6a1e3bcfb66b019f32f2b439",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/6a1e3bcfb66b019f32f2b439",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_NorthCentral_B23/TIFF/USGS_1M_12_x42y386_AZ_NorthCentral_B23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 12 x43y385 AZ_NorthCentral_B23",
+              "sizeInBytes": 280781111,
+              "publicationDate": "2026-05-15",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.76514983899995,
+                "maxX": -111.65513726599994,
+                "minY": 34.699631812000064,
+                "maxY": 34.790439992000074
+              },
+              "sourceId": "6a1e3bc5b66b019f32f2b409",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/6a1e3bc5b66b019f32f2b409",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_NorthCentral_B23/TIFF/USGS_1M_12_x43y385_AZ_NorthCentral_B23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 12 x43y386 AZ_Coconino_2019_B19",
+              "sizeInBytes": 232105927,
+              "publicationDate": "2021-01-06",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.76598454999998,
+                "maxX": -111.65584959099999,
+                "minY": 34.78980196500004,
+                "maxY": 34.88061092200007
+              },
+              "sourceId": "60679abfd34edc0435c0b1b5",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/60679abfd34edc0435c0b1b5",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_Coconino_2019_B19/TIFF/USGS_1M_12_x43y386_AZ_Coconino_2019_B19.tif"
+            },
+            {
+              "title": "USGS 1 Meter 12 x43y386 AZ_NorthCentral_B23",
+              "sizeInBytes": 91795031,
+              "publicationDate": "2026-05-15",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -111.76598454999998,
+                "maxX": -111.65584959099999,
+                "minY": 34.78980196500004,
+                "maxY": 34.88061092200007
+              },
+              "sourceId": "6a1e3bc4b66b019f32f2b407",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/6a1e3bc4b66b019f32f2b407",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/AZ_NorthCentral_B23/TIFF/USGS_1M_12_x43y386_AZ_NorthCentral_B23.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.092,
+        "estimated_covered_area_km2": 25.092,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 6,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 909,
+        "length_km": {
+          "path_candidate": 114.855,
+          "track_candidate": 7.276,
+          "road": 139.698,
+          "sidewalk": 5.461,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2010-06-15",
+          "2013-06-05",
+          "2013-06-19",
+          "2015-06-01",
+          "2017-06-04",
+          "2017-06-05",
+          "2019-06-18",
+          "2021-10-14",
+          "2023-06-15"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Crested Butte",
+      "status": "review_later",
+      "center": {
+        "lon": -106.985,
+        "lat": 38.869,
+        "source_note": "approximate Lower Loop access near Crested Butte"
+      },
+      "bbox_wgs84": [
+        -107.013844,
+        38.846391,
+        -106.956156,
+        38.891609
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -107.01384443312908,
+          38.846390706676075,
+          -106.95615556687092,
+          38.891609293323924
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 28,
+          "truncated": false,
+          "items": [
+            {
+              "id": "co_m_3810716_ne_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067834,
+                38.808651,
+                -106.994718,
+                38.878847
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067842,
+                38.87115,
+                -106.994711,
+                38.941348
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005277,
+                38.808686,
+                -106.932275,
+                38.878812
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005286,
+                38.871185,
+                -106.932269,
+                38.941314
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_060_20210907",
+              "datetime": "2021-09-07T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.066681,
+                38.809555,
+                -106.995882,
+                38.877919
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_060_20210907",
+              "datetime": "2021-09-07T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.066695,
+                38.87205,
+                -106.995901,
+                38.940415
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_060_20210907",
+              "datetime": "2021-09-07T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.00409,
+                38.809616,
+                -106.933418,
+                38.877891
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_060_20210907",
+              "datetime": "2021-09-07T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.004118,
+                38.872112,
+                -106.933451,
+                38.940387
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_060_20190914_20191120",
+              "datetime": "2019-09-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.066681,
+                38.809555,
+                -106.995882,
+                38.877919
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_060_20190914_20191120",
+              "datetime": "2019-09-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.066695,
+                38.87205,
+                -106.995901,
+                38.940415
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_060_20190914_20191120",
+              "datetime": "2019-09-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.00409,
+                38.809616,
+                -106.933418,
+                38.877891
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_060_20190914_20191120",
+              "datetime": "2019-09-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.004118,
+                38.872112,
+                -106.933451,
+                38.940387
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_1_20171007_20180102",
+              "datetime": "2017-10-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.068001,
+                38.808523,
+                -106.994565,
+                38.87895
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_1_20171007_20180102",
+              "datetime": "2017-10-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.068016,
+                38.871019,
+                -106.994582,
+                38.941445
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_1_20170926_20180102",
+              "datetime": "2017-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005409,
+                38.808585,
+                -106.932102,
+                38.878921
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_1_20170926_20180102",
+              "datetime": "2017-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005438,
+                38.871081,
+                -106.932133,
+                38.941417
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_1_20150911_20151102",
+              "datetime": "2015-09-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.068024,
+                38.808469,
+                -106.994541,
+                38.878968
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_1_20150911_20151102",
+              "datetime": "2015-09-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067994,
+                38.871001,
+                -106.994559,
+                38.9415
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_1_20150911_20151102",
+              "datetime": "2015-09-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005433,
+                38.808567,
+                -106.932124,
+                38.878939
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_1_20150911_20151102",
+              "datetime": "2015-09-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005463,
+                38.871009,
+                -106.932085,
+                38.941472
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_1_20130925_20131119",
+              "datetime": "2013-09-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005291,
+                38.808668,
+                -106.932265,
+                38.87882
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_1_20130925_20131119",
+              "datetime": "2013-09-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005297,
+                38.871174,
+                -106.932251,
+                38.941316
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_1_20130924_20131119",
+              "datetime": "2013-09-24T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067848,
+                38.808634,
+                -106.994706,
+                38.878849
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_1_20130924_20131119",
+              "datetime": "2013-09-24T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067852,
+                38.871139,
+                -106.994701,
+                38.941353
+              ]
+            },
+            {
+              "id": "co_m_3810716_ne_13_1_20110807_20111031",
+              "datetime": "2011-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.067895,
+                38.808606,
+                -106.994659,
+                38.878894
+              ]
+            },
+            {
+              "id": "co_m_3810708_se_13_1_20110807_20111031",
+              "datetime": "2011-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.06791,
+                38.871102,
+                -106.994654,
+                38.94139
+              ]
+            },
+            {
+              "id": "co_m_3810609_nw_13_1_20110807_20111031",
+              "datetime": "2011-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005338,
+                38.808641,
+                -106.932218,
+                38.878856
+              ]
+            },
+            {
+              "id": "co_m_3810601_sw_13_1_20110807_20111031",
+              "datetime": "2011-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -107.005344,
+                38.871137,
+                -106.932216,
+                38.941362
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 2,
+          "returned": 2,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 13 x32y431 CO_WestCentral_2019_A19",
+              "sizeInBytes": 263587402,
+              "publicationDate": "2021-06-12",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -107.07630050599994,
+                "maxX": -106.95854069799998,
+                "minY": 38.83040844400006,
+                "maxY": 38.92245897400005
+              },
+              "sourceId": "60c98727d34e86b9389f399b",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/60c98727d34e86b9389f399b",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_WestCentral_2019_A19/TIFF/USGS_1M_13_x32y431_CO_WestCentral_2019_A19.tif"
+            },
+            {
+              "title": "USGS 1 Meter 13 x33y431 CO_WestCentral_2019_A19",
+              "sizeInBytes": 261804827,
+              "publicationDate": "2021-06-12",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -106.96101525799997,
+                "maxX": -106.84338963399995,
+                "minY": 38.83239634500006,
+                "maxY": 38.924339462000034
+              },
+              "sourceId": "60c98704d34e86b9389f3925",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/60c98704d34e86b9389f3925",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_WestCentral_2019_A19/TIFF/USGS_1M_13_x33y431_CO_WestCentral_2019_A19.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.131,
+        "estimated_covered_area_km2": 25.131,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 2,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 514,
+        "length_km": {
+          "path_candidate": 58.381,
+          "track_candidate": 7.592,
+          "road": 100.969,
+          "sidewalk": 2.588,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2011-08-07",
+          "2013-09-24",
+          "2013-09-25",
+          "2015-09-11",
+          "2017-09-26",
+          "2017-10-07",
+          "2019-09-14",
+          "2021-09-07",
+          "2023-09-25"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Buffalo Creek",
+      "status": "review_later",
+      "center": {
+        "lon": -105.27462,
+        "lat": 39.38918,
+        "source_note": "South Buffalo Creek Road trailhead coordinate"
+      },
+      "bbox_wgs84": [
+        -105.303678,
+        39.366571,
+        -105.245562,
+        39.411789
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -105.30367826466386,
+          39.36657070667608,
+          -105.24556173533614,
+          39.41178929332393
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 28,
+          "truncated": false,
+          "items": [
+            {
+              "id": "co_m_3910547_nw_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253713,
+                39.309672,
+                -105.183845,
+                39.377826
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.31627,
+                39.309638,
+                -105.246286,
+                39.377862
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253717,
+                39.37217,
+                -105.183841,
+                39.440325
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_030_20230925_20240104",
+              "datetime": "2023-09-25T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316273,
+                39.372137,
+                -105.246282,
+                39.44036
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_060_20210727",
+              "datetime": "2021-07-27T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.252547,
+                39.310569,
+                -105.185009,
+                39.376924
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_060_20210727",
+              "datetime": "2021-07-27T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.315103,
+                39.310525,
+                -105.247437,
+                39.37697
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_060_20210727",
+              "datetime": "2021-07-27T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.252563,
+                39.373068,
+                -105.184965,
+                39.439423
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_060_20210727",
+              "datetime": "2021-07-27T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.315105,
+                39.373024,
+                -105.247448,
+                39.439469
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_060_20190913_20191125",
+              "datetime": "2019-09-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.252547,
+                39.310569,
+                -105.185009,
+                39.376924
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_060_20190913_20191121",
+              "datetime": "2019-09-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.315103,
+                39.310525,
+                -105.247437,
+                39.37697
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_060_20190913_20191121",
+              "datetime": "2019-09-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.252563,
+                39.373068,
+                -105.184965,
+                39.439423
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_060_20190913_20191121",
+              "datetime": "2019-09-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.315105,
+                39.373024,
+                -105.247448,
+                39.439469
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_1_20170902_20180102",
+              "datetime": "2017-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253851,
+                39.309557,
+                -105.183708,
+                39.377936
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_1_20170902_20180102",
+              "datetime": "2017-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316407,
+                39.309512,
+                -105.246134,
+                39.377982
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_1_20170902_20180102",
+              "datetime": "2017-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253868,
+                39.372056,
+                -105.183662,
+                39.440434
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_1_20170902_20180102",
+              "datetime": "2017-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316411,
+                39.372011,
+                -105.246145,
+                39.440481
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_1_20150924_20151102",
+              "datetime": "2015-09-24T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.3165,
+                39.309494,
+                -105.246134,
+                39.377964
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_1_20150919_20151102",
+              "datetime": "2015-09-19T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316434,
+                39.372029,
+                -105.246122,
+                39.440499
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_1_20150912_20151102",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.25392,
+                39.309557,
+                -105.183615,
+                39.37799
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_1_20150912_20151102",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253915,
+                39.372002,
+                -105.183662,
+                39.440434
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_1_20130926_20131119",
+              "datetime": "2013-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253722,
+                39.309656,
+                -105.183824,
+                39.377827
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_1_20130926_20131119",
+              "datetime": "2013-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316279,
+                39.30962,
+                -105.246274,
+                39.377865
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_1_20130926_20131119",
+              "datetime": "2013-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253728,
+                39.372155,
+                -105.183825,
+                39.440335
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_1_20130926_20131119",
+              "datetime": "2013-09-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316283,
+                39.372119,
+                -105.246273,
+                39.440363
+              ]
+            },
+            {
+              "id": "co_m_3910547_nw_13_1_20110904_20111004",
+              "datetime": "2011-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253769,
+                39.309629,
+                -105.183789,
+                39.377872
+              ]
+            },
+            {
+              "id": "co_m_3910546_ne_13_1_20110904_20111004",
+              "datetime": "2011-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316326,
+                39.309593,
+                -105.246227,
+                39.37791
+              ]
+            },
+            {
+              "id": "co_m_3910539_sw_13_1_20110904_20111004",
+              "datetime": "2011-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.253775,
+                39.372128,
+                -105.183779,
+                39.440371
+              ]
+            },
+            {
+              "id": "co_m_3910538_se_13_1_20110904_20111004",
+              "datetime": "2011-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -105.316341,
+                39.372092,
+                -105.246226,
+                39.440408
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 8,
+          "returned": 8,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 13 x47y436 CO_ArapahoRooseveltPikeNF_D23",
+              "sizeInBytes": 271766567,
+              "publicationDate": "2026-03-20",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.34836830499995,
+                "maxX": -105.23194862199995,
+                "minY": 39.29886052400008,
+                "maxY": 39.389256819000025
+              },
+              "sourceId": "69c20ed7b66b01d6ebf33ca7",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69c20ed7b66b01d6ebf33ca7",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y436_CO_ArapahoRooseveltPikeNF_D23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 13 x47y436 CO_DRCOG_2020_B20",
+              "sizeInBytes": 91168948,
+              "publicationDate": "2022-02-10",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.34836830499995,
+                "maxX": -105.23194862199995,
+                "minY": 39.29886052400008,
+                "maxY": 39.389256819000025
+              },
+              "sourceId": "620de549d34e6c7e83baa098",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/620de549d34e6c7e83baa098",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_DRCOG_2020_B20/TIFF/USGS_1M_13_x47y436_CO_DRCOG_2020_B20.tif"
+            },
+            {
+              "title": "USGS 1 Meter 13 x47y437 CO_ArapahoRooseveltPikeNF_D23",
+              "sizeInBytes": 63990352,
+              "publicationDate": "2026-03-20",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.34881735399995,
+                "maxX": -105.23224665299995,
+                "minY": 39.388967095000055,
+                "maxY": 39.47936291100007
+              },
+              "sourceId": "69c20ed7b66b01d6ebf33ca3",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69c20ed7b66b01d6ebf33ca3",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y437_CO_ArapahoRooseveltPikeNF_D23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 13 x47y437 CO_DRCOG_2020_B20",
+              "sizeInBytes": 274642428,
+              "publicationDate": "2022-02-10",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.34881735399995,
+                "maxX": -105.23224665299995,
+                "minY": 39.388967095000055,
+                "maxY": 39.47936291100007
+              },
+              "sourceId": "620de548d34e6c7e83baa096",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/620de548d34e6c7e83baa096",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_DRCOG_2020_B20/TIFF/USGS_1M_13_x47y437_CO_DRCOG_2020_B20.tif"
+            },
+            {
+              "title": "USGS one meter x47y436 CO Central Western 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.348438246,
+                "maxX": -105.231867263,
+                "minY": 39.2990954224,
+                "maxY": 39.3890209502
+              },
+              "sourceId": "5eaa4d5b82cefae35a22033f",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eaa4d5b82cefae35a22033f",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_Central_Western_2016/TIFF/USGS_one_meter_x47y436_CO_Central_Western_2016.tif"
+            },
+            {
+              "title": "USGS one meter x47y436 CO SoPlatteRiver-Lot5 2013",
+              "sizeInBytes": 80803267,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.348438245924,
+                "maxX": -105.231878859883,
+                "minY": 39.29880625151,
+                "maxY": 39.3893110220076
+              },
+              "sourceId": "5eaa4d5b82cefae35a220341",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eaa4d5b82cefae35a220341",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_SoPlatteRiver_Lot5_2013/TIFF/USGS_one_meter_x47y436_CO_SoPlatteRiver_Lot5_2013.tif"
+            },
+            {
+              "title": "USGS one meter x47y437 CO Central Western 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.348899013,
+                "maxX": -105.232176801,
+                "minY": 39.3892028939,
+                "maxY": 39.4791260815
+              },
+              "sourceId": "5eaa4d5c82cefae35a220343",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eaa4d5c82cefae35a220343",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_Central_Western_2016/TIFF/USGS_one_meter_x47y437_CO_Central_Western_2016.tif"
+            },
+            {
+              "title": "USGS one meter x47y437 CO SoPlatteRiver-Lot5 2013",
+              "sizeInBytes": 428615926,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -105.348887385972,
+                "maxX": -105.232176800801,
+                "minY": 39.3889128231345,
+                "maxY": 39.4794171134863
+              },
+              "sourceId": "5eaa4d5c82cefae35a220345",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eaa4d5c82cefae35a220345",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_SoPlatteRiver_Lot5_2013/TIFF/USGS_one_meter_x47y437_CO_SoPlatteRiver_Lot5_2013.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.116,
+        "estimated_covered_area_km2": 25.116,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 8,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 73,
+        "length_km": {
+          "path_candidate": 10.18,
+          "track_candidate": 0.879,
+          "road": 34.656,
+          "sidewalk": 0.0,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2011-09-04",
+          "2013-09-26",
+          "2015-09-12",
+          "2015-09-19",
+          "2015-09-24",
+          "2017-09-02",
+          "2019-09-13",
+          "2021-07-27",
+          "2023-09-25"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Tiger Mountain",
+      "status": "review_later",
+      "center": {
+        "lon": -121.936128,
+        "lat": 47.467988,
+        "source_note": "Tiger Summit Trailhead coordinate"
+      },
+      "bbox_wgs84": [
+        -121.969349,
+        47.445379,
+        -121.902907,
+        47.490597
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -121.96934946736431,
+          47.445378706676074,
+          -121.90290653263568,
+          47.49059729332392
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 12,
+          "truncated": false,
+          "items": [
+            {
+              "id": "wa_m_4712133_nw_10_060_20231007_20240209",
+              "datetime": "2023-10-07T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.003885,
+                47.43511,
+                -121.933562,
+                47.502395
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_060_20231006_20240209",
+              "datetime": "2023-10-06T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.941422,
+                47.435052,
+                -121.870941,
+                47.502428
+              ]
+            },
+            {
+              "id": "wa_m_4712133_nw_10_060_20191029_20191217",
+              "datetime": "2019-10-29T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.003885,
+                47.43511,
+                -121.933562,
+                47.502395
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_060_20191011_20191217",
+              "datetime": "2019-10-11T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.941422,
+                47.435052,
+                -121.870941,
+                47.502428
+              ]
+            },
+            {
+              "id": "wa_m_4712133_nw_10_1_20170815_20171128",
+              "datetime": "2017-08-15T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.005389,
+                47.434089,
+                -121.932055,
+                47.503416
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_1_20170815_20171128",
+              "datetime": "2017-08-15T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.942928,
+                47.43403,
+                -121.869432,
+                47.50345
+              ]
+            },
+            {
+              "id": "wa_m_4712133_nw_10_1_20150825_20151123",
+              "datetime": "2015-08-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.00539,
+                47.434034,
+                -121.932002,
+                47.503416
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_1_20150825_20151123",
+              "datetime": "2015-08-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.942927,
+                47.434066,
+                -121.869458,
+                47.503486
+              ]
+            },
+            {
+              "id": "wa_m_4712133_nw_10_1_20130910_20131022",
+              "datetime": "2013-09-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.00539,
+                47.434034,
+                -121.932002,
+                47.503416
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_1_20130910_20131022",
+              "datetime": "2013-09-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.942927,
+                47.434066,
+                -121.869458,
+                47.503486
+              ]
+            },
+            {
+              "id": "wa_m_4712133_ne_10_1_20110903_20111007",
+              "datetime": "2011-09-03T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -121.942927,
+                47.434066,
+                -121.869458,
+                47.503486
+              ]
+            },
+            {
+              "id": "wa_m_4712133_nw_10_1_20110826_20111007",
+              "datetime": "2011-08-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -122.00539,
+                47.434034,
+                -121.932002,
+                47.503416
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 4,
+          "returned": 4,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 10 x57y526 WA_KingCounty_2021_B21",
+              "sizeInBytes": 371504461,
+              "publicationDate": "2023-03-03",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -122.07231294999997,
+                "maxX": -121.93799882099995,
+                "minY": 47.39855075300005,
+                "maxY": 47.48966848400005
+              },
+              "sourceId": "640825d9d34e76f5f75e4201",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/640825d9d34e76f5f75e4201",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/WA_KingCounty_2021_B21/TIFF/USGS_1M_10_x57y526_WA_KingCounty_2021_B21.tif"
+            },
+            {
+              "title": "USGS 1 Meter 10 x57y527 WA_KingCounty_2021_B21",
+              "sizeInBytes": 376596116,
+              "publicationDate": "2023-03-03",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -122.07072970299998,
+                "maxX": -121.93618072599998,
+                "minY": 47.48851594200005,
+                "maxY": 47.57963581700005
+              },
+              "sourceId": "640825d9d34e76f5f75e41ff",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/640825d9d34e76f5f75e41ff",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/WA_KingCounty_2021_B21/TIFF/USGS_1M_10_x57y527_WA_KingCounty_2021_B21.tif"
+            },
+            {
+              "title": "USGS 1 Meter 10 x58y526 WA_KingCounty_2021_B21",
+              "sizeInBytes": 349424085,
+              "publicationDate": "2023-03-03",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -121.93980811099999,
+                "maxX": -121.80527674399997,
+                "minY": 47.39724869400004,
+                "maxY": 47.48851594200005
+              },
+              "sourceId": "640825d5d34e76f5f75e41f1",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/640825d5d34e76f5f75e41f1",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/WA_KingCounty_2021_B21/TIFF/USGS_1M_10_x58y526_WA_KingCounty_2021_B21.tif"
+            },
+            {
+              "title": "USGS 1 Meter 10 x58y527 WA_KingCounty_2021_B21",
+              "sizeInBytes": 369713140,
+              "publicationDate": "2023-03-03",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -121.93799882099995,
+                "maxX": -121.80323155899998,
+                "minY": 47.48720980000007,
+                "maxY": 47.57847965900004
+              },
+              "sourceId": "640825d5d34e76f5f75e41ef",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/640825d5d34e76f5f75e41ef",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/WA_KingCounty_2021_B21/TIFF/USGS_1M_10_x58y527_WA_KingCounty_2021_B21.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.167,
+        "estimated_covered_area_km2": 25.167,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 4,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 176,
+        "length_km": {
+          "path_candidate": 65.946,
+          "track_candidate": 40.26,
+          "road": 50.924,
+          "sidewalk": 0.009,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2011-08-26",
+          "2011-09-03",
+          "2013-09-10",
+          "2015-08-25",
+          "2017-08-15",
+          "2019-10-11",
+          "2019-10-29",
+          "2023-10-06",
+          "2023-10-07"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Copper Harbor",
+      "status": "review_later",
+      "center": {
+        "lon": -87.88833,
+        "lat": 47.46889,
+        "source_note": "approximate Copper Harbor center near principal MTB trail access"
+      },
+      "bbox_wgs84": [
+        -87.921552,
+        47.446281,
+        -87.855108,
+        47.491499
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -87.92155203749408,
+          47.44628070667608,
+          -87.85510796250591,
+          47.491499293323926
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 12,
+          "truncated": false,
+          "items": [
+            {
+              "id": "mi_m_4708734_nw_16_060_20220906",
+              "datetime": "2022-09-06T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.878708,
+                47.435187,
+                -87.808857,
+                47.502307
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_060_20220906",
+              "datetime": "2022-09-06T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.941329,
+                47.435177,
+                -87.871241,
+                47.502335
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_060_20200811",
+              "datetime": "2020-08-11T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.942133,
+                47.434782,
+                -87.869954,
+                47.503219
+              ]
+            },
+            {
+              "id": "mi_m_4708734_nw_16_060_20200730",
+              "datetime": "2020-07-30T00:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.88006,
+                47.43481,
+                -87.80703,
+                47.503189
+              ]
+            },
+            {
+              "id": "mi_m_4708734_nw_16_060_20180716_20190316",
+              "datetime": "2018-07-16T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.880052,
+                47.434804,
+                -87.807022,
+                47.503189
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_060_20180716_20190316",
+              "datetime": "2018-07-16T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.942133,
+                47.434777,
+                -87.869946,
+                47.503214
+              ]
+            },
+            {
+              "id": "mi_m_4708734_nw_16_h_20160725",
+              "datetime": "2016-07-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.880069,
+                47.434308,
+                -87.807515,
+                47.503191
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_h_20160725",
+              "datetime": "2016-07-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.942651,
+                47.43427,
+                -87.869938,
+                47.503225
+              ]
+            },
+            {
+              "id": "mi_m_4708734_nw_16_1_20140814_20141113",
+              "datetime": "2014-08-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.880076,
+                47.434304,
+                -87.807505,
+                47.50319
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_1_20140814_20141113",
+              "datetime": "2014-08-14T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.942645,
+                47.434267,
+                -87.86994,
+                47.503227
+              ]
+            },
+            {
+              "id": "mi_m_4708734_nw_16_1_20120703_20120904",
+              "datetime": "2012-07-03T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.880076,
+                47.434304,
+                -87.807505,
+                47.50319
+              ]
+            },
+            {
+              "id": "mi_m_4708733_ne_16_1_20120703_20120904",
+              "datetime": "2012-07-03T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -87.942645,
+                47.434267,
+                -87.86994,
+                47.503227
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 1,
+          "returned": 1,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 16 x43y526 MI_FEMA_2019_C19",
+              "sizeInBytes": 279962221,
+              "publicationDate": "2023-01-14",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -87.92927030099997,
+                "maxX": -87.79517455799999,
+                "minY": 47.39969969500004,
+                "maxY": 47.49066740600006
+              },
+              "sourceId": "65c4715fd34ef4b119caee96",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/65c4715fd34ef4b119caee96",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/MI_FEMA_2019_C19/TIFF/USGS_1M_16_x43y526_MI_FEMA_2019_C19.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.165,
+        "estimated_covered_area_km2": 24.709,
+        "estimated_fraction": 0.9819,
+        "product_boxes_with_footprints": 1,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 588,
+        "length_km": {
+          "path_candidate": 69.005,
+          "track_candidate": 16.066,
+          "road": 78.783,
+          "sidewalk": 0.0,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2012-07-03",
+          "2014-08-14",
+          "2016-07-25",
+          "2018-07-16",
+          "2020-07-30",
+          "2020-08-11",
+          "2022-09-06"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    },
+    {
+      "site": "Kingdom Trails",
+      "status": "review_later",
+      "center": {
+        "lon": -71.936,
+        "lat": 44.588,
+        "source_note": "approximate East Burke trail-system anchor"
+      },
+      "bbox_wgs84": [
+        -71.967534,
+        44.565391,
+        -71.904466,
+        44.610609
+      ],
+      "bbox_half_width_m": 2500,
+      "sources": {
+        "bbox": [
+          -71.96753415893237,
+          44.56539070667608,
+          -71.90446584106765,
+          44.610609293323925
+        ],
+        "approximate_km2": 25.0,
+        "naip": {
+          "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "collection": "naip",
+          "item_count": 28,
+          "truncated": false,
+          "items": [
+            {
+              "id": "vt_m_4407125_se_19_030_20230921_20231113",
+              "datetime": "2023-09-21T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.94455,
+                44.495612,
+                -71.868024,
+                44.566878
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_030_20230921_20231113",
+              "datetime": "2023-09-21T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.94456,
+                44.558113,
+                -71.868013,
+                44.629378
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_030_20230623_20231113",
+              "datetime": "2023-06-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007121,
+                44.495575,
+                -71.930456,
+                44.566914
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_030_20230623_20231113",
+              "datetime": "2023-06-23T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007131,
+                44.558076,
+                -71.930443,
+                44.629414
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_060_20210919",
+              "datetime": "2021-09-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007147,
+                44.495564,
+                -71.929927,
+                44.567424
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_060_20210919",
+              "datetime": "2021-09-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944073,
+                44.495622,
+                -71.867997,
+                44.567364
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_060_20210919",
+              "datetime": "2021-09-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007105,
+                44.558562,
+                -71.92997,
+                44.629427
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_060_20210919",
+              "datetime": "2021-09-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944031,
+                44.558625,
+                -71.868033,
+                44.629362
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_060_20190113_20190227",
+              "datetime": "2019-01-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944554,
+                44.495615,
+                -71.86802,
+                44.566883
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_060_20190113_20190227",
+              "datetime": "2019-01-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944568,
+                44.558115,
+                -71.868009,
+                44.629384
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_060_20181213_20190225",
+              "datetime": "2018-12-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007122,
+                44.495575,
+                -71.930456,
+                44.566919
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_060_20181213_20190225",
+              "datetime": "2018-12-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007135,
+                44.558076,
+                -71.930443,
+                44.629419
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_h_20160904",
+              "datetime": "2016-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944554,
+                44.495615,
+                -71.86802,
+                44.566883
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_h_20160904",
+              "datetime": "2016-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944568,
+                44.558115,
+                -71.868009,
+                44.629384
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_h_20160809",
+              "datetime": "2016-08-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007122,
+                44.495575,
+                -71.930456,
+                44.566919
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_h_20160809",
+              "datetime": "2016-08-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007135,
+                44.558076,
+                -71.930443,
+                44.629419
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_1_20140904_20141006",
+              "datetime": "2014-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.00713,
+                44.495571,
+                -71.930448,
+                44.566927
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_1_20140904_20141006",
+              "datetime": "2014-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944557,
+                44.495615,
+                -71.868023,
+                44.566887
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_1_20140904_20141006",
+              "datetime": "2014-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007143,
+                44.558075,
+                -71.930438,
+                44.629421
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_1_20140904_20141006",
+              "datetime": "2014-09-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944566,
+                44.55811,
+                -71.868009,
+                44.629391
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_1_20120807_20120927",
+              "datetime": "2012-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.00713,
+                44.495571,
+                -71.930448,
+                44.566927
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_1_20120807_20120927",
+              "datetime": "2012-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944557,
+                44.495615,
+                -71.868023,
+                44.566887
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_1_20120807_20120927",
+              "datetime": "2012-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007143,
+                44.558075,
+                -71.930438,
+                44.629421
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_1_20120807_20120927",
+              "datetime": "2012-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944566,
+                44.55811,
+                -71.868009,
+                44.629391
+              ]
+            },
+            {
+              "id": "vt_m_4407125_nw_19_1_20110917_20111114",
+              "datetime": "2011-09-17T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007195,
+                44.558038,
+                -71.930374,
+                44.629468
+              ]
+            },
+            {
+              "id": "vt_m_4407125_sw_19_1_20110830_20111114",
+              "datetime": "2011-08-30T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -72.007182,
+                44.495534,
+                -71.930383,
+                44.566964
+              ]
+            },
+            {
+              "id": "vt_m_4407125_se_19_1_20110830_20111114",
+              "datetime": "2011-08-30T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944621,
+                44.495568,
+                -71.86797,
+                44.566924
+              ]
+            },
+            {
+              "id": "vt_m_4407125_ne_19_1_20110830_20111114",
+              "datetime": "2011-08-30T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -71.944631,
+                44.558072,
+                -71.867957,
+                44.629428
+              ]
+            }
+          ]
+        },
+        "3dep": {
+          "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+          "dataset": "Digital Elevation Model (DEM) 1 meter",
+          "total": 8,
+          "returned": 8,
+          "truncated": false,
+          "items": [
+            {
+              "title": "USGS 1 Meter 18 x74y494 VT_Statewide_A23",
+              "sizeInBytes": 347087933,
+              "publicationDate": "2026-03-31",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -71.98192827499997,
+                "maxX": -71.85151688899998,
+                "minY": 44.48004083700005,
+                "maxY": 44.57333258300008
+              },
+              "sourceId": "69cdd022b66b016e15c79046",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69cdd022b66b016e15c79046",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Statewide_A23/TIFF/USGS_1M_18_x74y494_VT_Statewide_A23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 18 x74y495 VT_Statewide_A23",
+              "sizeInBytes": 344693217,
+              "publicationDate": "2026-03-31",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -71.97727800799998,
+                "maxX": -71.84665122299998,
+                "minY": 44.56993171000005,
+                "maxY": 44.66323223400008
+              },
+              "sourceId": "69cdd022b66b016e15c79044",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69cdd022b66b016e15c79044",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Statewide_A23/TIFF/USGS_1M_18_x74y495_VT_Statewide_A23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 19 x26y494 VT_Statewide_A23",
+              "sizeInBytes": 352299340,
+              "publicationDate": "2026-03-31",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -72.02272198799994,
+                "maxX": -71.89248165199996,
+                "minY": 44.48343112200007,
+                "maxY": 44.576595147000035
+              },
+              "sourceId": "69cdd07ab66b016e15c79296",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69cdd07ab66b016e15c79296",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Statewide_A23/TIFF/USGS_1M_19_x26y494_VT_Statewide_A23.tif"
+            },
+            {
+              "title": "USGS 1 Meter 19 x26y495 VT_Statewide_A23",
+              "sizeInBytes": 343233907,
+              "publicationDate": "2026-03-31",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -72.02739404099998,
+                "maxX": -71.89693908299995,
+                "minY": 44.573332580000056,
+                "maxY": 44.666504985000074
+              },
+              "sourceId": "69cdd079b66b016e15c79294",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/69cdd079b66b016e15c79294",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Statewide_A23/TIFF/USGS_1M_19_x26y495_VT_Statewide_A23.tif"
+            },
+            {
+              "title": "USGS one meter x26y494 VT Connecticut River 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -72.022800252,
+                "maxX": -71.892390623,
+                "minY": 44.4866228268,
+                "maxY": 44.5733845247
+              },
+              "sourceId": "5eace76982cefae35a248af4",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eace76982cefae35a248af4",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Connecticut_River_2016/TIFF/USGS_one_meter_x26y494_VT_Connecticut_River_2016.tif"
+            },
+            {
+              "title": "USGS one meter x26y495 VT Connecticut River 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -72.027472434,
+                "maxX": -71.8968479046,
+                "minY": 44.5765344482,
+                "maxY": 44.6632841683
+              },
+              "sourceId": "5eace76a82cefae35a248afc",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5eace76a82cefae35a248afc",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Connecticut_River_2016/TIFF/USGS_one_meter_x26y495_VT_Connecticut_River_2016.tif"
+            },
+            {
+              "title": "USGS one meter x74y494 VT Connecticut River 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -71.9773506747,
+                "maxX": -71.8562748784,
+                "minY": 44.4799844807,
+                "maxY": 44.5733885228
+              },
+              "sourceId": "5ead0b2582cefae35a2556e4",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5ead0b2582cefae35a2556e4",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Connecticut_River_2016/TIFF/USGS_one_meter_x74y494_VT_Connecticut_River_2016.tif"
+            },
+            {
+              "title": "USGS one meter x74y495 VT Connecticut River 2016",
+              "sizeInBytes": null,
+              "publicationDate": "2020-03-30",
+              "extent": "10000 x 10000 meter",
+              "boundingBox": {
+                "minX": -71.9726787252,
+                "maxX": -71.8514317764,
+                "minY": 44.5698753466,
+                "maxY": 44.6632881789
+              },
+              "sourceId": "5ead0b2582cefae35a2556e8",
+              "metaUrl": "https://www.sciencebase.gov/catalog/item/5ead0b2582cefae35a2556e8",
+              "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/VT_Connecticut_River_2016/TIFF/USGS_one_meter_x74y495_VT_Connecticut_River_2016.tif"
+            }
+          ]
+        },
+        "osm": {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "query": "highway=path|footway|track",
+          "network_request": false
+        }
+      },
+      "three_dep_coverage_estimate": {
+        "method": "TNM metadata boundingBox union",
+        "estimated_site_area_km2": 25.179,
+        "estimated_covered_area_km2": 25.179,
+        "estimated_fraction": 1.0,
+        "product_boxes_with_footprints": 8,
+        "raster_validity_verified": false,
+        "limitation": "metadata bounding boxes estimate product coverage; download/open the selected DEM to verify pixel coverage and resolution"
+      },
+      "osm_lengths": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+        "ways": 359,
+        "length_km": {
+          "path_candidate": 100.609,
+          "track_candidate": 22.084,
+          "road": 76.64,
+          "sidewalk": 0.031,
+          "other": 0.0
+        }
+      },
+      "decision_basis": "Metadata and OSM length are screening evidence only. Review seasonal imagery, trail truth, access, and permissions before any training-data decision.",
+      "3dep_resolution_evidence": {
+        "requested_dataset": "Digital Elevation Model (DEM) 1 meter",
+        "product_extents": [
+          "10000 x 10000 meter"
+        ],
+        "coverage_note": "Product bounding boxes are metadata extents; actual pixel validity requires opening the raster."
+      },
+      "season_evidence": {
+        "naip_item_dates": [
+          "2011-08-30",
+          "2011-09-17",
+          "2012-08-07",
+          "2014-09-04",
+          "2016-08-09",
+          "2016-09-04",
+          "2018-12-13",
+          "2019-01-13",
+          "2021-09-19",
+          "2023-06-23",
+          "2023-09-21"
+        ],
+        "snow_shadow_cloud_leaf_condition": "unknown; metadata dates alone do not establish visibility or canopy state"
+      },
+      "independent_review": {
+        "verified_target_trail_samples": null,
+        "verified_distractor_samples": null,
+        "status": "not_collected",
+        "reason": "No independent local truth source or reviewer sample has been verified for this screen."
+      },
+      "permissions": {
+        "status": "unknown",
+        "notes": "No area-specific imagery/trail-data permission review performed."
+      },
+      "decision_reason": "review_later: metadata shows candidate imagery and 1 m DEM product extents, but no independently verified target-trail/distractor samples or area-specific permission review has been collected.",
+      "screen_status": "review_later"
+    }
+  ],
+  "park_city_imagery_followup": {
+    "status": "review_later",
+    "priority": "review before any further geographic acquisition",
+    "recommended_candidate_year": "2018",
+    "candidate_mosaics": {
+      "2021": {
+        "dates": [
+          "2021-09-24",
+          "2021-11-21"
+        ],
+        "item_ids": [
+          "ut_m_4011128_nw_12_060_20211121",
+          "ut_m_4011120_sw_12_060_20211121",
+          "ut_m_4011128_ne_12_060_20210924",
+          "ut_m_4011120_se_12_060_20210924"
+        ],
+        "item_count": 4
+      },
+      "2018": {
+        "dates": [
+          "2018-09-09",
+          "2018-09-27"
+        ],
+        "item_ids": [
+          "ut_m_4011128_ne_12_060_20180927_20181209",
+          "ut_m_4011120_se_12_060_20180927_20181209",
+          "ut_m_4011128_nw_12_060_20180909_20181209",
+          "ut_m_4011120_sw_12_060_20180909_20181209"
+        ],
+        "item_count": 4
+      },
+      "2016": {
+        "dates": [
+          "2016-08-08",
+          "2016-08-20"
+        ],
+        "item_ids": [
+          "ut_m_4011128_nw_12_1_20160820_20161017",
+          "ut_m_4011128_ne_12_1_20160808_20161017",
+          "ut_m_4011120_sw_12_1_20160808_20161017",
+          "ut_m_4011120_se_12_1_20160808_20161017"
+        ],
+        "item_count": 4
+      }
+    },
+    "reason": "2018 provides four September tiles across the Park City AOI (September 9 and 27); 2021 combines two September 24 tiles with two November 21 tiles and the sample shows widespread snow-like cover. 2016 August coverage is a fallback.",
+    "caveats": [
+      "STAC items are reconstructed from the retained AOI bbox and latest-year fetcher rule; source IDs were not embedded in the existing raster.",
+      "Acquisition date does not prove snow-free, cloud-free, or low-shadow pixels.",
+      "Check trail construction, closure, reroute and label date before using older imagery as evidence."
+    ],
+    "next_review": "Open same-corridor low-resolution previews and inspect affected trail corridors; record snow/shadow/cloud/leaf status, independent trail references, positional uncertainty and permission."
+  }
+}

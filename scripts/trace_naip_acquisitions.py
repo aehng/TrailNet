@@ -24,12 +24,23 @@ def trace(summary_path: Path, output_path: Path) -> dict:
             latest_year = max((date[:4] for date in dates), default=None)
             selected = [item for item in result.get("items", [])
                         if latest_year and item.get("datetime", "").startswith(latest_year)]
+            by_year = {}
+            for item in result.get("items", []):
+                year = item.get("datetime", "")[:4]
+                if year:
+                    by_year.setdefault(year, []).append(item)
             results.append({
                 "area": area["name"], "bbox_wgs84": bbox,
                 "stac_catalog": result.get("catalog"), "collection": result.get("collection"),
                 "item_count": result.get("item_count"), "truncated": result.get("truncated"),
                 "latest_year_selected_by_fetcher": latest_year,
                 "items_selected_by_latest_year_rule": selected,
+                "candidate_items_by_year": {
+                    year: {"item_count": len(items),
+                           "dates": sorted({item.get("datetime", "")[:10] for item in items}),
+                           "items": items}
+                    for year, items in sorted(by_year.items(), reverse=True)
+                },
                 "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded.",
             })
         except Exception as error:

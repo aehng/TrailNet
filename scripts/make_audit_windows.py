@@ -44,6 +44,14 @@ def stable_order(rows: list[dict], seed: int) -> list[dict]:
         f"{seed}:{row['area']}:{row['image']}".encode()).hexdigest())
 
 
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def _sample(row: dict, crop_px: int) -> tuple[dict, np.ndarray, np.ndarray]:
     base = Path(row["index_dir"])
     with rasterio.open(base / row["image"]) as image_ds:
@@ -61,7 +69,9 @@ def _sample(row: dict, crop_px: int) -> tuple[dict, np.ndarray, np.ndarray]:
     info = dict(row)
     info.update({"crop_left_px": left, "crop_top_px": top, "crop_width_px": int(window.width),
                  "crop_height_px": int(window.height), "center_x": center_x, "center_y": center_y,
-                 "resolution_m": resolution_m, "valid_fraction": float(valid.mean()) if valid.size else 0.0})
+                 "resolution_m": resolution_m, "valid_fraction": float(valid.mean()) if valid.size else 0.0,
+                 "image_sha256": sha256(base / row["image"]),
+                 "class_map_sha256": sha256(base / row["class_map"])})
     return info, image, labels
 
 
@@ -133,6 +143,7 @@ def build_audit(index_root: Path, output: Path, seed: int = 42,
                          "image": info["image"], "center_x": info["center_x"], "center_y": info["center_y"],
                          "crop_width_px": info["crop_width_px"], "crop_height_px": info["crop_height_px"],
                          "resolution_m": info["resolution_m"], "image_mask_valid_fraction": round(info["valid_fraction"], 6),
+                         "image_sha256": info["image_sha256"], "class_map_sha256": info["class_map_sha256"],
                          "class_1_px": int((labels == 1).sum()),
                          "class_2_px": int((labels == 2).sum()), "class_3_px": int((labels == 3).sum()),
                          "ignore_px": int((labels == 4).sum()), "background_px": int((labels == 0).sum()),

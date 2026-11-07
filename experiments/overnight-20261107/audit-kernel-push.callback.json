@@ -1,0 +1,15 @@
+{
+  "executable": "kaggle",
+  "arguments": [
+    "kernels",
+    "push",
+    "-p",
+    "experiments/overnight-20261107/kernels/audit"
+  ],
+  "pid": 37632,
+  "started_at": "2026-11-07T09:30:53.4747414+00:00",
+  "ended_at": "2026-11-07T09:30:57.2412647+00:00",
+  "elapsed_seconds": 4,
+  "status": "complete",
+  "exit_code": 0
+}

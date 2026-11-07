@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T09:16:41.195840+00:00",
+  "generated_at": "2026-11-07T09:40:02.319018+00:00",
   "method": "NAIP STAC metadata query at retained AOI bounding boxes; no assets downloaded",
   "areas": [
     {
@@ -81,6 +81,534 @@
           ]
         }
       ],
+      "candidate_items_by_year": {
+        "2023": {
+          "item_count": 4,
+          "dates": [
+            "2023-07-11",
+            "2023-07-15"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_060_20230715_20231018",
+              "datetime": "2023-07-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628174,
+                43.560377,
+                -111.559437,
+                43.627124
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_060_20230715_20231018",
+              "datetime": "2023-07-15T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628156,
+                43.62283,
+                -111.559421,
+                43.68963
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_060_20230711_20231018",
+              "datetime": "2023-07-11T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690722,
+                43.560341,
+                -111.621842,
+                43.627179
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_060_20230711_20231018",
+              "datetime": "2023-07-11T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690694,
+                43.622794,
+                -111.621816,
+                43.689685
+              ]
+            }
+          ]
+        },
+        "2021": {
+          "item_count": 4,
+          "dates": [
+            "2021-06-14"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_060_20210614",
+              "datetime": "2021-06-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628174,
+                43.560377,
+                -111.559437,
+                43.627124
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_060_20210614",
+              "datetime": "2021-06-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690722,
+                43.560341,
+                -111.621842,
+                43.627179
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_060_20210614",
+              "datetime": "2021-06-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628156,
+                43.62283,
+                -111.559421,
+                43.68963
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_060_20210614",
+              "datetime": "2021-06-14T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690694,
+                43.622794,
+                -111.621816,
+                43.689685
+              ]
+            }
+          ]
+        },
+        "2019": {
+          "item_count": 4,
+          "dates": [
+            "2019-09-02"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628174,
+                43.560377,
+                -111.559437,
+                43.627124
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690722,
+                43.560341,
+                -111.621842,
+                43.627179
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.628156,
+                43.62283,
+                -111.559421,
+                43.68963
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690694,
+                43.622794,
+                -111.621816,
+                43.689685
+              ]
+            }
+          ]
+        },
+        "2017": {
+          "item_count": 4,
+          "dates": [
+            "2017-08-18"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629573,
+                43.559361,
+                -111.558041,
+                43.628139
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692121,
+                43.559324,
+                -111.620445,
+                43.628195
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629556,
+                43.621814,
+                -111.558024,
+                43.690645
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692095,
+                43.621777,
+                -111.620417,
+                43.690701
+              ]
+            }
+          ]
+        },
+        "2015": {
+          "item_count": 4,
+          "dates": [
+            "2015-09-07"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_1_20150907_20151207",
+              "datetime": "2015-09-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629574,
+                43.559307,
+                -111.558041,
+                43.628193
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_1_20150907_20151207",
+              "datetime": "2015-09-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692171,
+                43.559306,
+                -111.620444,
+                43.628231
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_1_20150907_20151207",
+              "datetime": "2015-09-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629606,
+                43.621795,
+                -111.557999,
+                43.690681
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_1_20150907_20151207",
+              "datetime": "2015-09-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692145,
+                43.621795,
+                -111.620467,
+                43.690718
+              ]
+            }
+          ]
+        },
+        "2013": {
+          "item_count": 4,
+          "dates": [
+            "2013-08-25",
+            "2013-09-20"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_.5_20130920_20131118",
+              "datetime": "2013-09-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627575,
+                43.560758,
+                -111.560035,
+                43.626743
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_.5_20130920_20131118",
+              "datetime": "2013-09-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627606,
+                43.623247,
+                -111.559995,
+                43.689231
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_.5_20130825_20131118",
+              "datetime": "2013-08-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690172,
+                43.560759,
+                -111.62244,
+                43.626779
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_.5_20130825_20131118",
+              "datetime": "2013-08-25T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.690143,
+                43.623247,
+                -111.622465,
+                43.689267
+              ]
+            }
+          ]
+        },
+        "2011": {
+          "item_count": 4,
+          "dates": [
+            "2011-07-23"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311128_nw_12_1_20110723_20110929",
+              "datetime": "2011-07-23T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629574,
+                43.559307,
+                -111.558041,
+                43.628193
+              ]
+            },
+            {
+              "id": "id_m_4311127_ne_12_1_20110723_20110929",
+              "datetime": "2011-07-23T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692171,
+                43.559306,
+                -111.620444,
+                43.628231
+              ]
+            },
+            {
+              "id": "id_m_4311120_sw_12_1_20110723_20110929",
+              "datetime": "2011-07-23T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629606,
+                43.621795,
+                -111.557999,
+                43.690681
+              ]
+            },
+            {
+              "id": "id_m_4311119_se_12_1_20110723_20110929",
+              "datetime": "2011-07-23T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.692145,
+                43.621795,
+                -111.620467,
+                43.690718
+              ]
+            }
+          ]
+        }
+      },
       "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
     },
     {
@@ -130,6 +658,216 @@
           ]
         }
       ],
+      "candidate_items_by_year": {
+        "2021": {
+          "item_count": 2,
+          "dates": [
+            "2021-11-13"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011134_nw_12_060_20211113",
+              "datetime": "2021-11-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.878226,
+                40.435204,
+                -111.809384,
+                40.502289
+              ]
+            },
+            {
+              "id": "ut_m_4011126_sw_12_060_20211113",
+              "datetime": "2021-11-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.878192,
+                40.49769,
+                -111.809355,
+                40.564774
+              ]
+            }
+          ]
+        },
+        "2018": {
+          "item_count": 2,
+          "dates": [
+            "2018-09-09"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011134_nw_12_060_20180909_20181209",
+              "datetime": "2018-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.877654,
+                40.435641,
+                -111.809955,
+                40.501852
+              ]
+            },
+            {
+              "id": "ut_m_4011126_sw_12_060_20180909_20181209",
+              "datetime": "2018-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.87762,
+                40.498127,
+                -111.809927,
+                40.564338
+              ]
+            }
+          ]
+        },
+        "2016": {
+          "item_count": 2,
+          "dates": [
+            "2016-06-27"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011134_nw_12_1_20160627_20161017",
+              "datetime": "2016-06-27T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879561,
+                40.434185,
+                -111.808051,
+                40.503307
+              ]
+            },
+            {
+              "id": "ut_m_4011126_sw_12_1_20160627_20161017",
+              "datetime": "2016-06-27T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879528,
+                40.496671,
+                -111.808022,
+                40.565792
+              ]
+            }
+          ]
+        },
+        "2014": {
+          "item_count": 2,
+          "dates": [
+            "2014-07-01"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011134_nw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879395,
+                40.434304,
+                -111.808159,
+                40.503189
+              ]
+            },
+            {
+              "id": "ut_m_4011126_sw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879397,
+                40.496798,
+                -111.808153,
+                40.565692
+              ]
+            }
+          ]
+        },
+        "2011": {
+          "item_count": 2,
+          "dates": [
+            "2011-07-20"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011134_nw_12_1_20110720_20111011",
+              "datetime": "2011-07-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879609,
+                40.434185,
+                -111.80798,
+                40.503343
+              ]
+            },
+            {
+              "id": "ut_m_4011126_sw_12_1_20110720_20111011",
+              "datetime": "2011-07-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.8796,
+                40.496707,
+                -111.808022,
+                40.565864
+              ]
+            }
+          ]
+        }
+      },
       "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
     },
     {
@@ -211,6 +949,387 @@
           ]
         }
       ],
+      "candidate_items_by_year": {
+        "2021": {
+          "item_count": 4,
+          "dates": [
+            "2021-09-24",
+            "2021-11-21"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011128_nw_12_060_20211121",
+              "datetime": "2021-11-21T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627944,
+                40.560344,
+                -111.559571,
+                40.62712
+              ]
+            },
+            {
+              "id": "ut_m_4011120_sw_12_060_20211121",
+              "datetime": "2021-11-21T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627963,
+                40.622829,
+                -111.559596,
+                40.689659
+              ]
+            },
+            {
+              "id": "ut_m_4011128_ne_12_060_20210924",
+              "datetime": "2021-09-24T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.565443,
+                40.560396,
+                -111.497132,
+                40.627082
+              ]
+            },
+            {
+              "id": "ut_m_4011120_se_12_060_20210924",
+              "datetime": "2021-09-24T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.565403,
+                40.622881,
+                -111.497169,
+                40.689621
+              ]
+            }
+          ]
+        },
+        "2018": {
+          "item_count": 4,
+          "dates": [
+            "2018-09-09",
+            "2018-09-27"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011128_ne_12_060_20180927_20181209",
+              "datetime": "2018-09-27T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.564872,
+                40.560831,
+                -111.497702,
+                40.626647
+              ]
+            },
+            {
+              "id": "ut_m_4011120_se_12_060_20180927_20181209",
+              "datetime": "2018-09-27T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.564832,
+                40.623316,
+                -111.49774,
+                40.689186
+              ]
+            },
+            {
+              "id": "ut_m_4011128_nw_12_060_20180909_20181209",
+              "datetime": "2018-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627373,
+                40.56078,
+                -111.560142,
+                40.626685
+              ]
+            },
+            {
+              "id": "ut_m_4011120_sw_12_060_20180909_20181209",
+              "datetime": "2018-09-09T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.627391,
+                40.623264,
+                -111.560167,
+                40.689224
+              ]
+            }
+          ]
+        },
+        "2016": {
+          "item_count": 4,
+          "dates": [
+            "2016-08-08",
+            "2016-08-20"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011128_nw_12_1_20160820_20161017",
+              "datetime": "2016-08-20T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629278,
+                40.559328,
+                -111.55824,
+                40.628136
+              ]
+            },
+            {
+              "id": "ut_m_4011128_ne_12_1_20160808_20161017",
+              "datetime": "2016-08-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566776,
+                40.559381,
+                -111.495802,
+                40.628097
+              ]
+            },
+            {
+              "id": "ut_m_4011120_sw_12_1_20160808_20161017",
+              "datetime": "2016-08-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629298,
+                40.621813,
+                -111.558263,
+                40.690674
+              ]
+            },
+            {
+              "id": "ut_m_4011120_se_12_1_20160808_20161017",
+              "datetime": "2016-08-08T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566737,
+                40.621866,
+                -111.495838,
+                40.690635
+              ]
+            }
+          ]
+        },
+        "2014": {
+          "item_count": 4,
+          "dates": [
+            "2014-07-01"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011128_nw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629159,
+                40.559446,
+                -111.558395,
+                40.628045
+              ]
+            },
+            {
+              "id": "ut_m_4011128_ne_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566598,
+                40.55948,
+                -111.495956,
+                40.628006
+              ]
+            },
+            {
+              "id": "ut_m_4011120_sw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629166,
+                40.62194,
+                -111.558383,
+                40.690547
+              ]
+            },
+            {
+              "id": "ut_m_4011120_se_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566606,
+                40.621984,
+                -111.495945,
+                40.690509
+              ]
+            }
+          ]
+        },
+        "2011": {
+          "item_count": 4,
+          "dates": [
+            "2011-08-10"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4011128_nw_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629278,
+                40.559328,
+                -111.55824,
+                40.628154
+              ]
+            },
+            {
+              "id": "ut_m_4011128_ne_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566729,
+                40.559381,
+                -111.495754,
+                40.628169
+              ]
+            },
+            {
+              "id": "ut_m_4011120_sw_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.629392,
+                40.621848,
+                -111.558169,
+                40.690674
+              ]
+            },
+            {
+              "id": "ut_m_4011120_se_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.566784,
+                40.621902,
+                -111.495743,
+                40.6906
+              ]
+            }
+          ]
+        }
+      },
       "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
     },
     {
@@ -260,6 +1379,656 @@
           ]
         }
       ],
+      "candidate_items_by_year": {
+        "2023": {
+          "item_count": 2,
+          "dates": [
+            "2023-07-13"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311140_ne_12_060_20230713_20231018",
+              "datetime": "2023-07-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.06504,
+                43.43566,
+                -110.997501,
+                43.501806
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_060_20230713_20231018",
+              "datetime": "2023-07-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065033,
+                43.498168,
+                -110.997499,
+                43.564314
+              ]
+            }
+          ]
+        },
+        "2022": {
+          "item_count": 4,
+          "dates": [
+            "2022-07-12",
+            "2022-07-19"
+          ],
+          "items": [
+            {
+              "id": "wy_m_4311033_nw_12_060_20220719",
+              "datetime": "2022-07-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003713,
+                43.435281,
+                -110.933219,
+                43.502719
+              ]
+            },
+            {
+              "id": "wy_m_4311025_sw_12_060_20220719",
+              "datetime": "2022-07-19T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003717,
+                43.497281,
+                -110.933217,
+                43.565719
+              ]
+            },
+            {
+              "id": "wy_m_4311140_ne_12_060_20220712",
+              "datetime": "2022-07-12T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065776,
+                43.435281,
+                -110.996291,
+                43.502719
+              ]
+            },
+            {
+              "id": "wy_m_4311132_se_12_060_20220712",
+              "datetime": "2022-07-12T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065785,
+                43.497282,
+                -110.996288,
+                43.565719
+              ]
+            }
+          ]
+        },
+        "2021": {
+          "item_count": 2,
+          "dates": [
+            "2021-07-06"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311140_ne_12_060_20210706",
+              "datetime": "2021-07-06T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.06504,
+                43.43566,
+                -110.997501,
+                43.501806
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_060_20210706",
+              "datetime": "2021-07-06T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065033,
+                43.498168,
+                -110.997499,
+                43.564314
+              ]
+            }
+          ]
+        },
+        "2019": {
+          "item_count": 6,
+          "dates": [
+            "2019-08-26",
+            "2019-09-02"
+          ],
+          "items": [
+            {
+              "id": "wy_m_4311140_ne_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.06504,
+                43.43566,
+                -110.997501,
+                43.501806
+              ]
+            },
+            {
+              "id": "wy_m_4311132_se_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065033,
+                43.498168,
+                -110.997499,
+                43.564314
+              ]
+            },
+            {
+              "id": "id_m_4311140_ne_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.06504,
+                43.43566,
+                -110.997501,
+                43.501806
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_060_20190902_20191119",
+              "datetime": "2019-09-02T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.065033,
+                43.498168,
+                -110.997499,
+                43.564314
+              ]
+            },
+            {
+              "id": "wy_m_4311033_nw_12_060_20190826_20191030",
+              "datetime": "2019-08-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.002474,
+                43.43566,
+                -110.934935,
+                43.501806
+              ]
+            },
+            {
+              "id": "wy_m_4311025_sw_12_060_20190826_20191030",
+              "datetime": "2019-08-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.002477,
+                43.498168,
+                -110.934942,
+                43.564314
+              ]
+            }
+          ]
+        },
+        "2017": {
+          "item_count": 6,
+          "dates": [
+            "2017-07-22",
+            "2017-08-17",
+            "2017-08-18"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311140_ne_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066427,
+                43.434651,
+                -110.996116,
+                43.502815
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_1_20170818_20180102",
+              "datetime": "2017-08-18T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066421,
+                43.497159,
+                -110.996112,
+                43.565322
+              ]
+            },
+            {
+              "id": "wy_m_4311140_ne_12_1_20170817_20180102",
+              "datetime": "2017-08-17T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066427,
+                43.434651,
+                -110.996116,
+                43.502815
+              ]
+            },
+            {
+              "id": "wy_m_4311033_nw_12_1_20170817_20180102",
+              "datetime": "2017-08-17T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003859,
+                43.434651,
+                -110.933548,
+                43.502815
+              ]
+            },
+            {
+              "id": "wy_m_4311025_sw_12_1_20170817_20180102",
+              "datetime": "2017-08-17T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003863,
+                43.497159,
+                -110.933554,
+                43.565322
+              ]
+            },
+            {
+              "id": "wy_m_4311132_se_12_1_20170722_20180102",
+              "datetime": "2017-07-22T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066421,
+                43.497159,
+                -110.996112,
+                43.565322
+              ]
+            }
+          ]
+        },
+        "2015": {
+          "item_count": 6,
+          "dates": [
+            "2015-08-10",
+            "2015-09-12"
+          ],
+          "items": [
+            {
+              "id": "wy_m_4311140_ne_12_.5_20150912_20151109",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066278,
+                43.434772,
+                -110.996283,
+                43.50272
+              ]
+            },
+            {
+              "id": "wy_m_4311132_se_12_.5_20150912_20151109",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066285,
+                43.497272,
+                -110.996279,
+                43.565219
+              ]
+            },
+            {
+              "id": "wy_m_4311033_nw_12_.5_20150912_20151109",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003711,
+                43.434772,
+                -110.933715,
+                43.50272
+              ]
+            },
+            {
+              "id": "wy_m_4311025_sw_12_.5_20150912_20151109",
+              "datetime": "2015-09-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003715,
+                43.497272,
+                -110.933709,
+                43.565219
+              ]
+            },
+            {
+              "id": "id_m_4311140_ne_12_1_20150810_20151207",
+              "datetime": "2015-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066427,
+                43.434687,
+                -110.996165,
+                43.502869
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_1_20150810_20151207",
+              "datetime": "2015-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066496,
+                43.497177,
+                -110.996161,
+                43.565358
+              ]
+            }
+          ]
+        },
+        "2013": {
+          "item_count": 2,
+          "dates": [
+            "2013-08-07"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311140_ne_12_.5_20130807_20131118",
+              "datetime": "2013-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.064446,
+                43.436129,
+                -110.998145,
+                43.501428
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_.5_20130807_20131118",
+              "datetime": "2013-08-07T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.064513,
+                43.498619,
+                -110.998143,
+                43.563918
+              ]
+            }
+          ]
+        },
+        "2012": {
+          "item_count": 4,
+          "dates": [
+            "2012-07-26",
+            "2012-08-04"
+          ],
+          "items": [
+            {
+              "id": "wy_m_4311140_ne_12_1_20120804_20121004",
+              "datetime": "2012-08-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066427,
+                43.434687,
+                -110.996165,
+                43.502869
+              ]
+            },
+            {
+              "id": "wy_m_4311132_se_12_1_20120804_20121004",
+              "datetime": "2012-08-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066496,
+                43.497177,
+                -110.996161,
+                43.565358
+              ]
+            },
+            {
+              "id": "wy_m_4311033_nw_12_1_20120804_20121004",
+              "datetime": "2012-08-04T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003835,
+                43.434687,
+                -110.933573,
+                43.502869
+              ]
+            },
+            {
+              "id": "wy_m_4311025_sw_12_1_20120726_20121004",
+              "datetime": "2012-07-26T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.003839,
+                43.497177,
+                -110.933504,
+                43.565358
+              ]
+            }
+          ]
+        },
+        "2011": {
+          "item_count": 2,
+          "dates": [
+            "2011-08-12"
+          ],
+          "items": [
+            {
+              "id": "id_m_4311140_ne_12_1_20110812_20110929",
+              "datetime": "2011-08-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066427,
+                43.434687,
+                -110.996165,
+                43.502869
+              ]
+            },
+            {
+              "id": "id_m_4311132_se_12_1_20110812_20110929",
+              "datetime": "2011-08-12T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.066496,
+                43.497177,
+                -110.996161,
+                43.565358
+              ]
+            }
+          ]
+        }
+      },
       "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
     },
     {
@@ -341,6 +2110,386 @@
           ]
         }
       ],
+      "candidate_items_by_year": {
+        "2021": {
+          "item_count": 4,
+          "dates": [
+            "2021-08-13"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4111150_sw_12_060_20210813",
+              "datetime": "2021-08-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.878264,
+                41.122727,
+                -111.809339,
+                41.189806
+              ]
+            },
+            {
+              "id": "ut_m_4111150_nw_12_060_20210813",
+              "datetime": "2021-08-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.878241,
+                41.185206,
+                -111.809321,
+                41.252284
+              ]
+            },
+            {
+              "id": "ut_m_4111149_se_12_060_20210813",
+              "datetime": "2021-08-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.940795,
+                41.122667,
+                -111.871736,
+                41.189836
+              ]
+            },
+            {
+              "id": "ut_m_4111149_ne_12_060_20210813",
+              "datetime": "2021-08-13T16:00:00Z",
+              "assets": [
+                "image",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.940832,
+                41.185199,
+                -111.871777,
+                41.252313
+              ]
+            }
+          ]
+        },
+        "2018": {
+          "item_count": 4,
+          "dates": [
+            "2018-08-29",
+            "2018-09-16"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4111149_se_12_060_20180916_20181209",
+              "datetime": "2018-09-16T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.940217,
+                41.123104,
+                -111.872313,
+                41.189399
+              ]
+            },
+            {
+              "id": "ut_m_4111149_ne_12_060_20180916_20181209",
+              "datetime": "2018-09-16T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.940253,
+                41.185636,
+                -111.872356,
+                41.251877
+              ]
+            },
+            {
+              "id": "ut_m_4111150_sw_12_060_20180829_20181209",
+              "datetime": "2018-08-29T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.877686,
+                41.123164,
+                -111.809916,
+                41.18937
+              ]
+            },
+            {
+              "id": "ut_m_4111150_nw_12_060_20180829_20181209",
+              "datetime": "2018-08-29T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.877662,
+                41.185643,
+                -111.809898,
+                41.251848
+              ]
+            }
+          ]
+        },
+        "2016": {
+          "item_count": 4,
+          "dates": [
+            "2016-07-13"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4111150_sw_12_1_20160713_20161017",
+              "datetime": "2016-07-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879613,
+                41.121708,
+                -111.807992,
+                41.190824
+              ]
+            },
+            {
+              "id": "ut_m_4111150_nw_12_1_20160713_20161017",
+              "datetime": "2016-07-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879591,
+                41.184187,
+                -111.807973,
+                41.253302
+              ]
+            },
+            {
+              "id": "ut_m_4111149_se_12_1_20160713_20161017",
+              "datetime": "2016-07-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942145,
+                41.121647,
+                -111.870388,
+                41.190855
+              ]
+            },
+            {
+              "id": "ut_m_4111149_ne_12_1_20160713_20161017",
+              "datetime": "2016-07-13T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942183,
+                41.184179,
+                -111.870429,
+                41.253332
+              ]
+            }
+          ]
+        },
+        "2014": {
+          "item_count": 4,
+          "dates": [
+            "2014-06-30",
+            "2014-07-01"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4111150_sw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879456,
+                41.1218,
+                -111.8081,
+                41.190688
+              ]
+            },
+            {
+              "id": "ut_m_4111150_nw_12_1_20140701_20141030",
+              "datetime": "2014-07-01T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879458,
+                41.184296,
+                -111.808093,
+                41.253193
+              ]
+            },
+            {
+              "id": "ut_m_4111149_se_12_1_20140630_20141030",
+              "datetime": "2014-06-30T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942012,
+                41.121766,
+                -111.870545,
+                41.190728
+              ]
+            },
+            {
+              "id": "ut_m_4111149_ne_12_1_20140630_20141030",
+              "datetime": "2014-06-30T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942014,
+                41.184262,
+                -111.870537,
+                41.253223
+              ]
+            }
+          ]
+        },
+        "2011": {
+          "item_count": 4,
+          "dates": [
+            "2011-08-10"
+          ],
+          "items": [
+            {
+              "id": "ut_m_4111150_sw_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879685,
+                41.121708,
+                -111.807897,
+                41.190861
+              ]
+            },
+            {
+              "id": "ut_m_4111150_nw_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.879686,
+                41.184132,
+                -111.807948,
+                41.253284
+              ]
+            },
+            {
+              "id": "ut_m_4111149_se_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942169,
+                41.121665,
+                -111.870436,
+                41.190854
+              ]
+            },
+            {
+              "id": "ut_m_4111149_ne_12_1_20110810_20111011",
+              "datetime": "2011-08-10T00:00:00Z",
+              "assets": [
+                "image",
+                "metadata",
+                "rendered_preview",
+                "thumbnail",
+                "tilejson"
+              ],
+              "bbox": [
+                -111.942231,
+                41.184179,
+                -111.870429,
+                41.253368
+              ]
+            }
+          ]
+        }
+      },
       "source_identity_caveat": "Reconstructed from retained AOI bbox and current fetcher rule; raster tags did not retain source item IDs, so exact mosaic item identity is not independently recorded."
     }
   ]

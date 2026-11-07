@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import json
+import csv
+import hashlib
+import math
 import os
 import shutil
 import subprocess
@@ -18,7 +21,7 @@ CKPT_SLUG = "trailnet-t4e2-a-ckpt"
 AREA_NAMES = ["kelly_canyon", "corner_canyon", "park_city", "teton_pass", "snowbasin"]
 INPUT_ROOT = Path("/kaggle/input")
 WORK = Path("/kaggle/working")
-PROJECT = WORK / "TrailNet"
+PROJECT = Path("/kaggle/temp/TrailNet")
 LOG_PATH = WORK / "trailnet-t4e2_a-eval-run.log"
 
 
@@ -112,12 +115,7 @@ def stage_inputs() -> None:
     if "novelty_output_path" not in post or "novelty_filter=False" not in post:
         raise RuntimeError("stale postprocess.py: missing unfiltered/novelty split")
     log("POSTPROCESS_OK unfiltered trails + novelty split")
-    ve = (PROJECT / "src" / "trailnet" / "vector_eval.py").read_text(encoding="utf-8")
-    if "scoped_vector_metrics" not in ve or "split_lines_to_blocks" not in ve:
-        raise RuntimeError("stale vector_eval.py: missing disjoint block scope and sidewalk exclusion")
-    if "directional_reraster_scores" not in ve:
-        raise RuntimeError("stale vector_eval.py: missing directional re-raster scores")
-    log("VECTOR_EVAL_OK scoped blocks, sidewalk exclusion, directional reraster")
+    log("VECTOR_EVAL_SKIPPED pixel parity replay only")
 
     ckpt = find_file(ckpt_mount, "trailnet_best.pt")
     if ckpt is None:
@@ -178,6 +176,7 @@ def apply_checkpoint_threshold() -> float:
 
 def ensure_deps() -> None:
     import importlib.util
+    import torch
     mapping = {
         "segmentation_models_pytorch": "segmentation-models-pytorch",
         "geopandas": "geopandas",
@@ -187,7 +186,15 @@ def ensure_deps() -> None:
     }
     missing_pkgs = [pkg for mod, pkg in mapping.items() if importlib.util.find_spec(mod) is None]
     if missing_pkgs:
-        run_command([sys.executable, "-m", "pip", "install", "-q", *missing_pkgs])
+        version, cuda_build = torch.__version__, torch.version.cuda
+        constraint = WORK / "torch-constraints.txt"
+        constraint.write_text(f"torch=={version}\n", encoding="utf-8")
+        run_command([sys.executable, "-m", "pip", "install", "-q", "-c", str(constraint), *missing_pkgs])
+        import importlib
+        importlib.reload(torch)
+        if torch.__version__ != version or torch.version.cuda != cuda_build:
+            raise RuntimeError("dependency installation changed the preinstalled PyTorch/CUDA build")
+        log(f"PYTORCH_BUILD_PRESERVED version={version} cuda={cuda_build}")
 
 
 
@@ -290,90 +297,164 @@ def re_rasterize_roundtrip_check() -> dict:
     return out
 
 
+EXPECTED_INDEX_SHA256 = {
+    "corner_canyon": "277eac2dad6bdc33386eba744838a82fccea0eea0cf9e90f69a83faee7ed2411",
+    "kelly_canyon": "60bb9f2c139cfaa47c6de7fda1121d325bfb4807ff1c056ad2dbb2d295a3f63d",
+    "park_city": "b288e2b19654911aee4b81b5d51c1679affc3227a75b9964c0eb359a834a8ba2",
+    "snowbasin": "250e16679bacb0a0d20d1160ad85e1724718a20576e3b8a19535eeb126732500",
+    "teton_pass": "f04eff6be5a833ad08d2a882e7c3a88eaf16b53cef4a948eea69ab735b50984f",
+}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _audit_split(rows):
+    import numpy as np
+    result = {"train": [], "val": [], "test": []}
+    for row in rows:
+        bx, by = int(np.floor(float(row["x"]) / 2500)), int(np.floor(float(row["y"]) / 2500))
+        key = f"42:{row['area']}:{bx}:{by}".encode()
+        value = int.from_bytes(hashlib.sha256(key).digest()[:8], "big") / 2**64
+        result["test" if value < 0.15 else ("val" if value < 0.30 else "train")].append(row)
+    return result
+
+
+def write_audit_windows(index_root: Path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import rasterio
+    from rasterio.windows import Window
+
+    audit_area_order = ("park_city", "corner_canyon", "kelly_canyon", "snowbasin", "teton_pass")
+    rows = []
+    for area in audit_area_order:
+        with (index_root / area / "index.csv").open(newline="", encoding="utf-8") as stream:
+            for row in csv.DictReader(stream):
+                row["index_dir"] = str(index_root / area)
+                rows.append(row)
+    split = _audit_split(rows)
+    allocation = {"park_city": {"train": 12, "val": 12},
+                  "corner_canyon": {"train": 3, "val": 3},
+                  "kelly_canyon": {"train": 3, "val": 3},
+                  "snowbasin": {"train": 3, "val": 3},
+                  "teton_pass": {"train": 3, "val": 3}}
+    selected, shortages = [], []
+    for area in audit_area_order:
+        for split_name in ("train", "val"):
+            wanted = allocation[area][split_name]
+            candidates = [r for r in split[split_name] if r["area"] == area]
+            pool = sorted(candidates, key=lambda r: hashlib.sha256(
+                f"42:{r['area']}:{r['image']}".encode()).hexdigest())[:max(wanted*4, wanted)]
+            positive, empty = [], []
+            for row in pool:
+                base = Path(row["index_dir"])
+                with rasterio.open(base / row["class_map"]) as ds:
+                    crop = round(128 / math.sqrt(abs(ds.transform.a * ds.transform.e)))
+                    win = Window(max(0,(ds.width-crop)//2), max(0,(ds.height-crop)//2),
+                                 min(crop,ds.width), min(crop,ds.height))
+                    labels = ds.read(1, window=win)
+                (positive if np.isin(labels,[1,2,3]).any() else empty).append(row)
+            chosen = positive[:math.ceil(wanted/2)] + empty[:math.ceil(wanted/2)]
+            used = {r["image"] for r in chosen}
+            chosen.extend(r for r in pool if r["image"] not in used and len(chosen)<wanted)
+            if len(chosen)<wanted:
+                shortages.append({"area":area,"split":split_name,"requested":wanted,"available":len(chosen)})
+            selected.extend((r,split_name) for r in chosen)
+
+    audit_dir = WORK / "audit"
+    audit_dir.mkdir(parents=True,exist_ok=True)
+    key_rows, panels = [], []
+    for number,(row,split_name) in enumerate(selected,1):
+        base=Path(row["index_dir"]); image_path=base/row["image"]; class_path=base/row["class_map"]
+        with rasterio.open(image_path) as ds:
+            crop=round(128/math.sqrt(abs(ds.transform.a*ds.transform.e)))
+            win=Window(max(0,(ds.width-crop)//2),max(0,(ds.height-crop)//2),min(crop,ds.width),min(crop,ds.height))
+            image=ds.read(window=win).astype(np.float32); valid=np.all(ds.read_masks(window=win)>0,axis=0)
+            transform=ds.window_transform(win); cx,cy=transform*(win.width/2,win.height/2)
+        with rasterio.open(class_path) as ds: labels=ds.read(1,window=win)
+        sid=f"W{number:03d}"
+        key_rows.append({"sample_id":sid,"area":row["area"],"split":split_name,"image":row["image"],
+            "center_x":cx,"center_y":cy,"crop_width_px":int(win.width),"crop_height_px":int(win.height),
+            "resolution_m":0.6,"image_mask_valid_fraction":round(float(valid.mean()),6),
+            "image_sha256":sha256(image_path),"class_map_sha256":sha256(class_path),
+            "class_1_px":int((labels==1).sum()),"class_2_px":int((labels==2).sum()),
+            "class_3_px":int((labels==3).sum()),"ignore_px":int((labels==4).sum()),
+            "background_px":int((labels==0).sum()),
+            "selection_stratum":"reference_positive" if np.isin(labels,[1,2,3]).any() else "apparently_empty"})
+        rgb=np.moveaxis(image[:3],0,-1); rgb=np.clip(rgb/max(1.0,float(np.nanpercentile(rgb,99))),0,1)
+        cir=np.moveaxis(image[[3,0,1]],0,-1); cir=np.clip(cir/max(1.0,float(np.nanpercentile(cir,99))),0,1)
+        panels.append((sid,rgb,cir,image[6]))
+    with (audit_dir/"audit_samples.csv").open("w",newline="",encoding="utf-8") as stream:
+        writer=csv.DictWriter(stream,fieldnames=list(key_rows[0])); writer.writeheader(); writer.writerows(key_rows)
+    for sheet,start in enumerate(range(0,len(panels),16),1):
+        batch=panels[start:start+16]; fig,axes=plt.subplots(len(batch),3,figsize=(11,max(3,len(batch)*2.1)),squeeze=False)
+        for i,(sid,rgb,cir,relief) in enumerate(batch):
+            for ax,array,title in zip(axes[i],(rgb,cir,relief),("RGB","NIR/R/G","3DEP relief")):
+                ax.imshow(array,cmap=None if array.ndim==3 else "gray"); ax.set_title(title,fontsize=8); ax.set_xticks([]); ax.set_yticks([])
+            axes[i,0].set_ylabel(sid,rotation=0,labelpad=20,fontsize=8)
+        fig.tight_layout(); fig.savefig(audit_dir/f"contact_sheet_{sheet:02d}.png",dpi=130); plt.close(fig)
+    summary={"seed":42,"block_size_m":2500,"crop_target_m":128,"requested_windows":48,
+             "sampled_windows":len(key_rows),"shortages":shortages,
+             "tile_pixel_identity_check":"compare image_sha256 and class_map_sha256 to local provisional samples",
+             "limitations":["no independent human adjudication","no labels or predictions appear on contact sheets"]}
+    (audit_dir/"audit_window_summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
+    return summary
+
+
 def main() -> None:
     if LOG_PATH.exists():
         LOG_PATH.unlink()
     started = time.time()
     os.environ.setdefault("MPLBACKEND", "Agg")
-    log(f"TrailNet {EXPERIMENT} starting (NO TRAIN)")
+    log(f"TrailNet {EXPERIMENT} starting (NO TRAIN; A PIXEL REPLAY + TILE AUDIT)")
     stage_inputs()
     ensure_deps()
-    thr = apply_checkpoint_threshold()
+    threshold = apply_checkpoint_threshold()
     sys.path.insert(0, str(PROJECT / "src"))
     import torch
     log(f"CUDA_COUNT {torch.cuda.device_count() if torch.cuda.is_available() else 0}")
-    # prepare sidewalk-aware tiles (CPU-ish) then GPU predict
+
     run_command([sys.executable, "scripts/prepare_data.py", "--config", CONFIG_NAME, "--all-areas"])
+    tile_root = PROJECT / "data" / "tiles_t4e_a"
+    index_hashes = {}
+    for area, expected in EXPECTED_INDEX_SHA256.items():
+        path = tile_root / area / "index.csv"
+        actual = sha256(path)
+        index_hashes[area] = {"sha256": actual, "expected_recovered_a_sha256": expected,
+                              "matches": actual == expected}
+    if not all(item["matches"] for item in index_hashes.values()):
+        raise RuntimeError(f"A regenerated tile index mismatch: {index_hashes}")
+    audit = write_audit_windows(tile_root)
+
     run_command([sys.executable, "scripts/predict.py", "--config", CONFIG_NAME, "--all-areas"])
-    run_command([sys.executable, "scripts/vectorize.py", "--config", CONFIG_NAME, "--all-areas"])
-    # Confirm novelty product exists and trails are unfiltered (novelty count <= trails)
-    for name in AREA_NAMES:
-        trails = PROJECT / "outputs_t4e_a" / "vectors" / f"{name}_trails.geojson"
-        novelty = PROJECT / "outputs_t4e_a" / "vectors" / f"{name}_novelty.geojson"
-        if trails.exists() and novelty.exists():
-            import geopandas as gpd
-            nt, nn = len(gpd.read_file(trails)), len(gpd.read_file(novelty))
-            log(f"NOVELTY_SPLIT {name} trails={nt} novelty={nn}")
-            if nn > nt:
-                raise RuntimeError(f"novelty count {nn} > trails {nt} for {name}")
-    vectors = write_vector_metrics()
-    reraster = re_rasterize_roundtrip_check()
-    # also run held-out pixel evaluate for continuity (uses same ckpt threshold via evaluate)
-    eval_output = run_command([
-        sys.executable, "scripts/evaluate.py", "--config", CONFIG_NAME,
-        "--thresholds", "0.90",
-    ])
-    aggregates = (vectors or {}).get("_aggregates") or {}
-    compact = {
-        "run": EXPERIMENT,
-        "config": CONFIG_NAME,
-        "architecture": "dual_terrain",
-        "no_train": True,
-        "eval_threshold": thr,
-        "val_block_agg_5m": aggregates.get("val_blocks"),
-        "test_block_agg_5m": aggregates.get("test_blocks"),
-        "full_footprint_agg_5m": aggregates.get("full_footprint"),
-        "reraster_check": {
-            k: {kk: vv for kk, vv in (v or {}).items() if kk in (
-                "roundtrip_precision", "roundtrip_recall", "meaningful", "crs", "threshold"
-            )}
-            if isinstance(v, dict) else v
-            for k, v in (reraster or {}).items()
-        },
-        "elapsed_seconds": round(time.time() - started, 1),
+    eval_output = run_command([sys.executable, "scripts/evaluate.py", "--config", CONFIG_NAME,
+                               "--thresholds", "0.90"])
+    result = {
+        "run": EXPERIMENT, "status": "complete", "config": CONFIG_NAME,
+        "no_train": True, "checkpoint_threshold": threshold, "pixel_eval_threshold": 0.90,
+        "eval_tail": eval_output[-8000:], "regenerated_a_index_hashes": index_hashes,
+        "audit_windows": audit, "elapsed_seconds": round(time.time() - started, 1),
+        "source_datasets": [RASTER_SLUG, CODE_SLUG, CKPT_SLUG],
     }
-    # Per-area val/test headlines (small) for downloadable gate table
-    val_block_metrics = {
-        "aggregates": aggregates,
-        "per_area": {
-            name: {
-                "val_blocks": (row.get("scopes") or {}).get("val_blocks"),
-                "test_blocks": (row.get("scopes") or {}).get("test_blocks"),
-                "full_footprint": (row.get("scopes") or {}).get("full_footprint"),
-            }
-            for name, row in (vectors or {}).items()
-            if name != "_aggregates" and isinstance(row, dict)
-        },
-    }
-    metrics = {
-        **compact,
-        "vector_metrics": vectors,
-        "reraster_check": reraster,
-        "eval_tail": eval_output[-2000:],
-    }
-    metrics_text = json.dumps(metrics, indent=2, default=str)
-    compact_text = json.dumps(compact, indent=2, default=str)
-    val_text = json.dumps(val_block_metrics, indent=2, default=str)
-    # Root of /kaggle/working so files API retains them (not buried under project/)
-    (WORK / "metrics.json").write_text(compact_text, encoding="utf-8")
-    (WORK / "val_block_metrics.json").write_text(val_text, encoding="utf-8")
-    (WORK / "metrics_full.json").write_text(metrics_text, encoding="utf-8")
-    out_dir = PROJECT / "outputs_t4e_a"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "metrics.json").write_text(compact_text, encoding="utf-8")
-    (out_dir / "val_block_metrics.json").write_text(val_text, encoding="utf-8")
-    log("METRICS_WRITTEN " + json.dumps({"root": str(WORK / "metrics.json"), "val_block": str(WORK / "val_block_metrics.json")}))
-    log("RUN_COMPLETE " + json.dumps(compact, default=str))
+    (WORK / "metrics.json").write_text(json.dumps(result, indent=2, default=str), encoding="utf-8")
+    (WORK / "preflight.json").write_text(json.dumps({
+        "checkpoint_sha256": sha256(PROJECT / "checkpoints_t4e2_a" / "trailnet_best.pt"),
+        "checkpoint_handoff_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+        "checkpoint_matches_handoff": sha256(PROJECT / "checkpoints_t4e2_a" / "trailnet_best.pt") == "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+        "regenerated_a_index_hashes": index_hashes,
+        "audit_sample_tile_hashes": "audit/audit_samples.csv",
+        "pixel_identity_verified_for_all_sampled_tiles": False,
+    }, indent=2), encoding="utf-8")
+    log("RUN_COMPLETE " + json.dumps({"elapsed_seconds": result["elapsed_seconds"],
+                                      "threshold": threshold, "audit_windows": audit.get("sampled_windows")}))
 
 
 if __name__ == "__main__":

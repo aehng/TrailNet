@@ -1,6 +1,6 @@
 {
-  "id": "elikearl/trailnet-t4q-a-replay-20261107",
-  "title": "TrailNet T4Q A Replay 2026-11-07",
+  "id": "elikearl/trailnet-t4q-a-replay-2026-11-07",
+  "title": "trailnet-t4q-a-replay-2026-11-07",
   "code_file": "run.py",
   "language": "python",
   "kernel_type": "script",
@@ -8,7 +8,11 @@
   "enable_gpu": true,
   "enable_tpu": false,
   "enable_internet": true,
-  "keywords": ["trailnet", "baseline", "replay"],
+  "keywords": [
+    "trailnet",
+    "baseline",
+    "replay"
+  ],
   "dataset_sources": [
     "elikearl/trailnet-multiaoi-v4",
     "elikearl/trailnet-t4e-code",
