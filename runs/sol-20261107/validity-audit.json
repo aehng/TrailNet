@@ -87,6 +87,7 @@
       },
       "val_traces": [
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "corner_canyon_r0009216_c0006144.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,
@@ -94,6 +95,7 @@
           "optical_declared_invalid_pixels": 209408
         },
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "corner_canyon_r0009216_c0006912.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,
@@ -274,6 +276,7 @@
       },
       "val_traces": [
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "park_city_r0000000_c0002688.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,
@@ -281,6 +284,7 @@
           "optical_declared_invalid_pixels": 0
         },
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "park_city_r0009216_c0006912.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,
@@ -375,6 +379,7 @@
       },
       "val_traces": [
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "snowbasin_r0007680_c0000000.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,
@@ -382,6 +387,7 @@
           "optical_declared_invalid_pixels": 0
         },
         {
+          "terrain_nonfinite_inside_optical_bounds": 0,
           "image": "snowbasin_r0009216_c0003072.tif",
           "optical_tensor_max_abs_difference": 0.0,
           "terrain_tensor_max_abs_difference": 0.0,

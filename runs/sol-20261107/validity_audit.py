@@ -39,7 +39,8 @@ for folder in sorted(SOURCE.iterdir()):
                 reproject(rasterio.band(dtm,1),z,src_transform=dtm.transform,src_crs=dtm.crs,src_nodata=dtm.nodata,dst_transform=transform,dst_crs=src.crs,dst_nodata=np.nan,resampling=Resampling.bilinear)
                 terr=np.stack(derive_terrain(z,src.transform.a,src.transform.e,25))*1.85
                 with rasterio.open(Path(r['index_dir'])/r['image']) as tile: actual=tile.read()
-                entry['val_traces'].append(dict(image=r['image'],optical_tensor_max_abs_difference=float(np.max(np.abs(norm-actual[:4]))),terrain_tensor_max_abs_difference=float(np.max(np.abs(terr-actual[4:]))),terrain_nonfinite_reprojected=int((~np.isfinite(z)).sum()),optical_declared_invalid_pixels=int(np.any(src.read_masks([1,2,3,4],window=win,boundless=True)==0,axis=0).sum())))
+                inside=((rr+np.arange(512))[:,None]<src.height)&((cc+np.arange(512))[None,:]<src.width)
+                entry['val_traces'].append(dict(terrain_nonfinite_inside_optical_bounds=int(((~np.isfinite(z))&inside).sum()),image=r['image'],optical_tensor_max_abs_difference=float(np.max(np.abs(norm-actual[:4]))),terrain_tensor_max_abs_difference=float(np.max(np.abs(terr-actual[4:]))),terrain_nonfinite_reprojected=int((~np.isfinite(z)).sum()),optical_declared_invalid_pixels=int(np.any(src.read_masks([1,2,3,4],window=win,boundless=True)==0,axis=0).sum())))
     result['areas'][folder.name]=entry
     print(folder.name,entry['optical']['invalid_by_band'],entry['terrain']['invalid_by_band'],flush=True)
 (OUT/'validity-audit.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')

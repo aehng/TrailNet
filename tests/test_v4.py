@@ -7,6 +7,7 @@ import geopandas as gpd
 import numpy as np
 import rasterio
 import torch
+import pytest
 from rasterio.transform import from_origin
 from shapely.geometry import LineString
 
@@ -74,7 +75,8 @@ def test_tile_stack_has_seven_channels_and_scales_only_terrain(tmp_path):
     assert classes[33, 20] == 1
 
 
-def test_outside_source_pixels_are_ignored_only_when_opted_in(tmp_path):
+@pytest.mark.parametrize("soft_band", [0.0, 5.0])
+def test_outside_source_pixels_are_ignored_only_when_opted_in(tmp_path, soft_band):
     data = tmp_path / "data"
     data.mkdir()
     imagery = data / "naip.tif"
@@ -89,13 +91,15 @@ def test_outside_source_pixels_are_ignored_only_when_opted_in(tmp_path):
         [{"highway": "path", "class_group": "path", "source": "test",
           "geometry": LineString([(500002, 4499995), (500018, 4499995)])},
          {"highway": "path", "class_group": "path", "source": "test",
-          "geometry": LineString([(500000.6, 4499998.5), (500002.4, 4499998.5)])}],
+          "geometry": LineString([(500000.6, 4499998.5), (500002.4, 4499998.5)])},
+         {"highway": "path", "class_group": "path", "source": "test",
+          "geometry": LineString([(500015, 4499988), (500030, 4499988)])}],
         crs="EPSG:32612",
     ).to_file(trails, driver="GPKG")
 
     common = {
         "_root": tmp_path,
-        "tiling": {"tile_size": 64, "overlap": 0,
+        "tiling": {"tile_size": 64, "overlap": 0, "soft_label_band_m": soft_band,
                    "trail_buffer_m": {"path": 1.0, "default": 1.0}},
         "terrain": {"local_relief_radius_px": 8, "channel_gain": 1.0},
     }
@@ -134,11 +138,11 @@ def test_outside_source_pixels_are_ignored_only_when_opted_in(tmp_path):
     assert (legacy_classes[~outside] == 1).any()
     assert legacy_classes[2, 2] == fixed_classes[2, 2] == 1
     assert np.all(legacy_image[:4, 2, 2] == 0)
-    assert np.all(legacy_classes[outside] == 0)
+    assert np.any(legacy_classes[outside] == 1)
     assert np.all(fixed_classes[outside] == 4)
-    assert np.all(legacy_target[outside] == 0)
+    assert np.any(legacy_target[outside] > 0)
     assert np.all(fixed_target[outside] == 0)
-    assert np.all(legacy_weights[outside] == 1.0)
+    assert np.all(legacy_weights[outside] > 0)
     assert np.all(fixed_weights[outside] == 0.0)
     assert np.array_equal(legacy_weights[~outside], fixed_weights[~outside])
 
