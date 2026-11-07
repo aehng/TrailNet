@@ -5,7 +5,7 @@ import geopandas as gpd
 import pandas as pd
 from shapely.geometry import LineString
 
-from trailnet.data.download import parse_overpass_response, probe_3dep
+from trailnet.data.download import fetch_naip, parse_overpass_response, probe_3dep
 from trailnet.data.labels import _drop_unnamed_osm_footway
 from trailnet.export import export_geojson, export_gpx, export_kml
 
@@ -28,6 +28,48 @@ def test_3dep_probe_preserves_product_footprints_and_resolution_metadata(monkeyp
     assert product["boundingBox"]["minX"] == -111.9
     assert product["extent"] == "10000 x 10000 meter"
     assert product["sourceId"] == "source-1"
+
+
+def test_fetch_naip_marks_fourth_output_band_undefined_not_alpha(tmp_path, monkeypatch):
+    import numpy as np
+    import rasterio
+    from rasterio.enums import ColorInterp
+    from rasterio.transform import from_origin
+    from rasterio.warp import transform_bounds
+    from trailnet.data import download
+
+    source_path = tmp_path / "naip-source.tif"
+    source_profile = {
+        "driver": "GTiff", "width": 100, "height": 100, "count": 4,
+        "dtype": "uint8", "crs": "EPSG:32612",
+        "transform": from_origin(500000, 4500000, 0.6, 0.6), "nodata": 0,
+    }
+    source_values = np.stack([np.full((100, 100), value, dtype=np.uint8)
+                              for value in (20, 40, 60, 80)])
+    with rasterio.open(source_path, "w", **source_profile) as source:
+        source.write(source_values)
+        source.colorinterp = (ColorInterp.red, ColorInterp.green,
+                              ColorInterp.blue, ColorInterp.undefined)
+    bounds_4326 = transform_bounds(
+        "EPSG:32612", "EPSG:4326", 500000, 4499940, 500060, 4500000,
+        densify_pts=21,
+    )
+    bbox = [bounds_4326[0], bounds_4326[1], bounds_4326[2], bounds_4326[3]]
+    monkeypatch.setattr(download, "_target_grid", lambda *_: (
+        "EPSG:32612", from_origin(500000, 4500000, 0.6, 0.6), 100, 100,
+    ))
+    monkeypatch.setattr(download, "_stac_search", lambda *_, **__: ([{
+        "id": "fixture-2021", "properties": {"datetime": "2021-06-01T00:00:00Z"},
+        "assets": {"image": {"href": str(source_path)}},
+        "bbox": list(bounds_4326),
+    }], False))
+    monkeypatch.setattr(download, "_pc_signed_href", lambda href, *_args, **_kwargs: href)
+
+    output = fetch_naip(bbox, tmp_path / "naip-output.tif", max_raster_km2=25)
+    with rasterio.open(output) as result:
+        assert result.colorinterp == (ColorInterp.red, ColorInterp.green,
+                                      ColorInterp.blue, ColorInterp.undefined)
+        np.testing.assert_array_equal(result.read(), source_values)
 
 
 def test_overpass_response_becomes_tagged_trail_lines():

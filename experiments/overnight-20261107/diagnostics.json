@@ -1,6 +1,6 @@
 {
   "status": "a_replay_complete_diagnostics_incomplete",
-  "reason": "A replay and published held-out pixel metrics reproduced; independent labels, weather adjudication, band identity, nodata semantics, and paired imagery registration are still unresolved.",
+  "reason": "A replay and published held-out pixel metrics reproduced; independent labels, weather adjudication, existing-raster mask/nodata behavior, and paired imagery registration are still unresolved. Source metadata confirms RGBN, and the NAIP writer now prevents new mosaics from tagging NIR as alpha.",
   "input_identities": {
     "checkpoint_matches_handoff": true,
     "raw_source_files_match_manifest": true,
@@ -11,7 +11,7 @@
     "local_provisional_image_hashes_match": "0/45",
     "local_provisional_class_map_hashes_match": "0/45",
     "canonical_park_city_screen_uses_exact_replay_centers": true,
-    "park_city_2021_eo_band_metadata": "all four reconstructed NAIP STAC items explicitly identify band 4 as NIR; local raster colorinterp still says alpha"
+    "park_city_2021_eo_band_metadata": "all four reconstructed NAIP STAC items identify band 4 as NIR; source COG tags it undefined; fetch_naip now writes RGB+undefined on new mosaics; existing mosaics still have alpha metadata"
   },
   "a_checkpoint_ablation": {
     "full_input": "not_run",
@@ -32,13 +32,13 @@
     "canonical_centers_from": "completed A replay audit_samples.csv",
     "bounded_retrieval": "complete for all 24 paired footprints",
     "candidate_allzero_windows": 0,
-    "mean_candidate_rgb_zero_pixel_fraction": 0.571854,
-    "candidate_reported_mask_valid_fraction": "1.0 for all windows despite all-zero RGB windows; masks require validation",
-    "band_order": "unverified",
-    "co_registration": "not measured",
+    "mean_candidate_rgb_zero_pixel_fraction": 0.0,
+    "candidate_reported_mask_valid_fraction": "1.0 for all 24 September 2018 NAIP windows",
+    "band_order": "STAC eo:bands identify Red/Green/Blue/NIR; raster:bands extension absent",
+    "co_registration": "local SIFT/RANSAC screen accepted 0/24 pairs; manual stable-landmark registration remains unmeasured",
     "snow_shadow_cloud_canopy_scored": false,
     "reuse_permission": "unknown",
-    "status": "bounded retrieval complete: 24/24 September 2018 NAIP windows return nonzero RGB and full reported mask; image-only review and stable-landmark registration remain open",
+    "status": "bounded retrieval complete: 24/24 September 2018 NAIP windows return nonzero RGB and full reported mask; image-only review found a stronger exposed-ground candidate, but automated registration screen accepted 0/24 pairs and trail-date compatibility remains open",
     "candidate_mean_zero_rgb_fraction": 0.0,
     "candidate_projection_transform": "reprojected from EPSG:26912 to exact EPSG:32612 0.6 m window bounds; per-window affine equals requested sample footprint; stable-landmark registration not measured",
     "candidate_band_order": "NAIP item eo:bands identify Red, Green, Blue, NIR; raster:bands extension absent",
@@ -48,8 +48,23 @@
       "mean_zero_rgb_fraction": 0.571854,
       "decision": "partial coverage; do not prefer as full-area replacement"
     },
+    "current_2021_validity": {
+      "windows": 24,
+      "partial_coverage_windows": ["W005", "W023"],
+      "valid_fraction_each": 0.230047,
+      "other_windows_report_full_validity": true,
+      "investigation": "Trace source footprint and mask through existing mosaic and training tile writer; do not infer full sample coverage from the other windows."
+    },
+    "registration_screen": {
+      "artifact": "experiments/overnight-20261107/registration_screen.json",
+      "method": "scikit-image SIFT descriptors and RANSAC SimilarityTransform on the 24 retrieved 2018/current RGB chip pairs",
+      "screen_passes": 0,
+      "screen_total": 24,
+      "criterion": "at least 8 inliers within 2 pixels and at least 0.30 inlier fraction",
+      "interpretation": "Features are too sparse or inconsistent to validate registration; this is not proof the imagery is misaligned. Manual stable-landmark matching is required before any paired model comparison."
+    },
     "warning": "Kernel emitted GDAL warning that WarpedVRT ignored optional RES; merge output transform is exact EPSG:32612 at 0.6 m, but stable-landmark registration remains unverified."
   },
   "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
-  "next_step": "Blinded-review current 2021 versus September 2018 NAIP on the 24 canonical windows; assess snow, bare, shadow, canopy, cloud and tread visibility separately. Check trail-date compatibility and independent references. Resolve local NIR colorinterp-alpha and nodata/mask behavior before training."
+  "next_step": "Investigate partial current-image validity for W005/W023; image-only review valid 2021/September 2018 pairs and measure stable-landmark registration; check trail-date compatibility and independent references. Existing masks/nodata behavior remains a training gate even though the writer now tags new NIR outputs correctly."
 }

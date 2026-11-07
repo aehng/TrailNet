@@ -60,7 +60,7 @@
     },
     "replay_callback": "complete; no inference/model-work error",
     "gpu_quota_after_failed_replay_retry_h": 28.56,
-    "park_city_best_followup_candidate": "PC2018 municipal imagery flown June 24 and July 1, 2018 was bounded-fetched for 24 canonical windows; 13/24 are all-zero. Complete September 2018 NAIP coverage remains a secondary candidate.",
+    "park_city_best_followup_candidate": "September 2018 NAIP is the lead imagery candidate: all 24 paired canonical windows have nonzero RGB and reported full masks; broad exposed-ground improvement is qualitative. Stable-landmark registration and trail-date compatibility remain unverified. PC2018 municipal imagery remains secondary because 13/24 windows are all-zero.",
     "naip2018_cpu_kernel": "elikearl/trailnet-park-city-naip2018-screen-2026-11-07; corrected version complete in 17.9 seconds; no GPU",
     "naip2018_initial_version": "ERROR: source COGs use EPSG:26912, not expected EPSG:32612; corrected run reprojects bounded windows to EPSG:32612"
   },
@@ -80,7 +80,7 @@
       "2021-11-21"
     ],
     "park_city_best_followup_candidate": "2018-09-09 and 2018-09-27; full four-tile coverage; visual weather and trail-change checks pending",
-    "visual_snow_review": "Image-only qualitative pass: examples W001, W004, W006-W008, W014-W018, W020, W022 look broadly bright/snow-like in 2021; paired September 2018 chips appear more exposed/vegetated. Not a measured snow fraction or tread adjudication; blinded human review pending.",
+    "visual_snow_review": "Image-only qualitative pass: examples W001, W004, W006-W008, W014-W018, W020, W022 look broadly bright/snow-like in 2021; paired September 2018 chips often show more exposed ground/vegetation. Not a measured snow fraction or tread adjudication; independent review pending.",
     "park_city_canonical_imagery_windows": 24,
     "park_city_canonical_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
     "park_city_candidate_2018_image_service": {
@@ -110,7 +110,8 @@
       "allzero_windows": 0,
       "mean_zero_rgb_fraction": 0.0,
       "all_windows_reported_mask_valid": true,
-      "stable_landmark_registration": "not measured",
+      "stable_landmark_registration": "automated SIFT/RANSAC screen accepted 0/24 pairs; manual landmarks not measured",
+      "registration_screen_artifact": "registration_screen.json",
       "permission": "unknown"
     }
   },
@@ -190,19 +191,20 @@
   },
   "training_gate": {
     "status": "not_qualified",
-    "reason": "A replay parity is sufficient for the published held-out pixel score and five index hashes. No independent verified trail/distractor samples or blinded weather adjudication exist; local nodata/mask semantics and landmark registration remain unresolved, and split footprints overlap.",
-    "next_decision": "Validate local raster mask/nodata behavior; conduct blinded review and landmark registration on the 24 same-footprint 2021/September-2018 NAIP pairs; establish independent dated trail truth and permission before considering any training arm."
+    "reason": "A replay parity is sufficient for the published held-out pixel score and five index hashes. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
+    "next_decision": "Investigate 2021 partial-coverage windows W005/W023; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs; establish independent dated trail truth and permission before considering any training arm."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
     "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
-    "full_test_suite": "87 passed, 146 warnings; fresh `pytest -q` run succeeded in the normal Windows context.",
+    "full_test_suite": "88 passed, 148 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0,
-    "artifact_validation": "All tracked JSON parsed; imagery inventory has 5 rows; canonical screen has 24 windows with 13 allzero candidate windows; all 5 regenerated A index hashes match; no_train=true.",
-    "git_diff_check": "passed before commit",
-    "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds"
+    "artifact_validation": "All 62 experiment JSON files parse; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; 2021 paired screen has 2 partial-coverage windows (W005/W023); all 5 regenerated A index hashes match; no_train=true.",
+    "git_diff_check": "passed after documentation updates",
+    "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds",
+    "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs"
   },
   "artifacts": {
     "replay_output": "experiments/overnight-20261107/kaggle-a-replay-final-output/",
@@ -210,6 +212,7 @@
     "canonical_imagery_screen": "experiments/overnight-20261107/park-city-imagery-final-output/park-city-imagery/paired-imagery-screen.json",
     "canonical_contact_sheets": "experiments/overnight-20261107/park-city-imagery-final-output/park-city-imagery/paired-contact-sheet-01.png through paired-contact-sheet-04.png",
     "park_city_2018_naip_screen": "experiments/overnight-20261107/park-city-naip2018-output/park-city-naip2018/paired-imagery-screen.json",
+    "park_city_2018_registration_screen": "experiments/overnight-20261107/registration_screen.json",
     "park_city_2021_item_metadata": "experiments/overnight-20261107/naip-2021-item-metadata.json"
   }
 }

@@ -14,7 +14,7 @@
     },
     "input_registration_and_pixel_identity": {
       "status": "partial",
-      "evidence": "A replay index hashes and published held-out score match; local provisional crop hashes match 0/45. Exact 2021 and 2018 NAIP STAC eo:bands confirm RGBN, but the local 2021 raster colorinterp says alpha, nodata/mask semantics are unresolved, and stable-landmark registration for alternate imagery is unmeasured. Municipal image-service band names are unknown."
+      "evidence": "A replay index hashes and published held-out score match; local provisional crop hashes match 0/45. Exact 2021 and 2018 NAIP STAC eo:bands confirm RGBN. New fetch_naip outputs now tag band 4 undefined instead of alpha, but existing mosaics retain the old tag and nodata/mask semantics remain unresolved; paired screen reports 23.0047% current-image validity in W005/W023. Local SIFT/RANSAC accepted 0/24 September 2018 pairs; manual stable-landmark registration and trail-date compatibility remain unverified. Municipal image-service band names are unknown."
     },
     "split_footprint_independence": {
       "status": "risk_identified",
@@ -54,7 +54,7 @@
   },
   "decision": "No training arm is justified. Preserve A; replay parity is not a label-quality or generalization result.",
   "reopen_when": [
-    "2021 NAIP source bands and local color tag/mask/nodata behavior are reconciled through the mosaic writer and training loader.",
+    "Investigate W005/W023 source-footprint coverage and reconcile existing raster mask/nodata behavior through the training loader; new mosaic band metadata is corrected.",
     "Dated independent Park City trail references and ML reuse permission are obtained.",
     "Blinded trusted VAL audit meets applicable arm sample/block thresholds.",
     "September 2018 paired windows pass stable-landmark registration and 2018 trail-date compatibility checks.",

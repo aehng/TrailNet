@@ -20,7 +20,7 @@ from urllib.request import Request, urlopen
 import geopandas as gpd
 import numpy as np
 import rasterio
-from rasterio.enums import Resampling
+from rasterio.enums import ColorInterp, Resampling
 from rasterio.transform import from_origin
 from rasterio.vrt import WarpedVRT
 from rasterio.warp import transform_bounds
@@ -222,6 +222,12 @@ def fetch_naip(bbox, output_path, *, catalog_url=DEFAULT_NAIP_STAC,
                        "transform": dst_transform, "nodata": 0, "tiled": True,
                        "blockxsize": 512, "blockysize": 512, "compress": "deflate"}
             with rasterio.open(staged_path, "w+", **profile) as destination:
+                # A four-band NAIP asset is RGB + near infrared. GeoTIFF's
+                # default interpretation for band 4 is alpha, which is wrong
+                # here and can mislead downstream GIS readers. Keep the band
+                # values unchanged and mark NIR as an undefined color channel.
+                destination.colorinterp = (ColorInterp.red, ColorInterp.green,
+                                           ColorInterp.blue, ColorInterp.undefined)
                 for item_number, item in enumerate(selected):
                     href = signed_href if item_number == 0 else _pc_signed_href(
                         item["assets"][asset_key]["href"], sign_url, timeout)
