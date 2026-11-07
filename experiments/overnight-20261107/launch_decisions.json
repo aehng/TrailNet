@@ -44,7 +44,7 @@
     "t4q-weatherdrop": {
       "status": "not_eligible",
       "required_gate": "at least 6 verified Park City snow and 6 bare VAL windows with tread; snow recall gap at least 0.10; terrain ablation loss at least 0.05; optical ablation within 0.05 without increased distractor burden",
-      "evidence": "No independently adjudicated snow/bare corridor windows and no A modality diagnostics."
+      "evidence": "Aggregate A VAL modality sensitivity is complete: terrain neutralization lowers F1 by 0.2142 and optical neutralization lowers F1 by 0.0610 at 0.90. No independently adjudicated snow/bare corridor windows or trusted tread/distractor references exist, so weather-specific recall and distractor-burden deltas are unsupported and the gate remains unmet."
     },
     "t4q-tversky": {
       "status": "not_eligible",

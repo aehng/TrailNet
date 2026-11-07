@@ -33,14 +33,20 @@ Recovered A split membership is 1,745 train, 172 VAL and 358 held-out. The geome
 
 Earlier audits remain hypotheses, not label corrections: the provisional imagery/relief check saw Park City relief-response offset median absolute 4.2 m over 500 samples (46.2% above 5 m; 24.2% above 10 m); the Corner Canyon inventory had 2,199 unnamed OSM footways totaling about 196.8 km of 2,229 features. Neither finding alone proves a trail label is wrong or right.
 
+## A-checkpoint VAL modality sensitivity
+
+I ran the A checkpoint on the exact recovered 172-tile VAL split, after regenerating all five indexes and confirming their hashes. VAL membership IDs match the recovered split 172/172. At threshold 0.90, full inputs scored F1 0.3428 (TP 67,814, FP 150,768, FN 109,265), matching the published 0.3427 after rounding. Zeroing terrain channels 4–6 reduced F1 to 0.1286 (13,159 / 14,479 / 163,920). Zeroing RGB+NIR after RGB normalization reduced F1 to 0.2818 (46,833 / 108,492 / 130,246). The same ignore mask and thresholds were used in each pass; the full configured VAL threshold sweep and per-area counts are recorded in `val-modality-ablation-output/val-modality-ablation.json`.
+
+Park City’s 124 VAL tiles are especially different: full-input F1 is 0.2281, terrain-neutralized has zero true positives at 0.90, and optical-neutralized F1 is 0.2941. This shows the checkpoint’s agreement with the existing Park City labels is sensitive to its input modalities; it does not show that snow caused the gap or that terrain finds true trails. No weather, negative-corridor, or independent-trail strata were available, so these aggregate results cannot qualify `t4q-weatherdrop` or another training arm. The two failed startup attempts were staging defects (Kaggle omitted companion files, then the script checked indexes before generating them); the self-contained third version completed without training. Its per-stage completion callbacks and timed fallback are included with the output.
+
 ## Training decision and next work
 
-All five candidate arms remain ineligible in `launch_decisions.json`. The A replay gate is met for published held-out pixel parity, but the following data gates remain open:
+All five candidate arms remain ineligible in `launch_decisions.json`. A held-out replay and aggregate VAL modality ablation are complete, but label-agreement metrics do not replace independent ground truth. The following data gates remain open:
 
 1. Trace the two partial-coverage 2021 windows, W005 and W023, through exact source footprints and masks. Audit `nodata=0` handling and record one source-to-training-tensor example; new NAIP downloads now have the corrected RGB+undefined color tag.
 2. Conduct an image-only paired review of exact valid 2018/2021 windows, scoring snow, bare/mixed, shadow, cloud, canopy, saturation and tread visibility separately; measure stable-landmark registration. Keep all-zero/invalid areas out of comparison denominators.
 3. Obtain dated independent Park City trail records and documented reuse permission; verify source lineage, tread type, positional accuracy and construction/reroute dates. Freeze trusted VAL geometry before exposing predictions.
-4. Then run A VAL modality diagnostics and only reopen a training arm if the preregistered thresholds are met. Preserve snow/shadow/canopy as separate evaluation slices; do not drop snow-affected samples or let a date/brightness heuristic determine labels.
+4. Use the completed aggregate A modality result only as a sensitivity finding. After condition labels and trusted trail/distractor references exist, compute paired snow/bare/canopy/shadow slices and reopen a training arm only if its preregistered thresholds are met. Preserve snow-affected samples; do not let a date or brightness heuristic determine labels.
 5. Keep the seven new sites at `review_later` until independent target/distractor sample counts, actual 3DEP raster coverage, seasonal image evidence and permissions are established. Do not add Bentonville or train on new areas under this plan.
 
 **Recommended next action:** inspect why W005 and W023 have partial current imagery, then measure stable-landmark registration for the 24 paired NAIP windows and request dated independent Park City trail references. Do not launch training until label and weather gates are supported.
@@ -57,4 +63,4 @@ All five candidate arms remain ineligible in `launch_decisions.json`. The A repl
 
 ## Verification record
 
-Fresh verification completed: `pytest -q` passed 88 tests with 148 warnings in the normal Windows context. The focused NAIP writer regression passed and confirms unchanged pixel values with band 4 tagged `undefined`. All 61 experiment JSON files parse. The September 2018 NAIP comparison has 24 windows and zero allzero responses; the municipal PC2018 comparison has 13/24 allzero responses. The paired 2021/2018 screen reports partial current imagery in W005 and W023. All five A index hashes match. `git diff --check` passes.
+Fresh verification completed: `pytest -q` passed 88 tests with 148 warnings in the normal Windows context. The focused NAIP writer regression passed and confirms unchanged pixel values with band 4 tagged `undefined`. All 73 experiment JSON files parse, including the new VAL modality artifact. The focused ablation tests pass (5 tests). The September 2018 NAIP comparison has 24 windows and zero allzero responses; the municipal PC2018 comparison has 13/24 allzero responses. The paired 2021/2018 screen reports partial current imagery in W005 and W023. All five A index hashes match. `git diff --check` passes.

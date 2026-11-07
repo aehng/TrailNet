@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T18:17:36Z",
-  "experiment_status": "a_replay_complete_data_quality_gates_open",
+  "updated_at": "2026-11-07T19:44:25Z",
+  "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
   "inputs": {
@@ -42,6 +42,22 @@
     },
     "training_kernels_launched": 0,
     "gpu_quota_after_replay_h": 28.22,
+    "val_modality_ablation": {
+      "kernel": "elikearl/trailnet-a-val-modality-ablation-2026-11-07",
+      "version": 3,
+      "status": "COMPLETE; three inference-only passes on exact 172-tile VAL; no held-out scoring and no training",
+      "version_1_failure": "Kaggle uploads only code_file; local base_runner.py import was unavailable",
+      "version_2_failure": "A regenerated tile index was checked before running scripts/prepare_data.py",
+      "version_3_staging_fix": "Self-contained entrypoint and bounded prepare_data child command; per-stage callbacks and 45-minute top-level timeout",
+      "prepare_data_seconds": 272.661,
+      "kernel_elapsed_seconds": 382.95,
+      "val_membership_sha256": "40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831",
+      "val_ids_match_recovered": "172/172",
+      "a_index_hashes_match": "5/5",
+      "gpu_quota_after_run_h": 28.09,
+      "result_artifact": "experiments/overnight-20261107/val-modality-ablation-output/val-modality-ablation.json",
+      "completion_callback": "experiments/overnight-20261107/val-modality-ablation-output/callbacks/val-ablation-run.callback.json"
+    },
     "replay_version": "final corrected PyTorch setup, callback timeouts enabled",
     "replay_staging_bug": "Corrected Teton index SHA constant typo; all five hashes now match.",
     "replay_elapsed_seconds": 854.0,
@@ -158,7 +174,7 @@
     "limitations": "Footprints are index-center-derived 512 px squares at 0.6 m; source nodata/valid pixel overlap is unavailable"
   },
   "plan_gates": {
-    "diagnostics": "A replay complete; pixel baseline reproduced; modality/weather and independent-reference diagnostics remain unsupported",
+    "diagnostics": "A replay and aggregate VAL modality ablation complete; condition-specific weather and independent-reference diagnostics remain unsupported",
     "launch_decisions": "written; all five training arms not_eligible",
     "diagnostics_artifact": "experiments/overnight-20261107/diagnostics.json",
     "launch_decisions_artifact": "experiments/overnight-20261107/launch_decisions.json"
@@ -191,20 +207,22 @@
   },
   "training_gate": {
     "status": "not_qualified",
-    "reason": "A replay parity is sufficient for the published held-out pixel score and five index hashes. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
-    "next_decision": "Investigate 2021 partial-coverage windows W005/W023; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs; establish independent dated trail truth and permission before considering any training arm."
+    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
+    "next_decision": "Investigate 2021 partial-coverage windows W005/W023; obtain dated independent Park City trail/distractor geometry and reuse terms; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs. Keep training closed until the audit gates are met."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
     "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
+    "focused_val_ablation_kernel_tests": "5 passed: self-contained Kaggle entrypoint, prepare-before-hash ordering, optical post-normalization neutralization, and terrain-only channel neutralization",
     "full_test_suite": "88 passed, 148 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0,
-    "artifact_validation": "All 62 experiment JSON files parse; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; 2021 paired screen has 2 partial-coverage windows (W005/W023); all 5 regenerated A index hashes match; no_train=true.",
-    "git_diff_check": "passed after documentation updates",
+    "artifact_validation": "73 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; paired 2021 screen has 2 partial-coverage windows (W005/W023); no_train=true.",
+    "git_diff_check": "passed",
     "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds",
-    "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs"
+    "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs",
+    "val_modality_callback": "complete; all three variants and final callback complete; 45-minute timed fallback did not trigger"
   },
   "artifacts": {
     "replay_output": "experiments/overnight-20261107/kaggle-a-replay-final-output/",
@@ -213,6 +231,8 @@
     "canonical_contact_sheets": "experiments/overnight-20261107/park-city-imagery-final-output/park-city-imagery/paired-contact-sheet-01.png through paired-contact-sheet-04.png",
     "park_city_2018_naip_screen": "experiments/overnight-20261107/park-city-naip2018-output/park-city-naip2018/paired-imagery-screen.json",
     "park_city_2018_registration_screen": "experiments/overnight-20261107/registration_screen.json",
+    "val_modality_ablation": "experiments/overnight-20261107/val-modality-ablation-output/val-modality-ablation.json",
+    "val_modality_ablation_callbacks": "experiments/overnight-20261107/val-modality-ablation-output/callbacks/",
     "park_city_2021_item_metadata": "experiments/overnight-20261107/naip-2021-item-metadata.json"
   }
 }

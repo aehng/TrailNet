@@ -1,0 +1,16 @@
+{
+  "stage": "command-python3",
+  "status": "complete",
+  "recorded_at": "2026-11-07T19:34:11Z",
+  "arguments": [
+    "scripts/prepare_data.py",
+    "--config",
+    "config_exp_t4e2_a_ignore5.yaml",
+    "--all-areas"
+  ],
+  "elapsed_seconds": 272.661,
+  "timeout_seconds": 1800,
+  "exit_code": 0,
+  "timed_fallback_triggered": false,
+  "output_tail": "Preparing kelly_canyon...\nPREPARE_SETUP area=kelly_canyon tiles=400 workers=4\n/kaggle/temp/TrailNet/data/tiles_t4e_a/kelly_canyon/index.csv\nPreparing corner_canyon...\nPREPARE_SETUP area=corner_canyon tiles=475 workers=4\n/kaggle/temp/TrailNet/data/tiles_t4e_a/corner_canyon/index.csv\nPreparing park_city...\nPREPARE_SETUP area=park_city tiles=475 workers=4\n/kaggle/temp/TrailNet/data/tiles_t4e_a/park_city/index.csv\nPreparing teton_pass...\nPREPARE_SETUP area=teton_pass tiles=450 workers=4\n/kaggle/temp/TrailNet/data/tiles_t4e_a/teton_pass/index.csv\nPreparing snowbasin...\nPREPARE_SETUP area=snowbasin tiles=475 workers=4\n/kaggle/temp/TrailNet/data/tiles_t4e_a/snowbasin/index.csv\n"
+}

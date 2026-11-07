@@ -1,0 +1,8 @@
+{
+  "stage": "run-final",
+  "status": "complete",
+  "recorded_at": "2026-11-07T19:35:13Z",
+  "timed_fallback_triggered": false,
+  "timeout_seconds": 2700,
+  "error": null
+}

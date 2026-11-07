@@ -1,6 +1,6 @@
 {
-  "status": "a_replay_complete_diagnostics_incomplete",
-  "reason": "A replay and published held-out pixel metrics reproduced; independent labels, weather adjudication, existing-raster mask/nodata behavior, and paired imagery registration are still unresolved. Source metadata confirms RGBN, and the NAIP writer now prevents new mosaics from tagging NIR as alpha.",
+  "status": "a_replay_and_aggregate_val_modality_ablation_complete_weather_and_label_diagnostics_incomplete",
+  "reason": "A replay and aggregate VAL modality sensitivity completed against the exact recovered split. Independent labels, weather adjudication, existing-raster mask/nodata behavior, and paired imagery registration remain unresolved. Source metadata confirms RGBN, and the NAIP writer now prevents new mosaics from tagging NIR as alpha.",
   "input_identities": {
     "checkpoint_matches_handoff": true,
     "raw_source_files_match_manifest": true,
@@ -14,10 +14,34 @@
     "park_city_2021_eo_band_metadata": "all four reconstructed NAIP STAC items identify band 4 as NIR; source COG tags it undefined; fetch_naip now writes RGB+undefined on new mosaics; existing mosaics still have alpha metadata"
   },
   "a_checkpoint_ablation": {
-    "full_input": "not_run",
-    "terrain_neutralized_channels_4_to_6": "not_run",
-    "optical_neutralized_channels_0_to_3": "not_run",
-    "reason": "A replay artifact contains held-out evaluation; VAL modality ablations have not been run."
+    "status": "complete_aggregate_label_agreement_only",
+    "artifact": "experiments/overnight-20261107/val-modality-ablation-output/val-modality-ablation.json",
+    "no_train": true,
+    "heldout_scored": false,
+    "val_tile_count": 172,
+    "recovered_val_ids_match": "172/172",
+    "val_membership_sha256": "40c0f42b790439e58e415d01b4b43f7d7a6c42c956a72c8123545cbc05d99831",
+    "regenerated_a_index_hashes_match_all_five": true,
+    "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+    "device": "Tesla T4",
+    "batch_size": 2,
+    "threshold_grid": [0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9],
+    "comparison_threshold": 0.9,
+    "variants": {
+      "full": {"tp": 67814, "fp": 150768, "fn": 109265, "iou": 0.206846, "f1": 0.342788},
+      "terrain_neutralized_channels_4_to_6": {"tp": 13159, "fp": 14479, "fn": 163920, "iou": 0.068695, "f1": 0.128558},
+      "optical_neutralized_channels_0_to_3_after_rgb_normalization": {"tp": 46833, "fp": 108492, "fn": 130246, "iou": 0.163998, "f1": 0.281784}
+    },
+    "fixed_threshold_deltas_vs_full": {
+      "terrain_neutralized": {"iou": -0.138152, "f1": -0.21423, "tp": -54655, "fp": -136289, "fn": 54655},
+      "optical_neutralized": {"iou": -0.042849, "f1": -0.061005, "tp": -20981, "fp": -42276, "fn": 20981}
+    },
+    "park_city_124_val_tiles_at_0_90": {
+      "full": {"tp": 27153, "fp": 116439, "fn": 67298, "f1": 0.228135},
+      "terrain_neutralized": {"tp": 0, "fp": 7748, "fn": 94451, "f1": 0.0},
+      "optical_neutralized": {"tp": 32492, "fp": 94042, "fn": 61959, "f1": 0.294065}
+    },
+    "interpretation": "Model agreement with existing Park City labels is strongly modality-sensitive. Since snow/bare condition and independent trail/distractor references are unverified, this cannot establish a snow effect, terrain truth, or a training arm."
   },
   "weather_slices": {
     "park_city_snow_windows_with_independently_verified_tread": 0,
@@ -66,5 +90,5 @@
     "warning": "Kernel emitted GDAL warning that WarpedVRT ignored optional RES; merge output transform is exact EPSG:32612 at 0.6 m, but stable-landmark registration remains unverified."
   },
   "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
-  "next_step": "Investigate partial current-image validity for W005/W023; image-only review valid 2021/September 2018 pairs and measure stable-landmark registration; check trail-date compatibility and independent references. Existing masks/nodata behavior remains a training gate even though the writer now tags new NIR outputs correctly."
+  "next_step": "Investigate partial current-image validity for W005/W023; obtain dated independent Park City trail/distractor geometry and reuse terms; manually validate stable landmarks and trail dates for 2018 imagery. Keep the aggregate ablation as label-agreement sensitivity only until condition-specific references exist."
 }
