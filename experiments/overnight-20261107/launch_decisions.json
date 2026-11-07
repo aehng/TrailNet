@@ -14,7 +14,7 @@
     },
     "input_registration_and_pixel_identity": {
       "status": "partial",
-      "evidence": "A replay index hashes and published held-out score match; local provisional crop hashes match 0/45. Exact 2021 and 2018 NAIP STAC eo:bands confirm RGBN. New fetch_naip outputs now tag band 4 undefined instead of alpha, but existing mosaics retain the old tag and nodata/mask semantics remain unresolved; paired screen reports 23.0047% current-image validity in W005/W023. Local SIFT/RANSAC accepted 0/24 September 2018 pairs; manual stable-landmark registration and trail-date compatibility remain unverified. Municipal image-service band names are unknown."
+      "evidence": "A replay index hashes and published held-out score match; local provisional crop hashes match 0/45. Exact 2021 and 2018 NAIP STAC eo:bands confirm RGBN. New fetch_naip outputs now tag band 4 undefined instead of alpha, but existing mosaics retain the old tag and broader nodata/mask semantics remain unresolved. W005/W023's 23.0047% valid fractions are explained by the eastern raster-footprint edge: 49/213 columns overlap the dataset and all in-footprint pixels are valid and nonzero. Local SIFT/RANSAC accepted 0/24 September 2018 pairs; manual stable-landmark registration and trail-date compatibility remain unverified. Municipal image-service band names are unknown."
     },
     "split_footprint_independence": {
       "status": "risk_identified",

@@ -90,5 +90,6 @@
     "warning": "Kernel emitted GDAL warning that WarpedVRT ignored optional RES; merge output transform is exact EPSG:32612 at 0.6 m, but stable-landmark registration remains unverified."
   },
   "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
-  "next_step": "Investigate partial current-image validity for W005/W023; obtain dated independent Park City trail/distractor geometry and reuse terms; manually validate stable landmarks and trail dates for 2018 imagery. Keep the aggregate ablation as label-agreement sensitivity only until condition-specific references exist."
+  "next_step": "W005/W023's partial current-image validity is traced to the eastern source-footprint edge; broaden nodata/mask-to-training-tensor validation across the mosaic. Obtain dated independent Park City trail/distractor geometry and reuse terms; manually validate stable landmarks and trail dates for 2018 imagery. Keep the aggregate ablation as label-agreement sensitivity only until condition-specific references exist.",
+  "park_city_mask_edge_audit": "experiments/overnight-20261107/park-city-mask-edge-audit.json"
 }

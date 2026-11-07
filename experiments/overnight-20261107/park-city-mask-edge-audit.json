@@ -1,0 +1,86 @@
+{
+  "audited_at": "2026-11-07",
+  "purpose": "Trace the reported low current-image valid fraction in Park City review windows W005 and W023.",
+  "method": "Read only the existing Park City four-band NAIP raster from the preserved original checkout. Recreated each 213x213 pixel, 0.6 m window using the paired-imagery screen center and raster transform; used boundless reads with the same rasterio read_masks behavior as the screen. No original checkout files were modified.",
+  "source": {
+    "relative_path": "data/park_city/naip_rgbn.tif",
+    "sha256": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+    "width_px": 7110,
+    "height_px": 9298,
+    "crs": "EPSG:32612",
+    "resolution_m": [
+      0.6,
+      0.6
+    ],
+    "bounds_epsg32612_m": [
+      448389.0,
+      4494505.2,
+      452655.0,
+      4500084.0
+    ],
+    "nodata": 0,
+    "color_interpretation": [
+      "red",
+      "green",
+      "blue",
+      "alpha"
+    ],
+    "mask_flags": [
+      [
+        "nodata"
+      ],
+      [
+        "nodata"
+      ],
+      [
+        "nodata"
+      ],
+      [
+        "nodata"
+      ]
+    ],
+    "rasterio_warning": "NodataShadowWarning: the dataset nodata attribute shadows the alpha band; masks are determined by nodata."
+  },
+  "windows": {
+    "W005": {
+      "source_window_row_col": [
+        4757,
+        7061
+      ],
+      "window_size_px": [
+        213,
+        213
+      ],
+      "inside_source_columns": 49,
+      "outside_source_columns": 164,
+      "reported_valid_fraction": 0.230047,
+      "recomputed_valid_fraction": 0.2300469483568075,
+      "in_source_valid_fraction": 1.0,
+      "in_source_rgb_all_zero_fraction": 0.0,
+      "outside_source_rgb_all_zero_fraction": 1.0
+    },
+    "W023": {
+      "source_window_row_col": [
+        8597,
+        7061
+      ],
+      "window_size_px": [
+        213,
+        213
+      ],
+      "inside_source_columns": 49,
+      "outside_source_columns": 164,
+      "reported_valid_fraction": 0.230047,
+      "recomputed_valid_fraction": 0.2300469483568075,
+      "in_source_valid_fraction": 1.0,
+      "in_source_rgb_all_zero_fraction": 0.0,
+      "outside_source_rgb_all_zero_fraction": 1.0
+    }
+  },
+  "finding": "Both windows have the same column position and are partly east of the raster's x maximum. The screen's 23.0047% mask-valid fraction is explained by 49/213 columns inside the dataset footprint, not by internal invalid pixels in these windows. The in-footprint pixels are valid and nonzero. This resolves the two window-specific coverage questions.",
+  "remaining_limits": [
+    "This does not resolve nodata/alpha semantics for other parts of the mosaic or prove how every training tensor and label weight treats out-of-footprint pixels.",
+    "Do not infer that any affected trail pixels should be excluded from evaluation until source footprint, raster mask, tensor, and label-mask overlap are compared."
+  ],
+  "original_checkout_modified": false
+}

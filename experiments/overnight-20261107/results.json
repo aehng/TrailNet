@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T19:47:02Z",
+  "updated_at": "2026-11-07T19:50:56Z",
   "experiment_status": "a_replay_and_val_modality_diagnostic_complete_data_quality_gates_open",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -212,10 +212,17 @@
     "trusted_val_reference_count": 0,
     "training_gate_changed": false
   },
+  "park_city_mask_edge_audit": {
+    "status": "w005_w023_source_footprint_edge_confirmed",
+    "artifact": "experiments/overnight-20261107/park-city-mask-edge-audit.json",
+    "source_raster_sha256": "7725b251a609db062c6da141b3810356153626f2c1bbf6722d09b070a26e2e3c",
+    "result": "Both windows have 49/213 columns in the source footprint and 100% in-footprint valid masks with nonzero RGB. Their 23.0047% valid fraction is explained by east-edge footprint coverage.",
+    "broader_nodata_alpha_and_tensor_audit": "open"
+  },
   "training_gate": {
     "status": "not_qualified",
     "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap.",
-    "next_decision": "Investigate 2021 partial-coverage windows W005/W023; obtain dated independent Park City trail/distractor geometry and reuse terms; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs. Keep training closed until the audit gates are met."
+    "next_decision": "Audit the existing mosaic's broader nodata/alpha semantics and one source-to-training-tensor path; obtain dated independent Park City trail/distractor geometry and reuse terms; manually verify stable landmarks and trail-date compatibility because automated SIFT/RANSAC passed 0/24 pairs. Keep training closed until the audit gates are met."
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
@@ -225,7 +232,7 @@
     "full_test_suite": "88 passed, 148 warnings in the normal Windows context. The sandbox attempt could not load the installed PyTorch XPU DLL; the authorized normal-context run passed.",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0,
-    "artifact_validation": "74 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen is recorded separately and does not qualify geometry; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; paired 2021 screen has 2 partial-coverage windows (W005/W023); no_train=true.",
+    "artifact_validation": "75 overnight experiment JSON files parse; VAL ablation artifact reports 172 exact VAL IDs and 5/5 index hashes; public reference metadata screen does not qualify independent geometry; W005/W023 partial validity is source-footprint edge coverage with in-footprint masks valid; 2018 NAIP screen has 24 windows with 0 allzero candidate windows; automated registration screen passes 0/24; municipal PC2018 has 13/24 allzero windows; no_train=true.",
     "git_diff_check": "passed",
     "naip2018_callback": "complete; 24 samples; 0 allzero chips; elapsed 17.9 seconds",
     "naip_colorinterp_regression": "focused regression passed; RGBN values unchanged and band 4 now undefined instead of alpha on newly written outputs",
