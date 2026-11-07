@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "elapsed_seconds": 262.51671913600006,
+  "payload_sha256": "8b1487a049ca0b5374fe3614482999a96577873cdf72a911b57b069c8621def9",
+  "training_launched": false,
+  "heldout_scored": false
+}

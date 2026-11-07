@@ -12,6 +12,8 @@ from trailnet.config import load_config
 from trailnet.data.dataset import read_indexes, spatial_split
 from trailnet.data.tiles import _load_label_index, _write_tile
 OUT=Path(__file__).resolve().parent
+EVAL_SPLIT=os.environ.get('SOL_EVAL_SPLIT','val')
+assert EVAL_SPLIT in ('val','test')
 SOURCE=Path(os.environ.get('SOL_SOURCE_ROOT','/workspace/trailnet-eval-vb-check/TrailNet/data'))
 INDEX=Path(os.environ.get('SOL_INDEX_ROOT','/workspace/TrailNet-handoff-20261106-1650/assets/recovered_A/data/tiles_t4e_a'))
 LABEL=Path(os.environ.get('SOL_LABEL_ROOT','/workspace/kaggle-t4e/code/label_overrides'))
@@ -21,7 +23,7 @@ split=spatial_split(rows,2500,.15,.15,42)
 assert {k:len(v) for k,v in split.items()}==dict(train=1745,val=172,test=358)
 records=[]; val_rows=[]; changed=[]
 for a in cfg['areas']:
-    name=a['name']; folder=OUT/'original-val'/name; folder.mkdir(parents=True,exist_ok=True)
+    name=a['name']; folder=OUT/('original-'+EVAL_SPLIT)/name; folder.mkdir(parents=True,exist_ok=True)
     with rasterio.open(SOURCE/name/'naip_rgbn.tif') as im, rasterio.open(SOURCE/name/'3dep_dtm.tif') as dtm:
         geoms,codes,idx=_load_label_index(LABEL/name/'trails.gpkg',im.crs,cfg['tiling']['trail_buffer_m'],5.,2.)
         profile=im.profile.copy()
@@ -41,7 +43,7 @@ for a in cfg['areas']:
             treated=int((positive & inside).sum())
             if bool(original)!=bool(treated): changed.append(dict(area=name,image=r['image'],original_positive=original,treated_positive=treated))
             records.append(dict(area=name,image=r['image'],positive_count=original))
-        for r in split['val']:
+        for r in split[EVAL_SPLIT]:
             if r['area']!=name: continue
             rr,cc=map(int,re.search(r'_r(\d+)_c(\d+)',r['image']).groups())
             if not (folder/r['image']).exists():
@@ -53,7 +55,7 @@ for a in cfg['areas']:
 records.sort(key=lambda r:(r['area'],r['image']))
 assert sum(r['positive_count']>0 for r in records)==993
 (OUT/'sampler-original.json').write_text(json.dumps(dict(source='Original A masks before coverage edits',tiles=records),indent=2)+'\n')
-(OUT/'val-rows.json').write_text(json.dumps(val_rows,indent=2)+'\n')
+(OUT/(EVAL_SPLIT+'-rows.json')).write_text(json.dumps(val_rows,indent=2)+'\n')
 print('sampler SHA256',hashlib.sha256((OUT/'sampler-original.json').read_bytes()).hexdigest(),flush=True)
 
 (OUT/'sampler-treatment-drift.json').write_text(json.dumps(dict(original_positive_tiles=993,original_empty_tiles=752,changed=changed),indent=2)+'\n')

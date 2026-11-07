@@ -40,13 +40,13 @@ def main():
         assert sha(src)==expected,(path,sha(src),expected)
         if src!=target:
             target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(src)
-    env=dict(os.environ,SOL_SOURCE_ROOT=str(PROJECT/'data'),SOL_LABEL_ROOT=str(PROJECT/'label_overrides'),SOL_INDEX_ROOT=str(PROJECT/'indexes'),SOL_CHECKPOINT=str(ckpt))
+    env=dict(os.environ,SOL_SOURCE_ROOT=str(PROJECT/'data'),SOL_LABEL_ROOT=str(PROJECT/'label_overrides'),SOL_INDEX_ROOT=str(PROJECT/'indexes'),SOL_CHECKPOINT=str(ckpt),SOL_EVAL_SPLIT='__EVAL_SPLIT__')
     print('FROZEN_INPUTS_VERIFIED',PAYLOAD_SHA,flush=True)
     run([sys.executable,str(OUT/'prepare_review.py')],env)
     assert sha(OUT/'sampler-original.json')=='e7d4f41185ffc0d08af9512fce331c6de099d8e0adb9be8d2c0fa6c53bb240e0'
-    run([sys.executable,str(OUT/'tta_val.py')],env)
-    (WORK/'execution.json').write_text(json.dumps(dict(status='complete',elapsed_seconds=time.monotonic()-START,payload_sha256=PAYLOAD_SHA,training_launched=False,heldout_scored=False),indent=2)+'\n')
+    run([sys.executable,str(OUT/'__EVAL_SCRIPT__.py')],env)
+    (WORK/'execution.json').write_text(json.dumps(dict(status='complete',elapsed_seconds=time.monotonic()-START,payload_sha256=PAYLOAD_SHA,training_launched=False,heldout_scored=__HELDOUT_FLAG__),indent=2)+'\n')
 if __name__=='__main__':
     try:main()
     except Exception as e:
-        (WORK/'execution.json').write_text(json.dumps(dict(status='failed',error=repr(e),elapsed_seconds=time.monotonic()-START,training_launched=False,heldout_scored=False),indent=2)+'\n');raise
+        (WORK/'execution.json').write_text(json.dumps(dict(status='failed',error=repr(e),elapsed_seconds=time.monotonic()-START,training_launched=False,heldout_scored=__HELDOUT_FLAG__),indent=2)+'\n');raise

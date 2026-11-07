@@ -1,0 +1,27 @@
+[{"stream_name":"stdout","time":21.07817715,"data":"FROZEN_INPUTS_VERIFIED 8b1487a049ca0b5374fe3614482999a96577873cdf72a911b57b069c8621def9\n"}
+,{"stream_name":"stdout","time":28.549998762,"data":"kelly_canyon complete\n"}
+,{"stream_name":"stdout","time":34.518189602,"data":"corner_canyon complete\n"}
+,{"stream_name":"stdout","time":76.190340236,"data":"park_city complete\n"}
+,{"stream_name":"stdout","time":77.577042502,"data":"teton_pass complete\n"}
+,{"stream_name":"stdout","time":97.793645497,"data":"snowbasin complete\n"}
+,{"stream_name":"stdout","time":97.799470999,"data":"sampler SHA256 e7d4f41185ffc0d08af9512fce331c6de099d8e0adb9be8d2c0fa6c53bb240e0\n"}
+,{"stream_name":"stdout","time":120.975120608,"data":"VAL_PROGRESS 1 172\n"}
+,{"stream_name":"stdout","time":136.336620957,"data":"VAL_PROGRESS 21 172\n"}
+,{"stream_name":"stdout","time":152.342318677,"data":"VAL_PROGRESS 41 172\n"}
+,{"stream_name":"stdout","time":168.152181221,"data":"VAL_PROGRESS 61 172\n"}
+,{"stream_name":"stdout","time":184.310719596,"data":"VAL_PROGRESS 81 172\n"}
+,{"stream_name":"stdout","time":200.665456441,"data":"VAL_PROGRESS 101 172\n"}
+,{"stream_name":"stdout","time":217.330754218,"data":"VAL_PROGRESS 121 172\n"}
+,{"stream_name":"stdout","time":233.777869067,"data":"VAL_PROGRESS 141 172\n"}
+,{"stream_name":"stdout","time":250.461369646,"data":"VAL_PROGRESS 161 172\n"}
+,{"stream_name":"stdout","time":260.410173574,"data":"RESULT A 0.9 {'tp': 67781, 'fp': 150653, 'fn': 97103, 'f1': 0.3536541461658466, 'precision': 0.31030425666333994, 'recall': 0.4110829431600398}\n"}
+,{"stream_name":"stdout","time":260.410307061,"data":"RESULT TTA4 0.9 {'tp': 64276, 'fp': 106065, 'fn': 100608, 'f1': 0.38347975240510107, 'precision': 0.3773372235691936, 'recall': 0.3898255743431746}\n"}
+,{"stream_name":"stdout","time":260.410472648,"data":"RESULT TTA8 0.9 {'tp': 62569, 'fp': 105283, 'fn': 102315, 'f1': 0.3760879496056934, 'precision': 0.37276291018278007, 'recall': 0.3794728415128211}\n"}
+,{"stream_name":"stdout","time":260.410564688,"data":"FROZEN_WINNER TTA4\n"}
+,{"stream_name":"stderr","time":265.966360129,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":265.966388896,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":266.222606908,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":266.222638863,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":267.015958794,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":268.008929075,"data":"[NbConvertApp] Writing 432567 bytes to __results__.html\n"}
+]

@@ -267,7 +267,7 @@
   },
   "training_gate": {
     "status": "coverage_diagnostic_failed_val_no_further_arm_qualified",
-    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 the legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; the large Corner Canyon change is due to removing 9,166 uncovered positive targets from the metric. Independent trail/distractor truth remains absent, so this only supports a diagnostic data-integrity run, not promotion. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; in Corner Canyon the score shifts 0.3978 to 0.6130 when 9,166 uncovered positive targets leave the metric. This is a scoring correction, not model improvement. Independent trail/distractor truth remains absent; promotion is blocked. The single seed-42 coverage-ignore diagnostic completed with exact indexes/splits and all 38,486,642 repeated outside-footprint pixels verified ignored. Candidate coverage-aware VAL F1 is 0.3526 versus A 0.3537 at 0.90, below both A and the 0.3737 screen floor; candidate legacy F1 is 0.2884 versus A 0.3428. No heldout scoring was run. No independently verified labels/distractors qualify another arm.",
+    "reason": "A replay and 172-tile VAL modality ablation completed; full-label F1 matches published VAL parity. Terrain neutralization causes a large label-agreement drop, while optical neutralization improves Park City label F1 at 0.90. These aggregate perturbations do not establish trail truth or snow causality. No independent verified trail/distractor samples or weather adjudication exist; existing mosaic nodata/mask behavior and landmark registration remain unresolved, and split footprints overlap. The all-AOI A-source coverage audit now finds geometric outside-footprint positives in four TRAIN areas and substantial Corner Canyon VAL positives; coverage-aware A metrics must be established before any diagnostic coverage-ignore run. Raster-internal nodata/zero semantics and independent trail/distractor truth remain unresolved. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 the legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; the large Corner Canyon change is due to removing 9,166 uncovered positive targets from the metric. Independent trail/distractor truth remains absent, so this only supports a diagnostic data-integrity run, not promotion. The unchanged A checkpoint was re-scored on exact VAL membership with fixed raster-bounds masks. All five index hashes match. At 0.90 legacy F1 is 0.3428 and coverage-aware F1 is 0.3537 for the same predictions; in Corner Canyon the score shifts 0.3978 to 0.6130 when 9,166 uncovered positive targets leave the metric. This is a scoring correction, not model improvement. Independent trail/distractor truth remains absent; promotion is blocked. The single seed-42 coverage-ignore diagnostic completed with exact indexes/splits and all 38,486,642 repeated outside-footprint pixels verified ignored. Candidate coverage-aware VAL F1 is 0.3526 versus A 0.3537 at 0.90, below both A and the 0.3737 screen floor; corrected original-target candidate legacy F1 is 0.342787 versus A 0.342788; former 0.2884 was invalid. No heldout scoring was run. No independently verified labels/distractors qualify another arm.",
     "next_decision": "Stop training. Continue source-mask/nodata/landmark checks and obtain dated independent trail/distractor references with reuse permission. Reopen training only with a new qualified lever; keep coverage masking as a data-integrity correction, not a performance claim."
   },
   "verification": {
@@ -425,9 +425,28 @@
     "candidate_coverage_f1_0_90": 0.3526188089595024,
     "coverage_f1_delta": -0.00103534,
     "required_floor": 0.37365415,
-    "candidate_legacy_f1_0_90": 0.2884,
+    "candidate_legacy_f1_0_90": 0.342786525666808,
     "A_legacy_f1_0_90": 0.34278839713795395,
     "no_heldout_score": true,
     "promotion_eligible": false
+  },
+  "sol_review_correction": {
+    "checkpoint_sha256": "efc92f7ec027d006f3854865c414746396ce95379c2afd371cbdcb81c1664699",
+    "threshold": 0.9,
+    "heldout_scored": false,
+    "results": {
+      "legacy": {
+        "tp": 75170,
+        "fp": 186333,
+        "fn": 101909,
+        "f1": 0.342786525666808
+      },
+      "coverage": {
+        "tp": 75170,
+        "fp": 186333,
+        "fn": 89714,
+        "f1": 0.3525904870458058
+      }
+    }
   }
 }
