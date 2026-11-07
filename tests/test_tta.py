@@ -1,6 +1,6 @@
 import pytest
 import torch
-from trailnet.tta import TTA4,TTA8,transform_input,invert_output,ensemble_probabilities
+from trailnet.tta import TTA4,TTA8,transform_input,invert_output,ensemble_probabilities,inference_probabilities
 
 
 def test_all_transforms_preserve_alignment_and_channels():
@@ -19,3 +19,12 @@ def test_probability_ensemble_aligns_directional_predictions():
     for transforms in (TTA4,TTA8):
         assert torch.allclose(ensemble_probabilities(model,image,transforms),model(image).sigmoid(),atol=1e-7)
     with pytest.raises(ValueError): ensemble_probabilities(model,image,())
+
+
+def test_inference_ensemble_is_explicit_and_matches_frozen_tta4():
+    class Directional(torch.nn.Module):
+        def forward(self, x): return x[:, :1] + torch.arange(x.shape[-1], device=x.device)[None,None,None,:]
+    model=Directional(); x=torch.randn(1,7,5,9)
+    assert torch.equal(inference_probabilities(model,x),model(x).sigmoid())
+    assert torch.equal(inference_probabilities(model,x,"tta4"),ensemble_probabilities(model,x,TTA4))
+    with pytest.raises(ValueError):inference_probabilities(model,x,"unselected")

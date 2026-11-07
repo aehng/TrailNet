@@ -1,0 +1,15 @@
+Completed one bounded attempt on `sol/attempt-20261107`, based on Luna 23bcaf2. Two predeclared inference arms, no new training, one selected-candidate heldout evaluation, no PC use. TTA4 won VAL and passed the inherited heldout numerical veto. No more arms or heldout tuning follow.
+
+| Arm at 0.90 | VAL coverage F1 | VAL legacy F1 | Heldout coverage F1 | Heldout legacy F1 |
+|---|---:|---:|---:|---:|
+| A | 0.353654 | 0.342788 | 0.431679 | 0.431084 |
+| TTA4 | 0.383480 | 0.370075 | 0.456816 | 0.456122 |
+| TTA8 | 0.376088 | 0.362853 | Not opened | Not opened |
+
+TTA4 uses the unchanged A checkpoint and averages four aligned views; threshold 0.90 was frozen before heldout. VAL coverage F1 improved by 0.029826; label precision changed 0.310304→0.377337, and label recall 0.411083→0.389826. Heldout coverage F1 changed by 0.025137; precision 0.480975→0.582567, recall 0.391548→0.375716. Exact TTA4 heldout TP/FP/FN: 289,721/207,597/481,397. The veto requires coverage F1≥A, P≥.53, R≥.33 and legacy F1≥.4311. All counts refer to existing labels.
+
+M1 fixed legacy comparison (candidate original-target F1 .342786526 vs A .342788397; original .2884 invalid), froze original sampler 993/752 with strict identity/hash checks, made coverage training fail without it, and corrected stale no-training statements. Nine original sampler changes are documented. M2 separated optical metadata validity from terrain validity; Teton's declared optical gap has no VAL membership, and six source-to-tensor traces match exactly. Frozen evaluation masks were unchanged.
+
+This demonstrates a label-agreement inference gain; it does not verify real-trail accuracy. Independent trail/distractor truth and the trusted-reference guardrails remain unavailable, unmatched predictions are not proven false, and existing split footprints overlap. A remains the default. TTA4 is opt-in (`inference.geometric_ensemble: tta4`) and costs four forward passes per tile. The ready inference configuration is `runs/sol-20261107/config_tta4_inference.yaml`; full-AOI inference/vectorization was not run. All 107 CPU tests pass. The CPU environment, immutable Kaggle bundles, source hashes, configs, full threshold tables, per-area counts and logs are retained under `runs/sol-20261107/`.
+
+The simultaneous A heldout replay differs from archived counts by TP−1, FP−2, FN+1; both round to F1 .4311. Candidate deltas use the simultaneous replay on identical tensors and masks. This small difference is recorded without assigning an unverified backend cause. Final quota: 27.36 GPU-hours remain (3-hour reserve preserved); approximately .17 GPU-hours consumed by the two completed kernels.

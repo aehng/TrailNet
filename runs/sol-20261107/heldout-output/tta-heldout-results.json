@@ -1,0 +1,140 @@
+{
+  "status": "complete",
+  "selection": {
+    "winner": "TTA4",
+    "threshold": 0.9,
+    "checkpoint_sha256": "73b9f79ce0d20b9056a36c37cea8645f8a128eaea313672dae13c2f96ff16e4a",
+    "coverage_mask_sha256": "6350928231908df0e7092003486735ecb697721a1d6904b026ba4ed7be9bfc52",
+    "val_results_sha256": "bc6b8699240e567e6e4c2b9aacdf80775c5818a030aa5450fa3adeb842a0be81",
+    "val_gate": 0.3736541461658466,
+    "val_f1": 0.38347975240510107,
+    "heldout_evaluations_authorized": 1,
+    "arms_closed": true
+  },
+  "heldout_scored": true,
+  "heldout_candidate_count": 1,
+  "heldout_tile_count": 358,
+  "threshold": 0.9,
+  "training_launched": false,
+  "coverage_mask_sha256": "2661dbaacdcaf344b463091ea9b93c51e10dd9195aa4cf42cecd74680e8838c5",
+  "scores": {
+    "A": {
+      "legacy": {
+        "tp": 301930,
+        "fp": 325816,
+        "fn": 471117,
+        "f1": 0.4310843929117293,
+        "precision": 0.48097478916631886,
+        "recall": 0.3905713365422801
+      },
+      "coverage": {
+        "tp": 301930,
+        "fp": 325816,
+        "fn": 469188,
+        "f1": 0.43167884797950334,
+        "precision": 0.48097478916631886,
+        "recall": 0.39154837521624447
+      }
+    },
+    "TTA4": {
+      "legacy": {
+        "tp": 289721,
+        "fp": 207597,
+        "fn": 483326,
+        "f1": 0.45612245299579257,
+        "precision": 0.5825668887914774,
+        "recall": 0.3747779889191731
+      },
+      "coverage": {
+        "tp": 289721,
+        "fp": 207597,
+        "fn": 481397,
+        "f1": 0.4568161105487388,
+        "precision": 0.5825668887914774,
+        "recall": 0.3757155195443499
+      }
+    }
+  },
+  "per_area": {
+    "A": {
+      "corner_canyon": {
+        "legacy": {
+          "tp": 167043,
+          "fp": 133509,
+          "fn": 259870
+        },
+        "coverage": {
+          "tp": 167043,
+          "fp": 133509,
+          "fn": 259870
+        }
+      },
+      "kelly_canyon": {
+        "legacy": {
+          "tp": 99323,
+          "fp": 140841,
+          "fn": 131554
+        },
+        "coverage": {
+          "tp": 99323,
+          "fp": 140841,
+          "fn": 131554
+        }
+      },
+      "park_city": {
+        "legacy": {
+          "tp": 35564,
+          "fp": 51466,
+          "fn": 79693
+        },
+        "coverage": {
+          "tp": 35564,
+          "fp": 51466,
+          "fn": 77764
+        }
+      }
+    },
+    "TTA4": {
+      "corner_canyon": {
+        "legacy": {
+          "tp": 163625,
+          "fp": 79240,
+          "fn": 263288
+        },
+        "coverage": {
+          "tp": 163625,
+          "fp": 79240,
+          "fn": 263288
+        }
+      },
+      "kelly_canyon": {
+        "legacy": {
+          "tp": 90868,
+          "fp": 99824,
+          "fn": 140009
+        },
+        "coverage": {
+          "tp": 90868,
+          "fp": 99824,
+          "fn": 140009
+        }
+      },
+      "park_city": {
+        "legacy": {
+          "tp": 35228,
+          "fp": 28533,
+          "fn": 80029
+        },
+        "coverage": {
+          "tp": 35228,
+          "fp": 28533,
+          "fn": 78100
+        }
+      }
+    }
+  },
+  "heldout_veto_passed": true,
+  "independent_truth_verified": false,
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4"
+}

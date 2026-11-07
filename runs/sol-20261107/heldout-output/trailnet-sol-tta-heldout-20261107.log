@@ -1,0 +1,24 @@
+[{"stream_name":"stdout","time":28.782449012,"data":"FROZEN_INPUTS_VERIFIED 4e648dba02e28f1e4cd62f06e8d7706d679b4b336bcdef6ffd1be33205060f63\n"}
+,{"stream_name":"stdout","time":58.743150627,"data":"kelly_canyon complete\n"}
+,{"stream_name":"stdout","time":123.045404812,"data":"corner_canyon complete\n"}
+,{"stream_name":"stdout","time":150.690811011,"data":"park_city complete\n"}
+,{"stream_name":"stdout","time":151.965551588,"data":"teton_pass complete\n"}
+,{"stream_name":"stdout","time":157.310198666,"data":"snowbasin complete\n"}
+,{"stream_name":"stdout","time":157.315834067,"data":"sampler SHA256 e7d4f41185ffc0d08af9512fce331c6de099d8e0adb9be8d2c0fa6c53bb240e0\n"}
+,{"stream_name":"stdout","time":189.363782124,"data":"HELDOUT_PROGRESS 1 358\n"}
+,{"stream_name":"stdout","time":205.202391619,"data":"HELDOUT_PROGRESS 41 358\n"}
+,{"stream_name":"stdout","time":221.165710512,"data":"HELDOUT_PROGRESS 81 358\n"}
+,{"stream_name":"stdout","time":237.471494316,"data":"HELDOUT_PROGRESS 121 358\n"}
+,{"stream_name":"stdout","time":253.963121113,"data":"HELDOUT_PROGRESS 161 358\n"}
+,{"stream_name":"stdout","time":270.708596599,"data":"HELDOUT_PROGRESS 201 358\n"}
+,{"stream_name":"stdout","time":287.687464877,"data":"HELDOUT_PROGRESS 241 358\n"}
+,{"stream_name":"stdout","time":304.948907284,"data":"HELDOUT_PROGRESS 281 358\n"}
+,{"stream_name":"stdout","time":322.465634709,"data":"HELDOUT_PROGRESS 321 358\n"}
+,{"stream_name":"stdout","time":338.381114154,"data":"HELDOUT_RESULT {\"A\": {\"legacy\": {\"tp\": 301930, \"fp\": 325816, \"fn\": 471117, \"f1\": 0.4310843929117293, \"precision\": 0.48097478916631886, \"recall\": 0.3905713365422801}, \"coverage\": {\"tp\": 301930, \"fp\": 325816, \"fn\": 469188, \"f1\": 0.43167884797950334, \"precision\": 0.48097478916631886, \"recall\": 0.39154837521624447}}, \"TTA4\": {\"legacy\": {\"tp\": 289721, \"fp\": 207597, \"fn\": 483326, \"f1\": 0.45612245299579257, \"precision\": 0.5825668887914774, \"recall\": 0.3747779889191731}, \"coverage\": {\"tp\": 289721, \"fp\": 207597, \"fn\": 481397, \"f1\": 0.4568161105487388, \"precision\": 0.5825668887914774, \"recall\": 0.3757155195443499}}} VETO_PASS True\n"}
+,{"stream_name":"stderr","time":346.249192861,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":346.249221785,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":346.615436237,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":346.615462568,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":347.424826945,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":348.715245607,"data":"[NbConvertApp] Writing 443364 bytes to __results__.html\n"}
+]

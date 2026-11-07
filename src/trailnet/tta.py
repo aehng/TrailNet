@@ -26,3 +26,12 @@ def ensemble_probabilities(model, image, transforms=TTA8):
         p = invert_output(p, turns, flip)
         total = p if total is None else total + p
     return total / len(transforms)
+
+
+def inference_probabilities(model, image, geometric_ensemble="none"):
+    """Opt-in deployment of the VAL-selected four-view ensemble."""
+    if geometric_ensemble == "none":
+        return model(image).sigmoid()
+    if geometric_ensemble == "tta4":
+        return ensemble_probabilities(model, image, TTA4)
+    raise ValueError(f"Unknown inference.geometric_ensemble: {geometric_ensemble!r}")

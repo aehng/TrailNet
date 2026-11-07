@@ -11,6 +11,7 @@ from trailnet.config import load_config, resolve_path
 from trailnet.data.terrain import derive_terrain
 from trailnet.models.unet import build_model
 from trailnet.train import select_device
+from trailnet.tta import inference_probabilities
 from trailnet.viz import build_map_area
 
 
@@ -73,7 +74,9 @@ def predict_area(config, area, checkpoint_path=None):
                     tiles.append(np.ascontiguousarray(inputs, dtype=np.float32))
                 stacked = torch.from_numpy(np.stack(tiles, axis=0)).to(device)
                 with torch.inference_mode():
-                    probs = torch.sigmoid(model(stacked)).cpu().numpy()[:, 0]
+                    probs = inference_probabilities(
+                        model, stacked, config.get("inference", {}).get("geometric_ensemble", "none")
+                    ).cpu().numpy()[:, 0]
                 for (row, col), prob in zip(chunk, probs):
                     h, w = min(size, image_ds.height-row), min(size, image_ds.width-col)
                     top = 0 if row == 0 else overlap // 2

@@ -448,5 +448,33 @@
         "f1": 0.3525904870458058
       }
     }
+  },
+  "sol_bounded_attempt": {
+    "outcome": {
+      "stage": "M4_complete",
+      "val_result": "val-output/tta-val-results.json",
+      "heldout_result": "heldout-output/tta-heldout-results.json",
+      "winner": "TTA4",
+      "threshold": 0.9,
+      "heldout_veto_passed": true,
+      "new_training_runs": 0,
+      "candidate_heldout_evaluations": 1,
+      "default_unchanged": true,
+      "independent_truth_verified": false,
+      "tests_passed": 107
+    },
+    "summary": "../../runs/sol-20261107/SUMMARY.md",
+    "val_coverage_f1": {
+      "A": 0.3536541461658466,
+      "TTA4": 0.38347975240510107,
+      "TTA8": 0.3760879496056934
+    },
+    "heldout_coverage_f1": {
+      "A": 0.43167884797950334,
+      "TTA4": 0.4568161105487388
+    },
+    "threshold": 0.9,
+    "default_remains_A": true,
+    "real_trail_accuracy_verified": false
   }
 }

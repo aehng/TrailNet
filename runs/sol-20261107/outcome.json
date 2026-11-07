@@ -1,0 +1,13 @@
+{
+  "stage": "M4_complete",
+  "val_result": "val-output/tta-val-results.json",
+  "heldout_result": "heldout-output/tta-heldout-results.json",
+  "winner": "TTA4",
+  "threshold": 0.9,
+  "heldout_veto_passed": true,
+  "new_training_runs": 0,
+  "candidate_heldout_evaluations": 1,
+  "default_unchanged": true,
+  "independent_truth_verified": false,
+  "tests_passed": 107
+}

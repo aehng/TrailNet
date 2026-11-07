@@ -1,5 +1,5 @@
 ........................................................................ [ 67%]
-..................................                                       [100%]
+...................................                                      [100%]
 =============================== warnings summary ===============================
 tests/test_labels_snap.py: 109 warnings
   /workspace/trailnet-sol/src/trailnet/data/labels.py:339: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
@@ -32,7 +32,7 @@ tests/test_v4.py::test_outside_source_pixels_are_ignored_only_when_opted_in[5.0]
 
 tests/test_v4.py::test_prepare_parallel_workers_write_all_tiles
 tests/test_v4.py::test_prepare_parallel_workers_write_all_tiles
-  /usr/lib/python3.13/multiprocessing/popen_fork.py:67: DeprecationWarning: This process (pid=207396) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  /usr/lib/python3.13/multiprocessing/popen_fork.py:67: DeprecationWarning: This process (pid=209549) is multi-threaded, use of fork() may lead to deadlocks in the child.
     self.pid = os.fork()
 
 tests/test_vector_eval.py::test_directional_reraster_stays_within_one_and_matches_one_pixel_line
@@ -48,4 +48,4 @@ tests/test_viz.py::test_geojson_dict_refuses_projected_metres_without_crs
     write(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-106 passed, 123 warnings in 7.03s
+107 passed, 123 warnings in 6.66s
