@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-11-07",
-  "status": "canonical_paired_window_fetch_complete_blinded_review_pending",
+  "status": "two_bounded_2018_candidates_fetched_blinded_review_pending",
   "current_training_imagery": {
     "source": "NAIP via Microsoft Planetary Computer STAC; exact IDs reconstructed from retained AOI bbox and latest-year fetcher rule",
     "acquisition_dates": [
@@ -15,35 +15,8 @@
       4500084.0
     ],
     "crs": "EPSG:32612",
-    "identity_limit": "Current 2021 source item IDs are reconstructed from the retained AOI bbox/latest-year rule. Local raster metadata says band 4 color interpretation alpha while the source is expected to be RGBN; exact STAC raster:bands and training loader semantics must be reconciled before use.",
-    "band_integrity_issue": "Rasterio reports colorinterp red/green/blue/alpha and nodata=0 for the local NAIP raster, while the trained input pipeline is described as RGBN. Fourth band has continuous non-binary values in inspected pixels. Resolve from exact STAC item asset metadata and inspect loader/channel normalization before treating it as alpha or NIR."
-  },
-  "preferred_followup_imagery_candidate": {
-    "source": "Park City / Summit County PC2018Imagery ArcGIS ImageServer",
-    "url": "https://gis.parkcity.org/server/rest/services/PC2018Imagery/ImageServer",
-    "flight_dates": [
-      "2018-06-24",
-      "2018-07-01"
-    ],
-    "ground_sample_distance_m": 0.5,
-    "pixel_type": "U8",
-    "band_count": 4,
-    "spatial_reference": "ESRI:102743 (WKID 3566), Utah Central feet",
-    "service_extent_native_units": [
-      1598231.0993440598,
-      7382600.418971393,
-      1680501.5993440598,
-      7468704.918971393
-    ],
-    "coverage_screen": "All 24 recovered Park City audit-window centerpoints transformed from EPSG:32612 fall inside the published image-service extent. This is metadata-extent overlap, not verified valid-pixel coverage.",
-    "relative_resolution": "0.5 m pixels are finer than the current 0.6 m NAIP grid; resampling and registration must be measured before pairing.",
-    "why_test_it": "The June/July flight is a stronger candidate for testing snow visibility because it is earlier in the snow-free season than the mixed September/November current mosaic. It also offers a different illumination opportunity, but the service metadata reviewed here does not give local flight time or sun geometry. Flight dates alone do not prove snow-free ground, clearer tread, or low shadow.",
-    "pixel_comparison_status": "bounded retrieval complete for 24 exact Park City windows from the completed A replay audit manifest; imagery-only paired sheets produced",
-    "permission_status": "unknown: public endpoint access does not establish ML reuse rights",
-    "trail_change_risk": "2018 imagery predates the 2021 training mosaic; trails built, closed, or rerouted between dates must be excluded from reference scoring.",
-    "valid_pixel_result": "13/24 candidate windows have entirely zero RGB; mean candidate RGB zero-filled fraction is 0.571854. The returned raster mask reports 100% valid and therefore does not detect these zero responses.",
-    "band_order_and_masks": "not verified; image responses are four-band, but service band names are absent from reviewed service metadata. Treat fourth-band role and masks as unknown; do not treat numeric zero alone as nodata.",
-    "review_status": "blinded human scoring pending; snow/shadow/cloud/canopy/tread visibility and local registration not scored"
+    "identity_limit": "The four reconstructed 2021 NAIP STAC item assets each have eo:bands Red, Green, Blue, NIR. Local mosaic Rasterio colorinterp says red,green,blue,alpha; band role is verified by item metadata but local tag and mask semantics need validation.",
+    "band_integrity_issue": "Exact 2021 STAC eo:bands verify fourth band as NIR for all four reconstructed items. Local TIFF tags label it alpha and nodata=0 triggers NodataShadowWarning. Training reads the four values directly, but mask/valid-coverage audits must be reconciled with pixel data and source footprints."
   },
   "independent_local_reference_candidates": [
     {
@@ -78,16 +51,16 @@
     }
   ],
   "recommended_experiment": {
-    "design": "Use the 24 canonical A replay Park City windows (manifest hash recorded above). First validate source IDs, band order, per-pixel valid masks and alignment; exclude invalid response areas. Give imagery-only sheets to a blinded reviewer, without sample key, labels or predictions, and separately record snow, bright bare, deep shadow, canopy, cloud, and tread visibility. Only then compare clear valid corridors against dated independent trail references and assess 2018 trail-change risk.",
+    "design": "Lead with exact same 24 replay-canonical windows in current 2021 NAIP and September 2018 NAIP; keep bounded PC2018 municipal comparison as partial-coverage secondary. First resolve input band/mask semantics, validate per-window footprint masks and stable-landmark registration. Have a reviewer blind to labels/predictions score snow, bright bare surfaces, deep shadow, canopy, cloud, and tread visibility separately.",
     "registration": "Retrieval used matching 127.8 m footprints and the same canonical centerpoints; this is not proof of pixel registration. Estimate offsets on stable landmarks using only valid pixels. Do not compare pixels or use older imagery to score labels until registration and trail-date compatibility are established.",
-    "decision_rule": "Do not replace or augment training imagery from this screen. Candidate requires valid coverage, verified RGBN/band semantics, source masks consistent with pixels, within-one-current-pixel registration, blinded corridor-level visibility improvement, no material tread change and documented reuse rights. Preserve snowy/shadowed/canopied cases as separate unsupported/unknown evaluation slices until independent tread truth exists.",
+    "decision_rule": "September 2018 NAIP is the preferred candidate for blinded visibility review because 24/24 fetched windows return imagery; it is not training-approved. Require within-one-pixel landmark registration, independent reference evidence and 2018 trail-date compatibility, consistent masks, and documented reuse rights before paired label scores or training changes. Preserve snow/shadow/canopy cases as separate unsupported/unknown slices.",
     "not_done": [
       "No blinded human visibility scoring",
-      "No verified snow/shadow/cloud/canopy fractions",
+      "No verified per-window weather/cover fractions",
       "No stable-landmark registration estimate",
       "No independent trail geometry adjudication",
       "No reuse permission confirmed",
-      "No training or weather ablation"
+      "No A VAL modality ablation or training"
     ]
   },
   "next_sites": {
@@ -106,5 +79,61 @@
     "reported_service_mask_fraction": "1.0 in all windows",
     "contact_sheets": "paired-contact-sheet-01.png through paired-contact-sheet-04.png",
     "human_review": "pending"
+  },
+  "secondary_municipal_imagery_candidate": {
+    "source": "Microsoft Planetary Computer NAIP 2018; four-item September mosaic",
+    "item_ids": [
+      "ut_m_4011128_nw_12_060_20180909_20181209",
+      "ut_m_4011120_sw_12_060_20180909_20181209",
+      "ut_m_4011128_ne_12_060_20180927_20181209",
+      "ut_m_4011120_se_12_060_20180927_20181209"
+    ],
+    "flight_dates": [
+      "2018-09-09",
+      "2018-09-27"
+    ],
+    "ground_sample_distance_m": 0.6,
+    "band_metadata": "Exact items eo:bands Red, Green, Blue, NIR; source CRS EPSG:26912, reprojected to EPSG:32612 for same-window display.",
+    "paired_screen": {
+      "windows": 24,
+      "sample_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
+      "allzero_RGB_windows": 0,
+      "mean_zero_RGB_pixel_fraction": 0.0,
+      "reported_candidate_mask_valid_fraction": "100% for all 24",
+      "elapsed_seconds": 17.9
+    },
+    "screen_artifacts": "park-city-naip2018-output/park-city-naip2018/paired-imagery-screen.json; source-items.json; paired-contact-sheet-01.png through 04.png",
+    "review_status": "blinded human scoring, stable-landmark registration, snow/shadow/cloud/canopy/tread visibility and 2018 trail-change compatibility pending",
+    "why_test_it": "All 24 canonical windows have nonzero RGB/full reported mask. Image-only panels show many 2021 bright/blue-white windows while September 2018 scenes appear snow-free and clearer. This is a visibility candidate only, not evidence that visible lines are trails or labels are wrong.",
+    "trail_change_risk": "2018 is three years before the current 2021 mosaic; construction, closure and reroute histories must be checked against the independent reference before any trail scoring.",
+    "permission_status": "STAC item license unknown; review NAIP/Planetary Computer terms for intended use before any training reuse."
+  },
+  "preferred_followup_imagery_candidate": {
+    "source": "Microsoft Planetary Computer NAIP 2018; four-item September mosaic",
+    "item_ids": [
+      "ut_m_4011128_nw_12_060_20180909_20181209",
+      "ut_m_4011120_sw_12_060_20180909_20181209",
+      "ut_m_4011128_ne_12_060_20180927_20181209",
+      "ut_m_4011120_se_12_060_20180927_20181209"
+    ],
+    "flight_dates": [
+      "2018-09-09",
+      "2018-09-27"
+    ],
+    "ground_sample_distance_m": 0.6,
+    "band_metadata": "Exact items eo:bands Red, Green, Blue, NIR; source CRS EPSG:26912, reprojected to EPSG:32612 for same-window display.",
+    "paired_screen": {
+      "windows": 24,
+      "sample_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
+      "allzero_RGB_windows": 0,
+      "mean_zero_RGB_pixel_fraction": 0.0,
+      "reported_candidate_mask_valid_fraction": "100% for all 24",
+      "elapsed_seconds": 17.9
+    },
+    "screen_artifacts": "park-city-naip2018-output/park-city-naip2018/paired-imagery-screen.json; source-items.json; paired-contact-sheet-01.png through 04.png",
+    "review_status": "blinded scoring, stable-landmark registration, snow/shadow/cloud/canopy/tread visibility and 2018 trail-change compatibility pending",
+    "why_test_it": "All 24 canonical windows return nonzero RGB/full reported mask. Sheets show many 2021 bright/blue-white windows while September 2018 scenes appear snow-free and clearer. This is a visibility candidate only, not evidence that visible lines are trails or labels are wrong.",
+    "trail_change_risk": "2018 is three years before the current 2021 mosaic; construction, closure and reroute histories must be checked against independent reference.",
+    "permission_status": "STAC item license unknown; review NAIP/Planetary Computer terms before training reuse."
   }
 }

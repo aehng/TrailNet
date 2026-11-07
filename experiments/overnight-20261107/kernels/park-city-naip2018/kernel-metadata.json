@@ -1,0 +1,23 @@
+{
+  "id": "elikearl/trailnet-park-city-naip2018-screen-2026-11-07",
+  "title": "trailnet-park-city-naip2018-screen-2026-11-07",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "trailnet",
+    "park-city",
+    "imagery",
+    "naip"
+  ],
+  "dataset_sources": [
+    "elikearl/trailnet-multiaoi-v4"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

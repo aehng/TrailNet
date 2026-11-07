@@ -1,0 +1,65 @@
+{
+  "collection": "naip",
+  "source": "Microsoft Planetary Computer STAC API; exact IDs reconstructed for retained 2021 mosaic",
+  "items": [
+    {
+      "id": "ut_m_4011128_nw_12_060_20211121",
+      "datetime": "2021-11-21T16:00:00Z",
+      "gsd_m": 0.6,
+      "proj_epsg": 26912,
+      "eo:bands": [
+        "red",
+        "green",
+        "blue",
+        "nir"
+      ],
+      "raster:bands": null,
+      "license": "unknown"
+    },
+    {
+      "id": "ut_m_4011120_sw_12_060_20211121",
+      "datetime": "2021-11-21T16:00:00Z",
+      "gsd_m": 0.6,
+      "proj_epsg": 26912,
+      "eo:bands": [
+        "red",
+        "green",
+        "blue",
+        "nir"
+      ],
+      "raster:bands": null,
+      "license": "unknown"
+    },
+    {
+      "id": "ut_m_4011128_ne_12_060_20210924",
+      "datetime": "2021-09-24T16:00:00Z",
+      "gsd_m": 0.6,
+      "proj_epsg": 26912,
+      "eo:bands": [
+        "red",
+        "green",
+        "blue",
+        "nir"
+      ],
+      "raster:bands": null,
+      "license": "unknown"
+    },
+    {
+      "id": "ut_m_4011120_se_12_060_20210924",
+      "datetime": "2021-09-24T16:00:00Z",
+      "gsd_m": 0.6,
+      "proj_epsg": 26912,
+      "eo:bands": [
+        "red",
+        "green",
+        "blue",
+        "nir"
+      ],
+      "raster:bands": null,
+      "license": "unknown"
+    }
+  ],
+  "band_evidence": "Each item asset eo:bands names are Red, Green, Blue, NIR; raster:bands is null. Rasterio local mosaic colorinterp is red,green,blue,alpha, an inconsistent metadata tag.",
+  "mask_caveat": "Local mosaic nodata=0 triggers Rasterio NodataShadowWarning; mask coverage is not validated against source footprints or raw alpha/band samples.",
+  "terms": "Item license field unknown."
+}

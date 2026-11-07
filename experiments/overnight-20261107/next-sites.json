@@ -4010,9 +4010,30 @@
     "permission_status": "unknown"
   },
   "next_steps": [
-    "Resolve NAIP and municipal imagery band order, source masks, and nodata behavior.",
-    "Blinded-review valid canonical paired windows for snow, shadow, cloud, canopy, brightness and tread visibility.",
-    "Request dated independent Park City trail records and ML reuse permission before training or promotion.",
-    "Keep all seven screened sites at review_later until independent target/distractor counts and permissions are verified."
-  ]
+    "Validate 2021 local colorinterp-alpha and nodata=0 mask behavior against exact STAC eo:bands and source footprints.",
+    "Blinded-review the 24 canonical 2021/September-2018 NAIP pairs; score snow, bright bare, deep shadow, canopy, cloud and tread visibility separately, then measure stable-landmark registration.",
+    "Check trail build/closure/reroute dates and obtain dated independent Park City trail records with positional uncertainty and reuse rights.",
+    "Keep PC2018 municipal service as secondary partial coverage only: 13/24 windows are allzero despite full returned masks.",
+    "Keep all seven proposed geographic sites at review_later until verified samples and permissions are established."
+  ],
+  "park_city_naip_2018_pair": {
+    "status": "bounded_window_retrieval_complete_review_later",
+    "source": "Planetary Computer NAIP four-item September 2018 mosaic",
+    "dates": [
+      "2018-09-09",
+      "2018-09-27"
+    ],
+    "gsd_m": 0.6,
+    "source_crs": "EPSG:26912",
+    "items_eo_bands": "Red, Green, Blue, NIR",
+    "canonical_windows": 24,
+    "allzero_windows": 0,
+    "mean_zero_rgb_fraction": 0.0,
+    "candidate_mask_valid_fraction": "100% for all windows",
+    "stable_landmark_registration": "not measured; output reprojected to exact sample-window bounds in EPSG:32612 at 0.6m",
+    "trail_date_compatibility": "unknown; three years before current 2021 mosaic",
+    "permission": "unknown",
+    "artifact": "park-city-naip2018-output/park-city-naip2018/paired-imagery-screen.json",
+    "decision": "preferred candidate for blinded visibility review; not approved for training or reference scoring"
+  }
 }

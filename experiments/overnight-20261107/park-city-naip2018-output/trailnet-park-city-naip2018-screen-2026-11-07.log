@@ -1,0 +1,60 @@
+[{"stream_name":"stderr","time":5.045185052,"data":"Warning 6: warp options does not support option RES\n"}
+,{"stream_name":"stderr","time":5.122367005,"data":"Warning 6: warp options does not support option RES\n"}
+,{"stream_name":"stderr","time":5.197293447,"data":"Warning 6: warp options does not support option RES\n"}
+,{"stream_name":"stderr","time":5.279325977,"data":"Warning 6: warp options does not support option RES\n"}
+,{"stream_name":"stderr","time":5.794301529,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":5.794339584,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":6.533820487,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":6.533861241,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":7.159018148,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":7.159053442,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":8.102660645,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":8.102698781,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":8.536664531,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":8.53676431,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":9.141660894,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":9.141694432,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":9.663714389,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":9.663788269,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":10.233794979,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":10.233829245,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":11.206254846,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":11.206298001,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":11.546452701,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":11.546506672,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":11.981789474,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":11.981825164,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":12.377354308,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":12.377405166,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":12.803218953,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":12.803299818,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":13.223755666,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":13.223790789,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":13.59301343,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":13.593050473,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":14.020052551,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.020087447,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":14.515725405,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.515759609,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":14.765511322,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":14.765566049,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":15.053136071,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.053173256000001,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":15.385193796,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.385230739,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":15.832311498,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":15.83234704,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":16.303164513,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":16.303198156,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":16.533269309,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":16.53330461,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stderr","time":17.026387443,"data":"/kaggle/src/script.py:66: NodataShadowWarning: The dataset's nodata attribute is shadowing the alpha band. All masks will be determined by the nodata attribute\n"}
+,{"stream_name":"stderr","time":17.026426123,"data":"  cm=np.logical_and.reduce(current.read_masks([1,2,3,4],window=win,boundless=True)\u003e0)\n"}
+,{"stream_name":"stdout","time":21.760821384,"data":"SCREEN_COMPLETE samples=24 allzero=0 output=/kaggle/working/park-city-naip2018\n"}
+,{"stream_name":"stderr","time":24.841756668,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":24.8417982,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":25.223737005,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":25.223761699,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":26.975008922,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":28.303802991,"data":"[NbConvertApp] Writing 321385 bytes to __results__.html\n"}
+]

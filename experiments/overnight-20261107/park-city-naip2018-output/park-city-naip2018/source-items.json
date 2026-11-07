@@ -1,0 +1,118 @@
+[
+  {
+    "id": "ut_m_4011128_ne_12_060_20180927_20181209",
+    "datetime": "2018-09-27T00:00:00Z",
+    "gsd": 0.6,
+    "proj:epsg": 26912,
+    "raster:bands": null,
+    "eo:bands": [
+      {
+        "name": "Red",
+        "common_name": "red"
+      },
+      {
+        "name": "Green",
+        "common_name": "green"
+      },
+      {
+        "name": "Blue",
+        "common_name": "blue"
+      },
+      {
+        "name": "NIR",
+        "common_name": "nir",
+        "description": "near-infrared"
+      }
+    ],
+    "license": "unknown",
+    "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+    "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011128_ne_12_060_20180927.tif"
+  },
+  {
+    "id": "ut_m_4011120_se_12_060_20180927_20181209",
+    "datetime": "2018-09-27T00:00:00Z",
+    "gsd": 0.6,
+    "proj:epsg": 26912,
+    "raster:bands": null,
+    "eo:bands": [
+      {
+        "name": "Red",
+        "common_name": "red"
+      },
+      {
+        "name": "Green",
+        "common_name": "green"
+      },
+      {
+        "name": "Blue",
+        "common_name": "blue"
+      },
+      {
+        "name": "NIR",
+        "common_name": "nir",
+        "description": "near-infrared"
+      }
+    ],
+    "license": "unknown",
+    "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+    "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011120_se_12_060_20180927.tif"
+  },
+  {
+    "id": "ut_m_4011128_nw_12_060_20180909_20181209",
+    "datetime": "2018-09-09T00:00:00Z",
+    "gsd": 0.6,
+    "proj:epsg": 26912,
+    "raster:bands": null,
+    "eo:bands": [
+      {
+        "name": "Red",
+        "common_name": "red"
+      },
+      {
+        "name": "Green",
+        "common_name": "green"
+      },
+      {
+        "name": "Blue",
+        "common_name": "blue"
+      },
+      {
+        "name": "NIR",
+        "common_name": "nir",
+        "description": "near-infrared"
+      }
+    ],
+    "license": "unknown",
+    "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+    "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011128_nw_12_060_20180909.tif"
+  },
+  {
+    "id": "ut_m_4011120_sw_12_060_20180909_20181209",
+    "datetime": "2018-09-09T00:00:00Z",
+    "gsd": 0.6,
+    "proj:epsg": 26912,
+    "raster:bands": null,
+    "eo:bands": [
+      {
+        "name": "Red",
+        "common_name": "red"
+      },
+      {
+        "name": "Green",
+        "common_name": "green"
+      },
+      {
+        "name": "Blue",
+        "common_name": "blue"
+      },
+      {
+        "name": "NIR",
+        "common_name": "nir",
+        "description": "near-infrared"
+      }
+    ],
+    "license": "unknown",
+    "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+    "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011120_sw_12_060_20180909.tif"
+  }
+]

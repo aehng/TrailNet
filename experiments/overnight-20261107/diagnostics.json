@@ -10,7 +10,8 @@
     "local_provisional_sample_centers_match": "35/45 overall; 18/24 Park City",
     "local_provisional_image_hashes_match": "0/45",
     "local_provisional_class_map_hashes_match": "0/45",
-    "canonical_park_city_screen_uses_exact_replay_centers": true
+    "canonical_park_city_screen_uses_exact_replay_centers": true,
+    "park_city_2021_eo_band_metadata": "all four reconstructed NAIP STAC items explicitly identify band 4 as NIR; local raster colorinterp still says alpha"
   },
   "a_checkpoint_ablation": {
     "full_input": "not_run",
@@ -26,19 +27,29 @@
     "status": "unsupported; canonical imagery-only contact sheets await blinded human review and independent corridor truth"
   },
   "paired_imagery": {
-    "candidate": "Park City/Summit County PC2018Imagery ImageServer, flown 2018-06-24 and 2018-07-01",
+    "candidate": "September 2018 NAIP; four exact STAC items, September 9/27 dates, 0.6 m GSD, EPSG:26912 source",
     "window_pairs_locked": 24,
     "canonical_centers_from": "completed A replay audit_samples.csv",
     "bounded_retrieval": "complete for all 24 paired footprints",
-    "candidate_allzero_windows": 13,
+    "candidate_allzero_windows": 0,
     "mean_candidate_rgb_zero_pixel_fraction": 0.571854,
     "candidate_reported_mask_valid_fraction": "1.0 for all windows despite all-zero RGB windows; masks require validation",
     "band_order": "unverified",
     "co_registration": "not measured",
     "snow_shadow_cloud_canopy_scored": false,
     "reuse_permission": "unknown",
-    "status": "partial coverage and integrity review required before blinded visibility scoring"
+    "status": "bounded retrieval complete: 24/24 September 2018 NAIP windows return nonzero RGB and full reported mask; image-only review and stable-landmark registration remain open",
+    "candidate_mean_zero_rgb_fraction": 0.0,
+    "candidate_projection_transform": "reprojected from EPSG:26912 to exact EPSG:32612 0.6 m window bounds; per-window affine equals requested sample footprint; stable-landmark registration not measured",
+    "candidate_band_order": "NAIP item eo:bands identify Red, Green, Blue, NIR; raster:bands extension absent",
+    "municipal_service_secondary": {
+      "windows": 24,
+      "allzero_windows": 13,
+      "mean_zero_rgb_fraction": 0.571854,
+      "decision": "partial coverage; do not prefer as full-area replacement"
+    },
+    "warning": "Kernel emitted GDAL warning that WarpedVRT ignored optional RES; merge output transform is exact EPSG:32612 at 0.6 m, but stable-landmark registration remains unverified."
   },
   "interpretation": "Replay parity does not establish label quality or explain weather-related error. No weather, modality, or imagery-causality claim can be made from available evidence.",
-  "next_step": "Resolve input band and mask semantics, then blinded-review only valid canonical paired windows; obtain dated independent trail reference evidence and permission before training."
+  "next_step": "Blinded-review current 2021 versus September 2018 NAIP on the 24 canonical windows; assess snow, bare, shadow, canopy, cloud and tread visibility separately. Check trail-date compatibility and independent references. Resolve local NIR colorinterp-alpha and nodata/mask behavior before training."
 }

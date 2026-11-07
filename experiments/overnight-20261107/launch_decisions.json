@@ -14,7 +14,7 @@
     },
     "input_registration_and_pixel_identity": {
       "status": "partial",
-      "evidence": "Replay index parity and published pixel metrics match, but local provisional audit sample image/class-map hashes match 0/45; candidate municipal imagery band order and masks are unverified."
+      "evidence": "A replay index hashes and published held-out score match; local provisional crop hashes match 0/45. Exact 2021 and 2018 NAIP STAC eo:bands confirm RGBN, but the local 2021 raster colorinterp says alpha, nodata/mask semantics are unresolved, and stable-landmark registration for alternate imagery is unmeasured. Municipal image-service band names are unknown."
     },
     "split_footprint_independence": {
       "status": "risk_identified",
@@ -54,10 +54,10 @@
   },
   "decision": "No training arm is justified. Preserve A; replay parity is not a label-quality or generalization result.",
   "reopen_when": [
-    "Input band order and nodata/mask behavior are verified for each image source.",
+    "2021 NAIP source bands and local color tag/mask/nodata behavior are reconciled through the mosaic writer and training loader.",
     "Dated independent Park City trail references and ML reuse permission are obtained.",
     "Blinded trusted VAL audit meets applicable arm sample/block thresholds.",
-    "Paired imagery windows are valid, co-registered, and reviewed with season/weather/cover conditions recorded.",
+    "September 2018 paired windows pass stable-landmark registration and 2018 trail-date compatibility checks.",
     "Cross-split tile-footprint overlap is reported and excluded from trusted audit windows."
   ]
 }

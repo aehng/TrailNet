@@ -1,0 +1,904 @@
+{
+  "status": "complete",
+  "sample_count": 24,
+  "sample_manifest_sha256": "11f813be28dce9c973842e030a6c9355ef37fb1c84a6fdf34b6adc85b3c9ab8f",
+  "source_code_sha256": "f067ffbb1a2e43c6fe9aa4476b52ecda78b09763f25cb07885c6b17324df39e6",
+  "elapsed_seconds": 17.9,
+  "candidate": "Planetary Computer NAIP Sept 2018 four-item mosaic",
+  "items": [
+    {
+      "id": "ut_m_4011128_ne_12_060_20180927_20181209",
+      "datetime": "2018-09-27T00:00:00Z",
+      "gsd": 0.6,
+      "proj:epsg": 26912,
+      "raster:bands": null,
+      "eo:bands": [
+        {
+          "name": "Red",
+          "common_name": "red"
+        },
+        {
+          "name": "Green",
+          "common_name": "green"
+        },
+        {
+          "name": "Blue",
+          "common_name": "blue"
+        },
+        {
+          "name": "NIR",
+          "common_name": "nir",
+          "description": "near-infrared"
+        }
+      ],
+      "license": "unknown",
+      "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011128_ne_12_060_20180927.tif"
+    },
+    {
+      "id": "ut_m_4011120_se_12_060_20180927_20181209",
+      "datetime": "2018-09-27T00:00:00Z",
+      "gsd": 0.6,
+      "proj:epsg": 26912,
+      "raster:bands": null,
+      "eo:bands": [
+        {
+          "name": "Red",
+          "common_name": "red"
+        },
+        {
+          "name": "Green",
+          "common_name": "green"
+        },
+        {
+          "name": "Blue",
+          "common_name": "blue"
+        },
+        {
+          "name": "NIR",
+          "common_name": "nir",
+          "description": "near-infrared"
+        }
+      ],
+      "license": "unknown",
+      "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011120_se_12_060_20180927.tif"
+    },
+    {
+      "id": "ut_m_4011128_nw_12_060_20180909_20181209",
+      "datetime": "2018-09-09T00:00:00Z",
+      "gsd": 0.6,
+      "proj:epsg": 26912,
+      "raster:bands": null,
+      "eo:bands": [
+        {
+          "name": "Red",
+          "common_name": "red"
+        },
+        {
+          "name": "Green",
+          "common_name": "green"
+        },
+        {
+          "name": "Blue",
+          "common_name": "blue"
+        },
+        {
+          "name": "NIR",
+          "common_name": "nir",
+          "description": "near-infrared"
+        }
+      ],
+      "license": "unknown",
+      "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011128_nw_12_060_20180909.tif"
+    },
+    {
+      "id": "ut_m_4011120_sw_12_060_20180909_20181209",
+      "datetime": "2018-09-09T00:00:00Z",
+      "gsd": 0.6,
+      "proj:epsg": 26912,
+      "raster:bands": null,
+      "eo:bands": [
+        {
+          "name": "Red",
+          "common_name": "red"
+        },
+        {
+          "name": "Green",
+          "common_name": "green"
+        },
+        {
+          "name": "Blue",
+          "common_name": "blue"
+        },
+        {
+          "name": "NIR",
+          "common_name": "nir",
+          "description": "near-infrared"
+        }
+      ],
+      "license": "unknown",
+      "asset_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "unsigned_href": "https://naipeuwest.blob.core.windows.net/naip/v002/ut/2018/ut_060cm_2018/40111/m_4011120_sw_12_060_20180909.tif"
+    }
+  ],
+  "current_source": "park_city_naip_rgbn.tif; 2021 September/November mosaic",
+  "current_colorinterp": "recorded separately in paired screen metadata",
+  "band_roles": "STAC item metadata is authoritative; Rasterio colorinterp may label the fourth band alpha. Inspect bands before trusting NIR interpretation.",
+  "ml_reuse_rights": "review dataset and Planetary Computer terms for intended use; no redistribution.",
+  "human_visibility_review": "pending; image-only sheets",
+  "snow_shadow_cloud_canopy_scored": false,
+  "allzero_windows": 0,
+  "mean_zero_rgb_fraction": 0.0,
+  "windows": [
+    {
+      "sample_id": "W001",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4496871.599999999,
+        449758.20000000007,
+        4496999.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        449630.4,
+        0.0,
+        -0.6,
+        4496999.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W002",
+      "center_epsg32612_m": [
+        452459.10000000003,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        452395.2,
+        4496871.599999999,
+        452523.00000000006,
+        4496999.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        452395.2,
+        0.0,
+        -0.6,
+        4496999.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W003",
+      "center_epsg32612_m": [
+        448542.30000000005,
+        4497396.299999999
+      ],
+      "bbox_epsg32612_m": [
+        448478.4,
+        4497332.3999999985,
+        448606.20000000007,
+        4497460.199999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        448478.4,
+        0.0,
+        -0.6,
+        4497460.199999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W004",
+      "center_epsg32612_m": [
+        449003.10000000003,
+        4496013.899999999
+      ],
+      "bbox_epsg32612_m": [
+        448939.2,
+        4495949.999999999,
+        449067.00000000006,
+        4496077.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        448939.2,
+        0.0,
+        -0.6,
+        4496077.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W005",
+      "center_epsg32612_m": [
+        452689.50000000006,
+        4497165.899999999
+      ],
+      "bbox_epsg32612_m": [
+        452625.60000000003,
+        4497101.999999999,
+        452753.4000000001,
+        4497229.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 0.230047,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        452625.60000000003,
+        0.0,
+        -0.6,
+        4497229.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W006",
+      "center_epsg32612_m": [
+        451307.10000000003,
+        4496013.899999999
+      ],
+      "bbox_epsg32612_m": [
+        451243.2,
+        4495949.999999999,
+        451371.00000000006,
+        4496077.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451243.2,
+        0.0,
+        -0.6,
+        4496077.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W007",
+      "center_epsg32612_m": [
+        448542.30000000005,
+        4495553.1
+      ],
+      "bbox_epsg32612_m": [
+        448478.4,
+        4495489.199999999,
+        448606.20000000007,
+        4495617.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        448478.4,
+        0.0,
+        -0.6,
+        4495617.0
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W008",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4497165.899999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4497101.999999999,
+        449758.20000000007,
+        4497229.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        449630.4,
+        0.0,
+        -0.6,
+        4497229.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W009",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4495322.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.80000000005,
+        4495258.799999999,
+        451140.6000000001,
+        4495386.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451012.80000000005,
+        0.0,
+        -0.6,
+        4495386.6
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W010",
+      "center_epsg32612_m": [
+        450846.30000000005,
+        4496935.499999999
+      ],
+      "bbox_epsg32612_m": [
+        450782.4,
+        4496871.599999999,
+        450910.20000000007,
+        4496999.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450782.4,
+        0.0,
+        -0.6,
+        4496999.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W011",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4494631.499999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4494567.599999999,
+        450219.00000000006,
+        4494695.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450091.2,
+        0.0,
+        -0.6,
+        4494695.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W012",
+      "center_epsg32612_m": [
+        449694.30000000005,
+        4495322.699999999
+      ],
+      "bbox_epsg32612_m": [
+        449630.4,
+        4495258.799999999,
+        449758.20000000007,
+        4495386.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        449630.4,
+        0.0,
+        -0.6,
+        4495386.6
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W013",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4498778.699999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4498714.799999999,
+        450219.00000000006,
+        4498842.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450091.2,
+        0.0,
+        -0.6,
+        4498842.6
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W014",
+      "center_epsg32612_m": [
+        451767.9,
+        4497857.1
+      ],
+      "bbox_epsg32612_m": [
+        451704.0,
+        4497793.199999999,
+        451831.80000000005,
+        4497921.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451704.0,
+        0.0,
+        -0.6,
+        4497921.0
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W015",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4499239.499999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.80000000005,
+        4499175.599999999,
+        451140.6000000001,
+        4499303.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451012.80000000005,
+        0.0,
+        -0.6,
+        4499303.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W016",
+      "center_epsg32612_m": [
+        450615.9,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        450552.0,
+        4499636.3999999985,
+        450679.80000000005,
+        4499764.199999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450552.0,
+        0.0,
+        -0.6,
+        4499764.199999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W017",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4499009.1
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4498945.199999999,
+        450219.00000000006,
+        4499073.0
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450091.2,
+        0.0,
+        -0.6,
+        4499073.0
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W018",
+      "center_epsg32612_m": [
+        450846.30000000005,
+        4499469.899999999
+      ],
+      "bbox_epsg32612_m": [
+        450782.4,
+        4499405.999999999,
+        450910.20000000007,
+        4499533.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450782.4,
+        0.0,
+        -0.6,
+        4499533.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W019",
+      "center_epsg32612_m": [
+        451076.70000000007,
+        4497626.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451012.80000000005,
+        4497562.799999999,
+        451140.6000000001,
+        4497690.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451012.80000000005,
+        0.0,
+        -0.6,
+        4497690.6
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W020",
+      "center_epsg32612_m": [
+        451998.30000000005,
+        4499930.699999999
+      ],
+      "bbox_epsg32612_m": [
+        451934.4,
+        4499866.799999999,
+        452062.20000000007,
+        4499994.6
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451934.4,
+        0.0,
+        -0.6,
+        4499994.6
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W021",
+      "center_epsg32612_m": [
+        452459.10000000003,
+        4498087.499999999
+      ],
+      "bbox_epsg32612_m": [
+        452395.2,
+        4498023.599999999,
+        452523.00000000006,
+        4498151.399999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        452395.2,
+        0.0,
+        -0.6,
+        4498151.399999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W022",
+      "center_epsg32612_m": [
+        451998.30000000005,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        451934.4,
+        4499636.3999999985,
+        452062.20000000007,
+        4499764.199999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        451934.4,
+        0.0,
+        -0.6,
+        4499764.199999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W023",
+      "center_epsg32612_m": [
+        452689.50000000006,
+        4494861.899999999
+      ],
+      "bbox_epsg32612_m": [
+        452625.60000000003,
+        4494797.999999999,
+        452753.4000000001,
+        4494925.8
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 0.230047,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        452625.60000000003,
+        0.0,
+        -0.6,
+        4494925.8
+      ],
+      "candidate_crs": "EPSG:32612"
+    },
+    {
+      "sample_id": "W024",
+      "center_epsg32612_m": [
+        450155.10000000003,
+        4499700.299999999
+      ],
+      "bbox_epsg32612_m": [
+        450091.2,
+        4499636.3999999985,
+        450219.00000000006,
+        4499764.199999999
+      ],
+      "ground_window_m": [
+        127.8,
+        127.8
+      ],
+      "current_mask_valid_fraction": 1.0,
+      "candidate_mask_valid_fraction": 1.0,
+      "candidate_zero_rgb_fraction": 0.0,
+      "candidate_nonzero_rgb_fraction": 1.0,
+      "candidate_zero_return_suspected": false,
+      "candidate_band_count": 4,
+      "candidate_transform": [
+        0.6,
+        0.0,
+        450091.2,
+        0.0,
+        -0.6,
+        4499764.199999999
+      ],
+      "candidate_crs": "EPSG:32612"
+    }
+  ]
+}
