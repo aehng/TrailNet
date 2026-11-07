@@ -144,5 +144,54 @@
     "val_fraction": 0.15,
     "test_fraction": 0.15
   },
+  "split_membership_audit": {
+    "artifact": "experiments/overnight-20261107/audit/split_audit.json",
+    "membership_csv": "experiments/overnight-20261107/audit/split_membership.csv",
+    "tile_counts": {
+      "train": 1745,
+      "val": 172,
+      "test": 358,
+      "total": 2275
+    },
+    "membership_sha256": {
+      "train": "02cf9daddc0b7654d326f759bdb301552b8a2d89deed6c22505845388e678cb3",
+      "val": "c081f0c368003e3b352263782e13efbb8f205c582a97edf2d83be7e144195c97",
+      "test": "47c376d79165caf828c81f77c87f20f6fef907b0fc7f947f7ca5c7eefea82c8f"
+    },
+    "cross_split_tile_footprints_m2": {
+      "corner_canyon": {
+        "train_val": 76677.12,
+        "train_test": 648806.4,
+        "val_test": 0.0
+      },
+      "kelly_canyon": {
+        "train_val": 0.0,
+        "train_test": 524943.36,
+        "val_test": 0.0
+      },
+      "park_city": {
+        "train_val": 277217.28,
+        "train_test": 153354.24,
+        "val_test": 401080.32
+      },
+      "snowbasin": {
+        "train_val": 253624.32,
+        "train_test": 0.0,
+        "val_test": 0.0
+      },
+      "teton_pass": {
+        "train_val": 0.0,
+        "train_test": 0.0,
+        "val_test": 0.0
+      }
+    },
+    "tile_footprint_assumption": "512 px square at 0.6 m per pixel; source tile masks/pixel validity unavailable",
+    "provisional_audit_sample": {
+      "window_count": 45,
+      "index_split_matches": 45,
+      "within_split_exclusive_geometry": 45,
+      "artifact": "experiments/overnight-20261107/audit/sample_exclusivity_review.json"
+    }
+  },
   "data_entry_gate": "Raw input files and tile indexes match source evidence; local tile pixel files have not yet been compared with regenerated A tiles."
 }

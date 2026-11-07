@@ -1,0 +1,62 @@
+{
+  "decision_time": "2026-11-07T10:15:51Z",
+  "training_launch": "none",
+  "selected_arm": null,
+  "confirmation_seed_43_eligible": false,
+  "global_gates": {
+    "a_replay_parity": {
+      "status": "failed_before_execution",
+      "evidence": "A replay staging failed before tile generation and inference; one allowed staging retry is consumed."
+    },
+    "trusted_independent_val_audit": {
+      "status": "not_met",
+      "evidence": "0 independently verified trail or distractor samples; no trusted VAL traces were frozen."
+    },
+    "input_registration_and_pixel_identity": {
+      "status": "not_verified",
+      "evidence": "Raw source files and tile indexes match, but regenerated tile image/class-map hashes do not."
+    },
+    "split_footprint_independence": {
+      "status": "risk_identified",
+      "evidence": "The recovered split has 2.34 km2 summed pairwise cross-split tile-footprint overlap; 0.401 km2 overlaps Park City VAL and held-out footprints. This is geometric footprint area; nodata validity is unknown."
+    },
+    "local_batch_12_fit": {
+      "status": "failed",
+      "evidence": "The Intel Arc 130V 8 GB batch-12 fit smoke check ran out of memory."
+    }
+  },
+  "arms": {
+    "t4q-labelmask": {
+      "status": "not_eligible",
+      "required_gate": "confirmed incorrect positive supervision in at least 8 TRAIN windows across 2 blocks and at least 1% of affected-area A-positive ground area",
+      "evidence": "No blinded independent TRAIN adjudication; verified qualifying windows and area are both 0/unknown."
+    },
+    "t4q-labeladd": {
+      "status": "not_eligible",
+      "required_gate": "at least 250 m of independently verified omitted tread across 8 TRAIN windows and 2 blocks",
+      "evidence": "No independent dated trail traces; qualifying length and windows are both 0/unknown."
+    },
+    "t4q-hardneg": {
+      "status": "not_eligible",
+      "required_gate": "verified recurring distractors in at least 8 TRAIN windows across 2 blocks and in trusted VAL evidence",
+      "evidence": "No verified distractor windows or frozen trusted VAL references."
+    },
+    "t4q-weatherdrop": {
+      "status": "not_eligible",
+      "required_gate": "at least 6 verified Park City snow and 6 bare VAL windows with tread; snow recall gap at least 0.10; terrain ablation loss at least 0.05; optical ablation within 0.05 without increased distractor burden",
+      "evidence": "No independently adjudicated snow/bare corridor windows and no A modality diagnostics."
+    },
+    "t4q-tversky": {
+      "status": "not_eligible",
+      "required_gate": "clear-image distractors in at least 6 trusted VAL windows across 2 blocks and no actionable label, alignment, or imagery defect",
+      "evidence": "No trusted VAL distractor audit; registration and tile-pixel identity remain unverified."
+    }
+  },
+  "decision": "No training arm is justified. Preserve A and do not treat failed staging as a model result.",
+  "reopen_when": [
+    "A replay parity and tile-pixel identities are verified in an authorized run.",
+    "Dated independent Park City trail references and ML reuse permission are obtained.",
+    "Blinded trusted VAL audit meets the applicable arm's sample/block thresholds.",
+    "Cross-split tile-footprint overlap is reported and excluded from trusted audit windows."
+  ]
+}

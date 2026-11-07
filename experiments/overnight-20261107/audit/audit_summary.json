@@ -283,5 +283,12 @@
       "Check trail construction, closure, reroute and label date before using older imagery as evidence."
     ],
     "next_review": "Open same-corridor low-resolution previews and inspect affected trail corridors; record snow/shadow/cloud/leaf status, independent trail references, positional uncertainty and permission."
+  },
+  "recovered_a_split_membership_audit": {
+    "artifact": "experiments/overnight-20261107/audit/split_audit.json",
+    "tile_counts": {"train": 1745, "val": 172, "heldout": 358, "total": 2275},
+    "summed_pairwise_cross_split_tile_overlap_km2": 2.335703,
+    "geometry_source": "recovered index centers and configured tile size/resolution; nodata validity unavailable",
+    "window_exclusivity_artifact": "experiments/overnight-20261107/audit/sample_exclusivity_review.json"
   }
 }

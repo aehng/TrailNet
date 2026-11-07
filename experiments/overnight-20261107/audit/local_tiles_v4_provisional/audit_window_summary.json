@@ -21,6 +21,12 @@
     }
   ],
   "tile_raster_pixel_identity_verified": false,
+  "split_exclusivity_review": {
+    "artifact": "experiments/overnight-20261107/audit/sample_exclusivity_review.json",
+    "sample_windows_matching_recovered_index_split": 45,
+    "sample_windows_inside_split_exclusive_geometry": 45,
+    "valid_pixel_overlap_verified": false
+  },
   "counts_by_area_split_stratum": {
     "park_city": {
       "train": {
@@ -78,6 +84,6 @@
     "No independent human adjudication; class-map counts are exposed only in audit_samples.csv.",
     "Snow/cloud/shadow/canopy visibility must be reviewed from the no-overlay contact sheets.",
     "Tile rasters were sampled from the local tiles_v4 folder; only index CSV hashes match recovered A, not per-tile raster hashes.",
-    "Center-point selection is a first-pass sampler, not a substitute for precise block-footprint clipping."
+    "Selected crop bounding boxes were checked against split-exclusive geometric tile footprints; source nodata/pixel-validity is not available for this check."
   ]
 }

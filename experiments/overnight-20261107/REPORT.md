@@ -24,6 +24,8 @@ The strongest follow-up imagery candidate is the complete four-tile NAIP set fro
 
 In the 45-window provisional sample, 17 windows have less than 99% valid imagery, 8 have less than 50%, and 5 have less than 10%. These are image-coverage cases, not weather failures. Use each window's valid mask in all future weather denominators.
 
+The recovered A indexes reproduce the frozen split counts exactly: 1,745 train, 172 VAL, and 358 held-out tiles. Their full tile-ID membership hashes are stored in `audit/split_audit.json`. A footprint audit using the configured 512-pixel tile size at 0.6 m shows cross-split pixel-footprint overlap: Park City has 277,217 m² train/VAL, 153,354 m² train/held-out, and 401,080 m² VAL/held-out overlap. Across all areas the pairwise overlap sums to about 2.34 km². These are geometric tile bounds; nodata/pixel-valid overlap could not be verified because tile rasters were not available. The legacy A VAL F1 0.3427 and held-out F1/IoU 0.4311/0.2748 therefore remain historical label-agreement scores with a documented shared-footprint risk. Do not present the held-out set as an independent spatial test in Park City. For the provisional 45-window audit, all sample split labels match the recovered indexes and all 45 crop bounds fall inside their split-exclusive tile-footprint geometry. Their imagery and class-map hashes still need Kaggle replay parity.
+
 An existing exploratory relief-offset audit found Park City's median absolute relief-response offset was 4.2 m over 500 samples; 46.2% exceeded 5 m and 24.2% exceeded 10 m. This measures alignment to a terrain response, not whether each line is a true trail. Corner Canyon's inventory had 2,199 unnamed OSM footways totaling about 196.8 km out of 2,229 footway features; naming alone is not a valid inclusion rule. Neither finding justifies automatic relabeling or dropping unnamed trails.
 
 The local contact-sheet screen was not fully blinded: the separate sample key was inspected before image review. Treat its visual observations as exploratory. Independent adjudication and an independent dated trail source are still needed before label edits or weather-arm eligibility.
@@ -36,7 +38,7 @@ All seven candidate areas have NAIP STAC candidates and 1 m 3DEP metadata extent
 
 ## Experiment decision
 
-No preregistered training arm qualified. The current evidence does not separate false positive labels, omitted tread, terrain/imagery misalignment, or obscured snow trails well enough to pick labelmask, labeladd, hard-negative, or weather-dropout training. The Arc batch-12 smoke failure and Kaggle staging failures prevent local/GPU training and A parity replay. Preserve A; do not interpret the failed staging attempt as a model result.
+No preregistered training arm qualified. The current evidence does not separate false positive labels, omitted tread, terrain/imagery misalignment, or obscured snow trails well enough to pick labelmask, labeladd, hard-negative, or weather-dropout training. `launch_decisions.json` records all five arms as ineligible; `diagnostics.json` records the unrun ablations and paired imagery checks. Cross-split tile overlap further weakens the independence of legacy VAL/held-out scores, though official membership remains frozen for comparisons. The Arc batch-12 smoke failure and Kaggle staging failures prevent local/GPU training and A parity replay. Preserve A; do not interpret the failed staging attempt as a model result.
 
 For Park City, request dated MTF GIS/as-built or trail-maintenance records, provenance, positional uncertainty, construction/reroute dates and ML permission; use only features not already present in A labels for independent evaluation. In parallel, review aligned, verified snow-free imagery over affected corridors. Review complete September 2018 coverage first, then the August 2016 set if 2018 visibility is poor. Preserve the 2021 late-fall imagery as its own snow/visibility evaluation slice. Keep canopy and deep-shadow slices separate, using leaf-off imagery or independent reference evidence where available.
 
@@ -46,13 +48,13 @@ Fix the dependency installer in a separately reviewed package, then request a ne
 
 ## Verification
 
-The focused callback/dependency tests passed: 4 tests; focused screen/download tests passed: 9 tests. The full suite passed: 83 tests, with 146 library/deprecation warnings. The first sandboxed full-suite invocation could not load the installed Intel XPU DLL; rerunning with normal Windows access completed successfully. Kaggle failure diagnoses above come from remote kernel logs; the PyTorch reload root cause was also reproduced locally.
+The focused callback/dependency tests passed: 4 tests; focused split-footprint tests passed: 4 tests; focused screen/download tests passed: 9 tests. The full suite passed: 87 tests, with 146 library/deprecation warnings. The first sandboxed full-suite invocation could not load the installed Intel XPU DLL; rerunning with normal Windows access completed successfully. Kaggle failure diagnoses above come from remote kernel logs; the PyTorch reload root cause was also reproduced locally.
 
 ---
 
 ## Summary
 
-- **Inputs:** Source rasters/vectors, A tile indexes, and checkpoint are hash-verified; local tile pixels still need parity verification.
+- **Inputs:** Source rasters/vectors, A tile indexes, and checkpoint are hash-verified; exact A tile pixels still need parity verification. Recovered split membership matches 172 VAL and 358 held-out tiles, with 2.34 km² summed pairwise cross-split tile overlap.
 - **Labels:** Existing audits show measurable alignment uncertainty and many unnamed paths, but neither establishes true label errors.
 - **Imagery:** Park City mixes September and late-November 2021 NAIP; snow-like cover and invalid tile edges warrant separate visibility/validity slices.
 - **Sites:** All seven are `review_later`; metadata is promising, but independent sample counts and permissions are unknown.

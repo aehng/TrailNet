@@ -379,6 +379,46 @@ def _audit_split(rows):
     return result
 
 
+def _split_exclusive_footprints(rows, tile_width_m):
+    from shapely.geometry import box
+    from shapely.ops import unary_union
+
+    if tile_width_m <= 0:
+        raise ValueError("tile_width_m must be positive")
+    grouped = {}
+    half = tile_width_m / 2.0
+    for row in rows:
+        footprint = box(float(row["x"]) - half, float(row["y"]) - half,
+                        float(row["x"]) + half, float(row["y"]) + half)
+        grouped.setdefault(row["area"], {}).setdefault(row["split"], []).append(footprint)
+    exclusive = {}
+    for area, split_geometries in grouped.items():
+        unions = {name: unary_union(split_geometries[name]) if split_geometries.get(name) else None
+                  for name in ("train", "val", "test")}
+        for split_name, own in unions.items():
+            others = [geom for name, geom in unions.items()
+                      if name != split_name and geom is not None]
+            other_union = unary_union(others) if others else None
+            exclusive[(area, split_name)] = (
+                own.difference(other_union) if own is not None and other_union is not None else own
+            )
+    return exclusive
+
+
+def _window_is_split_exclusive(row, split_name, crop_m, exclusive):
+    from shapely.geometry import box
+
+    if crop_m <= 0:
+        raise ValueError("crop_m must be positive")
+    footprint = exclusive.get((row["area"], split_name))
+    if footprint is None or footprint.is_empty:
+        return False
+    half = crop_m / 2.0
+    crop = box(float(row["x"]) - half, float(row["y"]) - half,
+               float(row["x"]) + half, float(row["y"]) + half)
+    return footprint.covers(crop)
+
+
 def write_audit_windows(index_root: Path):
     import matplotlib
     matplotlib.use("Agg")
@@ -395,6 +435,9 @@ def write_audit_windows(index_root: Path):
                 row["index_dir"] = str(index_root / area)
                 rows.append(row)
     split = _audit_split(rows)
+    split_rows = [{**row, "split": split_name} for split_name, bucket in split.items()
+                  for row in bucket]
+    exclusive_footprints = _split_exclusive_footprints(split_rows, tile_width_m=512 * 0.6)
     allocation = {"park_city": {"train": 12, "val": 12},
                   "corner_canyon": {"train": 3, "val": 3},
                   "kelly_canyon": {"train": 3, "val": 3},
@@ -404,7 +447,12 @@ def write_audit_windows(index_root: Path):
     for area in audit_area_order:
         for split_name in ("train", "val"):
             wanted = allocation[area][split_name]
-            candidates = [r for r in split[split_name] if r["area"] == area]
+            candidates = [
+                r for r in split[split_name]
+                if r["area"] == area
+                and _window_is_split_exclusive(r, split_name, crop_m=128.0,
+                                               exclusive=exclusive_footprints)
+            ]
             pool = sorted(candidates, key=lambda r: hashlib.sha256(
                 f"42:{r['area']}:{r['image']}".encode()).hexdigest())[:max(wanted*4, wanted)]
             positive, empty = [], []

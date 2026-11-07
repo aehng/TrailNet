@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T09:59:12Z",
+  "updated_at": "2026-11-07T10:15:51Z",
   "experiment_status": "early_stop_staging_failure",
   "original_checkout": "C:/Users/elijk/Documents/Projects/TrailNet (read-only; no source edits made)",
   "worktree_branch": "codex/overnight-failure-tests",
@@ -46,6 +46,34 @@
     "park_city_best_followup_candidate": "2018-09-09 and 2018-09-27; full four-tile coverage; visual weather and trail-change checks pending",
     "visual_snow_review": "qualitative only; no corridor snow fraction or independent human adjudication"
   },
+  "split_audit": {
+    "recovered_membership_counts": {
+      "train": 1745,
+      "val": 172,
+      "heldout": 358,
+      "total": 2275
+    },
+    "membership_sha256": {
+      "train": "02cf9daddc0b7654d326f759bdb301552b8a2d89deed6c22505845388e678cb3",
+      "val": "c081f0c368003e3b352263782e13efbb8f205c582a97edf2d83be7e144195c97",
+      "heldout": "47c376d79165caf828c81f77c87f20f6fef907b0fc7f947f7ca5c7eefea82c8f"
+    },
+    "pairwise_cross_split_tile_footprints_m2": {
+      "corner_canyon": {"train_val": 76677.12, "train_heldout": 648806.4, "val_heldout": 0.0},
+      "kelly_canyon": {"train_val": 0.0, "train_heldout": 524943.36, "val_heldout": 0.0},
+      "park_city": {"train_val": 277217.28, "train_heldout": 153354.24, "val_heldout": 401080.32},
+      "snowbasin": {"train_val": 253624.32, "train_heldout": 0.0, "val_heldout": 0.0},
+      "teton_pass": {"train_val": 0.0, "train_heldout": 0.0, "val_heldout": 0.0}
+    },
+    "provisional_45_window_split_and_exclusive_geometry_check": "45/45 split assignments match indexes; 45/45 windows lie within split-exclusive geometry; raster pixel identity remains unverified",
+    "limitations": "Footprints are index-center-derived 512 px squares at 0.6 m; source nodata/valid pixel overlap is unavailable"
+  },
+  "plan_gates": {
+    "diagnostics": "blocked_before_execution; A replay failed before inference",
+    "launch_decisions": "written; all five training arms not_eligible",
+    "diagnostics_artifact": "experiments/overnight-20261107/diagnostics.json",
+    "launch_decisions_artifact": "experiments/overnight-20261107/launch_decisions.json"
+  },
   "site_screen": {
     "sites": ["Fruita 18 Road", "Sedona Bell Rock", "Crested Butte", "Buffalo Creek", "Tiger Mountain", "Copper Harbor", "Kingdom Trails"],
     "current_decisions": "review_later",
@@ -63,13 +91,14 @@
   },
   "training_gate": {
     "status": "not_qualified",
-    "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No labelmask, labeladd, hard-negative, or weather arm has met its preregistered evidence gate.",
-    "next_decision": "wait for A replay parity; finish a blinded, independently referenced audit before registering a training arm"
+    "reason": "The exploratory imagery and legacy relief audit do not independently adjudicate false positive lines, omitted trails, or weather visibility. No arm meets its preregistered evidence gate, and cross-split tile footprints overlap in every area with a nonempty VAL/held-out or train/VAL pairing.",
+    "next_decision": "resolve the replay staging issue and its exhausted retry allowance, obtain independent dated trail references, and use split-exclusive audit windows before registering a training arm"
   },
   "verification": {
     "focused_callback_and_dependency_tests": "4 passed",
+    "focused_split_footprint_tests": "4 passed",
     "focused_screen_and_download_tests": "9 passed",
-    "full_test_suite": "83 passed, 146 warnings",
+    "full_test_suite": "87 passed, 146 warnings",
     "full_suite_command": "pytest -q",
     "full_suite_exit_code": 0
   }

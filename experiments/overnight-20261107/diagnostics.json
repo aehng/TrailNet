@@ -1,0 +1,32 @@
+{
+  "status": "blocked_before_execution",
+  "reason": "The permitted A replay retry failed before tile generation or model inference. No A parity run, trusted independent references, or verified 2018 imagery pairs are available.",
+  "input_identities": {
+    "checkpoint_matches_handoff": true,
+    "raw_source_files_match_manifest": true,
+    "recovered_tile_indexes_match": true,
+    "regenerated_tile_pixel_identity": false
+  },
+  "a_checkpoint_ablation": {
+    "full_input": "not_run",
+    "terrain_neutralized_channels_4_to_6": "not_run",
+    "optical_neutralized_channels_0_to_3": "not_run",
+    "reason": "Requires verified A replay inputs and original VAL inference."
+  },
+  "weather_slices": {
+    "park_city_snow_windows_with_independently_verified_tread": 0,
+    "park_city_bare_windows_with_independently_verified_tread": 0,
+    "recall_deltas": null,
+    "distractor_burden_deltas": null,
+    "status": "unsupported; exploratory contact sheets did not receive blinded corridor adjudication"
+  },
+  "paired_imagery": {
+    "candidate": "Park City NAIP 2018-09-09 and 2018-09-27, four tiles covering the AOI",
+    "window_pairs_locked": 0,
+    "snow_free_corridor_visibility_verified": false,
+    "four_band_resolution_registration_and_trail_date_checks": "not_run",
+    "status": "candidate metadata only; no imagery pair scored"
+  },
+  "interpretation": "No weather, modality, or imagery-causality claim can be made from this run.",
+  "next_step": "Resolve the A replay staging package and the plan's exhausted retry allowance, then obtain dated independent Park City trail references before selecting paired VAL windows."
+}

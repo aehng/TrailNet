@@ -1,0 +1,53 @@
+{
+  "method": "sample crop bbox tested against union of its split tile footprints minus all other split footprints",
+  "crop_width_m": "crop_width_px * stored resolution_m",
+  "samples": 45,
+  "counts_by_area_split": {
+    "park_city:train": {
+      "total": 12,
+      "exclusive": 12,
+      "index_split_match": 12
+    },
+    "park_city:val": {
+      "total": 12,
+      "exclusive": 12,
+      "index_split_match": 12
+    },
+    "corner_canyon:train": {
+      "total": 4,
+      "exclusive": 4,
+      "index_split_match": 4
+    },
+    "corner_canyon:val": {
+      "total": 3,
+      "exclusive": 3,
+      "index_split_match": 3
+    },
+    "kelly_canyon:train": {
+      "total": 4,
+      "exclusive": 4,
+      "index_split_match": 4
+    },
+    "snowbasin:train": {
+      "total": 4,
+      "exclusive": 4,
+      "index_split_match": 4
+    },
+    "snowbasin:val": {
+      "total": 3,
+      "exclusive": 3,
+      "index_split_match": 3
+    },
+    "teton_pass:train": {
+      "total": 3,
+      "exclusive": 3,
+      "index_split_match": 3
+    }
+  },
+  "all_sample_splits_match_index": true,
+  "exclusive_samples": 45,
+  "limitations": [
+    "source tile raster masks are unavailable; geometric exclusion does not prove valid pixels or label quality",
+    "these local sample rasters remain provisional because hashes have not been compared to regenerated A tiles"
+  ]
+}

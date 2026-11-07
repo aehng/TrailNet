@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import json
 import math
 import sys
 from pathlib import Path
@@ -13,6 +14,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import rasterio
+from shapely.geometry import box
+from shapely.ops import unary_union
 
 
 def frozen_spatial_split(rows: list[dict], seed: int = 42, block_size_m: int = 2500) -> dict[str, list[dict]]:
@@ -42,6 +45,146 @@ def read_indexes(index_paths: list[Path]) -> list[dict]:
 def stable_order(rows: list[dict], seed: int) -> list[dict]:
     return sorted(rows, key=lambda row: hashlib.sha256(
         f"{seed}:{row['area']}:{row['image']}".encode()).hexdigest())
+
+
+def split_exclusive_footprints(rows: list[dict], tile_width_m: float) -> dict:
+    """Return each split's union footprint after removing areas covered by other splits."""
+    if tile_width_m <= 0:
+        raise ValueError("tile_width_m must be positive")
+    by_area: dict[str, dict[str, list]] = {}
+    half = tile_width_m / 2.0
+    for row in rows:
+        geom = box(float(row["x"]) - half, float(row["y"]) - half,
+                   float(row["x"]) + half, float(row["y"]) + half)
+        by_area.setdefault(row["area"], {}).setdefault(row["split"], []).append(geom)
+    exclusive = {}
+    for area, split_geometries in by_area.items():
+        unions = {name: unary_union(split_geometries[name]) if split_geometries.get(name) else None
+                  for name in ("train", "val", "test")}
+        for split_name, own in unions.items():
+            other_geometries = [geom for name, geom in unions.items()
+                                if name != split_name and geom is not None]
+            other_union = unary_union(other_geometries) if other_geometries else None
+            exclusive[(area, split_name)] = own.difference(other_union) if own is not None and other_union else own
+    return exclusive
+
+
+def window_is_split_exclusive(row: dict, split_name: str, crop_m: float, exclusive: dict) -> bool:
+    """Require the entire centered crop to be covered by its split-exclusive footprint."""
+    if crop_m <= 0:
+        raise ValueError("crop_m must be positive")
+    footprint = exclusive.get((row["area"], split_name))
+    if footprint is None or footprint.is_empty:
+        return False
+    half = crop_m / 2.0
+    crop = box(float(row["x"]) - half, float(row["y"]) - half,
+               float(row["x"]) + half, float(row["y"]) + half)
+    return footprint.covers(crop)
+
+
+def pairwise_tile_overlap_report(rows: list[dict], tile_width_m: float) -> dict:
+    """Measure exact pairwise split intersections after unioning tile footprint boxes."""
+    if tile_width_m <= 0:
+        raise ValueError("tile_width_m must be positive")
+    by_area: dict[str, dict[str, list]] = {}
+    half = tile_width_m / 2.0
+    for row in rows:
+        area = row["area"]
+        split_name = row["split"]
+        if split_name not in {"train", "val", "test"}:
+            raise ValueError(f"invalid split {split_name!r}")
+        geom = box(float(row["x"]) - half, float(row["y"]) - half,
+                   float(row["x"]) + half, float(row["y"]) + half)
+        by_area.setdefault(area, {}).setdefault(split_name, []).append(geom)
+    report = {}
+    for area, split_geometries in sorted(by_area.items()):
+        unions = {name: unary_union(split_geometries[name]) if split_geometries.get(name) else None
+                  for name in ("train", "val", "test")}
+        values = {}
+        for first, second in (("train", "val"), ("train", "test"), ("val", "test")):
+            left, right = unions[first], unions[second]
+            values[f"{first}_{second}_intersection_m2"] = (
+                float(left.intersection(right).area) if left is not None and right is not None else 0.0
+            )
+        report[area] = values
+    return report
+
+
+def build_split_preflight(index_root: Path, output: Path, seed: int = 42,
+                          block_size_m: int = 2500, tile_size_px: int = 512,
+                          resolution_m: float = 0.6) -> dict:
+    """Record exact index membership and geometric cross-split tile overlap without rasters."""
+    index_paths = sorted(index_root.glob("*/index.csv"))
+    if not index_paths:
+        raise FileNotFoundError(f"No area index.csv files below {index_root}")
+    if tile_size_px <= 0 or resolution_m <= 0:
+        raise ValueError("tile_size_px and resolution_m must be positive")
+    rows = read_indexes(index_paths)
+    split_buckets = frozen_spatial_split(rows, seed=seed, block_size_m=block_size_m)
+    membership_rows = []
+    tile_ids_by_split = {}
+    counts_by_area = {}
+    blocks_by_split = {name: set() for name in ("train", "val", "test")}
+    for split_name, bucket in split_buckets.items():
+        ids = sorted(f"{row['area']}/{row['image']}" for row in bucket)
+        tile_ids_by_split[split_name] = ids
+        for row in bucket:
+            block_x = math.floor(row["x"] / block_size_m)
+            block_y = math.floor(row["y"] / block_size_m)
+            blocks_by_split[split_name].add((row["area"], block_x, block_y))
+            counts_by_area.setdefault(row["area"], {}).setdefault(split_name, 0)
+            counts_by_area[row["area"]][split_name] += 1
+            membership_rows.append({
+                "tile_id": f"{row['area']}/{row['image']}", "area": row["area"],
+                "image": row["image"], "split": split_name,
+                "block_x": block_x, "block_y": block_y,
+                "x_center_m": row["x"], "y_center_m": row["y"], "crs": row.get("crs", ""),
+            })
+    membership_rows.sort(key=lambda item: item["tile_id"])
+    output.mkdir(parents=True, exist_ok=True)
+    membership_path = output / "split_membership.csv"
+    with membership_path.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(membership_rows[0]))
+        writer.writeheader()
+        writer.writerows(membership_rows)
+    membership_hashes = {
+        name: hashlib.sha256("\n".join(tile_ids_by_split[name]).encode("utf-8")).hexdigest()
+        for name in ("train", "val", "test")
+    }
+    overlap_report = pairwise_tile_overlap_report(
+        [{**row, "split": split_name} for split_name, bucket in split_buckets.items() for row in bucket],
+        tile_width_m=tile_size_px * resolution_m,
+    )
+    split_rows = [{**row, "split": split_name} for split_name, bucket in split_buckets.items()
+                  for row in bucket]
+    exclusive_footprints = split_exclusive_footprints(
+        split_rows, tile_width_m=tile_size_px * resolution_m
+    )
+    exclusive_areas = {}
+    for (area, split_name), geom in exclusive_footprints.items():
+        exclusive_areas.setdefault(area, {})[split_name] = float(geom.area) if geom is not None else 0.0
+    report = {
+        "index_root": str(index_root), "seed": seed, "block_size_m": block_size_m,
+        "val_fraction": 0.15, "test_fraction": 0.15,
+        "tile_size_px": tile_size_px, "resolution_m": resolution_m,
+        "tile_footprint_width_m": tile_size_px * resolution_m,
+        "tile_counts": {name: len(tile_ids_by_split[name]) for name in ("train", "val", "test")}
+                       | {"total": len(membership_rows)},
+        "counts_by_area_split": counts_by_area,
+        "unique_blocks_by_split": {name: len(values) for name, values in blocks_by_split.items()},
+        "membership_sha256": membership_hashes,
+        "tile_ids_by_split": tile_ids_by_split,
+        "membership_csv": str(membership_path),
+        "cross_split_tile_footprints": overlap_report,
+        "split_exclusive_footprint_area_m2": exclusive_areas,
+        "limitations": [
+            "Membership comes from the recovered index coordinates and frozen seed-42 hash split.",
+            "Footprint areas use 512-pixel square tiles at the configured 0.6 m resolution.",
+            "Source tile masks and raster pixel validity are not available in this index-only audit.",
+        ],
+    }
+    (output / "split_audit.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return report
 
 
 def sha256(path: Path) -> str:
@@ -93,6 +236,9 @@ def build_audit(index_root: Path, output: Path, seed: int = 42,
         raise FileNotFoundError(f"No area index.csv files below {index_root}")
     rows = read_indexes(index_paths)
     split = frozen_spatial_split(rows, seed=seed, block_size_m=2500)
+    split_rows = [{**row, "split": split_name} for split_name, bucket in split.items()
+                  for row in bucket]
+    exclusive_footprints = split_exclusive_footprints(split_rows, tile_width_m=512 * 0.6)
     output.mkdir(parents=True, exist_ok=True)
     half = max_windows // 2
     area_order = ["park_city", "corner_canyon", "kelly_canyon", "snowbasin", "teton_pass"]
@@ -111,7 +257,11 @@ def build_audit(index_root: Path, output: Path, seed: int = 42,
     for area in area_order:
         for split_name in ("train", "val"):
             wanted = allocations.get(area, {}).get(split_name, 0)
-            candidates = [r for r in split[split_name] if r["area"] == area]
+            candidates = [
+                r for r in split[split_name]
+                if r["area"] == area
+                and window_is_split_exclusive(r, split_name, crop_m=crop_m, exclusive=exclusive_footprints)
+            ]
             positive, empty = [], []
             pool = stable_order(candidates, seed)[:max(wanted * 4, wanted)]
             for row in pool:
@@ -178,6 +328,7 @@ def build_audit(index_root: Path, output: Path, seed: int = 42,
             "grid": "seed-42 A-compatible index tile centers; center crop, fixed area/split allocation",
             "crop_target_m": crop_m, "requested_windows": max_windows,
             "sampled_windows": len(selected), "shortages": shortages,
+            "split_exclusive_windows_required": True,
             "tile_raster_pixel_identity_verified": False,
             "counts_by_area_split_stratum": {
                 area: {split_name: {stratum: sum(1 for item in key_rows
@@ -196,9 +347,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--index-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=Path("experiments/overnight-20261107/audit"))
+    parser.add_argument("--membership-only", action="store_true",
+                        help="write split IDs/hashes and cross-split tile-overlap areas without raster reads")
     args = parser.parse_args()
+    if args.membership_only:
+        report = build_split_preflight(args.index_root, args.output)
+        print(f"SPLIT_COUNTS {report['tile_counts']}; membership={report['membership_sha256']}")
+        print(f"SPLIT_OVERLAPS {json.dumps(report['cross_split_tile_footprints'], sort_keys=True)}")
+        return
     summary = build_audit(args.index_root, args.output)
-    (args.output / "audit_window_summary.json").write_text(__import__("json").dumps(summary, indent=2), encoding="utf-8")
+    (args.output / "audit_window_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(f"WINDOWS {summary['sampled_windows']}/{summary['requested_windows']}; shortages={len(summary['shortages'])}")
 
 
